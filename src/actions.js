@@ -31,6 +31,33 @@ module.exports = {
 					},
 				],
 			},
+			// Transition Actions
+			auto: {
+				label: 'Auto',
+				options: [
+					{
+						type: 'number',
+						label: 'Mix Effects Bus',
+						id: 'meId',
+						min: 1,
+						max: 4,
+						default: 1,
+					},
+				],
+			},
+			cut: {
+				label: 'Cut',
+				options: [
+					{
+						type: 'number',
+						label: 'Mix Effects Bus',
+						id: 'meId',
+						min: 1,
+						max: 4,
+						default: 1,
+					},
+				],
+			},
 			// Media Player Actions
 			mediaPlayerClip: {
 				label: 'Media Player: Clip',
@@ -667,6 +694,15 @@ module.exports = {
 			case 'connect':
 				path = '/mixeffect/connect'
 				args.push({ type: 's', value: options.switcherName })
+				break
+			// Transition Actions
+			case 'auto':
+				path = '/mixeffect/auto'
+				args.push({ type: 'i', value: options.meId })
+				break
+			case 'cut':
+				path = '/mixeffect/cut'
+				args.push({ type: 'i', value: options.meId })
 				break
 			// Media Player Actions
 			case 'mediaPlayerClip':

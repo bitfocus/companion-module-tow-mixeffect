@@ -4,6 +4,8 @@ module.exports = {
 	initPresets() {
 		const presets = []
 
+		const addPresets = (category) => category.list.forEach(item => presets.push(category.generate(item)))
+
 		const generateWithNoOptions = ({ category, label, size, action }) => ({
 			category: category,
 			label: label,
@@ -21,8 +23,8 @@ module.exports = {
 			],
 		})
 
-		const switcherSection = {
-			category: 'Switcher Section',
+		const switcher = {
+			category: 'Switcher',
 			list: [
 				{ id: 'audio', label: 'Audio', size: 14 },
 				{ id: 'auxiliary', label: 'AUX', size: 14 },
@@ -41,7 +43,7 @@ module.exports = {
 				{ id: 'view-all', label: 'View All Presets', size: 14 },
 			],
 			generate: (item) => ({
-				category: switcherSection.category,
+				category: switcher.category,
 				label: item.label,
 				bank: {
 					style: 'text',
@@ -60,6 +62,34 @@ module.exports = {
 				],
 			}),
 		}
+
+		const transitions = {
+			category: 'Transitions',
+			list: [
+				{ action: 'auto', label: 'Auto' },
+				{ action: 'cut', label: 'Cut' },
+			],
+			generate: (item) => ({
+				category: transitions.category,
+				label: item.label,
+				bank: {
+					style: 'text',
+					text: item.label,
+					size: 18,
+					color: this.rgb(255, 255, 255),
+					bgcolor: this.rgb(0, 0, 0),
+				},
+				actions: [
+					{
+						action: item.action,
+						options: {
+							meID: 1,
+						},
+					},
+				],
+			}),
+		}
+
 
 		const superSourcePreset = {
 			category: 'SuperSource Preset',
@@ -281,36 +311,40 @@ module.exports = {
 			}),
 		}
 
-		// Switcher Section
-		switcherSection.list.forEach(item => presets.push(switcherSection.generate(item)))
+		// Switcher 
+		addPresets(switcher)
+
+		// Transitions
+		addPresets(transitions)
 
 		// SuperSource Presets
-		superSourcePreset.list.forEach(item => presets.push(superSourcePreset.generate(item)))
-		superSourcePresetAdditional.list.forEach(item => presets.push(superSourcePresetAdditional.generate(item)))
-
+		addPresets(superSourcePreset)
+		addPresets(superSourcePresetAdditional)
+		
 		// SuperSource Animation Speed
-		superSourceAnimationSpeed.list.forEach(item => presets.push(superSourceAnimationSpeed.generate(item)))
+		addPresets(superSourceAnimationSpeed)
 		presets.push(generateWithNoOptions({
 			category: superSourceAnimationSpeed.category,
 			label: 'Cycle Speed',
 			size: 18,
 			action: 'superSourceAnimationSpeedCycle',
 		}))
-
+		
 		// SuperSource Animation Style
-		superSourceAnimationStyle.list.forEach(item => presets.push(superSourceAnimationStyle.generate(item)))
+		addPresets(superSourceAnimationStyle)
 		presets.push(generateWithNoOptions({
 			category: superSourceAnimationStyle.category,
 			label: 'Cycle Style',
 			size: 14,
 			action: 'superSourceAnimationStyleCycle',
 		}))
-
+		
 		// SuperSource Highlight
+		addPresets(superSourceHighlight)
 		superSourceHighlight.list.forEach(item => presets.push(superSourceHighlight.generate(item)))
-
+		
 		// Video Follows Audio
-		videoFollowAudio.list.forEach(item => presets.push(videoFollowAudio.generate(item)))
+		addPresets(videoFollowAudio)
 
 		// Other Actions
 		presets.push(generateWithNoOptions({
