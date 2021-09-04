@@ -679,7 +679,11 @@ module.exports = {
 			},
 			viewOnlyMode: {
 				label: 'View Only Mode',
-			}
+			},
+			remoteWebview: {
+				label: 'Remote Webview',
+			},
+
 		}
 
 		this.setActions(actions)
@@ -876,6 +880,9 @@ module.exports = {
 				break
 			case 'viewOnlyMode':
 				path = '/mixeffect/vom'
+				break
+			case 'remoteWebview':
+				path = '/mixeffect/remote-webview'
 				break
 			// Unknown Actions
 			default:
