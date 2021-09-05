@@ -127,8 +127,8 @@ module.exports = {
 		})
 
 		const superSourceList2 = [
-			{ label: 'Previous Preset', action: 'superSourcePresetPrevious' },
-			{ label: 'Next  Preset', action: 'superSourcePresetNext',  },
+			{ label: 'Previous Preset', action: 'superSourcePresetPrevious', options: { superSourceId: 1 } },
+			{ label: 'Next  Preset', action: 'superSourcePresetNext', options: { superSourceId: 1 } },
 		]
 		addPresetList({
 			category: 'SuperSource Preset',
