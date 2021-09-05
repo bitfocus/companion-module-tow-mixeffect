@@ -64,15 +64,15 @@ module.exports = {
 				options: [
 					{
 						type: 'number',
-						label: 'Media Player Index',
-						id: 'mediaPlayerIndex',
+						label: 'Clip Index',
+						id: 'clipIndex',
 						min: 1,
 						default: 1,
 					},
 					{
 						type: 'number',
-						label: 'Clip Index',
-						id: 'clipIndex',
+						label: 'Media Player Index',
+						id: 'mediaPlayerIndex',
 						min: 1,
 						default: 1,
 					},
@@ -108,15 +108,15 @@ module.exports = {
 				options: [
 					{
 						type: 'number',
-						label: 'Media Player Index',
-						id: 'mediaPlayerIndex',
+						label: 'Still Index',
+						id: 'stillIndex',
 						min: 1,
 						default: 1,
 					},
 					{
 						type: 'number',
-						label: 'Still Index',
-						id: 'stillIndex',
+						label: 'Media Player Index',
+						id: 'mediaPlayerIndex',
 						min: 1,
 						default: 1,
 					},
@@ -711,8 +711,8 @@ module.exports = {
 			// Media Player Actions
 			case 'mediaPlayerClip':
 				path = '/mixeffect/mp/clip'
-				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
 				args.push({ type: 'i', value: parseInt(options.ClipIndex) })
+				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
 				break
 			case 'mediaPlayerClipCycle':
 				path = '/mixeffect/mp/clip/cycle'
@@ -724,8 +724,8 @@ module.exports = {
 				break
 			case 'mediaPlayerStill':
 				path = '/mixeffect/mp/still'
-				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
 				args.push({ type: 'i', value: parseInt(options.stillIndex) })
+				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
 				break
 			case 'mediaPlayerStillCycle':
 				path = '/mixeffect/mp/still/cycle'
