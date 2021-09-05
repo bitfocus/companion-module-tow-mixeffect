@@ -1,19 +1,19 @@
 module.exports = {
 	initActions() {
-		const inputChoices = [...Array(40).keys()].map(n => ({ id: n + 1, label: `Input ${n + 1}` }))
+		const inputChoices = [...Array(40).keys()].map((n) => ({ id: n + 1, label: `Input ${n + 1}` }))
 
-		const growChoices = [...Array(21).keys()].map( n => {
-			const factor = n * 0.025;
+		const growChoices = [...Array(21).keys()].map((n) => {
+			const factor = n * 0.025
 			if (n === 0) {
-				return { id: '0.000', label: 'Don\'t Change' }
+				return { id: '0.000', label: "Don't Change" }
 			}
 			return { id: factor.toPrecision(4), label: `${(factor + 1).toPrecision(4)}x` }
 		})
 
-		const shrinkChoices = [...Array(21).keys()].map( n => {
-			const factor = n * 0.025;
+		const shrinkChoices = [...Array(21).keys()].map((n) => {
+			const factor = n * 0.025
 			if (n === 0) {
-				return { id: '0.000', label: 'Don\'t Change' }
+				return { id: '0.000', label: "Don't Change" }
 			}
 			return { id: factor.toPrecision(4), label: `${(1 - factor).toPrecision(4)}x` }
 		})
@@ -683,7 +683,6 @@ module.exports = {
 			remoteWebview: {
 				label: 'Remote Webview',
 			},
-
 		}
 
 		this.setActions(actions)
@@ -829,7 +828,6 @@ module.exports = {
 				break
 			case 'superSourceGrowHighlightedBox':
 				path = '/mixeffect/ssrc/grow-to'
-				console.log(options)
 				args.push({ type: 'f', value: parseFloat(options.growTo) })
 				break
 			case 'superSourceGrowHighlightedBoxBy':
