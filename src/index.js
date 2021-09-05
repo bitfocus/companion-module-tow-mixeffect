@@ -4,9 +4,8 @@ const configs = require('./configs')
 const actions = require('./actions')
 const constants = require('./constants')
 const presets = require('./presets')
-// TODO
-// const feedbacks = require('./feedbacks');
-// const variables = require('./variables');
+const variables = require('./variables');
+const feedbacks = require('./feedbacks');
 
 class MixEffectInstance extends instance_skel {
 	constructor(system, id, config) {
@@ -17,12 +16,17 @@ class MixEffectInstance extends instance_skel {
 			...actions,
 			...constants,
 			...presets,
-			// TODO
-			// ...feedbacks,
-			// ...variables,
+			...variables,
+			...feedbacks,
 		})
 
-		this.config = config
+		this.config = config;
+
+		this.store = {
+			variables: {
+				selectedMediaPlayer: 1,
+			}
+		}
 
 		this.initConstants()
 		this.initActions()
@@ -30,7 +34,9 @@ class MixEffectInstance extends instance_skel {
 	}
 
 	init() {
-		this.updateConfig()
+		this.initFeedbacks()
+		this.initVariableDefinitions()
+		this.status(this.STATUS_OK)
 	}
 
 	updateConfig(config) {

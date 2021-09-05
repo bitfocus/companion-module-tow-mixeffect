@@ -19,6 +19,24 @@ module.exports = {
 		})
 
 		const actions = {
+			// Internal Actions
+			selectMediaPlayer: {
+				label: 'Select Media Player',
+				options: [
+					{
+						type: 'dropdown',
+						label: 'Media Player',
+						id: 'mediaPlayerIndex',
+						choices: [
+							{ id: 1, label: 'Media Player 1' },
+							{ id: 2, label: 'Media Player 2' },
+							{ id: 3, label: 'Media Player 3' },
+							{ id: 4, label: 'Media Player 4' },
+						],
+						default: 1,
+					},
+				]
+			},
 			// Connectivity Actions
 			connect: {
 				label: 'Connect to Switcher',
@@ -70,10 +88,16 @@ module.exports = {
 						default: 1,
 					},
 					{
-						type: 'number',
-						label: 'Media Player Index',
+						type: 'dropdown',
+						label: 'Media Player',
 						id: 'mediaPlayerIndex',
-						min: 1,
+						choices: [
+							{ id: 1, label: 'Media Player 1' },
+							{ id: 2, label: 'Media Player 2' },
+							{ id: 3, label: 'Media Player 3' },
+							{ id: 4, label: 'Media Player 4' },
+							{ id: 0, label: 'Selected Media Player' },
+						],
 						default: 1,
 					},
 				],
@@ -82,10 +106,16 @@ module.exports = {
 				label: 'Media Player: Clip Cycle',
 				options: [
 					{
-						type: 'number',
-						label: 'Media Player Index',
+						type: 'dropdown',
+						label: 'Media Player',
 						id: 'mediaPlayerIndex',
-						min: 1,
+						choices: [
+							{ id: 1, label: 'Media Player 1' },
+							{ id: 2, label: 'Media Player 2' },
+							{ id: 3, label: 'Media Player 3' },
+							{ id: 4, label: 'Media Player 4' },
+							{ id: 0, label: 'Selected Media Player' },
+						],
 						default: 1,
 					},
 				],
@@ -94,12 +124,17 @@ module.exports = {
 				label: 'Media Player: Clip Reverse',
 				options: [
 					{
-						type: 'number',
-						label: 'Media Player Index',
+						type: 'dropdown',
+						label: 'Media Player',
 						id: 'mediaPlayerIndex',
-						min: 1,
+						choices: [
+							{ id: 1, label: 'Media Player 1' },
+							{ id: 2, label: 'Media Player 2' },
+							{ id: 3, label: 'Media Player 3' },
+							{ id: 4, label: 'Media Player 4' },
+							{ id: 0, label: 'Selected Media Player' },
+						],
 						default: 1,
-						required: true,
 					},
 				],
 			},
@@ -114,10 +149,16 @@ module.exports = {
 						default: 1,
 					},
 					{
-						type: 'number',
-						label: 'Media Player Index',
+						type: 'dropdown',
+						label: 'Media Player',
 						id: 'mediaPlayerIndex',
-						min: 1,
+						choices: [
+							{ id: 1, label: 'Media Player 1' },
+							{ id: 2, label: 'Media Player 2' },
+							{ id: 3, label: 'Media Player 3' },
+							{ id: 4, label: 'Media Player 4' },
+							{ id: 0, label: 'Selected Media Player' },
+						],
 						default: 1,
 					},
 				],
@@ -126,10 +167,16 @@ module.exports = {
 				label: 'Media Player: Still Cycle',
 				options: [
 					{
-						type: 'number',
-						label: 'Media Player Index',
+						type: 'dropdown',
+						label: 'Media Player',
 						id: 'mediaPlayerIndex',
-						min: 1,
+						choices: [
+							{ id: 1, label: 'Media Player 1' },
+							{ id: 2, label: 'Media Player 2' },
+							{ id: 3, label: 'Media Player 3' },
+							{ id: 4, label: 'Media Player 4' },
+							{ id: 0, label: 'Selected Media Player' },
+						],
 						default: 1,
 					},
 				],
@@ -138,12 +185,17 @@ module.exports = {
 				label: 'Media Player: Still Reverse',
 				options: [
 					{
-						type: 'number',
-						label: 'Media Player Index',
+						type: 'dropdown',
+						label: 'Media Player',
 						id: 'mediaPlayerIndex',
-						min: 1,
+						choices: [
+							{ id: 1, label: 'Media Player 1' },
+							{ id: 2, label: 'Media Player 2' },
+							{ id: 3, label: 'Media Player 3' },
+							{ id: 4, label: 'Media Player 4' },
+							{ id: 0, label: 'Selected Media Player' },
+						],
 						default: 1,
-						required: true,
 					},
 				],
 			},
@@ -693,6 +745,10 @@ module.exports = {
 		const args = []
 
 		switch (action) {
+			// Internal Actions
+			case 'selectMediaPlayer':
+				this.updateVariable('media_player', options.mediaPlayerIndex)
+				return
 			// Connectivity Actions
 			case 'connect':
 				path = '/mixeffect/connect'
@@ -711,28 +767,52 @@ module.exports = {
 			case 'mediaPlayerClip':
 				path = '/mixeffect/mp/clip'
 				args.push({ type: 'i', value: parseInt(options.ClipIndex) })
-				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
+				if (options.mediaPlayerIndex > 0) {
+					args.push({ type: 'i', value: options.mediaPlayerIndex })
+				} else {
+					this.getVariable('media_player', value => args.push({ type: 'i', value }))
+				}
 				break
 			case 'mediaPlayerClipCycle':
 				path = '/mixeffect/mp/clip/cycle'
-				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
+				if (options.mediaPlayerIndex > 0) {
+					args.push({ type: 'i', value: options.mediaPlayerIndex })
+				} else {
+					this.getVariable('media_player', value => args.push({ type: 'i', value }))
+				}
 				break
 			case 'mediaPlayerClipCycleReverse':
 				path = '/mixeffect/mp/clip/cycle-reverse'
-				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
+				if (options.mediaPlayerIndex > 0) {
+					args.push({ type: 'i', value: options.mediaPlayerIndex })
+				} else {
+					this.getVariable('media_player', value => args.push({ type: 'i', value }))
+				}
 				break
 			case 'mediaPlayerStill':
 				path = '/mixeffect/mp/still'
 				args.push({ type: 'i', value: parseInt(options.stillIndex) })
-				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
+				if (options.mediaPlayerIndex > 0) {
+					args.push({ type: 'i', value: options.mediaPlayerIndex })
+				} else {
+					this.getVariable('media_player', value => args.push({ type: 'i', value }))
+				}
 				break
 			case 'mediaPlayerStillCycle':
 				path = '/mixeffect/mp/still/cycle'
-				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
+				if (options.mediaPlayerIndex > 0) {
+					args.push({ type: 'i', value: options.mediaPlayerIndex })
+				} else {
+					this.getVariable('media_player', value => args.push({ type: 'i', value }))
+				}
 				break
 			case 'mediaPlayerStillCycleReverse':
 				path = '/mixeffect/mp/still/cycle-reverse'
-				args.push({ type: 'i', value: parseInt(options.mediaPlayerIndex) })
+				if (options.mediaPlayerIndex > 0) {
+					args.push({ type: 'i', value: options.mediaPlayerIndex })
+				} else {
+					this.getVariable('media_player', value => args.push({ type: 'i', value }))
+				}
 				break
 			// Macro Actions
 			case 'macroRun':
@@ -771,20 +851,20 @@ module.exports = {
 			case 'superSourcePreset':
 				path = '/mixeffect/ssrc/preset'
 				args.push({ type: 's', value: options.presetName })
-				args.push({ type: 's', value: options.superSourceId })
+				args.push({ type: 'i', value: options.superSourceId })
 				break
 			case 'superSourcePresetPrevious':
 				path = '/mixeffect/ssrc/previous'
-				args.push({ type: 's', value: options.superSourceId })
+				args.push({ type: 'i', value: options.superSourceId })
 				break
 			case 'superSourcePresetNext':
 				path = '/mixeffect/ssrc/next'
-				args.push({ type: 's', value: options.superSourceId })
+				args.push({ type: 'i', value: options.superSourceId })
 				break
 			case 'superSourceHighlight':
 				path = '/mixeffect/ssrc/highlight'
 				args.push({ type: 's', value: options.boxId })
-				args.push({ type: 's', value: options.superSourceId })
+				args.push({ type: 'i', value: options.superSourceId })
 				break
 			case 'superSourceBoxCrop':
 				path = '/mixeffect/ssrc/box/crop'
