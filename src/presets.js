@@ -23,16 +23,21 @@ module.exports = {
 			],
 		})
 
-		const addPresetList = ({ category, size = 14, action, bank = {}, list = [] }) => list.forEach(item => presets.push(generatePreset({
-			category, 
-			size,
-			action,
-			...item,
-			bank: {
-				...bank,
-				...item.bank,
-			},
-		})))
+		const addPresetList = ({ category, size = 14, action, bank = {}, list = [] }) =>
+			list.forEach((item) =>
+				presets.push(
+					generatePreset({
+						category,
+						size,
+						action,
+						...item,
+						bank: {
+							...bank,
+							...item.bank,
+						},
+					})
+				)
+			)
 
 		// Switcher
 		const switcherSectionList = [
@@ -52,10 +57,10 @@ module.exports = {
 			{ label: 'USK', options: { section: 'upstream-keyers' } },
 			{ label: 'View All Presets', options: { section: 'view-all' } },
 		]
-		addPresetList({ 
+		addPresetList({
 			category: 'Switcher',
 			action: 'switcherSection',
-			list: switcherSectionList ,
+			list: switcherSectionList,
 		})
 
 		// Transitions
@@ -112,9 +117,11 @@ module.exports = {
 			{ label: 'USK - Six Grid' },
 			{ label: 'USK - Six Grid Crop' },
 			{ label: 'USK - Six Left' },
-		].map(({ label }) => (
-			{ label, bank: { png64: thumbnails[label] }, options: { presetName: label, superSourceId: 1 } }
-		))
+		].map(({ label }) => ({
+			label,
+			bank: { png64: thumbnails[label] },
+			options: { presetName: label, superSource: 1 },
+		}))
 		addPresetList({
 			category: 'SuperSource Preset',
 			size: 7,
@@ -127,8 +134,8 @@ module.exports = {
 		})
 
 		const superSourceList2 = [
-			{ label: 'Previous Preset', action: 'superSourcePresetPrevious', options: { superSourceId: 1 } },
-			{ label: 'Next  Preset', action: 'superSourcePresetNext', options: { superSourceId: 1 } },
+			{ label: 'Previous Preset', action: 'superSourcePresetPrevious', options: { superSource: 1 } },
+			{ label: 'Next  Preset', action: 'superSourcePresetNext', options: { superSource: 1 } },
 		]
 		addPresetList({
 			category: 'SuperSource Preset',
@@ -139,12 +146,12 @@ module.exports = {
 		// SuperSource Animation Speed
 		const superSourceAnimationSpeedList = [
 			{ label: 'Instant', action: 'superSourceAnimationSpeed', options: { speed: 0 } },
-			{ label: 'Extra Fast', action: 'superSourceAnimationSpeed', options: { speed: 1 }  },
-			{ label: 'Fast', action: 'superSourceAnimationSpeed', options: { speed: 2 }  },
-			{ label: 'Normal', action: 'superSourceAnimationSpeed', options: { speed: 3 }  },
-			{ label: 'Slow', action: 'superSourceAnimationSpeed', options: { speed: 4 }  },
-			{ label: 'Extra Slow', action: 'superSourceAnimationSpeed', options: { speed: 5 }  },
-			{ label: 'Cycle Speed', action: 'superSourceAnimationSpeedCycle' }
+			{ label: 'Extra Fast', action: 'superSourceAnimationSpeed', options: { speed: 1 } },
+			{ label: 'Fast', action: 'superSourceAnimationSpeed', options: { speed: 2 } },
+			{ label: 'Normal', action: 'superSourceAnimationSpeed', options: { speed: 3 } },
+			{ label: 'Slow', action: 'superSourceAnimationSpeed', options: { speed: 4 } },
+			{ label: 'Extra Slow', action: 'superSourceAnimationSpeed', options: { speed: 5 } },
+			{ label: 'Cycle Speed', action: 'superSourceAnimationSpeedCycle' },
 		]
 		addPresetList({
 			category: 'SuperSource Animation Speed',
@@ -163,7 +170,7 @@ module.exports = {
 			{ label: 'Smooth Step', action: 'superSourceAnimationStyle', options: { style: 6 } },
 			{ label: 'Smoother Step', action: 'superSourceAnimationStyle', options: { style: 7 } },
 			{ label: 'Squared', action: 'superSourceAnimationStyle', options: { style: 8 } },
-			{ label: 'Cycle Style', action: 'superSourceAnimationStyleCycle' }
+			{ label: 'Cycle Style', action: 'superSourceAnimationStyleCycle' },
 		]
 		addPresetList({
 			category: 'SuperSource Animation Style',
@@ -173,16 +180,16 @@ module.exports = {
 
 		// SuperSource Highlight
 		superSourceHighlightList = [
-			{ label: 'Highlight Box 1', options: { boxId: 1 } },
-			{ label: 'Highlight Box 2', options: { boxId: 2 } },
-			{ label: 'Highlight Box 3', options: { boxId: 3 } },
-			{ label: 'Highlight Box 4', options: { boxId: 4 } },
-			{ label: 'Highlight Reset', options: { boxId: 0 } },
+			{ label: 'Highlight Box 1', options: { box: 1 } },
+			{ label: 'Highlight Box 2', options: { box: 2 } },
+			{ label: 'Highlight Box 3', options: { box: 3 } },
+			{ label: 'Highlight Box 4', options: { box: 4 } },
+			{ label: 'Highlight Reset', options: { box: 0 } },
 		]
 		addPresetList({
 			category: 'SuperSource Highlight',
 			action: 'superSourceHighlight',
-			options: { superSourceId: 1 },
+			options: { superSource: 1 },
 			list: superSourceHighlightList,
 		})
 
@@ -206,7 +213,7 @@ module.exports = {
 		]
 		addPresetList({
 			category: 'Other Actions',
-			list: otherList
+			list: otherList,
 		})
 
 		this.setPresetDefinitions(presets)

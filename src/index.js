@@ -4,8 +4,11 @@ const configs = require('./configs')
 const actions = require('./actions')
 const constants = require('./constants')
 const presets = require('./presets')
-const variables = require('./variables');
-const feedbacks = require('./feedbacks');
+const variables = require('./variables')
+const feedbacks = require('./feedbacks')
+const upgrades = require('./upgrades')
+
+const switchers = require('./switchers')
 
 class MixEffectInstance extends instance_skel {
 	constructor(system, id, config) {
@@ -20,29 +23,53 @@ class MixEffectInstance extends instance_skel {
 			...feedbacks,
 		})
 
-		this.config = config;
+		this.config = config
 
 		this.store = {
 			variables: {
 				selectedMediaPlayer: 1,
-			}
+				selectedMixEffectBus: 1,
+				selectedBox: 1,
+				selectedSuperSource: 1,
+				selectedUSK: 1,
+				selectedDSK: 1,
+			},
+		}
+	}
+
+	static GetUpgradeScripts() {
+		return [upgrades.v1_1_0]
+	}
+
+	static DEVELOPER_forceStartupUpgradeScript = 0
+
+	init() {
+		this.switcher = switchers.find(({ id }) => this.config.model === id)
+		if (!this.switcher) {
+			return this.status(this.STATUS_ERROR, 'Unknown Switcher')
 		}
 
 		this.initConstants()
 		this.initActions()
 		this.initPresets()
-	}
-
-	init() {
 		this.initFeedbacks()
-		this.initVariableDefinitions()
+		this.initVariables()
+
 		this.status(this.STATUS_OK)
 	}
 
 	updateConfig(config) {
-		if (config) {
-			this.config = config
+		this.config = config
+
+		this.switcher = switchers.find(({ id }) => this.config.model === id)
+
+		if (!this.switcher) {
+			return this.status(this.STATUS_ERROR, 'Unknown Switcher')
 		}
+
+		this.initActions()
+		this.initPresets()
+		this.initFeedbacks()
 
 		this.status(this.STATUS_OK)
 	}

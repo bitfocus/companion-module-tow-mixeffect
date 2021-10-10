@@ -2,14 +2,15 @@
   "name": "tow-mixeffect",
   "version": "1.0.2",
   "description": "Companion Module for MixEffect",
-	"manufacturer": "Adam Tow",
-	"product": [
-		"MixEffect"
-	],
-	"shortname": "mixeffect",
-	"main": "src/index.js",
+  "manufacturer": "Adam Tow",
+  "product": [
+    "MixEffect"
+  ],
+  "shortname": "mixeffect",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,9 @@
     "ATEM"
   ],
   "author": "Johnny Estilles <johnny@estilles.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.4.1",
+    "semantic-release": "^18.0.0"
+  }
 }
