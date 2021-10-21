@@ -75,7 +75,7 @@ module.exports = {
 			{ label: 'Four Grid Alternate' },
 			{ label: 'Four Grid Full' },
 			{ label: 'Four Horizontal Crop' },
-			{ label: 'Four Horizontal Full' },
+			{ label: 'Four Horizontal Fill' },
 			{ label: 'Four Left' },
 			{ label: 'Four Left Full' },
 			{ label: 'iPad Mini Left' },
