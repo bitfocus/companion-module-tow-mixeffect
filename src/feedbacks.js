@@ -76,7 +76,6 @@ module.exports = {
 			count: 4,
 		})
 
-
 		feedbacks.selected_color_generator = generateInternalFeedback({
 			label: 'Color Generator',
 			id: 'colorGenerator',

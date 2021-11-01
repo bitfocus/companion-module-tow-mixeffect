@@ -709,11 +709,7 @@ const superSourceActions = ({ context }) => {
 
 		actions.superSourceBoxPositionXSet = {
 			label: 'SuperSource: Box Position X Set',
-			options: [
-				option.box(),
-				option.value({ min: -48, max: 48 }),
-				option.superSource(context),
-			],
+			options: [option.box(), option.value({ min: -48, max: 48 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/position/set', [
 					{ type: 'i', value: options.box },
@@ -726,11 +722,7 @@ const superSourceActions = ({ context }) => {
 
 		actions.superSourceBoxPositionXAdjust = {
 			label: 'SuperSource: Box Position X Adjust',
-			options: [
-				option.box(),
-				option.value({ min: -48, max: 48 }),
-				option.superSource(context),
-			],
+			options: [option.box(), option.value({ min: -48, max: 48 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/position/adjust', [
 					{ type: 'i', value: options.box },
@@ -743,11 +735,7 @@ const superSourceActions = ({ context }) => {
 
 		actions.superSourceBoxPositionYSet = {
 			label: 'SuperSource: Box Position Y Set',
-			options: [
-				option.box(),
-				option.value({ min: -27, max: 27 }),
-				option.superSource(context),
-			],
+			options: [option.box(), option.value({ min: -27, max: 27 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/position/set', [
 					{ type: 'i', value: options.box },
@@ -760,11 +748,7 @@ const superSourceActions = ({ context }) => {
 
 		actions.superSourceBoxPositionYAdjust = {
 			label: 'SuperSource: Box Position Y Adjust',
-			options: [
-				option.box(),
-				option.value({ min: -27, max: 27 }),
-				option.superSource(context),
-			],
+			options: [option.box(), option.value({ min: -27, max: 27 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/position/adjust', [
 					{ type: 'i', value: options.box },
@@ -777,11 +761,7 @@ const superSourceActions = ({ context }) => {
 
 		actions.superSourceBoxSizeSet = {
 			label: 'SuperSource: Box Size Set',
-			options: [
-				option.box(),
-				option.value({ min: 0.07, max: 1}),
-				option.superSource(context)
-			],
+			options: [option.box(), option.value({ min: 0.07, max: 1 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/size/set', [
 					{ type: 'i', value: options.box },
@@ -793,11 +773,7 @@ const superSourceActions = ({ context }) => {
 
 		actions.superSourceBoxSizeAdjust = {
 			label: 'SuperSource: Box Size Adjust',
-			options: [
-				option.box(),
-				option.value({ min: -1, max: 1}),
-				option.superSource(context)
-			],
+			options: [option.box(), option.value({ min: -1, max: 1 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/size/adjust', [
 					{ type: 'i', value: options.box },
