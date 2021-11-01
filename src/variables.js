@@ -36,6 +36,12 @@ module.exports = {
 			storeId: 'selectedDSK',
 			feedback: 'selected_dsk',
 		},
+		{
+			label: 'Selected Color Generator',
+			name: 'color_generator',
+			storeId: 'selectedColorGenerator',
+			feedback: 'selected_color_generator',
+		},
 	],
 
 	initVariables() {

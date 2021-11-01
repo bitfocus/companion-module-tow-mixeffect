@@ -200,12 +200,12 @@ const option = {
 		}
 	},
 
-	colorGenerators: () => ({
+	colorGenerators: (selected = true) => ({
 		type: 'dropdown',
 		label: 'Color Generator',
 		id: 'colorGenerator',
 		default: 1,
-		choices: generateChoices({ label: 'Color Generator', count: 2, selected: false }),
+		choices: generateChoices({ label: 'Color Generator', count: 2, selected }),
 	}),
 
 	dsk: (context, selected = true) => ({

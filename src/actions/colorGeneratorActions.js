@@ -3,6 +3,14 @@ const { generateChoices, option } = require('./utils')
 const colorGeneratorActions = ({ context }) => {
 	const actions = {}
 
+	actions.selectColorGenerator = {
+		label: 'Color Generator: Select Color Generator',
+		options: [option.colorGenerators(false)],
+		callback: ({ options }) => {
+			context.updateVariable('color_generator', options.colorGenerator)
+		},
+	}
+
 	actions.setColorGenerator = {
 		label: 'Color Generator: Set',
 		options: [option.hue(), option.saturation(), option.luminance(), option.colorGenerators()],
@@ -11,7 +19,7 @@ const colorGeneratorActions = ({ context }) => {
 				{ type: 'f', value: parseFloat(options.hue) },
 				{ type: 'f', value: parseFloat(options.saturation) },
 				{ type: 'f', value: parseFloat(options.luminance) },
-				{ type: 'i', value: options.colorGenerator },
+				{ type: 'i', value: context.selectedOrValue('color_generator', options.colorGenerator)  },
 			])
 		},
 	}
@@ -23,7 +31,7 @@ const colorGeneratorActions = ({ context }) => {
 			context.oscSend('/mixeffect/color-generator/parameter/set', [
 				{ type: 'i', value: 0 },
 				{ type: 'f', value: parseFloat(options.value) },
-				{ type: 'i', value: options.colorGenerator },
+				{ type: 'i', value: context.selectedOrValue('color_generator', options.colorGenerator)  },
 			])
 		},
 	}
@@ -35,7 +43,7 @@ const colorGeneratorActions = ({ context }) => {
 			context.oscSend('/mixeffect/color-generator/parameter/set', [
 				{ type: 'i', value: 1 },
 				{ type: 'f', value: parseFloat(options.value) },
-				{ type: 'i', value: options.colorGenerator },
+				{ type: 'i', value: context.selectedOrValue('color_generator', options.colorGenerator)  },
 			])
 		},
 	}
@@ -47,7 +55,7 @@ const colorGeneratorActions = ({ context }) => {
 			context.oscSend('/mixeffect/color-generator/parameter/set', [
 				{ type: 'i', value: 2 },
 				{ type: 'f', value: parseFloat(options.value) },
-				{ type: 'i', value: options.colorGenerator },
+				{ type: 'i', value: context.selectedOrValue('color_generator', options.colorGenerator)  },
 			])
 		},
 	}
@@ -59,7 +67,7 @@ const colorGeneratorActions = ({ context }) => {
 			context.oscSend('/mixeffect/color-generator/parameter/adjust', [
 				{ type: 'i', value: 0 },
 				{ type: 'f', value: parseFloat(options.value) },
-				{ type: 'i', value: options.colorGenerator },
+				{ type: 'i', value: context.selectedOrValue('color_generator', options.colorGenerator)  },
 			])
 		},
 	}
@@ -71,7 +79,7 @@ const colorGeneratorActions = ({ context }) => {
 			context.oscSend('/mixeffect/color-generator/parameter/adjust', [
 				{ type: 'i', value: 1 },
 				{ type: 'f', value: parseFloat(options.value) },
-				{ type: 'i', value: options.colorGenerator },
+				{ type: 'i', value: context.selectedOrValue('color_generator', options.colorGenerator)  },
 			])
 		},
 	}
@@ -83,7 +91,7 @@ const colorGeneratorActions = ({ context }) => {
 			context.oscSend('/mixeffect/color-generator/parameter/adjust', [
 				{ type: 'i', value: 2 },
 				{ type: 'f', value: parseFloat(options.value) },
-				{ type: 'i', value: options.colorGenerator },
+				{ type: 'i', value: context.selectedOrValue('color_generator', options.colorGenerator)  },
 			])
 		},
 	}
