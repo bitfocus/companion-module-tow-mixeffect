@@ -147,7 +147,6 @@ const downstreamKeyerActions = ({ context }) => {
 	actions.dskMask = {
 		label: 'DSK: Mask',
 		options: [
-			option.mode(),
 			option.value({ label: 'Top', id: 'top', min: -9, max: 9, defaultValue: 9 }),
 			option.value({ label: 'Bottom', id: 'bottom', min: -9, max: 9, defaultValue: -9 }),
 			option.value({ label: 'Left', id: 'left', min: -16, max: 16, defaultValue: -16 }),
@@ -156,7 +155,6 @@ const downstreamKeyerActions = ({ context }) => {
 		],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/dsk/mask', [
-				{ type: 'i', value: options.mode },
 				{ type: 'f', value: parseFloat(options.top) },
 				{ type: 'f', value: parseFloat(options.bottom) },
 				{ type: 'f', value: parseFloat(options.left) },
