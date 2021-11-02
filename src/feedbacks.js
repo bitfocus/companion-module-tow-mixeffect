@@ -84,6 +84,14 @@ module.exports = {
 			count: 2,
 		})
 
+		feedbacks.selected_aux_bus = generateInternalFeedback({
+			label: 'AUX Bus',
+			id: 'auxBus',
+			storeId: 'selectedAuxBus',
+			base: 1,
+			count: this.switcher.auxBuses,
+		})
+
 		this.setFeedbackDefinitions(feedbacks)
 	},
 }

@@ -208,6 +208,14 @@ const option = {
 		choices: generateChoices({ label: 'Color Generator', count: 2, selected }),
 	}),
 
+	auxBuses: (context, selected = true) => ({
+		type: 'dropdown',
+		label: 'AUX Bus',
+		id: 'auxBus',
+		default: 1,
+		choices: generateChoices({ label: 'AUX', count: context.switcher.auxBuses, selected }),
+	}),
+
 	dsk: (context, selected = true) => ({
 		type: 'dropdown',
 		label: 'Downstream Keyer',

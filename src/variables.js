@@ -42,6 +42,12 @@ module.exports = {
 			storeId: 'selectedColorGenerator',
 			feedback: 'selected_color_generator',
 		},
+		{
+			label: 'Selected AUX Bus',
+			name: 'aux_bus',
+			storeId: 'selectedAuxBus',
+			feedback: 'selected_aux_bus',
+		},
 	],
 
 	initVariables() {

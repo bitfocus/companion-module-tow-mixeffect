@@ -34,6 +34,7 @@ class MixEffectInstance extends instance_skel {
 				selectedUSK: 1,
 				selectedDSK: 1,
 				selectedColorGenerator: 1,
+				selectedAuxBus: 1,
 			},
 		}
 	}
