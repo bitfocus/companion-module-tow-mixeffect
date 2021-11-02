@@ -23,6 +23,7 @@ jobs:
           cache: 'yarn'
       - run: yarn
       - run: yarn prettier . -c
+      - run: yarn eslint src
 
   semantic-release:
     runs-on: ubuntu-latest
