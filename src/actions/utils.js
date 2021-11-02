@@ -144,7 +144,7 @@ const option = {
 	symmetry: () => value({ label: 'Symmetry', id: 'symmetry', step: 0.1 }),
 
 	pattern: () =>
-		value({
+		list({
 			label: 'Pattern',
 			id: 'pattern',
 			list: [
