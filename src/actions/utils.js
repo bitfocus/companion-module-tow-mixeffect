@@ -75,7 +75,7 @@ const option = {
 	onOff: ({ label, id }) => list({ label, id, list: ['Off', 'On'] }),
 
 	mode: ({ label = 'Mode', id = 'mode' } = { label: 'Mode', id: 'mode' }) => {
-		return list({ label, id, list: ['Off', 'On', 'Toogle'] })
+		return list({ label, id, list: ['Off', 'On', 'Toggle'] })
 	},
 
 	color: ({ label, id }) => value({ label, id, step: 0.1 }),
