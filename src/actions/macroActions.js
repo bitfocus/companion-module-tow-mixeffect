@@ -27,7 +27,7 @@ const macroActions = ({ context }) => {
 
 	actions.macroLoop = {
 		label: 'Macro: Loop',
-		options: [option.mode],
+		options: [option.mode()],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/macro/loop', [{ type: 'i', value: options.mode }])
 		},
