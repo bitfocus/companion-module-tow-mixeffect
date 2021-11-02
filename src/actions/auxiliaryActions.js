@@ -1,4 +1,4 @@
-const { generateChoices, option } = require('./utils')
+const { option } = require('./utils')
 const { availability } = require('../switchers/types')
 
 const auxiliaryActions = ({ context }) => {

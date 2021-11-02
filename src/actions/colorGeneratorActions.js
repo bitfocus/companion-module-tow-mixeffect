@@ -1,4 +1,4 @@
-const { generateChoices, option } = require('./utils')
+const { option } = require('./utils')
 
 const colorGeneratorActions = ({ context }) => {
 	const actions = {}

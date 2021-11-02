@@ -1,6 +1,5 @@
-const { model, videoSource } = require('./types')
+const { model } = require('./types')
 const { atemMini } = require('./atem-mini')
-const { multiViewerSources } = require('./generators')
 
 const switcher = {
 	...atemMini,

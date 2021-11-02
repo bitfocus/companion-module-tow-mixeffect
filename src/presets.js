@@ -179,13 +179,14 @@ module.exports = {
 		})
 
 		// SuperSource Highlight
-		superSourceHighlightList = [
+		const superSourceHighlightList = [
 			{ label: 'Highlight Box 1', options: { box: 1 } },
 			{ label: 'Highlight Box 2', options: { box: 2 } },
 			{ label: 'Highlight Box 3', options: { box: 3 } },
 			{ label: 'Highlight Box 4', options: { box: 4 } },
 			{ label: 'Highlight Reset', options: { box: 0 } },
 		]
+
 		addPresetList({
 			category: 'SuperSource Highlight',
 			action: 'superSourceHighlight',
@@ -207,7 +208,7 @@ module.exports = {
 		})
 
 		// Other Actions
-		otherList = [
+		const otherList = [
 			{ label: 'Remote Webview', action: 'remoteWebview' },
 			{ label: 'View Only Mode', action: 'viewOnlyMode' },
 		]

@@ -1,5 +1,4 @@
 const { option } = require('./utils')
-const { availability } = require('../switchers/types')
 
 const fairlightActions = ({ context }) => {
 	const actions = {}

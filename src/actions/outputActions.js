@@ -1,6 +1,3 @@
-const { generateChoices } = require('./utils')
-const { availability } = require('../switchers/types')
-
 const outputActions = ({ context }) => {
 	const actions = {}
 
@@ -117,6 +114,7 @@ const outputActions = ({ context }) => {
 			let bitrate2 = options.bitrate2
 
 			if (options.bitrate > 0) {
+				// eslint-disable-next-line no-extra-semi
 				;({ bitrate1, bitrate2 } = bitrates.find(({ id }) => id === options.bitrate))
 			}
 

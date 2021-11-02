@@ -1221,7 +1221,7 @@ const upstreamKeyerActions = ({ context }) => {
 		label: 'USK: DVE Mask Left Adjust',
 		options: [
 			option.value({
-				max: -52,
+				min: -52,
 				max: 52,
 			}),
 			option.usk(context),

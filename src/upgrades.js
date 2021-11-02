@@ -1,17 +1,3 @@
-const { model } = require('./switchers/types')
-
-const renameAction = (actions = [], oldAction, newAction) => {
-	if (oldAction === newAction) {
-		return false
-	}
-
-	const found = actions.find((action) => action.id === oldAction)
-	if (found.length === 1) {
-		action.id = newAction
-	}
-	return true
-}
-
 const renameOption = (action, oldOption, newOption) => {
 	if (oldOption === newOption) {
 		return false
@@ -24,7 +10,7 @@ const renameOption = (action, oldOption, newOption) => {
 }
 
 module.exports = {
-	v1_1_0(context, config, actions, feedbacks) {
+	v1_1_0(context, config, actions) {
 		let upgraded = false
 
 		// config.model = model.atemMiniExtremeIso
