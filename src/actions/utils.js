@@ -24,7 +24,7 @@ const generateChoices = ({ label, count = 1, base = 1, selected = true, numberAl
 		label: numberAll ? `${label} ${id}` : `${label} ${count > 1 ? id : ''}`.trim(),
 	}))
 
-	if (selected && count > 1) {
+	if (selected) {
 		choices.push({ id: 0, label: `Selected ${label}` })
 	}
 
