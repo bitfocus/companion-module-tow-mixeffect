@@ -190,12 +190,12 @@ We have included a number of actions to help you control MixEffect. There are ac
 - SuperSource: Box Position
 - SuperSource: Box Size
 
-SuperSource: Box Crop Set
-SuperSource: Box Crop Adjust
-SuperSource: Box Position Set
-SuperSource: Box Position Adjust
-SuperSource: Box Size Set
-SuperSource: Box Size Adjust
+- SuperSource: Box Crop Set _(added in v1.1.0)_
+- SuperSource: Box Crop Adjust _(added in v1.1.0)_
+- SuperSource: Box Position Set _(added in v1.1.0)_
+- SuperSource: Box Position Adjust _(added in v1.1.0)_
+- SuperSource: Box Size Set _(added in v1.1.0)_
+- SuperSource: Box Size Adjust _(added in v1.1.0)_
 
 - SuperSource: Box Source
 - SuperSource: Box Enable _(added in v1.1.0)_
@@ -278,7 +278,9 @@ SuperSource: Box Size Adjust
 
 ### Variables
 
+- `aux_bus` - Internal variable set using the **Select Aux Bus** Action. Used by other actions when the **Selected Aux Bus** option from the dropdown is selected. _(added in v1.1.0)_
 - `box` - Internal variable set using the **Select Box** Action. Used by other actions when the **Selected Box** option from the dropdown is selected. _(added in v1.1.0)_
+- `color_generator` - Internal variable set using the **Select Color Generator** Action. Used by other actions when the **Selected Color Generator** option from the dropdown is selected. _(added in v1.1.0)_
 - `media_player` - Internal variable set using the **Select Media Player** Action. Used by other actions when the **Selected Media Player** option from the dropdown is selected.
 - `mix_effect_bus` - Internal variable set using the **Select Mix Effect Bus** Action. Used by other actions when the **Selected Mix Effect Bus** option from the dropdown is selected. _(added in v1.1.0)_
 - `supersource` - Internal variable set using the **Select SuperSource** Action. Used by other actions when the **Selected SuperSource** option from the dropdown is selected. _(added in v1.1.0)_
@@ -287,7 +289,9 @@ SuperSource: Box Size Adjust
 
 ### Feedbacks
 
+- Set color based on the value of the `aux_bus` variable _(added in v1.1.0)_
 - Set color based on the value of the `box` variable _(added in v1.1.0)_
+- Set color based on the value of the `color_generator` variable _(added in v1.1.0)_
 - Set color based on the value of the `media_player` variable
 - Set color based on the value of the `mix_effect_bus` variable _(added in v1.1.0)_
 - Set color based on the value of the `supersource` variable _(added in v1.1.0)_
