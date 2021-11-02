@@ -64,6 +64,7 @@ const colorSources = (count, options = { me: 1 }) =>
 			source:
 				availability.source.auxiliary |
 				availability.source.multiViewer |
+				availability.source.keySource |
 				availability.source.superSourceArt |
 				availability.source.superSourceBox,
 			me: meAvailability(options.me),
