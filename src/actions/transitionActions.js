@@ -700,7 +700,7 @@ const transitionActions = ({ context }) => {
 		},
 	}
 
-	actions.transitionWipeSymmetry = {
+	actions.transitionWipeSymmetrySet = {
 		label: 'Transition: Wipe Symmetry Set',
 		options: [option.symmetry(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
@@ -711,7 +711,7 @@ const transitionActions = ({ context }) => {
 		},
 	}
 
-	actions.transitionWipeSymmetry = {
+	actions.transitionWipeSymmetryAdjust = {
 		label: 'Transition: Wipe Symmetry Adjust',
 		options: [
 			option.value({
