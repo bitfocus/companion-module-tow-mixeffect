@@ -611,6 +611,14 @@ const superSourceActions = ({ context }) => {
 			},
 		}
 
+		actions.superSourceBoxSelect = {
+			label: 'SuperSource: Box Select',
+			options: [option.box(context, false)],
+			callback: ({ options }) => {
+				context.updateVariable('box', options.box)
+			},
+		}
+
 		actions.superSourceBoxCropTopSet = {
 			label: 'SuperSource: Box Crop Top Set',
 			options: [option.box(), option.value({ max: 18 }), option.superSource(context)],
