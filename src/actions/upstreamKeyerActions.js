@@ -489,7 +489,7 @@ const upstreamKeyerActions = ({ context }) => {
 		},
 	}
 
-	actions.uskChromaAdvancedRedSet = {
+	actions.uskChromaAdvancedRedAdjust = {
 		label: 'USK: Chroma Advanced Red Adjust',
 		options: [
 			option.value({
