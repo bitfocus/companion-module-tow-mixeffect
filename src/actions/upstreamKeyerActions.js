@@ -2239,7 +2239,7 @@ const upstreamKeyerActions = ({ context }) => {
 		},
 	}
 
-	actions.uskPatternSize = {
+	actions.uskPatternSizeAdjust = {
 		label: 'USK: Pattern Size Adjust',
 		options: [
 			option.value({
