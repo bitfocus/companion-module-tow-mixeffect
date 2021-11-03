@@ -1717,7 +1717,7 @@ const upstreamKeyerActions = ({ context }) => {
 				label: 'Fill Source',
 				id: 'fillSource',
 				sources: context.switcher.videoSources,
-				predicate: (source) => source.availability.source & availability.source.keySource,
+				predicate: (source) => source.availability.source & availability.source.auxiliary,
 			}),
 			option.videoSources({
 				label: 'Key Source',
