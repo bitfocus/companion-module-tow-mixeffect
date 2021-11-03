@@ -1,3 +1,4 @@
+const { SELECTED_ID } = require('./utils')
 const { appActions } = require('./appActions')
 const { auxiliaryActions } = require('./auxiliaryActions')
 const { colorGeneratorActions } = require('./colorGeneratorActions')
@@ -41,7 +42,7 @@ module.exports = {
 	selectedOrValue(variableName, value) {
 		let selectedValue = value
 
-		if (selectedValue === 0) {
+		if (selectedValue === SELECTED_ID) {
 			this.getVariable(variableName, (variableValue) => (selectedValue = variableValue))
 		}
 

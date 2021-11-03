@@ -365,7 +365,7 @@ const transitionActions = ({ context }) => {
 						label: 'Key',
 						count: context.switcher.upstreamKeyers,
 						numberAll: true,
-						selected: false,
+						selected: true,
 					}),
 				],
 				default: 1,

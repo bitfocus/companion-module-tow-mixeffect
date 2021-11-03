@@ -18,6 +18,8 @@ const shrinkChoices = arrayOf(21).map((n) => {
 	return { id: factor.toPrecision(4), label: `${(1 - factor).toPrecision(4)}x` }
 })
 
+const SELECTED_ID = -1
+
 const generateChoices = ({ label, count = 1, base = 1, selected = true, numberAll = false }) => {
 	const choices = arrayOf(count, base).map((id) => ({
 		id,
@@ -25,7 +27,7 @@ const generateChoices = ({ label, count = 1, base = 1, selected = true, numberAl
 	}))
 
 	if (selected) {
-		choices.push({ id: 0, label: `Selected ${label}` })
+		choices.push({ id: SELECTED_ID, label: `Selected ${label}` })
 	}
 
 	return choices
@@ -258,6 +260,7 @@ const option = {
 }
 
 module.exports = {
+	SELECTED_ID,
 	inputChoices,
 	growChoices,
 	shrinkChoices,
