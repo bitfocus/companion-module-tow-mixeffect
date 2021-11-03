@@ -226,12 +226,12 @@ const option = {
 		choices: generateChoices({ label: 'DSK', count: context.switcher.downstreamKeyers, selected }),
 	}),
 
-	usk: (context) => ({
+	usk: (context, selected = true) => ({
 		type: 'dropdown',
 		label: 'Upstream Keyer',
 		id: 'usk',
 		default: 1,
-		choices: generateChoices({ label: 'Key', count: context.switcher.upstreamKeyers }),
+		choices: generateChoices({ label: 'Key', count: context.switcher.upstreamKeyers, selected }),
 	}),
 
 	mixEffectBus: (context, numberAll = true) => ({

@@ -4,6 +4,14 @@ const { availability } = require('../switchers/types')
 const upstreamKeyerActions = ({ context }) => {
 	const actions = {}
 
+	actions.uskSelect = {
+		label: 'USK: Select',
+		options: [option.usk(context, false)],
+		callback: ({ options }) => {
+			context.updateVariable('usk', options.usk)
+		},
+	}
+
 	actions.uskChroma = {
 		label: 'USK: Chroma',
 		options: [
