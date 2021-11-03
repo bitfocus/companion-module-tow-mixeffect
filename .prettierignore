@@ -1,2 +1,9 @@
+# dependencies
+node_modules
+
+# Ignore package related files:
 package.json
-/LICENSE.md
+yarn.lock
+
+# Docs
+CHANGELOG.md
