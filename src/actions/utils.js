@@ -123,7 +123,7 @@ const option = {
 			default: 30,
 		}),
 
-	box: ({ selected = false } = { selected: false }) => ({
+	box: (selected = true) => ({
 		type: 'dropdown',
 		label: 'Box',
 		id: 'box',

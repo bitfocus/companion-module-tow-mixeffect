@@ -613,7 +613,7 @@ const superSourceActions = ({ context }) => {
 
 		actions.superSourceBoxSelect = {
 			label: 'SuperSource: Box Select',
-			options: [option.box(context, false)],
+			options: [option.box(false)],
 			callback: ({ options }) => {
 				context.updateVariable('box', options.box)
 			},
@@ -624,7 +624,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ max: 18 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/crop/set', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'top' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -637,7 +637,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: -18, max: 18 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/crop/adjust', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'top' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -650,7 +650,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ max: 18 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/crop/set', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'bottom' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -663,7 +663,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: -18, max: 18 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/crop/adjust', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'bottom' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -676,7 +676,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ max: 32 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/crop/set', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'left' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -689,7 +689,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: -32, max: 32 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/crop/adjust', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'left' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -702,7 +702,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ max: 32 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/crop/set', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'right' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -715,7 +715,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: -32, max: 32 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/crop/adjust', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'right' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -728,7 +728,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: -48, max: 48 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/position/set', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'x' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -741,7 +741,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: -48, max: 48 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/position/adjust', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'x' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -754,7 +754,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: -27, max: 27 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/position/set', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'y' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -767,7 +767,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: -27, max: 27 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/position/adjust', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'y' },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -780,7 +780,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: 0.07, max: 1 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/size/set', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -792,7 +792,7 @@ const superSourceActions = ({ context }) => {
 			options: [option.box(), option.value({ min: -1, max: 1 }), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/size/adjust', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -802,13 +802,7 @@ const superSourceActions = ({ context }) => {
 		actions.superSourceBoxSource = {
 			label: 'SuperSource: Box Source',
 			options: [
-				{
-					type: 'dropdown',
-					label: 'Box',
-					id: 'box',
-					choices: generateChoices({ label: 'Box ', count: 4, selected: false }),
-					default: 1,
-				},
+				option.box(),
 				{
 					type: 'dropdown',
 					label: 'Video Source',
@@ -823,7 +817,7 @@ const superSourceActions = ({ context }) => {
 			],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/source', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'i', value: options.videoSource },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -832,20 +826,10 @@ const superSourceActions = ({ context }) => {
 
 		actions.superSourceBoxEnable = {
 			label: 'SuperSource: Box Enable',
-			options: [
-				{
-					type: 'dropdown',
-					label: 'Box',
-					id: 'box',
-					choices: generateChoices({ label: 'Box ', count: 4, selected: false }),
-					default: 1,
-				},
-				option.mode(),
-				option.superSource(context),
-			],
+			options: [option.box(), option.mode(), option.superSource(context)],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/box/enable', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'i', value: options.mode },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -948,14 +932,14 @@ const superSourceActions = ({ context }) => {
 					type: 'dropdown',
 					label: 'Box',
 					id: 'box',
-					choices: [{ id: 0, label: 'Reset' }, ...generateChoices({ label: 'Box ', count: 4, selected: false })],
+					choices: [{ id: 0, label: 'Reset' }, ...generateChoices({ label: 'Box ', count: 4, selected: true })],
 					default: 1,
 				},
 				option.superSource(context),
 			],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/ssrc/highlight', [
-					{ type: 'i', value: options.box },
+					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
 			},
