@@ -151,7 +151,7 @@ const option = {
 			id: 'pattern',
 			list: [
 				'Left To Right Bar',
-				'Top To BottomBar',
+				'Top To Bottom Bar',
 				'Horizontal Barn Door',
 				'Vertical Barn Door',
 				'Corners In Four Box',
@@ -165,7 +165,7 @@ const option = {
 				'Top Center Box',
 				'Right Center Box',
 				'Bottom Center Box',
-				'Bottom Center Box',
+				'Left Center Box',
 				'Top Left Diagonal',
 				'Top Right Diagonal',
 			],
