@@ -4,6 +4,14 @@ const { availability } = require('../switchers/types')
 const superSourceActions = ({ context }) => {
 	const actions = {}
 
+	actions.superSourceSelect = {
+		label: 'SuperSource: Select',
+		options: [option.superSource(context, false)],
+		callback: ({ options }) => {
+			context.updateVariable('supersource', options.superSource)
+		},
+	}
+
 	if (context.switcher.superSources > 0) {
 		actions.superSourceAnimationSpeed = {
 			label: 'SuperSource: Animation Speed',
