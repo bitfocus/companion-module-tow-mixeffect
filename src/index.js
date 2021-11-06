@@ -26,16 +26,7 @@ class MixEffectInstance extends instance_skel {
 		this.config = config
 
 		this.store = {
-			variables: {
-				selectedMediaPlayer: 1,
-				selectedMixEffectBus: 1,
-				selectedBox: 1,
-				selectedSuperSource: 1,
-				selectedUSK: 1,
-				selectedDSK: 1,
-				selectedColorGenerator: 1,
-				selectedAuxBus: 1,
-			},
+			variables: {},
 		}
 	}
 
