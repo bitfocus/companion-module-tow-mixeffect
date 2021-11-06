@@ -1,4 +1,4 @@
-const { generateChoices, option } = require('./utils')
+const { option } = require('./utils')
 const { availability } = require('../switchers/types')
 
 const transitionActions = ({ context }) => {
@@ -355,27 +355,13 @@ const transitionActions = ({ context }) => {
 	actions.transitionNext = {
 		label: 'Transition: Next',
 		options: [
-			{
-				type: 'dropdown',
-				label: 'Key',
-				id: 'key',
-				choices: [
-					{ id: 0, label: 'Background' },
-					...generateChoices({
-						label: 'Key',
-						count: context.switcher.upstreamKeyers,
-						numberAll: true,
-						selected: true,
-					}),
-				],
-				default: 1,
-			},
+			option.usk(context, true, true),
 			option.mode(),
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/next', [
-				{ type: 'i', value: options.key },
+				{ type: 'i', value: context.selectedOrValue('usk', options.usk) },
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])

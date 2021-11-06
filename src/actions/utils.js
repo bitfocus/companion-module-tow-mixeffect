@@ -20,7 +20,7 @@ const shrinkChoices = arrayOf(21).map((n) => {
 
 const SELECTED_ID = -1
 
-const generateChoices = ({ label, count = 1, base = 1, selected = true, numberAll = false }) => {
+const generateChoices = ({ label, count = 1, base = 1, selected = true, numberAll = false, background = false }) => {
 	const choices = arrayOf(count, base).map((id) => ({
 		id,
 		label: numberAll ? `${label} ${id}` : `${label} ${count > 1 ? id : ''}`.trim(),
@@ -28,6 +28,10 @@ const generateChoices = ({ label, count = 1, base = 1, selected = true, numberAl
 
 	if (selected) {
 		choices.push({ id: SELECTED_ID, label: `Selected ${label}` })
+	}
+
+	if (background) {
+		choices.unshift({ id: 0, label: 'Background' })
 	}
 
 	return choices
@@ -226,12 +230,12 @@ const option = {
 		choices: generateChoices({ label: 'DSK', count: context.switcher.downstreamKeyers, selected }),
 	}),
 
-	usk: (context, selected = true) => ({
+	usk: (context, selected = true, background = false) => ({
 		type: 'dropdown',
 		label: 'Upstream Keyer',
 		id: 'usk',
 		default: 1,
-		choices: generateChoices({ label: 'Key', count: context.switcher.upstreamKeyers, selected }),
+		choices: generateChoices({ label: 'Key', count: context.switcher.upstreamKeyers, selected, background }),
 	}),
 
 	mixEffectBus: (context, numberAll = true) => ({
