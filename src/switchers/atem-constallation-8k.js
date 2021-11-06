@@ -5,7 +5,7 @@ const switcher = {
 	id: model.atemConstallation8k,
 	label: 'ATEM Constellation 8K',
 	mixEffectBuses: 4,
-	auxBuses: 6,
+	auxBuses: 24,
 	inputs: 40,
 	multiViewers: 4,
 	advancedMultiViewer: true,
