@@ -1048,7 +1048,7 @@ const superSourceActions = ({ context }) => {
 				option.superSource(context),
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/source', [
+				context.oscSend('/mixeffect/ssrc/swap-boxes', [
 					{ type: 'i', value: options.box1 },
 					{ type: 'i', value: options.box2 },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
