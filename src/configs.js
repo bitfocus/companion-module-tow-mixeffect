@@ -44,7 +44,7 @@ module.exports = {
 				type: 'dropdown',
 				label: 'Model',
 				id: 'model',
-				default: model.atemProductionStudeio4k,
+				default: model.atemMiniExtremeIso,
 				choices: switchers.map(({ id, label }) => ({ id, label })),
 			},
 		]

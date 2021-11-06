@@ -25,6 +25,8 @@ class MixEffectInstance extends instance_skel {
 
 		this.config = config
 
+		this.initConstants()
+
 		this.store = {
 			variables: {},
 		}
@@ -37,12 +39,16 @@ class MixEffectInstance extends instance_skel {
 	static DEVELOPER_forceStartupUpgradeScript = 0
 
 	init() {
+		if (!this.config.ip) {
+			this.status(this.STATUS_UNKNOWN, 'Please Configure')
+			return
+		}
+
 		this.switcher = switchers.find(({ id }) => this.config.model === id)
 		if (!this.switcher) {
 			return this.status(this.STATUS_ERROR, 'Unknown Switcher')
 		}
 
-		this.initConstants()
 		this.initActions()
 		this.initPresets()
 		this.initFeedbacks()
