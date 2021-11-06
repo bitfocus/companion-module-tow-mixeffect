@@ -222,6 +222,14 @@ const option = {
 		choices: generateChoices({ label: 'AUX', count: context.switcher.auxBuses, selected }),
 	}),
 
+	multiViewers: (context, selected = true) => ({
+		type: 'dropdown',
+		label: 'MultiViewer',
+		id: 'multiViewer',
+		default: 1,
+		choices: generateChoices({ label: 'MultiViewer', count: context.switcher.multiViewers, selected, numberAll: true }),
+	}),
+
 	dsk: (context, selected = true) => ({
 		type: 'dropdown',
 		label: 'Downstream Keyer',

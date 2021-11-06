@@ -9,7 +9,7 @@ module.exports = {
 
 		const generateInternalFeedback = ({ label, id, storeId, choices, base, count }) => ({
 			type: 'boolean',
-			label: `Set color based on selected ${label}`,
+			label: `Selected ${label}`,
 			style: {
 				color: this.rgb(255, 255, 255),
 				bgcolor: this.rgb(255, 0, 0),
@@ -90,6 +90,14 @@ module.exports = {
 			storeId: 'selectedAuxBus',
 			base: 1,
 			count: this.switcher.auxBuses,
+		})
+
+		feedbacks.selected_multiviewer = generateInternalFeedback({
+			label: 'MultiViewer',
+			id: 'multiViewer',
+			storeId: 'selectedMultiViewer',
+			base: 1,
+			count: this.switcher.multiViewers,
 		})
 
 		this.setFeedbackDefinitions(feedbacks)

@@ -1,8 +1,16 @@
-const { generateChoices } = require('./utils')
+const { generateChoices, option } = require('./utils')
 const { availability } = require('../switchers/types')
 
 const multiViewerActions = ({ context }) => {
 	const actions = {}
+
+	actions.multiViewerSelect = {
+		label: 'MultiViewer: Select',
+		options: [option.multiViewers(context, false)],
+		callback: ({ options }) => {
+			context.updateVariable('multiviewer', options.multiViewer)
+		},
+	}
 
 	if (!context.switcher.advancedMultiViewer) {
 		actions.multiViewerLayoutSet = {
@@ -55,23 +63,12 @@ const multiViewerActions = ({ context }) => {
 					],
 					default: 1,
 				},
-				{
-					type: 'dropdown',
-					label: 'Multiviewer',
-					id: 'multiviewer',
-					choices: generateChoices({
-						label: 'Multiviewer ',
-						count: context.switcher.multiViewers,
-						numberAll: true,
-						selected: false,
-					}),
-					default: 1,
-				},
+				option.multiViewers(context, true),
 			],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/multiview/layout-advanced', [
 					{ type: 'i', value: options.layout },
-					{ type: 'i', value: options.multiviewer },
+					{ type: 'i', value: context.selectedOrValue('multiviewer', options.multiViewer) },
 				])
 			},
 		}
@@ -100,24 +97,13 @@ const multiViewerActions = ({ context }) => {
 						.filter((item) => item.availability.source & availability.source.multiViewer)
 						.map(({ id, label }) => ({ id, label })),
 				},
-				{
-					type: 'dropdown',
-					label: 'Multiviewer',
-					id: 'multiviewer',
-					choices: generateChoices({
-						label: 'Multiviewer ',
-						count: context.switcher.multiViewers,
-						numberAll: true,
-						selected: false,
-					}),
-					default: 1,
-				},
+				option.multiViewers(context, true),
 			],
 			callback: ({ options }) => {
 				context.oscSend('/mixeffect/multiview/window', [
 					{ type: 'i', value: options.window },
 					{ type: 'i', value: options.videoSource },
-					{ type: 'i', value: options.multiviewer },
+					{ type: 'i', value: context.selectedOrValue('multiviewer', options.multiViewer) },
 				])
 			},
 		}

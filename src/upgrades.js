@@ -25,6 +25,7 @@ module.exports = {
 			upgraded = upgraded || renameOption(action, 'macroIndex', 'macro')
 			upgraded = upgraded || renameOption(action, 'mediaPlayerIndex', 'mediaPlayer')
 			upgraded = upgraded || renameOption(action, 'meid', 'mixEffectBus')
+			upgraded = upgraded || renameOption(action, 'multiviewer', 'multiViewer')
 			upgraded = upgraded || renameOption(action, 'stillIndex', 'still')
 			upgraded = upgraded || renameOption(action, 'superSourceId', 'superSource')
 

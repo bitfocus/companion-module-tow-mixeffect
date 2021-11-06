@@ -56,6 +56,13 @@ module.exports = {
 			feedback: 'selected_aux_bus',
 			defaultValue: 1,
 		},
+		{
+			label: 'Selected MultiViewer',
+			name: 'multiviewer',
+			storeId: 'selectedMultiViewer',
+			feedback: 'selected_multiviewer',
+			defaultValue: 1,
+		},
 	],
 
 	initVariables() {
