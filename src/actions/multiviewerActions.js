@@ -1,12 +1,12 @@
 const { generateChoices } = require('./utils')
 const { availability } = require('../switchers/types')
 
-const multiviewActions = ({ context }) => {
+const multiViewerActions = ({ context }) => {
 	const actions = {}
 
 	if (!context.switcher.advancedMultiViewer) {
-		actions.setMultiviewLayout = {
-			label: 'Multiviewer: Set Layout',
+		actions.multiViewerLayoutSet = {
+			label: 'MultiViewer: Layout Set',
 			options: [
 				{
 					type: 'dropdown',
@@ -28,8 +28,8 @@ const multiviewActions = ({ context }) => {
 	}
 
 	if (context.switcher.advancedMultiViewer) {
-		actions.setMultiviewLayoutAdvanced = {
-			label: 'Multiviewer: Set Layout Advanced',
+		actions.multiViewerAdvancedLayoutSet = {
+			label: 'MultiViewer: Advanced Layout Set',
 			options: [
 				{
 					type: 'dropdown',
@@ -76,8 +76,8 @@ const multiviewActions = ({ context }) => {
 			},
 		}
 
-		actions.setMultiviewWindow = {
-			label: 'Multiviewer: Set Window',
+		actions.multiViewerWindowSet = {
+			label: 'MultiViewer: Window Set',
 			options: [
 				{
 					type: 'dropdown',
@@ -127,5 +127,5 @@ const multiviewActions = ({ context }) => {
 }
 
 module.exports = {
-	multiviewActions,
+	multiViewerActions,
 }

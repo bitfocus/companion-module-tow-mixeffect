@@ -7,7 +7,7 @@ const { fairlightActions } = require('./fairlightActions')
 const { mediaPlayerActions } = require('./mediaPlayerActions')
 const { macroActions } = require('./macroActions')
 const { mixEffectBusActions } = require('./mixEffectBusActions')
-const { multiviewActions } = require('./multiviewActions')
+const { multiViewerActions } = require('./multiViewerActions')
 const { outputActions } = require('./outputActions')
 const { superSourceActions } = require('./superSourceActions')
 const { switcherActions } = require('./switcherActions')
@@ -25,7 +25,7 @@ module.exports = {
 			...mediaPlayerActions({ context: this }),
 			...macroActions({ context: this }),
 			...mixEffectBusActions({ context: this }),
-			...multiviewActions({ context: this }),
+			...multiViewerActions({ context: this }),
 			...outputActions({ context: this }),
 			...superSourceActions({ context: this }),
 			...switcherActions({ context: this }),
