@@ -354,11 +354,7 @@ const transitionActions = ({ context }) => {
 
 	actions.transitionNext = {
 		label: 'Transition: Next',
-		options: [
-			option.usk(context, true, true),
-			option.mode(),
-			option.mixEffectBus(context),
-		],
+		options: [option.usk(context, true, true), option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/next', [
 				{ type: 'i', value: context.selectedOrValue('usk', options.usk) },
