@@ -1,3 +1,11 @@
+# [1.1.0-beta.9](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.8...v1.1.0-beta.9) (2021-11-06)
+
+
+### Bug Fixes
+
+* **config:** detect missing configuration ([eb0a75d](https://github.com/estilles/companion-module-tow-mixeffect/commit/eb0a75d9ff40b6735054a0b9526d9aba69b08179))
+* **multiviewer:** correct filename ([e942a64](https://github.com/estilles/companion-module-tow-mixeffect/commit/e942a64d508f67ddafa305ccbf3a5694464c88cc))
+
 # [1.1.0-beta.8](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.7...v1.1.0-beta.8) (2021-11-06)
 
 
