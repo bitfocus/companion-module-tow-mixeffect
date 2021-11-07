@@ -46,7 +46,7 @@ module.exports = {
 
 		// MixEffect App
 		addPresetList({
-			category: 'Switcher',
+			category: 'Switcher Sections',
 			action: 'appSwitcherSection',
 			list: appSwitcherSectionChoices.map(({ id, presetLabel }) => ({
 				label: presetLabel,
@@ -131,7 +131,7 @@ module.exports = {
 			options: { presetName: label, superSource: 1 },
 		}))
 		addPresetList({
-			category: 'SuperSource Preset',
+			category: 'SuperSource: Presets',
 			size: 7,
 			bank: {
 				alignment: 'center:bottom',
@@ -146,7 +146,7 @@ module.exports = {
 			{ label: 'Next  Preset', action: 'superSourcePresetNext', options: { superSource: 1 } },
 		]
 		addPresetList({
-			category: 'SuperSource Preset',
+			category: 'SuperSource: Presets',
 			size: 14,
 			list: superSourceList2,
 		})
@@ -162,7 +162,7 @@ module.exports = {
 			{ label: 'Cycle Speed', action: 'superSourceAnimationSpeedCycle' },
 		]
 		addPresetList({
-			category: 'SuperSource Animation Speed',
+			category: 'SuperSource: Animation Speed',
 			size: 18,
 			list: superSourceAnimationSpeedList,
 		})
@@ -181,7 +181,7 @@ module.exports = {
 			{ label: 'Cycle Style', action: 'superSourceAnimationStyleCycle' },
 		]
 		addPresetList({
-			category: 'SuperSource Animation Style',
+			category: 'SuperSource: Animation Style',
 			size: 18,
 			list: superSourceAnimationStyleList,
 		})
@@ -196,7 +196,7 @@ module.exports = {
 		]
 
 		addPresetList({
-			category: 'SuperSource Highlight',
+			category: 'SuperSource: Highlight',
 			action: 'superSourceHighlight',
 			options: { superSource: 1 },
 			list: superSourceHighlightList,
