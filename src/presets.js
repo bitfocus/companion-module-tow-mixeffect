@@ -202,27 +202,36 @@ module.exports = {
 			list: superSourceHighlightList,
 		})
 
-		// Video Follows Audio
-		const videoFollowsAudioList = [
-			{ label: 'VFA\\nOn', options: { mode: 'on' } },
-			{ label: 'VFA\\nOff', options: { mode: 'off' } },
-			{ label: 'VFA\\nToggle', options: { mode: 'toggle' } },
+		// MixEffect App Actions
+		const appActions = [
+			{
+				label: 'ON',
+				action: 'appVideoFollowsAudio',
+				options: { mode: 1 },
+				bank: { png64: images.appActions.appVideoFollowsAudio },
+			},
+			{
+				label: 'OFF',
+				action: 'appVideoFollowsAudio',
+				options: { mode: 0 },
+				bank: { png64: images.appActions.appVideoFollowsAudio },
+			},
+			{
+				label: 'TOOGLE',
+				action: 'appVideoFollowsAudio',
+				options: { mode: 2 },
+				bank: { png64: images.appActions.appVideoFollowsAudio },
+			},
+			{ label: 'REMOTE WEBVIEW', action: 'appRemoteWebView', bank: { png64: images.appActions.appRemoteWebView } },
+			{ label: 'VIEW ONLY', action: 'appViewOnlyMode', bank: { png64: images.appActions.appViewOnlyMode } },
 		]
 		addPresetList({
-			category: 'Video Follows Audio',
-			action: 'videoFollowAudio',
-			size: 18,
-			list: videoFollowsAudioList,
-		})
-
-		// Other Actions
-		const otherList = [
-			{ label: 'Remote Webview', action: 'remoteWebview' },
-			{ label: 'View Only Mode', action: 'viewOnlyMode' },
-		]
-		addPresetList({
-			category: 'Other Actions',
-			list: otherList,
+			category: 'MixEffect App Actions',
+			list: appActions,
+			size: 7,
+			bank: {
+				alignment: 'center:bottom',
+			},
 		})
 
 		this.setPresetDefinitions(presets)
