@@ -47,7 +47,7 @@ const multiViewerActions = ({ context }) => {
 						{ id: 1, label: 'Default' },
 						{ id: 2, label: 'Top Left Small' },
 						{ id: 3, label: 'Top Right Small' },
-						{ id: 4, label: 'Program Botton' },
+						{ id: 4, label: 'Program Bottom' },
 						{ id: 5, label: 'Bottom Left Small' },
 						{ id: 6, label: 'Program Right' },
 						{ id: 7, label: 'Top Right Small Bottom Left Small' },
