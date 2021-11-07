@@ -1,3 +1,21 @@
+# [1.1.0-beta.11](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.10...v1.1.0-beta.11) (2021-11-07)
+
+
+### Bug Fixes
+
+* **multiviewer:** correct typo ([b7319f1](https://github.com/estilles/companion-module-tow-mixeffect/commit/b7319f167aceeddcffd3648228babfcf5e98553b))
+* **presets:** fix 'App: Switcher Section' presets ([3f69e2e](https://github.com/estilles/companion-module-tow-mixeffect/commit/3f69e2e2f4982c29c3530455a62e968d9ba047e0))
+* **presets:** update category names ([711945b](https://github.com/estilles/companion-module-tow-mixeffect/commit/711945b44cc457caa52c69255443a20d824be17b))
+* **presets:** update MixEffect App presets to match action changes ([7018097](https://github.com/estilles/companion-module-tow-mixeffect/commit/70180979013fe85437b0ab7ceb56edf5ec839a54))
+* **presets:** update SuperSource: Highlight presets ([9dd5d13](https://github.com/estilles/companion-module-tow-mixeffect/commit/9dd5d13f6b5b5533a3d60e2402490fa15d93e35c))
+* **preset:** update labels on VFA presets ([34be5f1](https://github.com/estilles/companion-module-tow-mixeffect/commit/34be5f1064c084558f44f2fd01533d11d1a057f3))
+* **preset:** update Transitions presets ([a7891fd](https://github.com/estilles/companion-module-tow-mixeffect/commit/a7891fd1b28f4a31cb3cd557741e2e940519dbc5))
+
+
+### Features
+
+* **presets:** add multi viewer presets ([b51debf](https://github.com/estilles/companion-module-tow-mixeffect/commit/b51debf474febdb91e3c7dc55decef238bd0900c))
+
 # [1.1.0-beta.10](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.9...v1.1.0-beta.10) (2021-11-07)
 
 
