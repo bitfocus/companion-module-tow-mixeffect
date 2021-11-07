@@ -14,7 +14,7 @@ const appSwitcherSectionChoices = [
 	{ id: 'supersource', label: 'SuperSource', presetLabel: 'SSRC' },
 	{ id: 'switcher', label: 'Switcher', presetLabel: 'SWITCHER' },
 	{ id: 'transitions', label: 'Transitions', presetLabel: 'TRANSITION' },
-	{ id: 'upstream-keyers', label: 'Upstream Keyers', presetLabel: 'USK'  },
+	{ id: 'upstream-keyers', label: 'Upstream Keyers', presetLabel: 'USK' },
 	{ id: 'view-all', label: 'View All Presets', presetLabel: 'PRESETS' },
 ]
 
