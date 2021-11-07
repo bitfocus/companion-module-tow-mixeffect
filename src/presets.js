@@ -1,5 +1,8 @@
 const thumbnails = require('./thumbnails')
 
+const { appSwitcherSectionChoices } = require('./actions/appActions')
+const images = require('./images')
+
 module.exports = {
 	initPresets() {
 		const presets = []
@@ -39,28 +42,19 @@ module.exports = {
 				)
 			)
 
-		// Switcher
-		const switcherSectionList = [
-			{ label: 'Audio', options: { section: 'audio' } },
-			{ label: 'AUX', options: { section: 'auxiliary' } },
-			{ label: 'Camera Control', options: { section: 'camera-control' } },
-			{ label: 'Color Gen', options: { section: 'color-generators' } },
-			{ label: 'DSK', options: { section: 'downstream-keyers' } },
-			{ label: 'Hyperdeck', options: { section: 'hyperdecks' } },
-			{ label: 'Macros', options: { section: 'macros' } },
-			{ label: 'Media', options: { section: 'media' } },
-			{ label: 'Output', options: { section: 'output' } },
-			{ label: 'Settings', options: { section: 'settings' } },
-			{ label: 'Super Source', options: { section: 'supersource' } },
-			{ label: 'Switcher', options: { section: 'switcher' } },
-			{ label: 'Transition', options: { section: 'transitions' } },
-			{ label: 'USK', options: { section: 'upstream-keyers' } },
-			{ label: 'View All Presets', options: { section: 'view-all' } },
-		]
+		// MixEffect App
 		addPresetList({
 			category: 'Switcher',
-			action: 'switcherSection',
-			list: switcherSectionList,
+			action: 'appSwitcherSection',
+			list: appSwitcherSectionChoices.map(({ id, presetLabel }) => ({
+				label: presetLabel,
+				options: { section: id },
+				bank: {
+					size: '7',
+					alignment: 'center:bottom',
+					png64: images.appSwitcherSection[id],
+				},
+			})),
 		})
 
 		// Transitions

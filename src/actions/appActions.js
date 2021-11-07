@@ -1,5 +1,23 @@
 const { option } = require('./utils')
 
+const appSwitcherSectionChoices = [
+	{ id: 'audio', label: 'AUDIO' },
+	{ id: 'auxiliary', label: 'Auxiliary', presetLabel: 'AUX' },
+	{ id: 'camera-control', label: 'Camera Control', presetLabel: 'CAMERA' },
+	{ id: 'color-generators', label: 'Color Generators', presetLabel: 'COLORS' },
+	{ id: 'downstream-keyers', label: 'Downstream Keyers', presetLabel: 'DSK' },
+	{ id: 'hyperdecks', label: 'Hyperdecks', presetLabel: 'HYPERDECK' },
+	{ id: 'macros', label: 'Macros', presetLabel: 'MACROS' },
+	{ id: 'media', label: 'Media', presetLabel: 'MEDIA' },
+	{ id: 'output', label: 'Output', presetLabel: 'OUTPUT' },
+	{ id: 'settings', label: 'Settings', presetLabel: 'SETTINGS' },
+	{ id: 'supersource', label: 'SuperSource', presetLabel: 'SSRC' },
+	{ id: 'switcher', label: 'Switcher', presetLabel: 'SWITCHER' },
+	{ id: 'transitions', label: 'Transitions', presetLabel: 'TRANSITION' },
+	{ id: 'upstream-keyers', label: 'Upstream Keyers', presetLabel: 'USK'  },
+	{ id: 'view-all', label: 'View All Presets', presetLabel: 'PRESETS' },
+]
+
 const appActions = ({ context }) => {
 	const actions = {}
 
@@ -69,23 +87,7 @@ const appActions = ({ context }) => {
 				type: 'dropdown',
 				label: 'Section Tag',
 				id: 'section',
-				choices: [
-					{ id: 'audio', label: 'Audio' },
-					{ id: 'auxiliary', label: 'Auxiliary' },
-					{ id: 'camera-control', label: 'Camera Control' },
-					{ id: 'color-generators', label: 'Color Generators' },
-					{ id: 'downstream-keyers', label: 'Downstream Keyers' },
-					{ id: 'hyperdecks', label: 'Hyperdecks' },
-					{ id: 'macros', label: 'Macros' },
-					{ id: 'media', label: 'Media' },
-					{ id: 'output', label: 'Output' },
-					{ id: 'settings', label: 'Settings' },
-					{ id: 'supersource', label: 'SuperSource' },
-					{ id: 'switcher', label: 'Switcher' },
-					{ id: 'transitions', label: 'Transitions' },
-					{ id: 'upstream-keyers', label: 'Upstream Keyers' },
-					{ id: 'view-all', label: 'View All Presets' },
-				],
+				choices: appSwitcherSectionChoices,
 				default: 'switcher',
 				minChoicesForSearch: 0,
 			},
@@ -147,4 +149,5 @@ const appActions = ({ context }) => {
 
 module.exports = {
 	appActions,
+	appSwitcherSectionChoices,
 }
