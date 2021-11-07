@@ -1,3 +1,10 @@
+# [1.1.0-beta.10](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.9...v1.1.0-beta.10) (2021-11-07)
+
+
+### Bug Fixes
+
+* **multiviewer:** remove old file ([198f9a8](https://github.com/estilles/companion-module-tow-mixeffect/commit/198f9a87963ddcab9ae504434cdc1cbbbe72685f))
+
 # [1.1.0-beta.9](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.8...v1.1.0-beta.9) (2021-11-06)
 
 
