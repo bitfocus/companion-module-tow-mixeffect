@@ -73,8 +73,8 @@ module.exports = {
 
 		// Transitions
 		const transitionList = [
-			{ label: 'Auto', action: 'auto' },
-			{ label: 'Cut', action: 'cut' },
+			{ label: 'Auto', action: 'auto', options: { mixEffectBus: 1 } },
+			{ label: 'Cut', action: 'cut', options: { mixEffectBus: 1 }  },
 		]
 		addPresetList({
 			category: 'Transitions',
