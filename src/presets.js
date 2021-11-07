@@ -205,19 +205,19 @@ module.exports = {
 		// MixEffect App Actions
 		const appActions = [
 			{
-				label: 'ON',
+				label: 'VFA ON',
 				action: 'appVideoFollowsAudio',
 				options: { mode: 1 },
 				bank: { png64: images.appActions.appVideoFollowsAudio },
 			},
 			{
-				label: 'OFF',
+				label: 'VFA OFF',
 				action: 'appVideoFollowsAudio',
 				options: { mode: 0 },
 				bank: { png64: images.appActions.appVideoFollowsAudio },
 			},
 			{
-				label: 'TOOGLE',
+				label: 'VFA TOGGLE',
 				action: 'appVideoFollowsAudio',
 				options: { mode: 2 },
 				bank: { png64: images.appActions.appVideoFollowsAudio },
