@@ -1,6 +1,8 @@
 const thumbnails = require('./thumbnails')
 
 const { appSwitcherSectionChoices } = require('./actions/appActions')
+const { multiViewerAdvancedLayoutSetChoices } = require('./actions/multiViewerActions')
+
 const images = require('./images')
 
 module.exports = {
@@ -53,6 +55,18 @@ module.exports = {
 					size: '7',
 					alignment: 'center:bottom',
 					png64: images.appSwitcherSection[id],
+				},
+			})),
+		})
+
+		// MultiViewers
+		addPresetList({
+			category: 'MultiViewers',
+			action: 'multiViewerAdvancedLayoutSet',
+			list: multiViewerAdvancedLayoutSetChoices.map(({ id, label }) => ({
+				options: { layout: id, multiViewer: 1 },
+				bank: {
+					png64: images.multiViewerAdvancedLayoutSet[label],
 				},
 			})),
 		})

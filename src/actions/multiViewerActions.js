@@ -1,6 +1,25 @@
 const { generateChoices, option } = require('./utils')
 const { availability } = require('../switchers/types')
 
+const multiViewerAdvancedLayoutSetChoices = [
+	{ id: 1, label: 'Default' },
+	{ id: 2, label: 'Top Left Small' },
+	{ id: 3, label: 'Top Right Small' },
+	{ id: 4, label: 'Program Bottom' },
+	{ id: 5, label: 'Bottom Left Small' },
+	{ id: 6, label: 'Program Right' },
+	{ id: 7, label: 'Top Right Small Bottom Left Small' },
+	{ id: 8, label: 'Bottom Right Program' },
+	{ id: 9, label: 'Bottom Right Small' },
+	{ id: 10, label: 'Top Left Small Bottom Right Small' },
+	{ id: 11, label: 'Program Left' },
+	{ id: 12, label: 'Bottom Left Program' },
+	{ id: 13, label: 'Program Top' },
+	{ id: 14, label: 'Top Right Program' },
+	{ id: 15, label: 'Top Left Program' },
+	{ id: 16, label: 'All Small' },
+]
+
 const multiViewerActions = ({ context }) => {
 	const actions = {}
 
@@ -43,24 +62,7 @@ const multiViewerActions = ({ context }) => {
 					type: 'dropdown',
 					label: 'Layout',
 					id: 'layout',
-					choices: [
-						{ id: 1, label: 'Default' },
-						{ id: 2, label: 'Top Left Small' },
-						{ id: 3, label: 'Top Right Small' },
-						{ id: 4, label: 'Program Bottom' },
-						{ id: 5, label: 'Bottom Left Small' },
-						{ id: 6, label: 'Program Right' },
-						{ id: 7, label: 'Top Right Small Bottom Left Small' },
-						{ id: 8, label: 'Bottom Right Program' },
-						{ id: 9, label: 'Bottom Right Small' },
-						{ id: 10, label: 'Top Left Small Bottom Right Small' },
-						{ id: 11, label: 'Program Left' },
-						{ id: 12, label: 'Bottom Left Program' },
-						{ id: 13, label: 'Program Top' },
-						{ id: 14, label: 'Top Right Program' },
-						{ id: 15, label: 'Top Left Program' },
-						{ id: 16, label: 'All Small' },
-					],
+					choices: multiViewerAdvancedLayoutSetChoices,
 					default: 1,
 				},
 				option.multiViewers(context, true),
@@ -114,4 +116,5 @@ const multiViewerActions = ({ context }) => {
 
 module.exports = {
 	multiViewerActions,
+	multiViewerAdvancedLayoutSetChoices,
 }
