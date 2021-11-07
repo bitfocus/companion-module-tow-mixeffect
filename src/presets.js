@@ -188,11 +188,11 @@ module.exports = {
 
 		// SuperSource Highlight
 		const superSourceHighlightList = [
-			{ label: 'Highlight Box 1', options: { box: 1 } },
-			{ label: 'Highlight Box 2', options: { box: 2 } },
-			{ label: 'Highlight Box 3', options: { box: 3 } },
-			{ label: 'Highlight Box 4', options: { box: 4 } },
-			{ label: 'Highlight Reset', options: { box: 0 } },
+			{ label: 'Highlight Box 1', options: { box: 1, supersource: 1 } },
+			{ label: 'Highlight Box 2', options: { box: 2, supersource: 1 } },
+			{ label: 'Highlight Box 3', options: { box: 3, supersource: 1 } },
+			{ label: 'Highlight Box 4', options: { box: 4, supersource: 1 } },
+			{ label: 'Highlight Reset', options: { box: 0, supersource: 1 } },
 		]
 
 		addPresetList({
