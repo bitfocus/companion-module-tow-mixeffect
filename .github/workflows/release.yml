@@ -40,3 +40,7 @@ jobs:
       - run: yarn semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GIT_AUTHOR_NAME: "Johnny Estilles"
+          GIT_AUTHOR_EMAIL: "johnny@estilles.com"
+          GIT_COMMITTER_NAME: "Johnny Estilles"
+          GIT_COMMITTER_EMAIL: "johnny@estilles.com"
