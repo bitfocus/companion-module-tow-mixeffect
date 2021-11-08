@@ -1,3 +1,6 @@
+const switchers = require('./switchers')
+const { model } = require('./switchers/types')
+
 module.exports = {
 	config_fields() {
 		return [
@@ -26,6 +29,24 @@ module.exports = {
 				default: this.DEFAULT_PORT,
 				required: true,
 			},
-		];
-	}	
+			{
+				type: 'text',
+				id: 'notice',
+				width: 12,
+				label: '',
+				value: `<span style="color: #ff0000">
+							<h5>&#60;&#60;&#60; IMPORTANT NOTICE &#62;&#62;&#62;</h5>
+							Choosing the model of ATEM switcher below will update the actions and feedbacks
+							available in this module to match the features supported by the select switcher.
+						</span>`,
+			},
+			{
+				type: 'dropdown',
+				label: 'Model',
+				id: 'model',
+				default: model.atemMiniExtremeIso,
+				choices: switchers.map(({ id, label }) => ({ id, label })),
+			},
+		]
+	},
 }

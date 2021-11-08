@@ -1,5 +1,10 @@
 const thumbnails = require('./thumbnails')
 
+const { appSwitcherSectionChoices } = require('./actions/appActions')
+const { multiViewerAdvancedLayoutSetChoices } = require('./actions/multiViewerActions')
+
+const images = require('./images')
+
 module.exports = {
 	initPresets() {
 		const presets = []
@@ -23,45 +28,53 @@ module.exports = {
 			],
 		})
 
-		const addPresetList = ({ category, size = 14, action, bank = {}, list = [] }) => list.forEach(item => presets.push(generatePreset({
-			category, 
-			size,
-			action,
-			...item,
-			bank: {
-				...bank,
-				...item.bank,
-			},
-		})))
+		const addPresetList = ({ category, size = 14, action, bank = {}, list = [] }) =>
+			list.forEach((item) =>
+				presets.push(
+					generatePreset({
+						category,
+						size,
+						action,
+						...item,
+						bank: {
+							...bank,
+							...item.bank,
+						},
+					})
+				)
+			)
 
-		// Switcher
-		const switcherSectionList = [
-			{ label: 'Audio', options: { section: 'audio' } },
-			{ label: 'AUX', options: { section: 'auxiliary' } },
-			{ label: 'Camera Control', options: { section: 'camera-control' } },
-			{ label: 'Color Gen', options: { section: 'color-generators' } },
-			{ label: 'DSK', options: { section: 'downstream-keyers' } },
-			{ label: 'Hyperdeck', options: { section: 'hyperdecks' } },
-			{ label: 'Macros', options: { section: 'macros' } },
-			{ label: 'Media', options: { section: 'media' } },
-			{ label: 'Output', options: { section: 'output' } },
-			{ label: 'Settings', options: { section: 'settings' } },
-			{ label: 'Super Source', options: { section: 'supersource' } },
-			{ label: 'Switcher', options: { section: 'switcher' } },
-			{ label: 'Transition', options: { section: 'transitions' } },
-			{ label: 'USK', options: { section: 'upstream-keyers' } },
-			{ label: 'View All Presets', options: { section: 'view-all' } },
-		]
-		addPresetList({ 
-			category: 'Switcher',
-			action: 'switcherSection',
-			list: switcherSectionList ,
+		// MixEffect App
+		addPresetList({
+			category: 'Switcher Sections',
+			action: 'appSwitcherSection',
+			list: appSwitcherSectionChoices.map(({ id, presetLabel }) => ({
+				label: presetLabel,
+				options: { section: id },
+				bank: {
+					size: '7',
+					alignment: 'center:bottom',
+					png64: images.appSwitcherSection[id],
+				},
+			})),
+		})
+
+		// MultiViewers
+		addPresetList({
+			category: 'MultiViewers',
+			action: 'multiViewerAdvancedLayoutSet',
+			list: multiViewerAdvancedLayoutSetChoices.map(({ id, label }) => ({
+				options: { layout: id, multiViewer: 1 },
+				bank: {
+					png64: images.multiViewerAdvancedLayoutSet[label],
+				},
+			})),
 		})
 
 		// Transitions
 		const transitionList = [
-			{ label: 'Auto', action: 'auto' },
-			{ label: 'Cut', action: 'cut' },
+			{ label: 'Auto', action: 'auto', options: { mixEffectBus: 1 } },
+			{ label: 'Cut', action: 'cut', options: { mixEffectBus: 1 } },
 		]
 		addPresetList({
 			category: 'Transitions',
@@ -112,11 +125,13 @@ module.exports = {
 			{ label: 'USK - Six Grid' },
 			{ label: 'USK - Six Grid Crop' },
 			{ label: 'USK - Six Left' },
-		].map(({ label }) => (
-			{ label, bank: { png64: thumbnails[label] }, options: { presetName: label, superSourceId: 1 } }
-		))
+		].map(({ label }) => ({
+			label,
+			bank: { png64: thumbnails[label] },
+			options: { presetName: label, superSource: 1 },
+		}))
 		addPresetList({
-			category: 'SuperSource Preset',
+			category: 'SuperSource: Presets',
 			size: 7,
 			bank: {
 				alignment: 'center:bottom',
@@ -127,11 +142,11 @@ module.exports = {
 		})
 
 		const superSourceList2 = [
-			{ label: 'Previous Preset', action: 'superSourcePresetPrevious', options: { superSourceId: 1 } },
-			{ label: 'Next  Preset', action: 'superSourcePresetNext', options: { superSourceId: 1 } },
+			{ label: 'Previous Preset', action: 'superSourcePresetPrevious', options: { superSource: 1 } },
+			{ label: 'Next  Preset', action: 'superSourcePresetNext', options: { superSource: 1 } },
 		]
 		addPresetList({
-			category: 'SuperSource Preset',
+			category: 'SuperSource: Presets',
 			size: 14,
 			list: superSourceList2,
 		})
@@ -139,15 +154,15 @@ module.exports = {
 		// SuperSource Animation Speed
 		const superSourceAnimationSpeedList = [
 			{ label: 'Instant', action: 'superSourceAnimationSpeed', options: { speed: 0 } },
-			{ label: 'Extra Fast', action: 'superSourceAnimationSpeed', options: { speed: 1 }  },
-			{ label: 'Fast', action: 'superSourceAnimationSpeed', options: { speed: 2 }  },
-			{ label: 'Normal', action: 'superSourceAnimationSpeed', options: { speed: 3 }  },
-			{ label: 'Slow', action: 'superSourceAnimationSpeed', options: { speed: 4 }  },
-			{ label: 'Extra Slow', action: 'superSourceAnimationSpeed', options: { speed: 5 }  },
-			{ label: 'Cycle Speed', action: 'superSourceAnimationSpeedCycle' }
+			{ label: 'Extra Fast', action: 'superSourceAnimationSpeed', options: { speed: 1 } },
+			{ label: 'Fast', action: 'superSourceAnimationSpeed', options: { speed: 2 } },
+			{ label: 'Normal', action: 'superSourceAnimationSpeed', options: { speed: 3 } },
+			{ label: 'Slow', action: 'superSourceAnimationSpeed', options: { speed: 4 } },
+			{ label: 'Extra Slow', action: 'superSourceAnimationSpeed', options: { speed: 5 } },
+			{ label: 'Cycle Speed', action: 'superSourceAnimationSpeedCycle' },
 		]
 		addPresetList({
-			category: 'SuperSource Animation Speed',
+			category: 'SuperSource: Animation Speed',
 			size: 18,
 			list: superSourceAnimationSpeedList,
 		})
@@ -163,50 +178,60 @@ module.exports = {
 			{ label: 'Smooth Step', action: 'superSourceAnimationStyle', options: { style: 6 } },
 			{ label: 'Smoother Step', action: 'superSourceAnimationStyle', options: { style: 7 } },
 			{ label: 'Squared', action: 'superSourceAnimationStyle', options: { style: 8 } },
-			{ label: 'Cycle Style', action: 'superSourceAnimationStyleCycle' }
+			{ label: 'Cycle Style', action: 'superSourceAnimationStyleCycle' },
 		]
 		addPresetList({
-			category: 'SuperSource Animation Style',
+			category: 'SuperSource: Animation Style',
 			size: 18,
 			list: superSourceAnimationStyleList,
 		})
 
 		// SuperSource Highlight
-		superSourceHighlightList = [
-			{ label: 'Highlight Box 1', options: { boxId: 1 } },
-			{ label: 'Highlight Box 2', options: { boxId: 2 } },
-			{ label: 'Highlight Box 3', options: { boxId: 3 } },
-			{ label: 'Highlight Box 4', options: { boxId: 4 } },
-			{ label: 'Highlight Reset', options: { boxId: 0 } },
+		const superSourceHighlightList = [
+			{ label: 'Highlight Box 1', options: { box: 1, supersource: 1 } },
+			{ label: 'Highlight Box 2', options: { box: 2, supersource: 1 } },
+			{ label: 'Highlight Box 3', options: { box: 3, supersource: 1 } },
+			{ label: 'Highlight Box 4', options: { box: 4, supersource: 1 } },
+			{ label: 'Highlight Reset', options: { box: 0, supersource: 1 } },
 		]
+
 		addPresetList({
-			category: 'SuperSource Highlight',
+			category: 'SuperSource: Highlight',
 			action: 'superSourceHighlight',
-			options: { superSourceId: 1 },
+			options: { superSource: 1 },
 			list: superSourceHighlightList,
 		})
 
-		// Video Follows Audio
-		const videoFollowsAudioList = [
-			{ label: 'VFA\\nOn', options: { mode: 'on' } },
-			{ label: 'VFA\\nOff', options: { mode: 'off' } },
-			{ label: 'VFA\\nToggle', options: { mode: 'toggle' } },
+		// MixEffect App Actions
+		const appActions = [
+			{
+				label: 'VFA ON',
+				action: 'appVideoFollowsAudio',
+				options: { mode: 1 },
+				bank: { png64: images.appActions.appVideoFollowsAudio },
+			},
+			{
+				label: 'VFA OFF',
+				action: 'appVideoFollowsAudio',
+				options: { mode: 0 },
+				bank: { png64: images.appActions.appVideoFollowsAudio },
+			},
+			{
+				label: 'VFA TOGGLE',
+				action: 'appVideoFollowsAudio',
+				options: { mode: 2 },
+				bank: { png64: images.appActions.appVideoFollowsAudio },
+			},
+			{ label: 'REMOTE WEBVIEW', action: 'appRemoteWebView', bank: { png64: images.appActions.appRemoteWebView } },
+			{ label: 'VIEW ONLY', action: 'appViewOnlyMode', bank: { png64: images.appActions.appViewOnlyMode } },
 		]
 		addPresetList({
-			category: 'Video Follows Audio',
-			action: 'videoFollowAudio',
-			size: 18,
-			list: videoFollowsAudioList,
-		})
-
-		// Other Actions
-		otherList = [
-			{ label: 'Remote Webview', action: 'remoteWebview' },
-			{ label: 'View Only Mode', action: 'viewOnlyMode' },
-		]
-		addPresetList({
-			category: 'Other Actions',
-			list: otherList
+			category: 'MixEffect App Actions',
+			list: appActions,
+			size: 7,
+			bank: {
+				alignment: 'center:bottom',
+			},
 		})
 
 		this.setPresetDefinitions(presets)
