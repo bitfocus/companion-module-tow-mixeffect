@@ -1,4 +1,7 @@
 # companion-module-tow-mixeffect
+![Build](https://img.shields.io/github/workflow/status/bitfocus/companion-module-tow-mixeffect/Release)
+![Version](https://img.shields.io/github/package-json/v/bitfocus/companion-module-tow-mixeffect)
+![Compatibility](https://img.shields.io/github/package-json/compatibility/bitfocus/companion-module-tow-mixeffect)
 
 [MixEffect Pro](https://mixeffect.app/) is a professional tool for controlling Blackmagic ATEM switchers from your iPhone or iPad.
 
