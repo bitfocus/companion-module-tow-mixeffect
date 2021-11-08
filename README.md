@@ -10,6 +10,6 @@ Please see [HELP.md](HELP.md) and [LICENSE](LICENSE) for more information.
 
 ### 2021-11-08
 
-> UPDATE: I have updated the Companion MixEffect module (**v1.1.0**) to support the new actions in [MixEffect Pro](https://mixeffect.app/) v1.2.x. This last update has not been merged into the Companion core, so unfortunately it is not yet avaible on the Companion Beta Builds. However, for those of you that want to try the latest release, I have made it available at [estill.es/companion-mixeffect](estill.es/companion-mixeffect). Here you can find Companion builds for Windows, Intel Mac and Mac M1 that include this module.
+> UPDATE: I have updated the Companion MixEffect module (**v1.1.0**) to support the new actions in [MixEffect Pro](https://mixeffect.app/) v1.2.x. This last update has not been merged into the Companion core, so unfortunately it is not yet avaible on the Companion Beta Builds. However, for those of you that want to try the latest release, I have made it available at [estill.es/companion-mixeffect](https://estill.es/companion-mixeffect). Here you can find Companion builds for Windows, Intel Mac and Mac M1 that include this module.
 >
 > There is no Companion build for the Raspberry Pi. Those interested in using this module on your Raspberry Pi, please check out the wiki article [Companion on the Raspberry Pi](bitfocus/companion/wiki/Companion-on-the-Raspberry-Pi) for guidance.
