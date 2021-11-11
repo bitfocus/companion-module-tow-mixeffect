@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.0...v1.1.1) (2021-11-11)
+
+
+### Bug Fixes
+
+* **variables:** correct default value keys for mp, me, box and ssrc ([01956e3](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/01956e39fa144c09e9e53b4fb64c7e9a9a92ca99))
+
 # [1.1.0](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.0.2...v1.1.0) (2021-11-08)
 
 
