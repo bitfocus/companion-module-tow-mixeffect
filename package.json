@@ -32,6 +32,7 @@
     "semantic-release": "^18.0.0"
   },
   "dependencies": {
+    "async-mutex": "^0.3.2",
     "osc": "^2.4.2"
   }
 }

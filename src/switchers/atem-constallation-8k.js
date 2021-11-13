@@ -23,6 +23,7 @@ const switcher = {
 	stinger: true,
 	advancedChromaKeyer: true,
 	fairlightAudio: true,
+	colorGenerators: 2,
 }
 
 switcher.videoSources = [

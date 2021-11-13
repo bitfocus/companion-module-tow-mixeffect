@@ -39,4 +39,25 @@ module.exports = {
 
 		return upgraded
 	},
+
+	v1_2_0(context, config) {
+		let upgraded = false
+
+		if (typeof config.port === 'string') {
+			config.port = parseInt(config.port)
+			upgraded = true
+		}
+
+		if (config.feedbackPort === undefined) {
+			config.feedbackPort = this.DEFAULT_FEEDBACK_PORT
+			upgraded = true
+		}
+
+		if (config.feedbackInterval === undefined) {
+			config.feedbackInterval = this.DEFAULT_FEEDBACK_INTERVAL
+			upgraded = true
+		}
+
+		return upgraded
+	},
 }

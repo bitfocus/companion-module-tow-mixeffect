@@ -1,5 +1,5 @@
 module.exports = {
-	variableDefinitions: [
+	staticVariableDefinitions: [
 		{
 			label: 'Selected Media Player',
 			name: 'media_player',
@@ -66,6 +66,8 @@ module.exports = {
 	],
 
 	initVariables() {
+		this.variableDefinitions = [...this.staticVariableDefinitions, ...this.getStateVariables()]
+
 		// Configure variables
 		this.setVariableDefinitions(this.variableDefinitions)
 
@@ -85,5 +87,9 @@ module.exports = {
 		if (feedback) {
 			this.checkFeedbacks(feedback)
 		}
+	},
+
+	updateVariables(updates = []) {
+		updates.forEach(({ name, value }) => this.updateVariable(name, value))
 	},
 }

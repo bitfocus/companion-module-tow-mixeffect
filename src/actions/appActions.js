@@ -1,7 +1,7 @@
 const { option } = require('./utils')
 
 const appSwitcherSectionChoices = [
-	{ id: 'audio', label: 'AUDIO' },
+	{ id: 'audio', label: 'AUDIO', presetLabel: 'AUDIO' },
 	{ id: 'auxiliary', label: 'Auxiliary', presetLabel: 'AUX' },
 	{ id: 'camera-control', label: 'Camera Control', presetLabel: 'CAMERA' },
 	{ id: 'color-generators', label: 'Color Generators', presetLabel: 'COLORS' },

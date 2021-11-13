@@ -127,12 +127,14 @@ const transitionActions = ({ context }) => {
 			option.videoSources({
 				label: 'Fill Source',
 				id: 'fillSource',
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.keySource,
 			}),
 			option.videoSources({
 				label: 'Key Source',
 				id: 'keySource',
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.keySource,
 			}),
@@ -180,12 +182,14 @@ const transitionActions = ({ context }) => {
 			option.videoSources({
 				label: 'Fill Source',
 				id: 'fillSource',
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.keySource,
 			}),
 			option.videoSources({
 				label: 'Key Source',
 				id: 'keySource',
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.keySource,
 			}),
@@ -447,6 +451,7 @@ const transitionActions = ({ context }) => {
 			option.videoSources({
 				label: 'Fill Source',
 				id: 'fillSource',
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.keySource,
 			}),
@@ -669,6 +674,7 @@ const transitionActions = ({ context }) => {
 			option.videoSources({
 				label: 'Fill Source',
 				id: 'fillSource',
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.keySource,
 			}),

@@ -1,5 +1,6 @@
 const { option } = require('./utils')
 const { availability } = require('../switchers/types')
+const { getFeedbackNames } = require('../feedbacks/dskFeedbacks')
 
 const downstreamKeyerActions = ({ context }) => {
 	const actions = {}
@@ -9,6 +10,7 @@ const downstreamKeyerActions = ({ context }) => {
 		options: [option.dsk(context, false)],
 		callback: ({ options }) => {
 			context.updateVariable('dsk', options.dsk)
+			context.checkFeedbacks(...getFeedbackNames())
 		},
 	}
 
@@ -26,12 +28,14 @@ const downstreamKeyerActions = ({ context }) => {
 			option.videoSources({
 				label: 'Fill Source',
 				id: 'fillSource',
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.auxiliary,
 			}),
 			option.videoSources({
 				label: 'Key Source',
 				id: 'keySource',
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.keySource,
 			}),

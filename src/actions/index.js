@@ -35,7 +35,7 @@ module.exports = {
 	},
 
 	oscSend(path, args = []) {
-		console.log('osc_send', this.config.ip, this.config.port, path, args)
+		this.debug('osc_send', this.config.ip, this.config.port, path, args)
 		this.system.emit('osc_send', this.config.ip, this.config.port, path, args)
 	},
 

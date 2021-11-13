@@ -124,7 +124,8 @@ const option = {
 			id: 'rate',
 			min: 1,
 			max: 250,
-			default: 30,
+			step: 1,
+			defaultValue: 30,
 		}),
 
 	box: (selected = true) => ({
@@ -132,7 +133,7 @@ const option = {
 		label: 'Box',
 		id: 'box',
 		choices: generateChoices({ label: 'Box ', count: 4, selected }),
-		default: 1,
+		defult: 1,
 	}),
 
 	clip: () => percent({ label: 'Clip (0-100%)', id: 'clip' }),
@@ -194,8 +195,10 @@ const option = {
 		}
 	},
 
-	videoSources: ({ label = 'Video Source', id = 'videoSource', sources, predicate = () => true }) => {
-		const choices = sources.filter(predicate).map(({ id, label }) => ({ id, label }))
+	videoSources: ({ label = 'Video Source', id = 'videoSource', sources, predicate = () => true, context }) => {
+		const choices = sources
+			.filter(predicate)
+			.map(({ id }) => ({ id, label: context.state.sources.find(({ id: sourceId }) => id === sourceId).longName }))
 		return {
 			type: 'dropdown',
 			label,

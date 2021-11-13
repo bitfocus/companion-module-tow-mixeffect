@@ -50,6 +50,7 @@ const mixEffectBusActions = ({ context }) => {
 		label: 'M/E: Set Preview Input',
 		options: [
 			option.videoSources({
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.auxiliary,
 			}),
@@ -67,6 +68,7 @@ const mixEffectBusActions = ({ context }) => {
 		label: 'M/E: Set Program Input',
 		options: [
 			option.videoSources({
+				context,
 				sources: context.switcher.videoSources,
 				predicate: (source) => source.availability.source & availability.source.auxiliary,
 			}),
