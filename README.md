@@ -10,4 +10,4 @@ This module will allow you to control an instance of [MixEffect Pro](https://mix
 
 Please see [HELP.md](HELP.md) and [LICENSE](LICENSE) for more information.
 
-> NOTE: The Companion MixEffect module (**v1.1.1**) is available in the [Companion Beta Builds](https://bitfocus.io/companion/download/builds/). If you wish to download it you'll need to visit the [BitFocus Downloads](https://bitfocus.io/user/downloads), login with or create your Bitfocus account, then click on the [Beta Builds](https://bitfocus.io/companion/download/builds/) link. The mix affect module was added on `companion-2.2.0-ae0a60d7-3615`, so it's also included in any newer build.
+> NOTE: The Companion MixEffect module (**v1.1.1**) is available in the [Companion Beta Builds](https://bitfocus.io/companion/download/builds/). If you wish to download it you'll need to visit the [BitFocus Downloads](https://bitfocus.io/user/downloads), login with or create your Bitfocus account, then click on the [Beta Builds](https://bitfocus.io/companion/download/builds/) link. The MixEffect module was added on `companion-2.2.0-ae0a60d7-3615`, so it's also included in any newer build.
