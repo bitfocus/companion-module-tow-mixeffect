@@ -8,6 +8,23 @@
 
 This module will allow you to control an instance of [MixEffect Pro](https://mixeffect.app/).
 
-Please see [HELP.md](HELP.md) and [LICENSE](LICENSE) for more information.
+## Downloading the Companion with the Native MixEffect Module from BitFocus
 
-> NOTE: The Companion MixEffect module (**v1.1.1**) is available in the [Companion Beta Builds](https://bitfocus.io/companion/download/builds/). If you wish to download it you'll need to visit the [BitFocus Downloads](https://bitfocus.io/user/downloads), login with or create your Bitfocus account, then click on the [Beta Builds](https://bitfocus.io/companion/download/builds/) link. The MixEffect module was added on `companion-2.2.0-ae0a60d7-3615`, so it's also included in any newer build.
+Version 1.1.2 of the native MixEffect module for Companion is now part of the Companion Beta Builds. Here are instructions on how to download the beta from BitFocus.io:
+
+1. Go to BitFocus Downloads: https://bitfocus.io/user/downloads
+2. Login or create your BitFocus account.
+3. Click on Beta Builds: https://bitfocus.io/companion/download/builds/
+4. Download the build of Companion that corresponds to your computer type: Linux, Mac, or Windows.
+
+## Downloadihg the Cutting Edge Beta Builds
+
+We periodically release new features of the native MixEffect module before it's incorporated into the official Companion Beta from BitFocus. If you want to make use of these features, follow these instructions to download and install:
+
+1. Go to [https://estill.es/companion-mixeffect-beta-builds](https://estill.es/companion-mixeffect-beta-builds).
+2. Click on the link associated with your computer. Beta builds are available for Windows, Intel Macs, and Apple Silicon Macs.
+3. Open the downloaded Disk Image from your computer.
+4. Drag the Companion.app file into your Applications folder. If you are currently running Companion, you must quit it.
+5. Double-click on Companion.app. If you get an alert saying you cannot open this app, Control-Click on Companion.app and choose Open. Allow your computer to Trust this app to open it.
+
+Please see [HELP.md](HELP.md) and [LICENSE](LICENSE) for more information.
