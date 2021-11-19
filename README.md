@@ -8,7 +8,7 @@
 
 This module will allow you to control an instance of [MixEffect Pro](https://mixeffect.app/).
 
-## Downloading the Companion with the Native MixEffect Module from BitFocus
+## Downloading Companion with the Native MixEffect Module Directly from Bitfocus
 
 Version 1.1.2 of the native MixEffect module for Companion is now part of the Companion Beta Builds. Here are instructions on how to download the beta from BitFocus.io:
 
@@ -17,7 +17,7 @@ Version 1.1.2 of the native MixEffect module for Companion is now part of the Co
 3. Click on Beta Builds: https://bitfocus.io/companion/download/builds/
 4. Download the build of Companion that corresponds to your computer type: Linux, Mac, or Windows.
 
-## Downloadihg the Cutting Edge Beta Builds
+## Downloading the Cutting Edge Beta Builds
 
 We periodically release new features of the native MixEffect module before it's incorporated into the official Companion Beta from BitFocus. If you want to make use of these features, follow these instructions to download and install:
 
