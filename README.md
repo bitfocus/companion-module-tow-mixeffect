@@ -22,9 +22,12 @@ Version 1.1.2 of the native MixEffect module for Companion is now part of the Co
 We periodically release new features of the native MixEffect module before it's incorporated into the official Companion Beta from BitFocus. If you want to make use of these features, follow these instructions to download and install:
 
 1. Go to [https://estill.es/companion-mixeffect-beta-builds](https://estill.es/companion-mixeffect-beta-builds).
-2. Click on the link associated with your computer. Beta builds are available for Windows, Intel Macs, and Apple Silicon Macs.
-3. Open the downloaded Disk Image from your computer.
-4. Drag the Companion.app file into your Applications folder. If you are currently running Companion, you must quit it.
-5. Double-click on Companion.app. If you get an alert saying you cannot open this app, Control-Click on Companion.app and choose Open. Allow your computer to Trust this app to open it.
+2. Open the folder corresponding to the beta build you want to install
+3. Click on the link associated with your computer. Beta builds are available for Windows, Intel Macs, and Apple Silicon Macs.
+4. Open the downloaded Disk Image from your computer.
+5. Drag the Companion.app file into your Applications folder. If you are currently running Companion, you must quit it.
+6. Double-click on Companion.app. If you get an alert saying you cannot open this app, Control-Click on Companion.app and choose Open. Allow your computer to Trust this app to open it.
+
+> _NOTE: If there are no current beta builds here you can will find a Companion build with the latest version of the native MixEffect Module_
 
 Please see [HELP.md](HELP.md) and [LICENSE](LICENSE) for more information.
