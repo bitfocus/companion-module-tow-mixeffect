@@ -1,3 +1,10 @@
+# [1.2.0-beta.1](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.2...v1.2.0-beta.1) (2021-11-24)
+
+
+### Features
+
+* **feedbacks:** add aux/cg/dsk/output feedbacks ([e916ca9](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/e916ca90c3d6666a583e6dea81623608822c7a0f))
+
 ## [1.1.1](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.0...v1.1.1) (2021-11-11)
 
 
