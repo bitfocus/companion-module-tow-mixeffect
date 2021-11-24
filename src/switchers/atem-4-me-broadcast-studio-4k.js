@@ -1,28 +1,28 @@
-const { model, audioSource } = require('./types')
+const { model } = require('./types')
 const generator = require('./generators')
 
 const switcher = {
-	id: model.atemConstallation8k,
-	label: 'ATEM Constellation 8K',
+	id: model.atem4meBroadcastStudio4k,
+	label: 'ATEM 4 M/E Broadcast Studio 4K',
 	mixEffectBuses: 4,
-	auxBuses: 24,
-	inputs: 40,
-	multiViewers: 4,
-	advancedMultiViewer: true,
-	upstreamKeyers: 16,
-	downstreamKeyers: 4,
-	superSources: 2,
+	auxBuses: 6,
+	inputs: 20,
+	multiViewers: 2,
+	advancedMultiViewer: false,
+	upstreamKeyers: 4,
+	downstreamKeyers: 2,
+	superSources: 1,
 	superSourceArtBorder: true,
 	macros: 100,
 	mediaPlayers: 4,
 	mediaStills: 64,
-	mediaClips: 4,
+	mediaClips: 2,
 	streaming: false,
 	recording: false,
 	recordISO: false,
 	stinger: true,
-	advancedChromaKeyer: true,
-	fairlightAudio: true,
+	advancedChromaKeyer: false,
+	fairlightAudio: false,
 }
 
 switcher.videoSources = [
@@ -42,12 +42,11 @@ switcher.videoSources = [
 
 switcher.audioSources = [
 	...generator.sdiSources(switcher.inputs),
-	...generator.micSources(1, audioSource.ts),
-	...generator.trsSources(1),
-	...generator.madiSources(32),
+	...generator.xlrSources(2),
+	...generator.rcaSources(2),
 	...generator.mediaPlayerAudioSources(switcher.mediaPlayers),
 ]
 
 module.exports = {
-	atemConstallation8k: switcher,
+	atem4meBroadcastStudio4k: switcher,
 }

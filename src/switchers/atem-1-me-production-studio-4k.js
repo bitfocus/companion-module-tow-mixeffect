@@ -19,7 +19,7 @@ const switcher = {
 	streaming: false,
 	recording: false,
 	recordISO: false,
-	stinger: false,
+	stinger: true,
 	advancedChromaKeyer: false,
 	fairlightAudio: false,
 }
