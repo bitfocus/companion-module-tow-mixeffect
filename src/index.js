@@ -30,7 +30,7 @@ class MixEffectInstance extends instance_skel {
 
 		this.config = config
 		this.osc = null
-		this.oscReady = false
+		this.oscInterval = null
 		this.oscLastMessage = null
 		this.switcher = null
 
@@ -115,15 +115,18 @@ class MixEffectInstance extends instance_skel {
 
 		this.osc.on('ready', () => {
 			this.debug('osc server ready', this.config.interval)
-			this.oscReady = true
-			setInterval(() => {
+			this.oscInterval = setInterval(() => {
 				if (this.currentStatus === this.STATUS_OK) {
 					const timeSinceLast = new Date().getTime() - this.oscLastMessage
 					if (timeSinceLast > this.config.interval * 10) {
 						this.status(this.STATUS_UNKNOWN, 'Waiting for MixEffect')
 					}
 				}
-				this.osc.send({ address: '/mixeffect/send-companion-feedback', args: [] }, this.config.ip, this.config.port)
+				try {
+					this.osc.send({ address: '/mixeffect/send-companion-feedback', args: [] }, this.config.ip, this.config.port)
+				} catch (error) {
+					this.log('warn', `Error sending request to MixEffect: ${error}`)
+				}
 			}, this.config.interval)
 		})
 
@@ -198,12 +201,15 @@ class MixEffectInstance extends instance_skel {
 	}
 
 	stopOsc() {
-		if (this.osc) {
+		if (this.oscInterval !== null) {
+			clearInterval(this.oscInterval)
+			this.oscInterval = null
+		}
+		if (this.osc !== null) {
 			this.osc.close()
+			this.osc = null
 		}
 
-		this.osc = null
-		this.oscReady = false
 		this.switcher = null
 
 		this.updatingState.cancel()
