@@ -37,7 +37,7 @@ module.exports = {
 				width: 6,
 				min: this.MIN_PORT,
 				max: this.MAX_PORT,
-				default: this.DEFAULT_PORT,
+				default: this.DEFAULT_FEEDBACK_PORT,
 				required: true,
 			},
 			{
@@ -47,7 +47,7 @@ module.exports = {
 				width: 6,
 				min: this.MIN_INTERVAL,
 				max: this.MAX_INTERVAL,
-				default: 100,
+				default: this.DEFAULT_FEEDBACK_INTERVAL,
 				required: true,
 			},
 			{
