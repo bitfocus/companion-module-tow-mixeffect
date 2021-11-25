@@ -1,17 +1,17 @@
 const { updateState } = require('./utils')
 
 const all = {
-	dsk: require('./dskState'),
-	superSource: require('./superSourceState'),
-	output: require('./outputState'),
-	fairlight: require('./fairlightState'),
-	sources: require('./sourcesState'),
-	colorGenerators: require('./colorGeneratorsState'),
-	mediaPool: require('./mediaPoolState'),
 	aux: require('./auxState'),
-	multiview: require('./multiViewerState'),
-	me: require('./meState'),
-	macros: require('./macrosState'),
+	dsk: require('./dskState'),
+	colorGenerators: require('./colorGeneratorsState'),
+	// fairlight: require('./fairlightState'),
+	// mediaPool: require('./mediaPoolState'),
+	// me: require('./meState'),
+	// macros: require('./macrosState'),
+	// multiview: require('./multiViewerState'),
+	output: require('./outputState'),
+	// sources: require('./sourcesState'),
+	// superSource: require('./superSourceState'),
 }
 
 module.exports = {
