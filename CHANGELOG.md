@@ -1,3 +1,10 @@
+# [1.2.0-beta.4](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2021-11-25)
+
+
+### Bug Fixes
+
+* **config:** correct defaults for feedback ([8794098](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/8794098421b68a0b3fbaf136a5e5b19cd751063b))
+
 # [1.2.0-beta.3](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2021-11-25)
 
 
