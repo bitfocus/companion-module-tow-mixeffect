@@ -1,3 +1,10 @@
+# [1.2.0-beta.3](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2021-11-25)
+
+
+### Bug Fixes
+
+* **instance:** improve error detection on instance disable ([5b95f35](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/5b95f356897dfb55cf9303e276869c3ba37293dd))
+
 # [1.2.0-beta.2](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2021-11-25)
 
 
