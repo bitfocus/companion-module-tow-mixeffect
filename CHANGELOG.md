@@ -1,3 +1,10 @@
+# [1.2.0-beta.2](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2021-11-25)
+
+
+### Bug Fixes
+
+* disable some state/feedbacks temporariliy ([c29a34e](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/c29a34e84bc7f230a79b01bcca2b2fb99f68be14))
+
 # [1.2.0-beta.1](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.2...v1.2.0-beta.1) (2021-11-24)
 
 
