@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.2...v1.1.3) (2021-12-09)
+
+
+### Bug Fixes
+
+* **switchers:** various fixes to switch configs ([2eebc09](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/2eebc094f418c8fbaf26f1ed7f6de5517e3dbc89)), closes [#4](https://github.com/bitfocus/companion-module-tow-mixeffect/issues/4) [#5](https://github.com/bitfocus/companion-module-tow-mixeffect/issues/5)
+
 ## [1.1.1](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.0...v1.1.1) (2021-11-11)
 
 
