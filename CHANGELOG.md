@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.5...v1.1.6) (2022-02-13)
+
+
+### Reverts
+
+* Revert "bulk replace system.emit calls" ([370dbfe](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/370dbfe15ed98cee197b8df833ce2faa7f52f4c1))
+
 ## [1.1.3](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.2...v1.1.3) (2021-12-09)
 
 
