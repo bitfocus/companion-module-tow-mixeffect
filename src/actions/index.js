@@ -36,7 +36,7 @@ module.exports = {
 
 	oscSend(path, args = []) {
 		console.log('osc_send', this.config.ip, this.config.port, path, args)
-		super.oscSend(this.config.ip, this.config.port, path, args)
+		this.system.emit('osc_send', this.config.ip, this.config.port, path, args)
 	},
 
 	selectedOrValue(variableName, value) {
