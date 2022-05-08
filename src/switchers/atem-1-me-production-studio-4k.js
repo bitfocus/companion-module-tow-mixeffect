@@ -1,4 +1,4 @@
-const { model } = require('./types')
+const { model, audioSource } = require('./types')
 const generator = require('./generators')
 
 const switcher = {
@@ -40,6 +40,7 @@ switcher.videoSources = [
 
 switcher.audioSources = [
 	...generator.sdiSources(switcher.inputs),
+	...generator.micSources(1),
 	...generator.xlrSources(1),
 	...generator.rcaSources(1),
 	...generator.mediaPlayerAudioSources(switcher.mediaPlayers),

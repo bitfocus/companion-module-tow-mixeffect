@@ -11,7 +11,7 @@ configuration includes:
 2. Enabling the OSC server for the particular switcher you want to control, and
 3. Setting a port number to the switcher's OSC server.
 
-For more information see the [Getting Started with OSC in MixEffect](https://mixeffect.app/docs/osc) guide.
+For more information see the [Getting Started with OSC in MixEffect](https://docs.mixeffect.app/automate/osc) guide.
 
 Once OSC is enabled on the MixEffect app you can proceed to configure this module. You will need:
 
