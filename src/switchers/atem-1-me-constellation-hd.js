@@ -1,4 +1,4 @@
-const { model, audioSource } = require('./types')
+const { model } = require('./types')
 const generator = require('./generators')
 
 const switcher = {
