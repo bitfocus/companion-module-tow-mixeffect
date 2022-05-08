@@ -42,7 +42,7 @@ switcher.videoSources = [
 
 switcher.audioSources = [
 	...generator.sdiSources(switcher.inputs),
-	...generator.micSources(1),
+	...generator.micSources(1, audioSource.ts),
 	...generator.trsSources(2),
 	...generator.mediaPlayerAudioSources(switcher.mediaPlayers),
 ]

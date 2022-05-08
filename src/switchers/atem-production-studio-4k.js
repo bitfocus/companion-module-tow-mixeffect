@@ -41,7 +41,7 @@ switcher.videoSources = [
 switcher.audioSources = [
 	...generator.hdmiSources(4),
 	...generator.sdiSources(4, 5),
-	...generator.micSources(1),
+	...generator.micSources(1, audioSource.ts),
 	...generator.xlrSources(1),
 	...generator.rcaSources(1),
 ]
