@@ -38,7 +38,7 @@ module.exports = [
 	atemMiniProIso,
 	atemMiniExtreme,
 	atemMiniExtremeIso,
-	
+
 	atem1meConstellationHd,
 	atem2meConstellationHd,
 	atem4meConstellationHd,
