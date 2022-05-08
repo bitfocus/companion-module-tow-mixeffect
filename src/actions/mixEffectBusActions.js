@@ -13,7 +13,7 @@ const mixEffectBusActions = ({ context }) => {
 				id: 'mixEffectBus',
 				choices: generateChoices({
 					label: 'M/E',
-					count: context.switcher.setPreviewInputmixEffectBuses,
+					count: context.switcher.mixEffectBuses,
 					selected: false,
 					numberAll: true,
 				}),
