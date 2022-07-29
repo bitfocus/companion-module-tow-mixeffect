@@ -20,6 +20,11 @@ const { atem1meConstellationHd } = require('./atem-1-me-constellation-hd')
 const { atem2meConstellationHd } = require('./atem-2-me-constellation-hd')
 const { atem4meConstellationHd } = require('./atem-4-me-constellation-hd')
 
+const { atemSdi } = require('./atem-sdi')
+const { atemSdiProIso } = require('./atem-sdi-pro-iso')
+const { atemSdiExtremeIso } = require('./atem-sdi-extreme-iso')
+
+
 module.exports = [
 	atemProductionStudio4k,
 
@@ -42,4 +47,8 @@ module.exports = [
 	atem1meConstellationHd,
 	atem2meConstellationHd,
 	atem4meConstellationHd,
+	
+	atemSdi,
+	atemSdiProIso,
+	atemSdiExtremeIso,
 ]

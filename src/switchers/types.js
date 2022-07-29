@@ -29,6 +29,10 @@ module.exports = {
 		atem1meConstellationHd: 18,
 		atem2meConstellationHd: 19,
 		atem4meConstellationHd: 20,
+		
+		atemSdi: 21,
+		atemSdiProIso: 22,
+		atemSdiExtremeIso: 23,
 	},
 
 	// Video Source Types

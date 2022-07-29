@@ -1,8 +1,8 @@
 const { model } = require('./types')
-const { atemMini } = require('./atem-mini')
+const { atemMiniPro } = require('./atem-mini-pro')
 
 const switcher = {
-	...atemMini,
+	...atemMiniPro,
 	id: model.atemMiniProIso,
 	label: 'ATEM Mini Pro ISO',
 	recordISO: true,

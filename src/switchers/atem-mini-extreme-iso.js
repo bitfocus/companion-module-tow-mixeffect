@@ -6,7 +6,6 @@ const switcher = {
 	id: model.atemMiniExtremeIso,
 	label: 'ATEM Mini Extreme ISO',
 	recordISO: true,
-	// superSourceArtBorder: true,
 }
 
 module.exports = {

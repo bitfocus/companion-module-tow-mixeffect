@@ -18,7 +18,7 @@ const switcher = {
 	mediaClips: 0,
 	streaming: true,
 	recording: true,
-	recordISO: true,
+	recordISO: false,
 	stinger: false,
 	advancedChromaKeyer: true,
 	fairlightAudio: true,
