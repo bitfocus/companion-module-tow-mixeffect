@@ -24,7 +24,6 @@ const { atemSdi } = require('./atem-sdi')
 const { atemSdiProIso } = require('./atem-sdi-pro-iso')
 const { atemSdiExtremeIso } = require('./atem-sdi-extreme-iso')
 
-
 module.exports = [
 	atemProductionStudio4k,
 
@@ -47,7 +46,7 @@ module.exports = [
 	atem1meConstellationHd,
 	atem2meConstellationHd,
 	atem4meConstellationHd,
-	
+
 	atemSdi,
 	atemSdiProIso,
 	atemSdiExtremeIso,
