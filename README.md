@@ -10,24 +10,13 @@ This module will allow you to control an instance of [MixEffect Pro](https://mix
 
 ## Downloading Companion with the Native MixEffect Module Directly from Bitfocus
 
-Version 1.1.2 of the native MixEffect module for Companion is now part of the Companion Beta Builds. Here are instructions on how to download the beta from BitFocus.io:
+Version 1.1.8 of the native MixEffect module for Companion is now part of current Companion Release 2.2.3.
+
+Version 1.1.9 with ATEM SDI support is available on the Companion Beta Builds section of the BitFocus.io website. Here are instructions on how to download beta builds:
 
 1. Go to BitFocus Downloads: https://bitfocus.io/user/downloads
 2. Login or create your BitFocus account.
 3. Click on Beta Builds: https://bitfocus.io/companion/download/builds/
 4. Download the build of Companion that corresponds to your computer type: Linux, Mac, or Windows.
-
-## Downloading the Cutting Edge Beta Builds
-
-We periodically release new features of the native MixEffect module before it's incorporated into the official Companion Beta from BitFocus. If you want to make use of these features, follow these instructions to download and install:
-
-1. Go to [https://estill.es/companion-mixeffect-beta-builds](https://estill.es/companion-mixeffect-beta-builds).
-2. Open the folder corresponding to the beta build you want to install
-3. Click on the link associated with your computer. Beta builds are available for Windows, Intel Macs, and Apple Silicon Macs.
-4. Open the downloaded Disk Image from your computer.
-5. Drag the Companion.app file into your Applications folder. If you are currently running Companion, you must quit it.
-6. Double-click on Companion.app. If you get an alert saying you cannot open this app, Control-Click on Companion.app and choose Open. Allow your computer to Trust this app to open it.
-
-> _NOTE: If there are no current beta builds here you can will find a Companion build with the latest version of the native MixEffect Module_
 
 Please see [HELP.md](HELP.md) and [LICENSE](LICENSE) for more information.
