@@ -7,6 +7,7 @@ const presets = require('./presets')
 const variables = require('./variables')
 const feedbacks = require('./feedbacks')
 const upgrades = require('./upgrades')
+const polling = require('./polling')
 
 const switchers = require('./switchers')
 
@@ -21,9 +22,14 @@ class MixEffectInstance extends instance_skel {
 			...presets,
 			...variables,
 			...feedbacks,
+			...polling,
 		})
 
 		this.config = config
+
+		this.data = {
+			interval: null,
+		}
 
 		this.initConstants()
 
@@ -52,7 +58,8 @@ class MixEffectInstance extends instance_skel {
 		this.initActions()
 		this.initPresets()
 		this.initFeedbacks()
-		this.initVariables()
+		this.initVariables(this.switcher)
+		this.initPolling()
 
 		this.status(this.STATUS_OK)
 	}
@@ -69,11 +76,16 @@ class MixEffectInstance extends instance_skel {
 		this.initActions()
 		this.initPresets()
 		this.initFeedbacks()
+		this.initPolling()
 
 		this.status(this.STATUS_OK)
 	}
 
-	destroy() {}
+	destroy() {
+		if (this.data.interval) {
+			clearInterval(this.data.interval)
+		}
+	}
 }
 
 module.exports = MixEffectInstance

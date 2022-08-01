@@ -6,6 +6,9 @@ const arrayOf = (count, start = 0, step = 1) => {
 	return array
 }
 
+const generateChoices = ({ label, base, count }) => arrayOf(count, base).map((n) => ({ id: n, label: `${label} ${n}` }))
+
 module.exports = {
 	arrayOf,
+	generateChoices,
 }
