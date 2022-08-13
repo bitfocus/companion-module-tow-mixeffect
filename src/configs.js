@@ -30,6 +30,32 @@ module.exports = {
 				required: true,
 			},
 			{
+				type: 'checkbox',
+				label: 'Enable Feedback Polling',
+				id: 'feedbackPolling',
+				default: true
+			},
+			{
+				type: 'number',
+				id: 'httpServerPort',
+				label: 'HTTP Server Port',
+				width: 6,
+				min: 1024,
+				max: 65535,
+				step: 1,
+				default: 8080,
+			},
+			{
+				type: 'number',
+				id: 'pollingInterval',
+				label: 'Polling Interval',
+				width: 6,
+				min: 500,
+				max: 10000,
+				step: 1,
+				default: 500,
+			},
+			{
 				type: 'text',
 				id: 'notice',
 				width: 12,
