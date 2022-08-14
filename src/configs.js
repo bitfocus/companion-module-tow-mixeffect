@@ -53,7 +53,7 @@ module.exports = {
 				type: 'checkbox',
 				label: 'Enable Feedback Polling',
 				id: 'feedbackPolling',
-				default: true
+				default: true,
 			},
 			{
 				type: 'text',
