@@ -10,7 +10,7 @@ module.exports = {
 		if (!this.config.feedbackPolling) {
 			return
 		}
-		if (this.config.ip) {
+		if (this.config.ip && this.config.httpServerPort && this.config.pollingInterval) {
 			this.data.interval = setInterval(() => {
 				this.system.emit('rest_get', this.getUrl(), (err, result) => {
 					if (err !== null) {
