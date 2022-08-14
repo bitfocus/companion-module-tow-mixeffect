@@ -23,17 +23,21 @@ module.exports = {
 			{
 				type: 'textinput',
 				id: 'port',
-				label: 'Target Port',
+				label: 'OSC Port',
 				width: 6,
 				regex: this.REGEX_PORT,
 				default: this.DEFAULT_PORT,
 				required: true,
 			},
 			{
-				type: 'checkbox',
-				label: 'Enable Feedback Polling',
-				id: 'feedbackPolling',
-				default: true
+				type: 'number',
+				id: 'pollingInterval',
+				label: 'Polling Interval (milliseconds)',
+				width: 6,
+				min: 500,
+				max: 10000,
+				step: 1,
+				default: 500,
 			},
 			{
 				type: 'number',
@@ -46,14 +50,10 @@ module.exports = {
 				default: 8080,
 			},
 			{
-				type: 'number',
-				id: 'pollingInterval',
-				label: 'Polling Interval',
-				width: 6,
-				min: 500,
-				max: 10000,
-				step: 1,
-				default: 500,
+				type: 'checkbox',
+				label: 'Enable Feedback Polling',
+				id: 'feedbackPolling',
+				default: true
 			},
 			{
 				type: 'text',
