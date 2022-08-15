@@ -113,6 +113,27 @@ module.exports = {
 		}
 
 		//TODO: superSource
+		for (let i = 0; i < switcher.superSources; i++) {
+			this.variableDefinitions.push({
+				name: 'superSource_cascade',
+				label: 'SuperSource: Cascade',
+			})
+			
+			/*
+			TODO: ssrc
+			*/
+
+			this.variableDefinitions.push({
+				name: 'superSource_animationSpeed',
+				label: 'SuperSource: Animation Speed',
+			})
+			
+			this.variableDefinitions.push({
+				name: 'superSource_interpolationStyle',
+				label: 'SuperSource: Interpolation Style',
+			})
+		}
+		
 
 		// output
 		this.variableDefinitions.push({
