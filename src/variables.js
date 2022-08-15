@@ -403,7 +403,10 @@ module.exports = {
 
 		//TODO: classic audio
 		if (switcher.fairlightAudio === false) {
-			// not sure what to do here. Need JSON file to process.
+			let audioSourceLength = switcher.audioSources.length
+			for (let i = 0; i < audioSourceLength; i++) {
+				// not sure what to do here. Need JSON file to process.
+			}
 		}
 
 		//TODO: sources
