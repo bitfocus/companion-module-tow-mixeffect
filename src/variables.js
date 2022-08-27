@@ -1143,11 +1143,8 @@ module.exports = {
 		// mediaPool
 		let mediaPoolInfo = data?.mediaPool
 		for (const [key, value] of Object.entries(mediaPoolInfo)) {
-			if (key === 'clipCapacity') {
-				this.updateVariable(`mediaPool_clipCapacity`, value)
-			}
-			if (key === 'stillCapacity') {
-				this.updateVariable(`mediaPool_stillCapacity`, value)
+			if (key.match(/^(clipCapacity|stillCapacity)$/)) {
+				this.updateVariable(`mediaPool_${key}`, value)
 			}
 			if (key === 'stills') {
 				//TODO: stills
@@ -1183,55 +1180,13 @@ module.exports = {
 		data?.me?.forEach((item) => {
 			let meId = item.index + 1
 			for (const [key, value] of Object.entries(item)) {
-				if (key === 'transitionDve') {
-					this.updateVariable(`me_${meId}_transitionDve_logoRate`, value?.logoRate)
-					this.updateVariable(`me_${meId}_transitionDve_style`, value?.style)
-					this.updateVariable(`me_${meId}_transitionDve_fillSource`, value?.fillSource)
-					this.updateVariable(`me_${meId}_transitionDve_reverse`, value?.reverse)
-					this.updateVariable(`me_${meId}_transitionDve_rate`, value?.rate)
-					this.updateVariable(`me_${meId}_transitionDve_flipFlop`, value?.flipFlop)
-					this.updateVariable(`me_${meId}_transitionDve_keySource`, value?.keySource)
-					this.updateVariable(`me_${meId}_transitionDve_preMultiplied`, value?.preMultiplied)
-					this.updateVariable(`me_${meId}_transitionDve_enableKey`, value?.enableKey)
-					this.updateVariable(`me_${meId}_transitionDve_invertKey`, value?.invertKey)
+				if (key.match(/^(preview|transitionMix|index|inTransition|ftbInTransition|backgroundState|ftb|program)$/)) {
+					this.updateVariable(`me_${meId}_${key}`, value)
 				}
-				if (key === 'preview') {
-					this.updateVariable(`me_${meId}_preview`, value)
-				}
-				if (key === 'transitionDip') {
-					this.updateVariable(`me_${meId}_transitionDip_dipSource`, value?.dipSource)
-					this.updateVariable(`me_${meId}_transitionDip_rate`, value?.rate)
-				}
-				if (key === 'transitionMix') {
-					this.updateVariable(`me_${meId}_transitionMix_rate`, value?.rate)
-				}
-				if (key === 'index') {
-					this.updateVariable(`me_${meId}_index`, value)
-				}
-				if (key === 'inTransition') {
-					this.updateVariable(`me_${meId}_inTransition`, value)
-				}
-				if (key === 'transitionSting') {
-					this.updateVariable(`me_${meId}_transitionSting_source`, value?.source)
-					this.updateVariable(`me_${meId}_transitionSting_triggerPoint`, value?.triggerPoint)
-					this.updateVariable(`me_${meId}_transitionSting_clipDuration`, value?.clipDuration)
-					this.updateVariable(`me_${meId}_transitionSting_mixRate`, value?.mixRate)
-					this.updateVariable(`me_${meId}_transitionSting_preMultiplied`, value?.preMultiplied)
-					this.updateVariable(`me_${meId}_transitionSting_preRoll`, value?.preRoll)
-					this.updateVariable(`me_${meId}_transitionSting_invertKey`, value?.invertKey)
-				}
-				if (key === 'ftbInTransition') {
-					this.updateVariable(`me_${meId}_ftbInTransition`, value)
-				}
-				if (key === 'backgroundState') {
-					this.updateVariable(`me_${meId}_backgroundState`, value)
-				}
-				if (key === 'transitionWipe') {
-					this.updateVariable(`me_${meId}_transitionWipe_pattern`, value?.pattern)
-					this.updateVariable(`me_${meId}_transitionWipe_flipFlop`, value?.flipFlop)
-					this.updateVariable(`me_${meId}_transitionWipe_fillSource`, value?.fillSource)
-					this.updateVariable(`me_${meId}_transitionWipe_reverse`, value?.reverse)
-					this.updateVariable(`me_${meId}_transitionWipe_rate`, value?.rate)
+				if (key.match(/^(transitionDve|transitionDip|transitionSting|transitionWipe|transition)$/)) {
+					for (const [insideKey, insideValue] of Object.entries(value)) {
+						this.updateVariable(`me_${meId}_${key}_${insideKey}`, insideValue)
+					}
 				}
 				if (key === 'usk') {
 					value?.forEach((uskItem) => {
@@ -1246,16 +1201,6 @@ module.exports = {
 							}
 						}
 					})
-				}
-				if (key === 'ftb') {
-					this.updateVariable(`me_${meId}_ftb`, value)
-				}
-				if (key === 'program') {
-					this.updateVariable(`me_${meId}_program`, value)
-				}
-				if (key === 'transition') {
-					this.updateVariable(`me_${meId}_transition_style`, value?.style)
-					this.updateVariable(`me_${meId}_transition_rate`, value?.rate)
 				}
 			}
 		})
