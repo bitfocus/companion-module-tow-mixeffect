@@ -1211,7 +1211,12 @@ module.exports = {
 			if (key !== 'macros') {
 				this.updateVariable(`macros_${key}`, value)
 			} else {
-				//TODO: do something with key='macros'
+				value?.forEach((macroItem) => {
+					let macroId = macroItem.index + 1
+					for (const [insideKey, insideValue] of Object.entries(macroItem)) {
+						this.updateVariable(`macros_${macroId}_${insideKey}`, insideValue)
+					}
+				})
 			}
 		}
 	},
