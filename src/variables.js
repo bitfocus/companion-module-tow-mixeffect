@@ -118,7 +118,7 @@ module.exports = {
 				name: 'superSource_cascade',
 				label: 'SuperSource: Cascade',
 			})
-			
+
 			/*
 			TODO: ssrc
 			*/
@@ -127,13 +127,12 @@ module.exports = {
 				name: 'superSource_animationSpeed',
 				label: 'SuperSource: Animation Speed',
 			})
-			
+
 			this.variableDefinitions.push({
 				name: 'superSource_interpolationStyle',
 				label: 'SuperSource: Interpolation Style',
 			})
 		}
-		
 
 		// output
 		this.variableDefinitions.push({
@@ -161,7 +160,7 @@ module.exports = {
 			label: 'Output: Use Low Latency',
 		})
 
-		//TODO: fairlight
+		// fairlight
 		if (switcher.fairlightAudio === true) {
 			let audioSourceLength = switcher.audioSources.length
 			// sources array begin
@@ -292,7 +291,37 @@ module.exports = {
 				})
 
 				// equalizerBands array begin
-				//TODO
+				for (let j = 0; i < 5; i++) {
+					let eqBandId = j + 1
+					this.variableDefinitions.push({
+						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_bandEnabled`,
+						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} enabled`,
+					})
+					this.variableDefinitions.push({
+						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_frequency`,
+						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Frequency`,
+					})
+					this.variableDefinitions.push({
+						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_frequencyRange`,
+						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Frequency Range`,
+					})
+					this.variableDefinitions.push({
+						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_qFactor`,
+						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} qFactor`,
+					})
+					this.variableDefinitions.push({
+						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_band`,
+						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Band`,
+					})
+					this.variableDefinitions.push({
+						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_gain`,
+						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Gain`,
+					})
+					this.variableDefinitions.push({
+						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_shape`,
+						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Shape`,
+					})
+				}
 				// equalizerBands array end
 			}
 			// sources array end
@@ -431,9 +460,83 @@ module.exports = {
 		}
 
 		//TODO: sources
+		let sourcesLength = switcher.videoSources.length
+		for (let i = 0; i < sourcesLength; i++) {
+			let srcId = i + 1
+			this.variableDefinitions.push({
+				name: `source_${srcId}_outputSource`,
+				label: `Source ${srcId} Output Source`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_keySource`,
+				label: `Source ${srcId} Key Source`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_longName`,
+				label: `Source ${srcId} Long Name`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_inputSource`,
+				label: `Source ${srcId} Input Source`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_shortName`,
+				label: `Source ${srcId} Short Name`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_mediaSourceFillOnly`,
+				label: `Source ${srcId} Media Source Fill Only`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_me2AndFillSources`,
+				label: `Source ${srcId} ME2 And Fill Sources`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_auxSource`,
+				label: `Source ${srcId} Aux Source`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_superSourceBoxSource`,
+				label: `Source ${srcId} Super Source Box Source`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_me1AndFillSources`,
+				label: `Source ${srcId} ME1 And Fill Sources`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_me4AndFillSources`,
+				label: `Source ${srcId} ME4 And Fill Sources`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_superSourceArtSource`,
+				label: `Source ${srcId} Super Source Art Source`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_mediaSource`,
+				label: `Source ${srcId} Media Source`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_inputSourceForHyperDeck`,
+				label: `Source ${srcId} Input Source For HyperDeck`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_multiviewSource`,
+				label: `Source ${srcId} Multiview Source`,
+			})
+			this.variableDefinitions.push({
+				name: `source_${srcId}_me3AndFillSources`,
+				label: `Source ${srcId} ME3 And Fill Sources`,
+			})
+		}
 
 		// color generators
-		for (let i = 0; i < switcher.colorGenerators; i++) {
+		let colorGeneratorCount = 0
+		switcher?.videoSources?.forEach((item) => {
+			if (item.type === 3) {
+				colorGeneratorCount++
+			}
+		})
+		for (let i = 0; i < colorGeneratorCount; i++) {
 			let cgId = i + 1
 			this.variableDefinitions.push({
 				name: `colorGenerator_${cgId}_hue`,
@@ -450,6 +553,56 @@ module.exports = {
 		}
 
 		//TODO: mediaPool
+		this.variableDefinitions.push({
+			name: 'mediaPool_clipCapacity',
+			label: 'Media Pool: Clip Capacity',
+		})
+		this.variableDefinitions.push({
+			name: 'mediaPool_stillCapacity',
+			label: 'Media Pool: Still Capacity',
+		})
+		for (let i = 0; i < switcher.mediaStills; i++) {
+			let stillId = i + 1
+			this.variableDefinitions.push({
+				name: `mediaPool_still_${stillId}_filename`,
+				label: `Media Pool: Still ${stillId} Filename`,
+			})
+			this.variableDefinitions.push({
+				name: `mediaPool_still_${stillId}_index`,
+				label: `Media Pool: Still ${stillId} Index`,
+			})
+		}
+		for (let i = 0; i < switcher.mediaPlayers; i++) {
+			let mpId = i + 1
+			this.variableDefinitions.push({
+				name: `mediaPool_mp_${mpId}_stillIndex`,
+				label: `Media Pool: Media Player ${mpId} Still Index`,
+			})
+			this.variableDefinitions.push({
+				name: `mediaPool_mp_${mpId}_clipIndex`,
+				label: `Media Pool: Media Player ${mpId} Clip Index`,
+			})
+			this.variableDefinitions.push({
+				name: `mediaPool_mp_${mpId}_type`,
+				label: `Media Pool: Media Player ${mpId} Type`,
+			})
+			this.variableDefinitions.push({
+				name: `mediaPool_mp_${mpId}_index`,
+				label: `Media Pool: Media Player ${mpId} Index`,
+			})
+		}
+		// mediaPool.clips
+		for (let i = 0; i < switcher.mediaClips; i++) {
+			let mcId = i + 1
+			console.log(mcId)
+			//TODO: not sure what to do here. Need JSON file to process.
+		}
+		// mediaPool.audioClips
+		for (let i = 0; i < switcher.mediaClips; i++) {
+			let mcId = i + 1
+			console.log(mcId)
+			//TODO: not sure what to do here. Need JSON file to process.
+		}
 
 		// aux
 		for (let i = 0; i < switcher.auxBuses; i++) {
@@ -970,13 +1123,14 @@ module.exports = {
 		// fairlight
 
 		// sources
-		//data?.sources?.forEach(item => {
-		//	let sourceId = item.index + 1
-		//		const object = item
-		//	for(const [key, value] of Object.entries(object)) {
-		//		this.updateVariable(`source_${auxId}_${key}`, value)
-		//	}
-		//})
+		let sourceId = 1
+		data?.sources?.forEach((item) => {
+			const object = item
+			for (const [key, value] of Object.entries(object)) {
+				this.updateVariable(`source_${sourceId}_${key}`, value)
+			}
+			sourceId++
+		})
 
 		// colorGenerators
 		data?.colorGenerators?.forEach((item) => {
@@ -987,7 +1141,27 @@ module.exports = {
 		})
 
 		// mediaPool
-		//let mediaPoolInfo = data?.mediaPool
+		let mediaPoolInfo = data?.mediaPool
+		for (const [key, value] of Object.entries(mediaPoolInfo)) {
+			if (key === 'clipCapacity') {
+				this.updateVariable(`mediaPool_clipCapacity`, value)
+			}
+			if (key === 'stillCapacity') {
+				this.updateVariable(`mediaPool_stillCapacity`, value)
+			}
+			if (key === 'stills') {
+				//TODO: stills
+			}
+			if (key === 'mp') {
+				//TODO: mp
+			}
+			if (key === 'audioClips') {
+				//TODO: audioClips
+			}
+			if (key === 'clips') {
+				//TODO: clips
+			}
+		}
 
 		// aux
 		data?.aux?.forEach((item) => {
@@ -1006,6 +1180,85 @@ module.exports = {
 		})
 
 		// me
+		data?.me?.forEach((item) => {
+			let meId = item.index + 1
+			for (const [key, value] of Object.entries(item)) {
+				if (key === 'transitionDve') {
+					this.updateVariable(`me_${meId}_transitionDve_logoRate`, value?.logoRate)
+					this.updateVariable(`me_${meId}_transitionDve_style`, value?.style)
+					this.updateVariable(`me_${meId}_transitionDve_fillSource`, value?.fillSource)
+					this.updateVariable(`me_${meId}_transitionDve_reverse`, value?.reverse)
+					this.updateVariable(`me_${meId}_transitionDve_rate`, value?.rate)
+					this.updateVariable(`me_${meId}_transitionDve_flipFlop`, value?.flipFlop)
+					this.updateVariable(`me_${meId}_transitionDve_keySource`, value?.keySource)
+					this.updateVariable(`me_${meId}_transitionDve_preMultiplied`, value?.preMultiplied)
+					this.updateVariable(`me_${meId}_transitionDve_enableKey`, value?.enableKey)
+					this.updateVariable(`me_${meId}_transitionDve_invertKey`, value?.invertKey)
+				}
+				if (key === 'preview') {
+					this.updateVariable(`me_${meId}_preview`, value)
+				}
+				if (key === 'transitionDip') {
+					this.updateVariable(`me_${meId}_transitionDip_dipSource`, value?.dipSource)
+					this.updateVariable(`me_${meId}_transitionDip_rate`, value?.rate)
+				}
+				if (key === 'transitionMix') {
+					this.updateVariable(`me_${meId}_transitionMix_rate`, value?.rate)
+				}
+				if (key === 'index') {
+					this.updateVariable(`me_${meId}_index`, value)
+				}
+				if (key === 'inTransition') {
+					this.updateVariable(`me_${meId}_inTransition`, value)
+				}
+				if (key === 'transitionSting') {
+					this.updateVariable(`me_${meId}_transitionSting_source`, value?.source)
+					this.updateVariable(`me_${meId}_transitionSting_triggerPoint`, value?.triggerPoint)
+					this.updateVariable(`me_${meId}_transitionSting_clipDuration`, value?.clipDuration)
+					this.updateVariable(`me_${meId}_transitionSting_mixRate`, value?.mixRate)
+					this.updateVariable(`me_${meId}_transitionSting_preMultiplied`, value?.preMultiplied)
+					this.updateVariable(`me_${meId}_transitionSting_preRoll`, value?.preRoll)
+					this.updateVariable(`me_${meId}_transitionSting_invertKey`, value?.invertKey)
+				}
+				if (key === 'ftbInTransition') {
+					this.updateVariable(`me_${meId}_ftbInTransition`, value)
+				}
+				if (key === 'backgroundState') {
+					this.updateVariable(`me_${meId}_backgroundState`, value)
+				}
+				if (key === 'transitionWipe') {
+					this.updateVariable(`me_${meId}_transitionWipe_pattern`, value?.pattern)
+					this.updateVariable(`me_${meId}_transitionWipe_flipFlop`, value?.flipFlop)
+					this.updateVariable(`me_${meId}_transitionWipe_fillSource`, value?.fillSource)
+					this.updateVariable(`me_${meId}_transitionWipe_reverse`, value?.reverse)
+					this.updateVariable(`me_${meId}_transitionWipe_rate`, value?.rate)
+				}
+				if (key === 'usk') {
+					value?.forEach((uskItem) => {
+						let uskId = uskItem.index + 1
+						for (const [uskKey, uskValue] of Object.entries(uskItem)) {
+							if (uskKey.match(/^(chromaAdvanced|dve|pattern|luma)$/)) {
+								for (const [insideKey, insideValue] of Object.entries(uskValue)) {
+									this.updateVariable(`me_${meId}_usk_${uskId}_${uskKey}_${insideKey}`, insideValue)
+								}
+							} else {
+								this.updateVariable(`me_${meId}_usk_${uskId}_${uskKey}`, uskValue)
+							}
+						}
+					})
+				}
+				if (key === 'ftb') {
+					this.updateVariable(`me_${meId}_ftb`, value)
+				}
+				if (key === 'program') {
+					this.updateVariable(`me_${meId}_program`, value)
+				}
+				if (key === 'transition') {
+					this.updateVariable(`me_${meId}_transition_style`, value?.style)
+					this.updateVariable(`me_${meId}_transition_rate`, value?.rate)
+				}
+			}
+		})
 
 		// macros
 		let macroInfo = data?.macros
