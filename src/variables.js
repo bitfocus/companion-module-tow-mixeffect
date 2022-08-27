@@ -1180,10 +1180,10 @@ module.exports = {
 		data?.me?.forEach((item) => {
 			let meId = item.index + 1
 			for (const [key, value] of Object.entries(item)) {
-				if (key.match(/^(preview|transitionMix|index|inTransition|ftbInTransition|backgroundState|ftb|program)$/)) {
+				if (key.match(/^(preview|index|inTransition|ftbInTransition|backgroundState|ftb|program)$/)) {
 					this.updateVariable(`me_${meId}_${key}`, value)
 				}
-				if (key.match(/^(transitionDve|transitionDip|transitionSting|transitionWipe|transition)$/)) {
+				if (key.match(/^(transitionDve|transitionDip|transitionMix|transitionSting|transitionWipe|transition)$/)) {
 					for (const [insideKey, insideValue] of Object.entries(value)) {
 						this.updateVariable(`me_${meId}_${key}_${insideKey}`, insideValue)
 					}
