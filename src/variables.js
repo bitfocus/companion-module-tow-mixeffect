@@ -1214,7 +1214,9 @@ module.exports = {
 				value?.forEach((macroItem) => {
 					let macroId = macroItem.index + 1
 					for (const [insideKey, insideValue] of Object.entries(macroItem)) {
-						this.updateVariable(`macros_${macroId}_${insideKey}`, insideValue)
+						if (insideKey.match(/^(name)$/)) {
+							this.updateVariable(`macros_${macroId}_${insideKey}`, insideValue)
+						}
 					}
 				})
 			}
