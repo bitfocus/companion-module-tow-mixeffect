@@ -626,10 +626,6 @@ module.exports = {
 				name: `mediaPool_still_${stillId}_filename`,
 				label: `Media Pool: Still ${stillId} Filename`,
 			})
-			this.variableDefinitions.push({
-				name: `mediaPool_still_${stillId}_index`,
-				label: `Media Pool: Still ${stillId} Index`,
-			})
 		}
 		for (let i = 0; i < switcher.mediaPlayers; i++) {
 			let mpId = i + 1
@@ -645,10 +641,10 @@ module.exports = {
 				name: `mediaPool_mp_${mpId}_type`,
 				label: `Media Pool: Media Player ${mpId} Type`,
 			})
-			this.variableDefinitions.push({
-				name: `mediaPool_mp_${mpId}_index`,
-				label: `Media Pool: Media Player ${mpId} Index`,
-			})
+			// this.variableDefinitions.push({
+			// 	name: `mediaPool_mp_${mpId}_index`,
+			// 	label: `Media Pool: Media Player ${mpId} Index`,
+			// })
 		}
 		// mediaPool.clips
 		for (let i = 0; i < switcher.mediaClips; i++) {
@@ -1288,10 +1284,20 @@ module.exports = {
 				this.updateVariable(`mediaPool_${key}`, value)
 			}
 			if (key === 'stills') {
-				//TODO: stills
+				value?.forEach((item) => {
+					let stillId = item.index + 1
+					this.updateVariable(`mediaPool_still_${stillId}_filename`, item.filename)
+				})
 			}
 			if (key === 'mp') {
-				//TODO: mp
+				value?.forEach((item) => {
+					let mpId = item.index + 1
+					for (const [secondKey, secondValue] of Object.entries(item)) {
+						if(secondKey !== 'index') {
+							this.updateVariable(`mediaPool_mp_${mpId}_${secondKey}`, secondValue)
+						}
+					}
+				})
 			}
 			if (key === 'audioClips') {
 				//TODO: audioClips
