@@ -28,7 +28,7 @@ const getFeedbacks = ({ context }) => {
 			id: 'mediaPlayer',
 			storeId: 'selectedMediaPlayer',
 			base: 1,
-			count: 4,
+			count: context.switcher.mediaPlayers,
 		}),
 
 		selected_mix_effect_bus: generateInternalFeedback({

@@ -1209,33 +1209,33 @@ module.exports = {
 						if (secondKey.match(/^(limiter|compressor)$/)) {
 							for (const [thirdKey, thirdValue] of Object.entries(secondValue)) {
 								this.updateVariable(`fairlightAudio_${key}_${secondKey}_${thirdKey}`, thirdValue)
-							}							
-						} else if(secondKey === 'equalizerBands' ) {
+							}
+						} else if (secondKey === 'equalizerBands') {
 							secondValue?.forEach((bandItem) => {
 								let bandId = bandItem.band + 1
 								for (const [bandKey, bandValue] of Object.entries(bandItem)) {
 									this.updateVariable(`fairlightAudio_${key}_equalizerBand_${bandId}_${bandKey}`, bandValue)
-								}							
+								}
 							})
 						} else {
 							this.updateVariable(`fairlightAudio_${key}_${secondKey}`, secondValue)
 						}
 					}
 				}
-				if(key === 'sources') {
+				if (key === 'sources') {
 					let srcId = 1
 					value?.forEach((sourceItem) => {
 						for (const [secondKey, secondValue] of Object.entries(sourceItem)) {
 							if (secondKey.match(/^(limiter|compressor|expander)$/)) {
 								for (const [thirdKey, thirdValue] of Object.entries(secondValue)) {
 									this.updateVariable(`fairlightAudio_source_${srcId}_${secondKey}_${thirdKey}`, thirdValue)
-								}							
-							} else if(secondKey === 'equalizerBands' ) {
+								}
+							} else if (secondKey === 'equalizerBands') {
 								secondValue?.forEach((bandItem) => {
 									let bandId = bandItem.band + 1
 									for (const [bandKey, bandValue] of Object.entries(bandItem)) {
 										this.updateVariable(`fairlightAudio_source_${srcId}_equalizerBand_${bandId}_${bandKey}`, bandValue)
-									}							
+									}
 								})
 							} else {
 								this.updateVariable(`fairlightAudio_source_${srcId}_${secondKey}`, secondValue)
@@ -1293,7 +1293,7 @@ module.exports = {
 				value?.forEach((item) => {
 					let mpId = item.index + 1
 					for (const [secondKey, secondValue] of Object.entries(item)) {
-						if(secondKey !== 'index') {
+						if (secondKey !== 'index') {
 							this.updateVariable(`mediaPool_mp_${mpId}_${secondKey}`, secondValue)
 						}
 					}
