@@ -112,16 +112,12 @@ module.exports = {
 			})
 		}
 
-		//TODO: superSource
-		for (let i = 0; i < switcher.superSources; i++) {
+		// superSource
+		if (switcher.superSources > 0) {
 			this.variableDefinitions.push({
 				name: 'superSource_cascade',
 				label: 'SuperSource: Cascade',
 			})
-
-			/*
-			TODO: ssrc
-			*/
 
 			this.variableDefinitions.push({
 				name: 'superSource_animationSpeed',
@@ -132,6 +128,57 @@ module.exports = {
 				name: 'superSource_interpolationStyle',
 				label: 'SuperSource: Interpolation Style',
 			})
+			for (let i = 0; i < switcher.superSources; i++) {
+				let ssId = i + 1
+				// art
+				this.variableDefinitions.push({
+					name: `superSource_ssrc_${ssId}_art_borderEnabled`,
+					label: `SuperSource: SSRC ${ssId} Art: Border Enabled`,
+				})
+				this.variableDefinitions.push({
+					name: `superSource_ssrc_${ssId}_art_placeIn`,
+					label: `SuperSource: SSRC ${ssId} Art: Place In`,
+				})
+				this.variableDefinitions.push({
+					name: `superSource_ssrc_${ssId}_art_invertKey`,
+					label: `SuperSource: SSRC ${ssId} Art: Invert Key`,
+				})
+				this.variableDefinitions.push({
+					name: `superSource_ssrc_${ssId}_art_preMultiplied`,
+					label: `SuperSource: SSRC ${ssId} Art: Pre-Multiplied`,
+				})
+				this.variableDefinitions.push({
+					name: `superSource_ssrc_${ssId}_art_borderBevel`,
+					label: `SuperSource: SSRC ${ssId} Art: Border Bevel`,
+				})
+
+				// currentPreset
+				this.variableDefinitions.push({
+					name: `superSource_ssrc_${ssId}_currentPreset`,
+					label: `SuperSource: SSRC ${ssId} Current Preset`,
+				})
+
+				// boxes
+				for (let j = 0; j < 4; j++) {
+					let boxId = j + 1
+					this.variableDefinitions.push({
+						name: `superSource_ssrc_${ssId}_box_${boxId}_highlighted`,
+						label: `SuperSource: SSRC ${ssId} Box ${boxId}: Highlighted`,
+					})
+					this.variableDefinitions.push({
+						name: `superSource_ssrc_${ssId}_box_${boxId}_enabled`,
+						label: `SuperSource: SSRC ${ssId} Box ${boxId}: Enabled`,
+					})
+					this.variableDefinitions.push({
+						name: `superSource_ssrc_${ssId}_box_${boxId}_cropped`,
+						label: `SuperSource: SSRC ${ssId} Box ${boxId}: Cropped`,
+					})
+					this.variableDefinitions.push({
+						name: `superSource_ssrc_${ssId}_box_${boxId}_source`,
+						label: `SuperSource: SSRC ${ssId} Box ${boxId}: Source`,
+					})
+				}
+			}
 		}
 
 		// output
@@ -451,11 +498,23 @@ module.exports = {
 			})
 		}
 
-		//TODO: classic audio
+		// classic audio
 		if (switcher.fairlightAudio === false) {
 			let audioSourceLength = switcher.audioSources.length
 			for (let i = 0; i < audioSourceLength; i++) {
-				// not sure what to do here. Need JSON file to process.
+				let srcId = i + 1
+				this.variableDefinitions.push({
+					name: `legacyAudio_source_${srcId}_mixOption`,
+					label: `Legacy Audio Source ${srcId}: Mix Option`,
+				})
+				this.variableDefinitions.push({
+					name: `legacyAudio_source_${srcId}_audioSource`,
+					label: `Legacy Audio Source ${srcId}: Audio Source`,
+				})
+				this.variableDefinitions.push({
+					name: `legacyAudio_source_${srcId}_isMixedIn`,
+					label: `Legacy Audio Source ${srcId}: Is Mixed In?`,
+				})
 			}
 		}
 
@@ -1106,11 +1165,33 @@ module.exports = {
 
 		// superSource
 		let superSourceInfo = data?.superSource
-		for (const [key, value] of Object.entries(superSourceInfo)) {
-			if (key !== 'ssrc') {
-				this.updateVariable(`macros_${key}`, value)
-			} else {
-				//TODO: do something with key='ssrc'
+		if (typeof superSourceInfo !== 'undefined') {
+			for (const [key, value] of Object.entries(superSourceInfo)) {
+				if (key !== 'ssrc') {
+					this.updateVariable(`superSource_${key}`, value)
+				} else {
+					value?.forEach((superSourceItem) => {
+						let superSourceId = superSourceItem.index + 1
+						for (const [insideKey, insideValue] of Object.entries(superSourceItem)) {
+							if (insideKey === 'art') {
+								for (const [artKey, artValue] of Object.entries(insideValue)) {
+									this.updateVariable(`superSource_ssrc_${superSourceId}_${insideKey}_${artKey}`, artValue)
+								}
+							}
+							if (insideKey === 'currentPreset') {
+								this.updateVariable(`superSource_ssrc_${superSourceId}_${insideKey}`, insideValue)
+							}
+							if (insideKey === 'boxes') {
+								insideValue?.forEach((boxItem) => {
+									let boxId = boxItem.boxId + 1
+									for (const [artKey, artValue] of Object.entries(boxItem)) {
+										this.updateVariable(`superSource_ssrc_${superSourceId}_box_${boxId}_${artKey}`, artValue)
+									}
+								})
+							}
+						}
+					})
+				}
 			}
 		}
 
@@ -1121,6 +1202,22 @@ module.exports = {
 		}
 
 		// fairlight
+		let fairlightInfo = data?.fairlight
+		if (typeof fairlightInfo !== 'undefined') {
+			// TODO:
+		}
+
+		// legacyAudio
+		let legacyAudioInfo = data?.legacyAudio
+		if (typeof legacyAudioInfo !== 'undefined') {
+			data?.sources?.forEach((legacyAudioItem) => {
+				let srcId = 1
+				for (const [key, value] of Object.entries(legacyAudioItem)) {
+					this.updateVariable(`legacyAudio_source_${srcId}_${key}`, value)
+				}
+				srcId++
+			})
+		}
 
 		// sources
 		let sourceId = 1
@@ -1207,18 +1304,20 @@ module.exports = {
 
 		// macros
 		let macroInfo = data?.macros
-		for (const [key, value] of Object.entries(macroInfo)) {
-			if (key !== 'macros') {
-				this.updateVariable(`macros_${key}`, value)
-			} else {
-				value?.forEach((macroItem) => {
-					let macroId = macroItem.index + 1
-					for (const [insideKey, insideValue] of Object.entries(macroItem)) {
-						if (insideKey.match(/^(name)$/)) {
-							this.updateVariable(`macros_${macroId}_${insideKey}`, insideValue)
+		if (typeof macroInfo !== 'undefined') {
+			for (const [key, value] of Object.entries(macroInfo)) {
+				if (key !== 'macros') {
+					this.updateVariable(`macros_${key}`, value)
+				} else {
+					value?.forEach((macroItem) => {
+						let macroId = macroItem.index + 1
+						for (const [insideKey, insideValue] of Object.entries(macroItem)) {
+							if (insideKey.match(/^(name)$/)) {
+								this.updateVariable(`macros_${macroId}_${insideKey}`, insideValue)
+							}
 						}
-					}
-				})
+					})
+				}
 			}
 		}
 	},
