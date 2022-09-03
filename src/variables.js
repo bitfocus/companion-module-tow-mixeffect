@@ -518,7 +518,7 @@ module.exports = {
 			}
 		}
 
-		//TODO: sources
+		// sources
 		let sourcesLength = switcher.videoSources.length
 		for (let i = 0; i < sourcesLength; i++) {
 			let srcId = i + 1
@@ -611,7 +611,7 @@ module.exports = {
 			})
 		}
 
-		//TODO: mediaPool
+		// mediaPool
 		this.variableDefinitions.push({
 			name: 'mediaPool_clipCapacity',
 			label: 'Media Pool: Clip Capacity',
@@ -1250,8 +1250,8 @@ module.exports = {
 		// legacyAudio
 		let legacyAudioInfo = data?.legacyAudio
 		if (typeof legacyAudioInfo !== 'undefined') {
+			let srcId = 1
 			data?.sources?.forEach((legacyAudioItem) => {
-				let srcId = 1
 				for (const [key, value] of Object.entries(legacyAudioItem)) {
 					this.updateVariable(`legacyAudio_source_${srcId}_${key}`, value)
 				}
