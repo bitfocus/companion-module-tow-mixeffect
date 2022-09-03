@@ -338,7 +338,7 @@ module.exports = {
 				})
 
 				// equalizerBands array begin
-				for (let j = 0; i < 5; i++) {
+				for (let j = 0; j < 6; j++) {
 					let eqBandId = j + 1
 					this.variableDefinitions.push({
 						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_bandEnabled`,
@@ -433,7 +433,7 @@ module.exports = {
 			})
 
 			//TODO: are there only 6 bands for all models?
-			for (let i = 0; i < 5; i++) {
+			for (let i = 0; i < 6; i++) {
 				let eqId = i + 1
 				this.variableDefinitions.push({
 					name: `fairlightAudio_master_equalizerBand_${eqId}_bandEnabled`,
@@ -1204,7 +1204,51 @@ module.exports = {
 		// fairlight
 		let fairlightInfo = data?.fairlight
 		if (typeof fairlightInfo !== 'undefined') {
-			// TODO:
+			for (const [key, value] of Object.entries(fairlightInfo)) {
+				if (key.match(/^(vfaEnabled|canVfa)$/)) {
+					this.updateVariable(`fairlightAudio_${key}`, value)
+				}
+				if (key.match(/^(solo|master)$/)) {
+					for (const [secondKey, secondValue] of Object.entries(value)) {
+						if (secondKey.match(/^(limiter|compressor)$/)) {
+							for (const [thirdKey, thirdValue] of Object.entries(secondValue)) {
+								this.updateVariable(`fairlightAudio_${key}_${secondKey}_${thirdKey}`, thirdValue)
+							}							
+						} else if(secondKey === 'equalizerBands' ) {
+							secondValue?.forEach((bandItem) => {
+								let bandId = bandItem.band + 1
+								for (const [bandKey, bandValue] of Object.entries(bandItem)) {
+									this.updateVariable(`fairlightAudio_${key}_equalizerBand_${bandId}_${bandKey}`, bandValue)
+								}							
+							})
+						} else {
+							this.updateVariable(`fairlightAudio_${key}_${secondKey}`, secondValue)
+						}
+					}
+				}
+				if(key === 'sources') {
+					let srcId = 1
+					value?.forEach((sourceItem) => {
+						for (const [secondKey, secondValue] of Object.entries(sourceItem)) {
+							if (secondKey.match(/^(limiter|compressor|expander)$/)) {
+								for (const [thirdKey, thirdValue] of Object.entries(secondValue)) {
+									this.updateVariable(`fairlightAudio_source_${srcId}_${secondKey}_${thirdKey}`, thirdValue)
+								}							
+							} else if(secondKey === 'equalizerBands' ) {
+								secondValue?.forEach((bandItem) => {
+									let bandId = bandItem.band + 1
+									for (const [bandKey, bandValue] of Object.entries(bandItem)) {
+										this.updateVariable(`fairlightAudio_source_${srcId}_equalizerBand_${bandId}_${bandKey}`, bandValue)
+									}							
+								})
+							} else {
+								this.updateVariable(`fairlightAudio_source_${srcId}_${secondKey}`, secondValue)
+							}
+						}
+						srcId++
+					})
+				}
+			}
 		}
 
 		// legacyAudio
