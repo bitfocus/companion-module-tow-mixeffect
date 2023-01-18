@@ -1,12 +1,15 @@
 const { generateChoices } = require('../utils')
 
+const { combineRgb } = require('@companion-module/base')
+
 const getFeedbacks = ({ context }) => {
+	// here we use the label in option as the name of the feedback
 	const generateInternalFeedback = ({ label, id, storeId, choices, base, count }) => ({
 		type: 'boolean',
-		label: `Selected: ${label}`,
-		style: {
-			color: context.rgb(255, 255, 255),
-			bgcolor: context.rgb(255, 0, 0),
+		name: `Selected: ${label}`,
+		defaultStyle: {
+			color: combineRgb(255, 255, 255),
+			bgcolor: combineRgb(255, 0, 0),
 		},
 		options: [
 			{

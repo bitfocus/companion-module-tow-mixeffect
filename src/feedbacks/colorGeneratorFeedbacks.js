@@ -2,9 +2,9 @@ const { generateFeedback } = require('./utils')
 const { option } = require('../actions/utils')
 
 const feedbacksDefinitions = [
-	{ id: 'colorHue', stateId: 'hue', label: 'Color Generator: Hue', optionType: 'hue' },
-	{ id: 'colorSaturation', stateId: 'saturation', label: 'Color Generator: Saturation', optionType: 'saturation' },
-	{ id: 'colorLuminance', stateId: 'luminance', label: 'Color Generator: Luminance', optionType: 'luminance' },
+	{ id: 'colorHue', stateId: 'hue', name: 'Color Generator: Hue', optionType: 'hue' },
+	{ id: 'colorSaturation', stateId: 'saturation', name: 'Color Generator: Saturation', optionType: 'saturation' },
+	{ id: 'colorLuminance', stateId: 'luminance', name: 'Color Generator: Luminance', optionType: 'luminance' },
 ]
 
 const getFeedbackNames = () => feedbacksDefinitions.map(({ id }) => id)
@@ -12,12 +12,11 @@ const getFeedbackNames = () => feedbacksDefinitions.map(({ id }) => id)
 const getFeedbacks = ({ context }) => {
 	let feedbacks = {}
 
-	feedbacksDefinitions.forEach(({ label, id, stateId, optionType }) => {
+	feedbacksDefinitions.forEach(({ name, id, stateId, optionType }) => {
 		feedbacks = {
 			...feedbacks,
 			[id]: generateFeedback({
-				context,
-				label,
+				name,
 				options: [option[optionType](), option.colorGenerators()],
 				callback: ({ options }) => {
 					const colorGeneratorId = context.selectedOrValue('color_generator', options.colorGenerator) - 1

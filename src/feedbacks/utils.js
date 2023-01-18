@@ -1,9 +1,11 @@
-const generateFeedback = ({ context, label, callback, options, style = {} }) => ({
+const { combineRgb } = require('@companion-module/base')
+
+const generateFeedback = ({ name, callback, options, style = {} }) => ({
 	type: 'boolean',
-	label,
-	style: {
-		color: context.rgb(255, 255, 255),
-		bgcolor: context.rgb(255, 0, 0),
+	name,
+	defaultStyle: {
+		color: combineRgb(255, 255, 255),
+		bgcolor: combineRgb(255, 0, 0),
 		...style,
 	},
 	options,

@@ -2,19 +2,18 @@ const { generateFeedback } = require('./utils')
 const { option } = require('../actions/utils')
 
 const feedbacksDefinitions = [
-	{ id: 'recording', label: 'Output: Recording Status' },
-	{ id: 'streaming', label: 'Output: Streaming Status' },
+	{ id: 'recording', name: 'Output: Recording Status' },
+	{ id: 'streaming', name: 'Output: Streaming Status' },
 ]
 
 const getFeedbacks = ({ context }) => {
 	let feedbacks = {}
 
-	feedbacksDefinitions.forEach(({ label, id }) => {
+	feedbacksDefinitions.forEach(({ name, id }) => {
 		feedbacks = {
 			...feedbacks,
 			[id]: generateFeedback({
-				context,
-				label,
+				name,
 				options: [option.onOff({ id, label: 'Status' })],
 				callback: ({ options }) => Boolean(options[id]) === context.state.output[id],
 			}),

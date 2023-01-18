@@ -2,19 +2,18 @@ const { generateFeedback } = require('./utils')
 const { option } = require('../actions/utils')
 const { availability } = require('../switchers/types')
 
-const feedbacksDefinitions = [{ id: 'auxSource', stateId: 'source', label: 'Aux: source' }]
+const feedbacksDefinitions = [{ id: 'auxSource', stateId: 'source', name: 'Aux: source' }]
 
 const getFeedbackNames = () => feedbacksDefinitions.map(({ id }) => id)
 
 const getFeedbacks = ({ context }) => {
 	let feedbacks = {}
 
-	feedbacksDefinitions.forEach(({ label, id, stateId }) => {
+	feedbacksDefinitions.forEach(({ name, id, stateId }) => {
 		feedbacks = {
 			...feedbacks,
 			[id]: generateFeedback({
-				context,
-				label,
+				name,
 				options: [
 					option.videoSources({
 						context,
