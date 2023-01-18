@@ -1,0 +1,31 @@
+{
+	"id": "tow-mixeffect",
+	"name": "tow-mixeffect",
+	"shortname": "mixeffect",
+	"description": "Companion Module for MixEffect",
+	"version": "0.0.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/bitfocus/companion-module-tow-mixeffect.git",
+	"bugs": "https://github.com/bitfocus/companion-module-tow-mixeffect/issues",
+	"maintainers": [
+		{
+			"name": "Johnny Estilles",
+			"email": "johnny@estilles.com"
+		}
+	],
+	"legacyIds": [],
+	"runtime": {
+		"type": "node18",
+		"api": "nodejs-ipc",
+		"apiVersion": "0.0.0",
+		"entrypoint": "../src/index.js"
+	},
+	"manufacturer": "Adam Tow",
+	"products": [
+		"MixEffect"
+	],
+	"keywords": [
+		"MixEffect",
+		"ATEM"
+	]
+}
