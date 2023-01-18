@@ -5,7 +5,7 @@ const upstreamKeyerActions = ({ context }) => {
 	const actions = {}
 
 	actions.uskSelect = {
-		label: 'USK: Select',
+		name: 'USK: Select',
 		options: [option.usk(context, false)],
 		callback: ({ options }) => {
 			context.updateVariable('usk', options.usk)
@@ -13,7 +13,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChroma = {
-		label: 'USK: Chroma',
+		name: 'USK: Chroma',
 		options: [
 			option.hue(),
 			option.gain(),
@@ -37,7 +37,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvanced = {
-		label: 'USK: Chroma Advanced',
+		name: 'USK: Chroma Advanced',
 		options: [
 			option.value({
 				label: 'Foreground Level',
@@ -93,7 +93,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromeAdvancedSample = {
-		label: 'USK: Chroma Advanced Sample',
+		name: 'USK: Chroma Advanced Sample',
 		options: [
 			{
 				type: 'number',
@@ -137,7 +137,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedForegroundLevelSet = {
-		label: 'USK: Chroma Advanced Foreground Level Set',
+		name: 'USK: Chroma Advanced Foreground Level Set',
 		options: [
 			option.value({
 				label: 'Foreground Level',
@@ -158,7 +158,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedForegroundLevelAdjust = {
-		label: 'USK: Chroma Advanced Foreground Level Adjust',
+		name: 'USK: Chroma Advanced Foreground Level Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -178,7 +178,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedBackgroundLevelSet = {
-		label: 'USK: Chroma Advanced Background Level Set',
+		name: 'USK: Chroma Advanced Background Level Set',
 		options: [
 			option.value({
 				label: 'Background Level',
@@ -199,7 +199,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedBackgroundLevelAdjust = {
-		label: 'USK: Chroma Advanced Background Level Adjust',
+		name: 'USK: Chroma Advanced Background Level Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -219,7 +219,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedKeyEdgeSet = {
-		label: 'USK: Chroma Advanced Key Edge Set',
+		name: 'USK: Chroma Advanced Key Edge Set',
 		options: [
 			option.value({
 				label: 'Key Edge',
@@ -240,7 +240,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedKeyEdgeAdjust = {
-		label: 'USK: Chroma Advanced Key Edge Adjust',
+		name: 'USK: Chroma Advanced Key Edge Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -260,7 +260,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedSpillSuppressionSet = {
-		label: 'USK: Chroma Advanced Spill Suppression Set',
+		name: 'USK: Chroma Advanced Spill Suppression Set',
 		options: [
 			option.value({
 				label: 'Spill Suppression',
@@ -281,7 +281,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedSpillSuppressionAdjust = {
-		label: 'USK: Chroma Advanced Spill Suppression Adjust',
+		name: 'USK: Chroma Advanced Spill Suppression Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -301,7 +301,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedFlareSuppressionSet = {
-		label: 'USK: Chroma Advanced Flare Suppression Set',
+		name: 'USK: Chroma Advanced Flare Suppression Set',
 		options: [
 			option.value({
 				label: 'Flare Suppression',
@@ -322,7 +322,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedFlareSuppressionAdjust = {
-		label: 'USK: Chroma Advanced Flare Suppression Adjust',
+		name: 'USK: Chroma Advanced Flare Suppression Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -342,7 +342,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedBrightnessSet = {
-		label: 'USK: Chroma Advanced Brightness Set',
+		name: 'USK: Chroma Advanced Brightness Set',
 		options: [
 			option.value({
 				label: 'Brightness',
@@ -364,7 +364,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedBrightnessAdjust = {
-		label: 'USK: Chroma Advanced Brightness Adjust',
+		name: 'USK: Chroma Advanced Brightness Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -384,7 +384,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedContrastSet = {
-		label: 'USK: Chroma Advanced Contrast Set',
+		name: 'USK: Chroma Advanced Contrast Set',
 		options: [
 			option.value({
 				label: 'Contrast',
@@ -406,7 +406,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedContrastAdjust = {
-		label: 'USK: Chroma Advanced Contrast Adjust',
+		name: 'USK: Chroma Advanced Contrast Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -426,7 +426,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedSaturationSet = {
-		label: 'USK: Chroma Advanced Saturation Set',
+		name: 'USK: Chroma Advanced Saturation Set',
 		options: [
 			option.value({
 				label: 'Saturation',
@@ -448,7 +448,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedSaturationAdjust = {
-		label: 'USK: Chroma Advanced Saturation Adjust',
+		name: 'USK: Chroma Advanced Saturation Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -468,7 +468,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedRedSet = {
-		label: 'USK: Chroma Advanced Red Set',
+		name: 'USK: Chroma Advanced Red Set',
 		options: [
 			option.value({
 				label: 'Red',
@@ -490,7 +490,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedRedAdjust = {
-		label: 'USK: Chroma Advanced Red Adjust',
+		name: 'USK: Chroma Advanced Red Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -510,7 +510,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedGreenSet = {
-		label: 'USK: Chroma Advanced Green Set',
+		name: 'USK: Chroma Advanced Green Set',
 		options: [
 			option.value({
 				label: 'Green',
@@ -532,7 +532,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedGreenAdjust = {
-		label: 'USK: Chroma Advanced Green Adjust',
+		name: 'USK: Chroma Advanced Green Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -552,7 +552,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedBlueSet = {
-		label: 'USK: Chroma Advanced Blue Set',
+		name: 'USK: Chroma Advanced Blue Set',
 		options: [
 			option.value({
 				label: 'Blue',
@@ -574,7 +574,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskChromaAdvancedBlueAdjust = {
-		label: 'USK: Chroma Advanced Blue Adjust',
+		name: 'USK: Chroma Advanced Blue Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -594,7 +594,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveBorder = {
-		label: 'USK: DVE Border',
+		name: 'USK: DVE Border',
 		options: [
 			option.mode(),
 			option.list({
@@ -663,7 +663,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveBorderEnable = {
-		label: 'USK: DVE Border Enable',
+		name: 'USK: DVE Border Enable',
 		options: [option.mode(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/dve/border/enable', [
@@ -675,7 +675,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderBevelStyleSet = {
-		label: 'USK: DVE Border Bevel Style Set',
+		name: 'USK: DVE Border Bevel Style Set',
 		options: [
 			option.list({
 				label: 'Bevel Style',
@@ -696,7 +696,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderOuterWidthSet = {
-		label: 'USK: DVE Border Outer Width Set',
+		name: 'USK: DVE Border Outer Width Set',
 		options: [
 			option.value({
 				label: 'Border Outer Width',
@@ -717,7 +717,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderOuterWidthAdjust = {
-		label: 'USK: DVE Border Outer Width Adjust',
+		name: 'USK: DVE Border Outer Width Adjust',
 		options: [
 			option.value({
 				min: -16,
@@ -737,7 +737,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderInnerWidthSet = {
-		label: 'USK: DVE Border Inner Width Set',
+		name: 'USK: DVE Border Inner Width Set',
 		options: [
 			option.value({
 				label: 'Border Inner Width',
@@ -758,7 +758,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderInnerWidthAdjust = {
-		label: 'USK: DVE Border Inner Width Adjust',
+		name: 'USK: DVE Border Inner Width Adjust',
 		options: [
 			option.value({
 				min: -16,
@@ -778,7 +778,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderOuterSoftnessSet = {
-		label: 'USK: DVE Border Outer Softness Set',
+		name: 'USK: DVE Border Outer Softness Set',
 		options: [
 			option.value({
 				label: 'Border Outer Softness (0-100%)',
@@ -799,7 +799,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderOuterSoftnessAdjust = {
-		label: 'USK: DVE Border Outer Softness Adjust',
+		name: 'USK: DVE Border Outer Softness Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -819,7 +819,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderInnerSoftnessSet = {
-		label: 'USK: DVE Border Inner Softness Set',
+		name: 'USK: DVE Border Inner Softness Set',
 		options: [
 			option.value({
 				label: 'Border Inner Softness (0-100%)',
@@ -840,7 +840,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderInnerSoftnessAdjust = {
-		label: 'USK: DVE Border Inner Softness Adjust',
+		name: 'USK: DVE Border Inner Softness Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -860,7 +860,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderBevelSoftnessSet = {
-		label: 'USK: DVE Border Bevel Softness Set',
+		name: 'USK: DVE Border Bevel Softness Set',
 		options: [
 			option.value({
 				label: 'Border Bevel Softness',
@@ -881,7 +881,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderBevelSoftnessAdjust = {
-		label: 'USK: DVE Border Bevel Softness Adjust',
+		name: 'USK: DVE Border Bevel Softness Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -901,7 +901,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderBevelPositionSet = {
-		label: 'USK: DVE Border Bevel Position Set',
+		name: 'USK: DVE Border Bevel Position Set',
 		options: [
 			option.value({
 				label: 'Border Bevel Position',
@@ -922,7 +922,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderBevelPositionAdjust = {
-		label: 'USK: DVE Border Bevel Position Adjust',
+		name: 'USK: DVE Border Bevel Position Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -942,7 +942,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderOpacitySet = {
-		label: 'USK: DVE Border Opacity Set',
+		name: 'USK: DVE Border Opacity Set',
 		options: [
 			option.value({
 				label: 'Border Opacity (0-100%)',
@@ -963,7 +963,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderOpacityAdjust = {
-		label: 'USK: DVE Border Opacity Adjust',
+		name: 'USK: DVE Border Opacity Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -983,7 +983,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderHueSet = {
-		label: 'USK: DVE Border Hue Set',
+		name: 'USK: DVE Border Hue Set',
 		options: [option.hue, option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/dve/border/parameter/set', [
@@ -996,7 +996,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderHueAdjust = {
-		label: 'USK: DVE Border Hue Adjust',
+		name: 'USK: DVE Border Hue Adjust',
 		options: [
 			option.value({
 				min: -180,
@@ -1017,7 +1017,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderSaturationSet = {
-		label: 'USK: DVE Border Saturation Set',
+		name: 'USK: DVE Border Saturation Set',
 		options: [option.saturation(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/dve/border/parameter/set', [
@@ -1030,7 +1030,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderSaturationAdjust = {
-		label: 'USK: DVE Border Saturation Adjust',
+		name: 'USK: DVE Border Saturation Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -1051,7 +1051,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderLuminanceSet = {
-		label: 'USK: DVE Border Luminance Set',
+		name: 'USK: DVE Border Luminance Set',
 		options: [option.luminance(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/dve/border/parameter/set', [
@@ -1064,7 +1064,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEBorderLuminanceAdjust = {
-		label: 'USK: DVE Border Luminance Adjust',
+		name: 'USK: DVE Border Luminance Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -1085,7 +1085,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveMask = {
-		label: 'USK: DVE Mask',
+		name: 'USK: DVE Mask',
 		options: [
 			option.value({
 				label: 'Top',
@@ -1123,7 +1123,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEMaskTopSet = {
-		label: 'USK: DVE Mask Top Set',
+		name: 'USK: DVE Mask Top Set',
 		options: [
 			option.value({
 				label: 'Top',
@@ -1144,7 +1144,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEMaskTopAdjust = {
-		label: 'USK: DVE Mask Top Adjust',
+		name: 'USK: DVE Mask Top Adjust',
 		options: [
 			option.value({
 				min: -38,
@@ -1164,7 +1164,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEMaskBottomSet = {
-		label: 'USK: DVE Mask Bottom Set',
+		name: 'USK: DVE Mask Bottom Set',
 		options: [
 			option.value({
 				label: 'Bottom',
@@ -1185,7 +1185,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEMaskBottomAdjust = {
-		label: 'USK: DVE Mask Bottom Adjust',
+		name: 'USK: DVE Mask Bottom Adjust',
 		options: [
 			option.value({
 				min: -38,
@@ -1205,7 +1205,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEMaskLeftSet = {
-		label: 'USK: DVE Mask Left Set',
+		name: 'USK: DVE Mask Left Set',
 		options: [
 			option.value({
 				label: 'Left',
@@ -1226,7 +1226,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEMaskLeftAdjust = {
-		label: 'USK: DVE Mask Left Adjust',
+		name: 'USK: DVE Mask Left Adjust',
 		options: [
 			option.value({
 				min: -52,
@@ -1246,7 +1246,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEMaskRightSet = {
-		label: 'USK: DVE Mask Right Set',
+		name: 'USK: DVE Mask Right Set',
 		options: [
 			option.value({
 				label: 'Right',
@@ -1267,7 +1267,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEMaskRightAdjust = {
-		label: 'USK: DVE Mask Right Adjust',
+		name: 'USK: DVE Mask Right Adjust',
 		options: [
 			option.value({
 				min: -52,
@@ -1287,7 +1287,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveMaskEnable = {
-		label: 'USK: DVE Mask Enable',
+		name: 'USK: DVE Mask Enable',
 		options: [option.mode(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/dve/mask/enable', [
@@ -1299,7 +1299,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDvePosition = {
-		label: 'USK: DVE Position',
+		name: 'USK: DVE Position',
 		options: [
 			option.value({
 				label: 'Position X',
@@ -1327,7 +1327,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEPositionSet = {
-		label: 'USK: DVE Position Set',
+		name: 'USK: DVE Position Set',
 		options: [
 			option.coordinate(),
 			option.value({
@@ -1350,7 +1350,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEPositionAdjust = {
-		label: 'USK: DVE Position Adjust',
+		name: 'USK: DVE Position Adjust',
 		options: [
 			option.coordinate(),
 			option.value({
@@ -1371,7 +1371,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveRotation = {
-		label: 'USK: DVE Rotation Set',
+		name: 'USK: DVE Rotation Set',
 		options: [option.rotation(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/dve/rotation', [
@@ -1383,7 +1383,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveRotationAdjust = {
-		label: 'USK: DVE Rotation Adjust',
+		name: 'USK: DVE Rotation Adjust',
 		options: [
 			option.value({
 				min: -180,
@@ -1403,7 +1403,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveShadow = {
-		label: 'USK: DVE Shadow',
+		name: 'USK: DVE Shadow',
 		options: [
 			option.value({
 				label: 'Angle (0-359°)',
@@ -1431,7 +1431,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveShadowEnable = {
-		label: 'USK: DVE Shadow Enable',
+		name: 'USK: DVE Shadow Enable',
 		options: [option.mode(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/dve/shadow/enable', [
@@ -1443,7 +1443,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEShadowParameterAngleSet = {
-		label: 'USK: DVE Shadow Parameter Angle Set',
+		name: 'USK: DVE Shadow Parameter Angle Set',
 		options: [
 			option.value({
 				label: 'Angle (0-359°)',
@@ -1465,7 +1465,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEShadowParameterAngleAdjust = {
-		label: 'USK: DVE Shadow Parameter Angle Adjust',
+		name: 'USK: DVE Shadow Parameter Angle Adjust',
 		options: [
 			option.value({
 				min: -180,
@@ -1486,7 +1486,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEShadowParameterAltitudeSet = {
-		label: 'USK: DVE Shadow Parameter Altitude Set',
+		name: 'USK: DVE Shadow Parameter Altitude Set',
 		options: [
 			option.value({
 				label: 'Altitude',
@@ -1508,7 +1508,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDVEShadowParameterAltitudeAdjust = {
-		label: 'USK: DVE Shadow Parameter Altitude Adjust',
+		name: 'USK: DVE Shadow Parameter Altitude Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -1529,7 +1529,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveSize = {
-		label: 'USK: DVE Size',
+		name: 'USK: DVE Size',
 		options: [
 			option.value({
 				label: 'Size X',
@@ -1555,7 +1555,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveSizeSet = {
-		label: 'USK: DVE Size Set',
+		name: 'USK: DVE Size Set',
 		options: [
 			option.coordinate(),
 			option.value({
@@ -1577,7 +1577,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveSizeAdjust = {
-		label: 'USK: DVE Size Adjust',
+		name: 'USK: DVE Size Adjust',
 		options: [
 			option.coordinate(),
 			option.value({
@@ -1600,7 +1600,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskDveSizePositionRotation = {
-		label: 'USK: DVE Size Position Rotation',
+		name: 'USK: DVE Size Position Rotation',
 		options: [
 			option.size({ label: 'Size X', id: 'sizeX', max: 99.99, step: 0.01 }),
 			option.size({ label: 'Size Y', id: 'sizeY', max: 99.99, step: 0.01 }),
@@ -1634,7 +1634,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskFlyingKeyEnable = {
-		label: 'USK: Flying Key Enable',
+		name: 'USK: Flying Key Enable',
 		options: [option.mode({ label: 'Flying Key Enabled' }), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/flying-key/enable', [
@@ -1646,7 +1646,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskFlyingKeyKeyframe = {
-		label: 'USK: Flying Key Keyframe',
+		name: 'USK: Flying Key Keyframe',
 		options: [
 			{
 				type: 'dropdown',
@@ -1671,7 +1671,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskFlyingKeyRate = {
-		label: 'USK: Flying Key Rate',
+		name: 'USK: Flying Key Rate',
 		options: [option.rate(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/flying-key/rate', [
@@ -1683,7 +1683,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskFlyingKeyRun = {
-		label: 'USK: Flying Key Run',
+		name: 'USK: Flying Key Run',
 		options: [
 			{
 				type: 'dropdown',
@@ -1719,7 +1719,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskInputs = {
-		label: 'USK: Inputs',
+		name: 'USK: Inputs',
 		options: [
 			option.videoSources({
 				label: 'Fill Source',
@@ -1747,7 +1747,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskLumaKey = {
-		label: 'USK: Luma Key',
+		name: 'USK: Luma Key',
 		options: [
 			option.mode({ label: 'Pre Multiplied' }),
 			option.clip(),
@@ -1769,7 +1769,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskLumaKeyClipGain = {
-		label: 'USK: Luma Key Clip Gain',
+		name: 'USK: Luma Key Clip Gain',
 		options: [option.clip(), option.gain(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/luma/key/clip-gain', [
@@ -1782,7 +1782,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskLumaKeyClipSet = {
-		label: 'USK: Luma Key Clip Set',
+		name: 'USK: Luma Key Clip Set',
 		options: [option.clip(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/luma/key/clip/set', [
@@ -1794,7 +1794,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskLumaKeyClipAdjust = {
-		label: 'USK: Luma Key Clip Adjust',
+		name: 'USK: Luma Key Clip Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -1813,7 +1813,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskLumaKeyGainSet = {
-		label: 'USK: Luma Key Gain Set',
+		name: 'USK: Luma Key Gain Set',
 		options: [option.gain(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/luma/key/gain/set', [
@@ -1825,7 +1825,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskLumaKeyGainAdjust = {
-		label: 'USK: Luma Key Gain Adjust',
+		name: 'USK: Luma Key Gain Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -1844,7 +1844,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskLumaKeyInvert = {
-		label: 'USK: Luma Key Invert',
+		name: 'USK: Luma Key Invert',
 		options: [option.mode({ label: 'Invert Key', id: 'invertKey' }), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/luma/key/invert', [
@@ -1856,7 +1856,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskLumaKeyPreMultiplied = {
-		label: 'USK: Luma Key Pre Multiplied',
+		name: 'USK: Luma Key Pre Multiplied',
 		options: [
 			option.mode({ label: 'Pre Multiplied', id: 'preMultiplied' }),
 			option.usk(context),
@@ -1872,7 +1872,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMask = {
-		label: 'USK: Mask',
+		name: 'USK: Mask',
 		options: [
 			option.value({
 				label: 'Top',
@@ -1918,7 +1918,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMaskEnable = {
-		label: 'USK: Mask Enable',
+		name: 'USK: Mask Enable',
 		options: [option.mode({ label: 'Enable Mask' }), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/mask/enable', [
@@ -1930,7 +1930,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMaskTopSet = {
-		label: 'USK: Mask Top Set',
+		name: 'USK: Mask Top Set',
 		options: [
 			option.value({
 				label: 'Top',
@@ -1953,7 +1953,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMaskTopAdjust = {
-		label: 'USK: Mask Top Adjust',
+		name: 'USK: Mask Top Adjust',
 		options: [
 			option.value({
 				min: -9,
@@ -1973,7 +1973,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMaskBottomSet = {
-		label: 'USK: Mask Bottom Set',
+		name: 'USK: Mask Bottom Set',
 		options: [
 			option.value({
 				label: 'Bottom',
@@ -1996,7 +1996,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMaskBottomAdjust = {
-		label: 'USK: Mask Bottom Adjust',
+		name: 'USK: Mask Bottom Adjust',
 		options: [
 			option.value({
 				min: -9,
@@ -2016,7 +2016,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMaskLeftSet = {
-		label: 'USK: Mask Left Set',
+		name: 'USK: Mask Left Set',
 		options: [
 			option.value({
 				label: 'Left',
@@ -2039,7 +2039,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMaskLeftAdjust = {
-		label: 'USK: Mask Left Adjust',
+		name: 'USK: Mask Left Adjust',
 		options: [
 			option.value({
 				min: -16,
@@ -2059,7 +2059,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMaskRightSet = {
-		label: 'USK: Mask Right Set',
+		name: 'USK: Mask Right Set',
 		options: [
 			option.value({
 				label: 'Right',
@@ -2082,7 +2082,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskMaskRightAdjust = {
-		label: 'USK: Mask Right Adjust',
+		name: 'USK: Mask Right Adjust',
 		options: [
 			option.value({
 				min: -16,
@@ -2102,7 +2102,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskOnAir = {
-		label: 'USK: On Air',
+		name: 'USK: On Air',
 		options: [option.mode(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/on-air', [
@@ -2114,7 +2114,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPattern = {
-		label: 'USK: Pattern',
+		name: 'USK: Pattern',
 		options: [
 			option.pattern(),
 			option.size(),
@@ -2142,7 +2142,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternCycle = {
-		label: 'USK: Pattern Cycle',
+		name: 'USK: Pattern Cycle',
 		options: [option.yesNo({ label: 'Reverse', id: 'reverse' }), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/pattern/cycle', [
@@ -2154,7 +2154,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternInvert = {
-		label: 'USK: Pattern Invert',
+		name: 'USK: Pattern Invert',
 		options: [option.mode({ label: 'Invert Pattern' }), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/pattern/invert', [
@@ -2166,7 +2166,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternPosition = {
-		label: 'USK: Pattern Position',
+		name: 'USK: Pattern Position',
 		options: [
 			option.position({ label: 'Position X', id: 'x' }),
 			option.position({ label: 'Position Y', id: 'y' }),
@@ -2184,7 +2184,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternPositionSet = {
-		label: 'USK: Pattern Position Set',
+		name: 'USK: Pattern Position Set',
 		options: [
 			option.coordinate(),
 			option.value({
@@ -2206,7 +2206,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternPositionAdjust = {
-		label: 'USK: Pattern Position Adjust',
+		name: 'USK: Pattern Position Adjust',
 		options: [
 			option.coordinate(),
 			option.value({
@@ -2228,7 +2228,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternSize = {
-		label: 'USK: Pattern Size Set',
+		name: 'USK: Pattern Size Set',
 		options: [option.size(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/pattern/size', [
@@ -2240,7 +2240,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternSizeAdjust = {
-		label: 'USK: Pattern Size Adjust',
+		name: 'USK: Pattern Size Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -2260,7 +2260,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternSizeSymmetrySoftnessPosition = {
-		label: 'USK: Pattern Size Symmetry Softness Position',
+		name: 'USK: Pattern Size Symmetry Softness Position',
 		options: [
 			option.size(),
 			option.symmetry(),
@@ -2284,7 +2284,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternSoftness = {
-		label: 'USK: Pattern Softness Set',
+		name: 'USK: Pattern Softness Set',
 		options: [option.softness(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/pattern/softness', [
@@ -2296,7 +2296,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternSoftnessAdjust = {
-		label: 'USK: Pattern Softness Adjust',
+		name: 'USK: Pattern Softness Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -2315,7 +2315,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternStyle = {
-		label: 'USK: Pattern Style',
+		name: 'USK: Pattern Style',
 		options: [option.pattern(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/pattern/style', [
@@ -2327,7 +2327,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternSymmetry = {
-		label: 'USK: Pattern Symmetry Set',
+		name: 'USK: Pattern Symmetry Set',
 		options: [option.symmetry(), option.usk(context), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/usk/pattern/symmetry', [
@@ -2339,7 +2339,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskPatternSymmetryAdjust = {
-		label: 'USK: Pattern Symmetry Adjust',
+		name: 'USK: Pattern Symmetry Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -2358,7 +2358,7 @@ const upstreamKeyerActions = ({ context }) => {
 	}
 
 	actions.uskStyle = {
-		label: 'USK: Style',
+		name: 'USK: Style',
 		options: [
 			{
 				type: 'dropdown',

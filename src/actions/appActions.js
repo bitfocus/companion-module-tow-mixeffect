@@ -22,7 +22,7 @@ const appActions = ({ context }) => {
 	const actions = {}
 
 	actions.appConnectToSwitcher = {
-		label: 'App: Connect to Switcher',
+		name: 'App: Connect to Switcher',
 		options: [
 			{
 				type: 'textinput',
@@ -37,7 +37,7 @@ const appActions = ({ context }) => {
 	}
 
 	actions.appRunShortCut = {
-		label: 'App: Run Shortcut',
+		name: 'App: Run Shortcut',
 		options: [
 			{
 				type: 'textinput',
@@ -59,7 +59,7 @@ const appActions = ({ context }) => {
 	}
 
 	actions.appRunShortcutAndReturn = {
-		label: 'App: Run Shortcut and Return',
+		name: 'App: Run Shortcut and Return',
 		options: [
 			{
 				type: 'textinput',
@@ -81,7 +81,7 @@ const appActions = ({ context }) => {
 	}
 
 	actions.appSwitcherSection = {
-		label: 'App: Switcher Section',
+		name: 'App: Switcher Section',
 		options: [
 			{
 				type: 'dropdown',
@@ -98,7 +98,7 @@ const appActions = ({ context }) => {
 	}
 
 	actions.appSwitcherPage = {
-		label: 'App: Switcher Page',
+		name: 'App: Switcher Page',
 		options: [
 			{
 				type: 'textinput',
@@ -113,26 +113,29 @@ const appActions = ({ context }) => {
 	}
 
 	actions.appSwitcherPagePrevious = {
-		label: 'App: Switcher Page: Previous',
+		name: 'App: Switcher Page: Previous',
+		options: [],
 		callback: () => {
 			context.oscSend('/mixeffect/page', [{ type: 's', value: 'previous' }])
 		},
 	}
 
 	actions.appSwitcherPageNext = {
-		label: 'App: Switcher Page: Next',
+		name: 'App: Switcher Page: Next',
+		options: [],
 		callback: () => {
 			context.oscSend('/mixeffect/page', [{ type: 's', value: 'next' }])
 		},
 	}
 
 	actions.appRemoteWebView = {
-		label: 'App: Remote WebView',
+		name: 'App: Remote WebView',
+		options: [],
 		callback: () => context.oscSend('/mixeffect/remote-webview'),
 	}
 
 	actions.appVideoFollowsAudio = {
-		label: 'App: Video Follows Audio',
+		name: 'App: Video Follows Audio',
 		options: [option.mode()],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/vfa', [{ type: 's', value: options.mode }])
@@ -140,7 +143,8 @@ const appActions = ({ context }) => {
 	}
 
 	actions.appViewOnlyMode = {
-		label: 'App: View Only Mode',
+		name: 'App: View Only Mode',
+		options: [],
 		callback: () => context.oscSend('/mixeffect/vom'),
 	}
 

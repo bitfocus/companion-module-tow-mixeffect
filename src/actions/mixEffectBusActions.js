@@ -5,7 +5,7 @@ const mixEffectBusActions = ({ context }) => {
 	const actions = {}
 
 	actions.selectMixEffectBus = {
-		label: 'M/E: Select Mix Effect Bus',
+		name: 'M/E: Select Mix Effect Bus',
 		options: [
 			{
 				type: 'dropdown',
@@ -26,7 +26,7 @@ const mixEffectBusActions = ({ context }) => {
 	}
 
 	actions.fadeToBlackAuto = {
-		label: 'M/E: Fade to Black Auto',
+		name: 'M/E: Fade to Black Auto',
 		options: [option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/ftb', [
@@ -36,7 +36,7 @@ const mixEffectBusActions = ({ context }) => {
 	}
 
 	actions.fadeToBlackRate = {
-		label: 'M/E: Fade to Black Rate',
+		name: 'M/E: Fade to Black Rate',
 		options: [option.rate(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/ftb/rate', [
@@ -47,7 +47,7 @@ const mixEffectBusActions = ({ context }) => {
 	}
 
 	actions.setPreviewInput = {
-		label: 'M/E: Set Preview Input',
+		name: 'M/E: Set Preview Input',
 		options: [
 			option.videoSources({
 				sources: context.switcher.videoSources,
@@ -64,7 +64,7 @@ const mixEffectBusActions = ({ context }) => {
 	}
 
 	actions.setProgramInput = {
-		label: 'M/E: Set Program Input',
+		name: 'M/E: Set Program Input',
 		options: [
 			option.videoSources({
 				sources: context.switcher.videoSources,

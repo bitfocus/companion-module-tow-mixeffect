@@ -2,12 +2,14 @@ const switcherActions = ({ context }) => {
 	const actions = {}
 
 	actions.switcherStartupStateClear = {
-		label: 'Switcher: Startup State Clear',
+		name: 'Switcher: Startup State Clear',
+		options: [],
 		callback: () => context.oscSend('/mixeffect/startup/clear'),
 	}
 
 	actions.switcherStartupStateSave = {
-		label: 'Switcher: Startup State Save',
+		name: 'Switcher: Startup State Save',
+		options: [],
 		callback: () => context.oscSend('/mixeffect/startup/save'),
 	}
 

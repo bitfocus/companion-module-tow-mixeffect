@@ -4,7 +4,7 @@ const macroActions = ({ context }) => {
 	const actions = {}
 
 	actions.macroRun = {
-		label: 'Macro: Run',
+		name: 'Macro: Run',
 		options: [
 			{
 				type: 'number',
@@ -21,12 +21,13 @@ const macroActions = ({ context }) => {
 	}
 
 	actions.macroContinue = {
-		label: 'Macro: Continue',
+		name: 'Macro: Continue',
+		options: [],
 		callback: () => context.oscSend('/mixeffect/macro/continue'),
 	}
 
 	actions.macroLoop = {
-		label: 'Macro: Loop',
+		name: 'Macro: Loop',
 		options: [option.mode()],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/macro/loop', [{ type: 'i', value: options.mode }])
@@ -34,7 +35,8 @@ const macroActions = ({ context }) => {
 	}
 
 	actions.macroStop = {
-		label: 'Macro: Stop',
+		name: 'Macro: Stop',
+		options: [],
 		callback: () => context.oscSend('/mixeffect/macro/stop'),
 	}
 

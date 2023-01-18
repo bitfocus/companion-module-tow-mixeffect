@@ -43,7 +43,7 @@ const transitionActions = ({ context }) => {
 	]
 
 	actions.transitionAuto = {
-		label: 'Transition: Auto',
+		name: 'Transition: Auto',
 		options: [option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/auto', [
@@ -53,7 +53,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionCut = {
-		label: 'Transition: Cut',
+		name: 'Transition: Cut',
 		options: [option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/cut', [
@@ -63,7 +63,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDip = {
-		label: 'Transition: Dip',
+		name: 'Transition: Dip',
 		options: [
 			option.rate(),
 			{
@@ -89,7 +89,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDipSource = {
-		label: 'Transition: Dip Source',
+		name: 'Transition: Dip Source',
 		options: [
 			{
 				type: 'dropdown',
@@ -113,7 +113,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transtionDve = {
-		label: 'Transition: DVE',
+		name: 'Transition: DVE',
 		options: [
 			option.rate(),
 			{
@@ -164,7 +164,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDveFlipFlip = {
-		label: 'Transition: DVE Flip Flop',
+		name: 'Transition: DVE Flip Flop',
 		options: [option.mode({ label: 'Flip Flop', id: 'flipflop' }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/flip-flop', [
@@ -175,7 +175,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDveInputs = {
-		label: 'Transition: DVE Inputs',
+		name: 'Transition: DVE Inputs',
 		options: [
 			option.videoSources({
 				label: 'Fill Source',
@@ -201,7 +201,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDveKey = {
-		label: 'Transition: DVE Key',
+		name: 'Transition: DVE Key',
 		options: [
 			option.mode({ label: 'Pre Multiplied', id: 'preMultiplied' }),
 			option.clip(),
@@ -221,7 +221,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDveClipGain = {
-		label: 'Transition: DVE Key Clip Gain',
+		name: 'Transition: DVE Key Clip Gain',
 		options: [option.clip(), option.gain(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/key/clip-gain', [
@@ -233,7 +233,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDevKeyClipSet = {
-		label: 'Transition: DVE Key Clip Set',
+		name: 'Transition: DVE Key Clip Set',
 		options: [option.clip(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/key/clip/set', [
@@ -244,7 +244,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDevKeyClipAdjust = {
-		label: 'Transition: DVE Key Clip Adjust',
+		name: 'Transition: DVE Key Clip Adjust',
 		options: [option.value({ min: -100, max: 100, step: 0.1, defaultValue: 0 }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/key/clip/adjust', [
@@ -255,7 +255,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDevKeyGainSet = {
-		label: 'Transition: DVE Key Gain Set',
+		name: 'Transition: DVE Key Gain Set',
 		options: [option.gain(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/key/gain/set', [
@@ -266,7 +266,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDevKeyGainAdjust = {
-		label: 'Transition: DVE Key Gain Adjust',
+		name: 'Transition: DVE Key Gain Adjust',
 		options: [option.value({ min: -100, max: 100, step: 0.1, defaultValue: 0 }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/key/gain/adjust', [
@@ -277,7 +277,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDveKeyEnable = {
-		label: 'Transition: DVE Key Enable',
+		name: 'Transition: DVE Key Enable',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/key/enable', [
@@ -288,7 +288,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDveKeyInvert = {
-		label: 'Transition: DVE Key Invert',
+		name: 'Transition: DVE Key Invert',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/key/invert', [
@@ -299,7 +299,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDveKeyPreMultiplied = {
-		label: 'Transition: DVE Key Pre Multiplied',
+		name: 'Transition: DVE Key Pre Multiplied',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/key/pre-multiplied', [
@@ -310,7 +310,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDveReverse = {
-		label: 'Transition: DVE Reverse',
+		name: 'Transition: DVE Reverse',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/dve/reverse', [
@@ -321,7 +321,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionDveStyle = {
-		label: 'Transition: DVE Style',
+		name: 'Transition: DVE Style',
 		options: [
 			{
 				type: 'dropdown',
@@ -342,7 +342,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionMix = {
-		label: 'Transition: Mix',
+		name: 'Transition: Mix',
 		options: [option.rate(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/mix', [
@@ -353,7 +353,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionNext = {
-		label: 'Transition: Next',
+		name: 'Transition: Next',
 		options: [option.usk(context, true, true), option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/next', [
@@ -365,7 +365,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionPreview = {
-		label: 'Transition: Preview',
+		name: 'Transition: Preview',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/preview', [
@@ -376,7 +376,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionRate = {
-		label: 'Transition: Rate',
+		name: 'Transition: Rate',
 		options: [
 			{
 				type: 'dropdown',
@@ -404,7 +404,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionStyle = {
-		label: 'Transition: Style',
+		name: 'Transition: Style',
 		options: [
 			{
 				type: 'dropdown',
@@ -430,7 +430,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipe = {
-		label: 'Transition: Wipe',
+		name: 'Transition: Wipe',
 		options: [
 			option.rate(),
 			option.pattern(),
@@ -476,7 +476,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeBorder = {
-		label: 'Transition: Wipe Border',
+		name: 'Transition: Wipe Border',
 		options: [
 			{
 				type: 'number',
@@ -501,7 +501,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeBorderSoftnessSet = {
-		label: 'Transition: Wipe Border Softness Set',
+		name: 'Transition: Wipe Border Softness Set',
 		options: [option.softness(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/wipe/border/parameter/set', [
@@ -513,7 +513,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeBorderSoftnessAdjust = {
-		label: 'Transition: Wipe Border Softness Adjust',
+		name: 'Transition: Wipe Border Softness Adjust',
 		options: [option.value({ min: -100, max: 100, step: 0.1, defaultValue: 0 }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/wipe/border/parameter/adjust', [
@@ -525,7 +525,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeBorderWidthSet = {
-		label: 'Transition: Wipe Border Width Set',
+		name: 'Transition: Wipe Border Width Set',
 		options: [
 			option.value({
 				label: 'Width',
@@ -547,7 +547,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeBorderWidthAdjust = {
-		label: 'Transition: Wipe Border Width Adjust',
+		name: 'Transition: Wipe Border Width Adjust',
 		options: [
 			option.value({
 				min: -100,
@@ -567,7 +567,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeFlipFlop = {
-		label: 'Transition: Wipe Flip Flop',
+		name: 'Transition: Wipe Flip Flop',
 		options: [option.mode({ label: 'Flip Flop', id: 'flipflop' }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/wipe/flip-flop', [
@@ -578,7 +578,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipePattern = {
-		label: 'Transition: Wipe Pattern',
+		name: 'Transition: Wipe Pattern',
 		options: [option.pattern(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/wipe/pattern', [
@@ -589,7 +589,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipePatternCycle = {
-		label: 'Transition: Wipe Pattern Cycle',
+		name: 'Transition: Wipe Pattern Cycle',
 		options: [option.yesNo({ label: 'Reverse', id: 'reverse' }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/wipe/pattern/cycle', [
@@ -600,7 +600,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipePosition = {
-		label: 'Transition: Wipe Position',
+		name: 'Transition: Wipe Position',
 		options: [
 			option.position({ label: 'Position X', id: 'x', defaultValue: 0.5 }),
 			option.position({ label: 'Position Y', id: 'y', defaultValue: 0.5 }),
@@ -616,7 +616,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipePositionSet = {
-		label: 'Transition: Wipe Position Set',
+		name: 'Transition: Wipe Position Set',
 		options: [
 			option.coordinate(),
 			option.position({ label: 'Position', id: 'position', defaultValue: 0.5 }),
@@ -632,7 +632,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipePositionAdjust = {
-		label: 'Transition: Wipe Position Adjust',
+		name: 'Transition: Wipe Position Adjust',
 		options: [
 			option.coordinate(),
 			option.value({
@@ -653,7 +653,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeReverse = {
-		label: 'Transition: Wipe Reverse',
+		name: 'Transition: Wipe Reverse',
 		options: [option.mode({ label: 'Reverse', id: 'reverse' }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/wipe/reverse', [
@@ -664,7 +664,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeSource = {
-		label: 'Transition: Wipe Source',
+		name: 'Transition: Wipe Source',
 		options: [
 			option.videoSources({
 				label: 'Fill Source',
@@ -683,7 +683,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeSymmetrySet = {
-		label: 'Transition: Wipe Symmetry Set',
+		name: 'Transition: Wipe Symmetry Set',
 		options: [option.symmetry(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/transition/wipe/symmetry', [
@@ -694,7 +694,7 @@ const transitionActions = ({ context }) => {
 	}
 
 	actions.transitionWipeSymmetryAdjust = {
-		label: 'Transition: Wipe Symmetry Adjust',
+		name: 'Transition: Wipe Symmetry Adjust',
 		options: [
 			option.value({
 				min: -100,

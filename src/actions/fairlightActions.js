@@ -4,7 +4,7 @@ const fairlightActions = ({ context }) => {
 	const actions = {}
 
 	actions.fairlightAudioFrameDelay = {
-		label: 'Fairlight: Audio Frame Delay',
+		name: 'Fairlight: Audio Frame Delay',
 		options: [
 			option.audioSources(context.switcher.audioSources, (source) => source.frameDelay),
 			option.audioSourceType(),
@@ -20,7 +20,7 @@ const fairlightActions = ({ context }) => {
 	}
 
 	actions.fairlightInputMixOptionSet = {
-		label: 'Fairlight: Input Mix Option Set',
+		name: 'Fairlight: Input Mix Option Set',
 		options: [
 			option.audioSources(context.switcher.audioSources),
 			option.audioSourceType(),
@@ -47,7 +47,7 @@ const fairlightActions = ({ context }) => {
 	}
 
 	actions.fairlightFaderGainSet = {
-		label: 'Fairlight: Fader Gain Set',
+		name: 'Fairlight: Fader Gain Set',
 		options: [
 			option.audioSources(context.switcher.audioSources),
 			option.audioSourceType(),
@@ -63,7 +63,7 @@ const fairlightActions = ({ context }) => {
 	}
 
 	actions.fairlightInputGainSet = {
-		label: 'Fairlight: Input Gain Set',
+		name: 'Fairlight: Input Gain Set',
 		options: [
 			option.audioSources(context.switcher.audioSources),
 			option.audioSourceType(),
@@ -79,7 +79,7 @@ const fairlightActions = ({ context }) => {
 	}
 
 	actions.fairlightMasterGainSet = {
-		label: 'Fairlight: Master Gain Set',
+		name: 'Fairlight: Master Gain Set',
 		options: [option.value({ min: -100, max: 10, defaultValue: 0 })],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/fairlight/master-gain/set', [{ type: 'f', value: parseFloat(options.value) }])
@@ -87,7 +87,7 @@ const fairlightActions = ({ context }) => {
 	}
 
 	actions.fairlightFaderGainAdjust = {
-		label: 'Fairlight: Fader Gain Adjust',
+		name: 'Fairlight: Fader Gain Adjust',
 		options: [
 			option.audioSources(context.switcher.audioSources),
 			option.audioSourceType(),
@@ -103,7 +103,7 @@ const fairlightActions = ({ context }) => {
 	}
 
 	actions.fairlightInputGainAdjust = {
-		label: 'Fairlight: Input Gain Adjust',
+		name: 'Fairlight: Input Gain Adjust',
 		options: [
 			option.audioSources(context.switcher.audioSources),
 			option.audioSourceType(),
@@ -119,7 +119,7 @@ const fairlightActions = ({ context }) => {
 	}
 
 	actions.fairlightMasterGainAdjust = {
-		label: 'Fairlight: Master Gain Adjust',
+		name: 'Fairlight: Master Gain Adjust',
 		options: [option.value({ min: -100, max: 10, defaultValue: 0 })],
 		callback: ({ options }) => {
 			context.oscSend('/mixeffect/fairlight/master-gain/adjust', [{ type: 'f', value: parseFloat(options.value) }])
@@ -127,12 +127,13 @@ const fairlightActions = ({ context }) => {
 	}
 
 	actions.fairlightResetPeaks = {
-		label: 'Fairlight: Reset Peaks',
+		name: 'Fairlight: Reset Peaks',
+		options: [],
 		callback: () => context.oscSend('/mixeffect/fairlight/reset-peaks'),
 	}
 
 	actions.fairlightResetSourcePeaks = {
-		label: 'Fairlight: Reset Source Peaks',
+		name: 'Fairlight: Reset Source Peaks',
 		options: [
 			option.audioSources(context.switcher.audioSources),
 			option.audioSourceType(),

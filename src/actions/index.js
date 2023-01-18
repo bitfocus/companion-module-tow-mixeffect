@@ -16,7 +16,7 @@ const { upstreamKeyerActions } = require('./upstreamKeyerActions')
 
 module.exports = {
 	initActions() {
-		this.setActions({
+		this.setActionDefinitions({
 			...appActions({ context: this }),
 			...auxiliaryActions({ context: this }),
 			...colorGeneratorActions({ context: this }),

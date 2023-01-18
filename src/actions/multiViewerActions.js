@@ -24,7 +24,7 @@ const multiViewerActions = ({ context }) => {
 	const actions = {}
 
 	actions.multiViewerSelect = {
-		label: 'MultiViewer: Select',
+		name: 'MultiViewer: Select',
 		options: [option.multiViewers(context, false)],
 		callback: ({ options }) => {
 			context.updateVariable('multiviewer', options.multiViewer)
@@ -33,7 +33,7 @@ const multiViewerActions = ({ context }) => {
 
 	if (!context.switcher.advancedMultiViewer) {
 		actions.multiViewerLayoutSet = {
-			label: 'MultiViewer: Layout Set',
+			name: 'MultiViewer: Layout Set',
 			options: [
 				{
 					type: 'dropdown',
@@ -56,7 +56,7 @@ const multiViewerActions = ({ context }) => {
 
 	if (context.switcher.advancedMultiViewer) {
 		actions.multiViewerAdvancedLayoutSet = {
-			label: 'MultiViewer: Advanced Layout Set',
+			name: 'MultiViewer: Advanced Layout Set',
 			options: [
 				{
 					type: 'dropdown',
@@ -76,7 +76,7 @@ const multiViewerActions = ({ context }) => {
 		}
 
 		actions.multiViewerWindowSet = {
-			label: 'MultiViewer: Window Set',
+			name: 'MultiViewer: Window Set',
 			options: [
 				{
 					type: 'dropdown',

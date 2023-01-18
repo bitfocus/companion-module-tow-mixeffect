@@ -27,7 +27,7 @@ const outputActions = ({ context }) => {
 	]
 
 	actions.recordingSetFileName = {
-		label: 'Output: Recording Set Filename',
+		name: 'Output: Recording Set Filename',
 		options: [
 			{
 				type: 'textinput',
@@ -42,7 +42,7 @@ const outputActions = ({ context }) => {
 	}
 
 	actions.recordingStartStop = {
-		label: 'Output: Recording Start or Stop',
+		name: 'Output: Recording Start or Stop',
 		options: [
 			{
 				type: 'dropdown',
@@ -62,12 +62,13 @@ const outputActions = ({ context }) => {
 	}
 
 	actions.recordingSwitchDisk = {
-		label: 'Output: Recording Switch Disk',
+		name: 'Output: Recording Switch Disk',
+		options: [],
 		callback: () => context.oscSend('/mixeffect/recording/switch-disk'),
 	}
 
 	actions.streamingSetService = {
-		label: 'Output: Streaming Set Service',
+		name: 'Output: Streaming Set Service',
 		options: [
 			{
 				type: 'textinput',
@@ -129,7 +130,7 @@ const outputActions = ({ context }) => {
 	}
 
 	actions.streamingStartStop = {
-		label: 'Output: Streaming Start or Stop',
+		name: 'Output: Streaming Start or Stop',
 		options: [
 			{
 				type: 'dropdown',
