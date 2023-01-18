@@ -1,6 +1,6 @@
 {
 	"name": "tow-mixeffect",
-	"version": "1.1.9",
+	"version": "2.0.0",
 	"compatibility": "MixEffect Pro 1.2.x",
 	"main": "src/index.js",
 	"scripts": {
