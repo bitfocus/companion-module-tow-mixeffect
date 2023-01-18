@@ -15,7 +15,7 @@ module.exports = {
 				this.system.emit('rest_get', this.getUrl(), (err, result) => {
 					if (err !== null) {
 						this.log('error', `HTTP GET Request failed (${result.error.code})`)
-						this.status(this.STATUS_ERROR, result.error.code)
+						this.updateStatus('connection_failure', result.error.code)
 						return
 					}
 					if (
@@ -24,7 +24,7 @@ module.exports = {
 						result.response.headers['content-length'] > 0
 					) {
 						this.updateVariables(result.data)
-						this.status(this.STATUS_OK)
+						this.updateStatus('ok')
 					}
 				})
 			}, this.config.pollingInterval)

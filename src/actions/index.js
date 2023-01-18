@@ -43,7 +43,7 @@ module.exports = {
 		let selectedValue = value
 
 		if (selectedValue === SELECTED_ID) {
-			this.getVariable(variableName, (variableValue) => (selectedValue = variableValue))
+			this.getVariableValue(variableName, (variableValue) => (selectedValue = variableValue))
 		}
 
 		return selectedValue

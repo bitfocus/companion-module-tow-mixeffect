@@ -1,4 +1,4 @@
-const instance_skel = require('../../../instance_skel')
+const { InstanceBase, runEntrypoint } = require('@companion-module/base')
 
 const configs = require('./configs')
 const actions = require('./actions')
@@ -11,9 +11,9 @@ const polling = require('./polling')
 
 const switchers = require('./switchers')
 
-class MixEffectInstance extends instance_skel {
-	constructor(system, id, config) {
-		super(system, id, config)
+class MixEffectInstance extends InstanceBase {
+	constructor(internal) {
+		super(internal)
 
 		Object.assign(this, {
 			...configs,
@@ -24,7 +24,15 @@ class MixEffectInstance extends instance_skel {
 			...feedbacks,
 			...polling,
 		})
+	}
 
+	static GetUpgradeScripts() {
+		return [upgrades.v1_1_0]
+	}
+
+	static DEVELOPER_forceStartupUpgradeScript = 0
+
+	async init(config) {
 		this.config = config
 
 		this.data = {
@@ -36,23 +44,15 @@ class MixEffectInstance extends instance_skel {
 		this.store = {
 			variables: {},
 		}
-	}
 
-	static GetUpgradeScripts() {
-		return [upgrades.v1_1_0]
-	}
-
-	static DEVELOPER_forceStartupUpgradeScript = 0
-
-	init() {
 		if (!this.config.ip) {
-			this.status(this.STATUS_UNKNOWN, 'Please Configure')
+			this.updateStatus('disconnected', 'Please Configure')
 			return
 		}
 
 		this.switcher = switchers.find(({ id }) => this.config.model === id)
 		if (!this.switcher) {
-			return this.status(this.STATUS_ERROR, 'Unknown Switcher')
+			return this.updateStatus('bad_config', 'Unknown Switcher')
 		}
 
 		this.initActions()
@@ -61,16 +61,16 @@ class MixEffectInstance extends instance_skel {
 		this.initVariables(this.switcher)
 		this.initPolling()
 
-		this.status(this.STATUS_OK)
+		this.updateStatus('ok')
 	}
 
-	updateConfig(config) {
+	async configUpdated(config) {
 		this.config = config
 
 		this.switcher = switchers.find(({ id }) => this.config.model === id)
 
 		if (!this.switcher) {
-			return this.status(this.STATUS_ERROR, 'Unknown Switcher')
+			return this.updateStatus('bad_config', 'Unknown Switcher')
 		}
 
 		this.initActions()
@@ -78,14 +78,14 @@ class MixEffectInstance extends instance_skel {
 		this.initFeedbacks()
 		this.initPolling()
 
-		this.status(this.STATUS_OK)
+		this.updateStatus('ok')
 	}
 
-	destroy() {
+	async destroy() {
 		if (this.data.interval) {
 			clearInterval(this.data.interval)
 		}
 	}
 }
 
-module.exports = MixEffectInstance
+runEntrypoint(MixEffectInstance, MixEffectInstance.GetUpgradeScripts())

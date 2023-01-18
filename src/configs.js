@@ -1,8 +1,10 @@
 const switchers = require('./switchers')
 const { model } = require('./switchers/types')
 
+const { Regex } = require('@companion-module/base')
+
 module.exports = {
-	config_fields() {
+	getConfigFields() {
 		return [
 			{
 				type: 'static-text',
@@ -16,7 +18,7 @@ module.exports = {
 				id: 'ip',
 				label: 'Target IP',
 				width: 6,
-				regex: this.REGEX_IP,
+				regex: Regex.IP,
 				default: this.DEFAULT_IP,
 				required: true,
 			},
@@ -25,7 +27,7 @@ module.exports = {
 				id: 'port',
 				label: 'OSC Port',
 				width: 6,
-				regex: this.REGEX_PORT,
+				regex: Regex.PORT,
 				default: this.DEFAULT_PORT,
 				required: true,
 				step: 1,
@@ -45,7 +47,7 @@ module.exports = {
 				id: 'httpServerPort',
 				label: 'HTTP Server Port',
 				width: 6,
-				regex: this.REGEX_PORT,
+				regex: Regex.PORT,
 				step: 1,
 				default: 8080,
 			},
