@@ -3,65 +3,65 @@ module.exports = {
 
 	initVariables(switcher) {
 		this.variableDefinitions.push({
-			label: 'Selected Media Player',
-			name: 'media_player',
+			name: 'Selected Media Player',
+			variableId: 'media_player',
 			storeId: 'selectedMediaPlayer',
 			feedback: 'selected_media_player',
 			defaultValue: 1,
 		})
 
 		this.variableDefinitions.push({
-			label: 'Selected Mix Effect Bus',
-			name: 'mix_effect_bus',
+			name: 'Selected Mix Effect Bus',
+			variableId: 'mix_effect_bus',
 			storeId: 'selectedMixEffectBus',
 			feedback: 'selected_mix_effect_bus',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
-			label: 'Selected Box',
-			name: 'box',
+			name: 'Selected Box',
+			variableId: 'box',
 			storeId: 'selectedBox',
 			feedback: 'selected_box',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
-			label: 'Selected SuperSource',
-			name: 'supersource',
+			name: 'Selected SuperSource',
+			variableId: 'supersource',
 			storeId: 'selectedSuperSource',
 			feedback: 'selected_supersource',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
-			label: 'Selected USK',
-			name: 'usk',
+			name: 'Selected USK',
+			variableId: 'usk',
 			storeId: 'selectedUSK',
 			feedback: 'selected_usk',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
-			label: 'Selected DSK',
-			name: 'dsk',
+			name: 'Selected DSK',
+			variableId: 'dsk',
 			storeId: 'selectedDSK',
 			feedback: 'selected_dsk',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
-			label: 'Selected Color Generator',
-			name: 'color_generator',
+			name: 'Selected Color Generator',
+			variableId: 'color_generator',
 			storeId: 'selectedColorGenerator',
 			feedback: 'selected_color_generator',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
-			label: 'Selected AUX Bus',
-			name: 'aux_bus',
+			name: 'Selected AUX Bus',
+			variableId: 'aux_bus',
 			storeId: 'selectedAuxBus',
 			feedback: 'selected_aux_bus',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
-			label: 'Selected MultiViewer',
-			name: 'multiviewer',
+			name: 'Selected MultiViewer',
+			variableId: 'multiviewer',
 			storeId: 'selectedMultiViewer',
 			feedback: 'selected_multiviewer',
 			defaultValue: 1,
@@ -71,111 +71,111 @@ module.exports = {
 		for (let i = 0; i < switcher.downstreamKeyers; i++) {
 			let dskId = i + 1
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_keySource`,
-				label: `Key source for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_keySource`,
+				name: `Key source for DSK ${dskId}`,
 			})
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_isAutoTransitioning`,
-				label: `isAutoTransitioning for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_isAutoTransitioning`,
+				name: `isAutoTransitioning for DSK ${dskId}`,
 			})
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_invertKey`,
-				label: `Invert key for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_invertKey`,
+				name: `Invert key for DSK ${dskId}`,
 			})
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_inTransition`,
-				label: `inTransition for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_inTransition`,
+				name: `inTransition for DSK ${dskId}`,
 			})
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_tie`,
-				label: `Tie for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_tie`,
+				name: `Tie for DSK ${dskId}`,
 			})
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_isTowardsOnAir`,
-				label: `isTowardsOnAir for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_isTowardsOnAir`,
+				name: `isTowardsOnAir for DSK ${dskId}`,
 			})
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_fillSource`,
-				label: `Fill source for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_fillSource`,
+				name: `Fill source for DSK ${dskId}`,
 			})
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_onAir`,
-				label: `On air for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_onAir`,
+				name: `On air for DSK ${dskId}`,
 			})
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_masked`,
-				label: `Masked for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_masked`,
+				name: `Masked for DSK ${dskId}`,
 			})
 			this.variableDefinitions.push({
-				name: `dsk_${dskId}_preMultiplied`,
-				label: `PreMultiplied for DSK ${dskId}`,
+				variableId: `dsk_${dskId}_preMultiplied`,
+				name: `PreMultiplied for DSK ${dskId}`,
 			})
 		}
 
 		// superSource
 		if (switcher.superSources > 0) {
 			this.variableDefinitions.push({
-				name: 'superSource_cascade',
-				label: 'SuperSource: Cascade',
+				variableId: 'superSource_cascade',
+				name: 'SuperSource: Cascade',
 			})
 
 			this.variableDefinitions.push({
-				name: 'superSource_animationSpeed',
-				label: 'SuperSource: Animation Speed',
+				variableId: 'superSource_animationSpeed',
+				name: 'SuperSource: Animation Speed',
 			})
 
 			this.variableDefinitions.push({
-				name: 'superSource_interpolationStyle',
-				label: 'SuperSource: Interpolation Style',
+				variableId: 'superSource_interpolationStyle',
+				name: 'SuperSource: Interpolation Style',
 			})
 			for (let i = 0; i < switcher.superSources; i++) {
 				let ssId = i + 1
 				// art
 				this.variableDefinitions.push({
-					name: `superSource_ssrc_${ssId}_art_borderEnabled`,
-					label: `SuperSource: SSRC ${ssId} Art: Border Enabled`,
+					variableId: `superSource_ssrc_${ssId}_art_borderEnabled`,
+					name: `SuperSource: SSRC ${ssId} Art: Border Enabled`,
 				})
 				this.variableDefinitions.push({
-					name: `superSource_ssrc_${ssId}_art_placeIn`,
-					label: `SuperSource: SSRC ${ssId} Art: Place In`,
+					variableId: `superSource_ssrc_${ssId}_art_placeIn`,
+					name: `SuperSource: SSRC ${ssId} Art: Place In`,
 				})
 				this.variableDefinitions.push({
-					name: `superSource_ssrc_${ssId}_art_invertKey`,
-					label: `SuperSource: SSRC ${ssId} Art: Invert Key`,
+					variableId: `superSource_ssrc_${ssId}_art_invertKey`,
+					name: `SuperSource: SSRC ${ssId} Art: Invert Key`,
 				})
 				this.variableDefinitions.push({
-					name: `superSource_ssrc_${ssId}_art_preMultiplied`,
-					label: `SuperSource: SSRC ${ssId} Art: Pre-Multiplied`,
+					variableId: `superSource_ssrc_${ssId}_art_preMultiplied`,
+					name: `SuperSource: SSRC ${ssId} Art: Pre-Multiplied`,
 				})
 				this.variableDefinitions.push({
-					name: `superSource_ssrc_${ssId}_art_borderBevel`,
-					label: `SuperSource: SSRC ${ssId} Art: Border Bevel`,
+					variableId: `superSource_ssrc_${ssId}_art_borderBevel`,
+					name: `SuperSource: SSRC ${ssId} Art: Border Bevel`,
 				})
 
 				// currentPreset
 				this.variableDefinitions.push({
-					name: `superSource_ssrc_${ssId}_currentPreset`,
-					label: `SuperSource: SSRC ${ssId} Current Preset`,
+					variableId: `superSource_ssrc_${ssId}_currentPreset`,
+					name: `SuperSource: SSRC ${ssId} Current Preset`,
 				})
 
 				// boxes
 				for (let j = 0; j < 4; j++) {
 					let boxId = j + 1
 					this.variableDefinitions.push({
-						name: `superSource_ssrc_${ssId}_box_${boxId}_highlighted`,
-						label: `SuperSource: SSRC ${ssId} Box ${boxId}: Highlighted`,
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_highlighted`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Highlighted`,
 					})
 					this.variableDefinitions.push({
-						name: `superSource_ssrc_${ssId}_box_${boxId}_enabled`,
-						label: `SuperSource: SSRC ${ssId} Box ${boxId}: Enabled`,
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_enabled`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Enabled`,
 					})
 					this.variableDefinitions.push({
-						name: `superSource_ssrc_${ssId}_box_${boxId}_cropped`,
-						label: `SuperSource: SSRC ${ssId} Box ${boxId}: Cropped`,
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_cropped`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Cropped`,
 					})
 					this.variableDefinitions.push({
-						name: `superSource_ssrc_${ssId}_box_${boxId}_source`,
-						label: `SuperSource: SSRC ${ssId} Box ${boxId}: Source`,
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_source`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Source`,
 					})
 				}
 			}
@@ -183,28 +183,28 @@ module.exports = {
 
 		// output
 		this.variableDefinitions.push({
-			name: 'output_isoRecordAllInputs',
-			label: 'Output: ISO record all inputs',
+			variableId: 'output_isoRecordAllInputs',
+			name: 'Output: ISO record all inputs',
 		})
 
 		this.variableDefinitions.push({
-			name: 'output_streaming',
-			label: 'Output: Streaming',
+			variableId: 'output_streaming',
+			name: 'Output: Streaming',
 		})
 
 		this.variableDefinitions.push({
-			name: 'output_recording',
-			label: 'Output: Recording',
+			variableId: 'output_recording',
+			name: 'Output: Recording',
 		})
 
 		this.variableDefinitions.push({
-			name: 'output_recordInAllCameras',
-			label: 'Output: Record In All Cameras',
+			variableId: 'output_recordInAllCameras',
+			name: 'Output: Record In All Cameras',
 		})
 
 		this.variableDefinitions.push({
-			name: 'output_useLowLatency',
-			label: 'Output: Use Low Latency',
+			variableId: 'output_useLowLatency',
+			name: 'Output: Use Low Latency',
 		})
 
 		// fairlight
@@ -215,158 +215,158 @@ module.exports = {
 				let srcId = i + 1
 				// expander
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_expander_attack`,
-					label: `Fairlight Audio: Source ${srcId} Expander Attack`,
+					variableId: `fairlightAudio_source_${srcId}_expander_attack`,
+					name: `Fairlight Audio: Source ${srcId} Expander Attack`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_expander_hold`,
-					label: `Fairlight Audio: Source ${srcId} Expander Hold`,
+					variableId: `fairlightAudio_source_${srcId}_expander_hold`,
+					name: `Fairlight Audio: Source ${srcId} Expander Hold`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_expander_release`,
-					label: `Fairlight Audio: Source ${srcId} Expander Release`,
+					variableId: `fairlightAudio_source_${srcId}_expander_release`,
+					name: `Fairlight Audio: Source ${srcId} Expander Release`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_expander_range`,
-					label: `Fairlight Audio: Source ${srcId} Expander Range`,
+					variableId: `fairlightAudio_source_${srcId}_expander_range`,
+					name: `Fairlight Audio: Source ${srcId} Expander Range`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_expander_gateEnabled`,
-					label: `Fairlight Audio: Source ${srcId} Expander Gate Enabled`,
+					variableId: `fairlightAudio_source_${srcId}_expander_gateEnabled`,
+					name: `Fairlight Audio: Source ${srcId} Expander Gate Enabled`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_expander_expanderEnabled`,
-					label: `Fairlight Audio: Source ${srcId} Expander Enabled`,
+					variableId: `fairlightAudio_source_${srcId}_expander_expanderEnabled`,
+					name: `Fairlight Audio: Source ${srcId} Expander Enabled`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_expander_ratio`,
-					label: `Fairlight Audio: Source ${srcId} Expander Ratio`,
+					variableId: `fairlightAudio_source_${srcId}_expander_ratio`,
+					name: `Fairlight Audio: Source ${srcId} Expander Ratio`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_expander_threshold`,
-					label: `Fairlight Audio: Source ${srcId} Expander Threshold`,
+					variableId: `fairlightAudio_source_${srcId}_expander_threshold`,
+					name: `Fairlight Audio: Source ${srcId} Expander Threshold`,
 				})
 
 				// compressor
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_compressor_hold`,
-					label: `Fairlight Audio: Source ${srcId} Compressor Hold`,
+					variableId: `fairlightAudio_source_${srcId}_compressor_hold`,
+					name: `Fairlight Audio: Source ${srcId} Compressor Hold`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_compressor_release`,
-					label: `Fairlight Audio: Source ${srcId} Compressor Release`,
+					variableId: `fairlightAudio_source_${srcId}_compressor_release`,
+					name: `Fairlight Audio: Source ${srcId} Compressor Release`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_compressor_attack`,
-					label: `Fairlight Audio: Source ${srcId} Compressor Attack`,
+					variableId: `fairlightAudio_source_${srcId}_compressor_attack`,
+					name: `Fairlight Audio: Source ${srcId} Compressor Attack`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_compressor_compressorEnabled`,
-					label: `Fairlight Audio: Source ${srcId} Compressor Enabled`,
+					variableId: `fairlightAudio_source_${srcId}_compressor_compressorEnabled`,
+					name: `Fairlight Audio: Source ${srcId} Compressor Enabled`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_compressor_ratio`,
-					label: `Fairlight Audio: Source ${srcId} Compressor Ratio`,
+					variableId: `fairlightAudio_source_${srcId}_compressor_ratio`,
+					name: `Fairlight Audio: Source ${srcId} Compressor Ratio`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_compressor_threshold`,
-					label: `Fairlight Audio: Source ${srcId} Compressor Threshold`,
+					variableId: `fairlightAudio_source_${srcId}_compressor_threshold`,
+					name: `Fairlight Audio: Source ${srcId} Compressor Threshold`,
 				})
 
 				// equalizerGain
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_equalizerGain`,
-					label: `Fairlight Audio: Source ${srcId} Equalizer Gain`,
+					variableId: `fairlightAudio_source_${srcId}_equalizerGain`,
+					name: `Fairlight Audio: Source ${srcId} Equalizer Gain`,
 				})
 
 				// limiter
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_limiter_release`,
-					label: `Fairlight Audio: Source ${srcId} Limiter Release`,
+					variableId: `fairlightAudio_source_${srcId}_limiter_release`,
+					name: `Fairlight Audio: Source ${srcId} Limiter Release`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_limiter_attack`,
-					label: `Fairlight Audio: Source ${srcId} Limiter Attack`,
+					variableId: `fairlightAudio_source_${srcId}_limiter_attack`,
+					name: `Fairlight Audio: Source ${srcId} Limiter Attack`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_limiter_limiterEnabled`,
-					label: `Fairlight Audio: Source ${srcId} Limiter Enabled`,
+					variableId: `fairlightAudio_source_${srcId}_limiter_limiterEnabled`,
+					name: `Fairlight Audio: Source ${srcId} Limiter Enabled`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_limiter_hold`,
-					label: `Fairlight Audio: Source ${srcId} Limiter Hold`,
+					variableId: `fairlightAudio_source_${srcId}_limiter_hold`,
+					name: `Fairlight Audio: Source ${srcId} Limiter Hold`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_limiter_threshold`,
-					label: `Fairlight Audio: Source ${srcId} Limiter Threshold`,
+					variableId: `fairlightAudio_source_${srcId}_limiter_threshold`,
+					name: `Fairlight Audio: Source ${srcId} Limiter Threshold`,
 				})
 
 				// gain
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_gain`,
-					label: `Fairlight Audio: Source ${srcId} Gain`,
+					variableId: `fairlightAudio_source_${srcId}_gain`,
+					name: `Fairlight Audio: Source ${srcId} Gain`,
 				})
 
 				// mixOption
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_mixOption`,
-					label: `Fairlight Audio: Source ${srcId} Mix Option`,
+					variableId: `fairlightAudio_source_${srcId}_mixOption`,
+					name: `Fairlight Audio: Source ${srcId} Mix Option`,
 				})
 
 				// equalizerEnabled
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_equalizerEnabled`,
-					label: `Fairlight Audio: Source ${srcId} Equalizer Enabled`,
+					variableId: `fairlightAudio_source_${srcId}_equalizerEnabled`,
+					name: `Fairlight Audio: Source ${srcId} Equalizer Enabled`,
 				})
 
 				// isMixedIn
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_isMixedIn`,
-					label: `Fairlight Audio: Source ${srcId} isMixedIn`,
+					variableId: `fairlightAudio_source_${srcId}_isMixedIn`,
+					name: `Fairlight Audio: Source ${srcId} isMixedIn`,
 				})
 
 				// sourceId
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_sourceId`,
-					label: `Fairlight Audio: Source ${srcId} Source Id`,
+					variableId: `fairlightAudio_source_${srcId}_sourceId`,
+					name: `Fairlight Audio: Source ${srcId} Source Id`,
 				})
 
 				// audioSource
 				this.variableDefinitions.push({
-					name: `fairlightAudio_source_${srcId}_audioSource`,
-					label: `Fairlight Audio: Source ${srcId} Audio Source`,
+					variableId: `fairlightAudio_source_${srcId}_audioSource`,
+					name: `Fairlight Audio: Source ${srcId} Audio Source`,
 				})
 
 				// equalizerBands array begin
 				for (let j = 0; j < 6; j++) {
 					let eqBandId = j + 1
 					this.variableDefinitions.push({
-						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_bandEnabled`,
-						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} enabled`,
+						variableId: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_bandEnabled`,
+						name: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} enabled`,
 					})
 					this.variableDefinitions.push({
-						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_frequency`,
-						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Frequency`,
+						variableId: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_frequency`,
+						name: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Frequency`,
 					})
 					this.variableDefinitions.push({
-						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_frequencyRange`,
-						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Frequency Range`,
+						variableId: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_frequencyRange`,
+						name: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Frequency Range`,
 					})
 					this.variableDefinitions.push({
-						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_qFactor`,
-						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} qFactor`,
+						variableId: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_qFactor`,
+						name: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} qFactor`,
 					})
 					this.variableDefinitions.push({
-						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_band`,
-						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Band`,
+						variableId: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_band`,
+						name: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Band`,
 					})
 					this.variableDefinitions.push({
-						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_gain`,
-						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Gain`,
+						variableId: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_gain`,
+						name: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Gain`,
 					})
 					this.variableDefinitions.push({
-						name: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_shape`,
-						label: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Shape`,
+						variableId: `fairlightAudio_source_${srcId}_equalizerBand_${eqBandId}_shape`,
+						name: `Fairlight Audio: Source ${srcId} Equalizer Band ${eqBandId} Shape`,
 					})
 				}
 				// equalizerBands array end
@@ -375,126 +375,126 @@ module.exports = {
 
 			// vfaEnabled
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_vfaEnabled',
-				label: 'Fairlight Audio: VFA Enabled',
+				variableId: 'fairlightAudio_vfaEnabled',
+				name: 'Fairlight Audio: VFA Enabled',
 			})
 
 			// solo begin
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_solo_enabled',
-				label: 'Fairlight Audio: Solo Enabled',
+				variableId: 'fairlightAudio_solo_enabled',
+				name: 'Fairlight Audio: Solo Enabled',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_solo_audioSource',
-				label: 'Fairlight Audio: Solo Audio Source',
+				variableId: 'fairlightAudio_solo_audioSource',
+				name: 'Fairlight Audio: Solo Audio Source',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_solo_sourceId',
-				label: 'Fairlight Audio: Solo Source Id',
+				variableId: 'fairlightAudio_solo_sourceId',
+				name: 'Fairlight Audio: Solo Source Id',
 			})
 			// solo end
 
 			// master begin
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_equalizerGain',
-				label: 'Fairlight Audio: Master Equalizer Gain',
+				variableId: 'fairlightAudio_master_equalizerGain',
+				name: 'Fairlight Audio: Master Equalizer Gain',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_limiter_release',
-				label: 'Fairlight Audio: Master Limiter Release',
+				variableId: 'fairlightAudio_master_limiter_release',
+				name: 'Fairlight Audio: Master Limiter Release',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_limiter_attack',
-				label: 'Fairlight Audio: Master Limiter Attack',
+				variableId: 'fairlightAudio_master_limiter_attack',
+				name: 'Fairlight Audio: Master Limiter Attack',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_limiter_limiterEnabled',
-				label: 'Fairlight Audio: Master Limiter Enabled',
+				variableId: 'fairlightAudio_master_limiter_limiterEnabled',
+				name: 'Fairlight Audio: Master Limiter Enabled',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_limiter_hold',
-				label: 'Fairlight Audio: Master Limiter Hold',
+				variableId: 'fairlightAudio_master_limiter_hold',
+				name: 'Fairlight Audio: Master Limiter Hold',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_limiter_threshold',
-				label: 'Fairlight Audio: Master Limiter Threshold',
+				variableId: 'fairlightAudio_master_limiter_threshold',
+				name: 'Fairlight Audio: Master Limiter Threshold',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_gain',
-				label: 'Fairlight Audio: Master Gain',
+				variableId: 'fairlightAudio_master_gain',
+				name: 'Fairlight Audio: Master Gain',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_equalizerEnabled',
-				label: 'Fairlight Audio: Master Equalizer Enabled',
+				variableId: 'fairlightAudio_master_equalizerEnabled',
+				name: 'Fairlight Audio: Master Equalizer Enabled',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_followFadeToBlack',
-				label: 'Fairlight Audio: Follow Fade To Black',
+				variableId: 'fairlightAudio_master_followFadeToBlack',
+				name: 'Fairlight Audio: Follow Fade To Black',
 			})
 
 			//TODO: are there only 6 bands for all models?
 			for (let i = 0; i < 6; i++) {
 				let eqId = i + 1
 				this.variableDefinitions.push({
-					name: `fairlightAudio_master_equalizerBand_${eqId}_bandEnabled`,
-					label: `Fairlight Audio: Master EQ Band ${eqId} Enabled`,
+					variableId: `fairlightAudio_master_equalizerBand_${eqId}_bandEnabled`,
+					name: `Fairlight Audio: Master EQ Band ${eqId} Enabled`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_master_equalizerBand_${eqId}_frequency`,
-					label: `Fairlight Audio: Master EQ Band ${eqId} Frequency`,
+					variableId: `fairlightAudio_master_equalizerBand_${eqId}_frequency`,
+					name: `Fairlight Audio: Master EQ Band ${eqId} Frequency`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_master_equalizerBand_${eqId}_frequencyRange`,
-					label: `Fairlight Audio: Master EQ Band ${eqId} Frequency Range`,
+					variableId: `fairlightAudio_master_equalizerBand_${eqId}_frequencyRange`,
+					name: `Fairlight Audio: Master EQ Band ${eqId} Frequency Range`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_master_equalizerBand_${eqId}_qFactor`,
-					label: `Fairlight Audio: Master EQ Band ${eqId} qFactor`,
+					variableId: `fairlightAudio_master_equalizerBand_${eqId}_qFactor`,
+					name: `Fairlight Audio: Master EQ Band ${eqId} qFactor`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_master_equalizerBand_${eqId}_band`,
-					label: `Fairlight Audio: Master EQ Band ${eqId} band`,
+					variableId: `fairlightAudio_master_equalizerBand_${eqId}_band`,
+					name: `Fairlight Audio: Master EQ Band ${eqId} band`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_master_equalizerBand_${eqId}_gain`,
-					label: `Fairlight Audio: Master EQ Band ${eqId} Gain`,
+					variableId: `fairlightAudio_master_equalizerBand_${eqId}_gain`,
+					name: `Fairlight Audio: Master EQ Band ${eqId} Gain`,
 				})
 				this.variableDefinitions.push({
-					name: `fairlightAudio_master_equalizerBand_${eqId}_shape`,
-					label: `Fairlight Audio: Master EQ Band ${eqId} Shape`,
+					variableId: `fairlightAudio_master_equalizerBand_${eqId}_shape`,
+					name: `Fairlight Audio: Master EQ Band ${eqId} Shape`,
 				})
 			}
 
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_compressor_hold',
-				label: 'Fairlight Audio: Master Compressor Hold',
+				variableId: 'fairlightAudio_master_compressor_hold',
+				name: 'Fairlight Audio: Master Compressor Hold',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_compressor_release',
-				label: 'Fairlight Audio: Master Compressor Release',
+				variableId: 'fairlightAudio_master_compressor_release',
+				name: 'Fairlight Audio: Master Compressor Release',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_compressor_attack',
-				label: 'Fairlight Audio: Master Compressor Attack',
+				variableId: 'fairlightAudio_master_compressor_attack',
+				name: 'Fairlight Audio: Master Compressor Attack',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_compressor_compressorEnabled',
-				label: 'Fairlight Audio: Master Compressor Enabled',
+				variableId: 'fairlightAudio_master_compressor_compressorEnabled',
+				name: 'Fairlight Audio: Master Compressor Enabled',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_compressor_ratio',
-				label: 'Fairlight Audio: Master Compressor Ratio',
+				variableId: 'fairlightAudio_master_compressor_ratio',
+				name: 'Fairlight Audio: Master Compressor Ratio',
 			})
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_master_compressor_threshold',
-				label: 'Fairlight Audio: Master Compressor Threshold',
+				variableId: 'fairlightAudio_master_compressor_threshold',
+				name: 'Fairlight Audio: Master Compressor Threshold',
 			})
 			// master end
 
 			// canVfa
 			this.variableDefinitions.push({
-				name: 'fairlightAudio_canVfa',
-				label: 'Fairlight Audio: Can VFA?',
+				variableId: 'fairlightAudio_canVfa',
+				name: 'Fairlight Audio: Can VFA?',
 			})
 		}
 
@@ -504,16 +504,16 @@ module.exports = {
 			for (let i = 0; i < audioSourceLength; i++) {
 				let srcId = i + 1
 				this.variableDefinitions.push({
-					name: `legacyAudio_source_${srcId}_mixOption`,
-					label: `Legacy Audio Source ${srcId}: Mix Option`,
+					variableId: `legacyAudio_source_${srcId}_mixOption`,
+					name: `Legacy Audio Source ${srcId}: Mix Option`,
 				})
 				this.variableDefinitions.push({
-					name: `legacyAudio_source_${srcId}_audioSource`,
-					label: `Legacy Audio Source ${srcId}: Audio Source`,
+					variableId: `legacyAudio_source_${srcId}_audioSource`,
+					name: `Legacy Audio Source ${srcId}: Audio Source`,
 				})
 				this.variableDefinitions.push({
-					name: `legacyAudio_source_${srcId}_isMixedIn`,
-					label: `Legacy Audio Source ${srcId}: Is Mixed In?`,
+					variableId: `legacyAudio_source_${srcId}_isMixedIn`,
+					name: `Legacy Audio Source ${srcId}: Is Mixed In?`,
 				})
 			}
 		}
@@ -523,68 +523,68 @@ module.exports = {
 		for (let i = 0; i < sourcesLength; i++) {
 			let srcId = i + 1
 			this.variableDefinitions.push({
-				name: `source_${srcId}_outputSource`,
-				label: `Source ${srcId} Output Source`,
+				variableId: `source_${srcId}_outputSource`,
+				name: `Source ${srcId} Output Source`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_keySource`,
-				label: `Source ${srcId} Key Source`,
+				variableId: `source_${srcId}_keySource`,
+				name: `Source ${srcId} Key Source`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_longName`,
-				label: `Source ${srcId} Long Name`,
+				variableId: `source_${srcId}_longName`,
+				name: `Source ${srcId} Long Name`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_inputSource`,
-				label: `Source ${srcId} Input Source`,
+				variableId: `source_${srcId}_inputSource`,
+				name: `Source ${srcId} Input Source`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_shortName`,
-				label: `Source ${srcId} Short Name`,
+				variableId: `source_${srcId}_shortName`,
+				name: `Source ${srcId} Short Name`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_mediaSourceFillOnly`,
-				label: `Source ${srcId} Media Source Fill Only`,
+				variableId: `source_${srcId}_mediaSourceFillOnly`,
+				name: `Source ${srcId} Media Source Fill Only`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_me2AndFillSources`,
-				label: `Source ${srcId} ME2 And Fill Sources`,
+				variableId: `source_${srcId}_me2AndFillSources`,
+				name: `Source ${srcId} ME2 And Fill Sources`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_auxSource`,
-				label: `Source ${srcId} Aux Source`,
+				variableId: `source_${srcId}_auxSource`,
+				name: `Source ${srcId} Aux Source`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_superSourceBoxSource`,
-				label: `Source ${srcId} Super Source Box Source`,
+				variableId: `source_${srcId}_superSourceBoxSource`,
+				name: `Source ${srcId} Super Source Box Source`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_me1AndFillSources`,
-				label: `Source ${srcId} ME1 And Fill Sources`,
+				variableId: `source_${srcId}_me1AndFillSources`,
+				name: `Source ${srcId} ME1 And Fill Sources`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_me4AndFillSources`,
-				label: `Source ${srcId} ME4 And Fill Sources`,
+				variableId: `source_${srcId}_me4AndFillSources`,
+				name: `Source ${srcId} ME4 And Fill Sources`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_superSourceArtSource`,
-				label: `Source ${srcId} Super Source Art Source`,
+				variableId: `source_${srcId}_superSourceArtSource`,
+				name: `Source ${srcId} Super Source Art Source`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_mediaSource`,
-				label: `Source ${srcId} Media Source`,
+				variableId: `source_${srcId}_mediaSource`,
+				name: `Source ${srcId} Media Source`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_inputSourceForHyperDeck`,
-				label: `Source ${srcId} Input Source For HyperDeck`,
+				variableId: `source_${srcId}_inputSourceForHyperDeck`,
+				name: `Source ${srcId} Input Source For HyperDeck`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_multiviewSource`,
-				label: `Source ${srcId} Multiview Source`,
+				variableId: `source_${srcId}_multiviewSource`,
+				name: `Source ${srcId} Multiview Source`,
 			})
 			this.variableDefinitions.push({
-				name: `source_${srcId}_me3AndFillSources`,
-				label: `Source ${srcId} ME3 And Fill Sources`,
+				variableId: `source_${srcId}_me3AndFillSources`,
+				name: `Source ${srcId} ME3 And Fill Sources`,
 			})
 		}
 
@@ -598,52 +598,52 @@ module.exports = {
 		for (let i = 0; i < colorGeneratorCount; i++) {
 			let cgId = i + 1
 			this.variableDefinitions.push({
-				name: `colorGenerator_${cgId}_hue`,
-				label: `Hue for Color Generator ${cgId}`,
+				variableId: `colorGenerator_${cgId}_hue`,
+				name: `Hue for Color Generator ${cgId}`,
 			})
 			this.variableDefinitions.push({
-				name: `colorGenerator_${cgId}_saturation`,
-				label: `Saturation for Color Generator ${cgId}`,
+				variableId: `colorGenerator_${cgId}_saturation`,
+				name: `Saturation for Color Generator ${cgId}`,
 			})
 			this.variableDefinitions.push({
-				name: `colorGenerator_${cgId}_luminance`,
-				label: `Luminance for Color Generator ${cgId}`,
+				variableId: `colorGenerator_${cgId}_luminance`,
+				name: `Luminance for Color Generator ${cgId}`,
 			})
 		}
 
 		// mediaPool
 		this.variableDefinitions.push({
-			name: 'mediaPool_clipCapacity',
-			label: 'Media Pool: Clip Capacity',
+			variableId: 'mediaPool_clipCapacity',
+			name: 'Media Pool: Clip Capacity',
 		})
 		this.variableDefinitions.push({
-			name: 'mediaPool_stillCapacity',
-			label: 'Media Pool: Still Capacity',
+			variableId: 'mediaPool_stillCapacity',
+			name: 'Media Pool: Still Capacity',
 		})
 		for (let i = 0; i < switcher.mediaStills; i++) {
 			let stillId = i + 1
 			this.variableDefinitions.push({
-				name: `mediaPool_still_${stillId}_filename`,
-				label: `Media Pool: Still ${stillId} Filename`,
+				variableId: `mediaPool_still_${stillId}_filename`,
+				name: `Media Pool: Still ${stillId} Filename`,
 			})
 		}
 		for (let i = 0; i < switcher.mediaPlayers; i++) {
 			let mpId = i + 1
 			this.variableDefinitions.push({
-				name: `mediaPool_mp_${mpId}_stillIndex`,
-				label: `Media Pool: Media Player ${mpId} Still Index`,
+				variableId: `mediaPool_mp_${mpId}_stillIndex`,
+				name: `Media Pool: Media Player ${mpId} Still Index`,
 			})
 			this.variableDefinitions.push({
-				name: `mediaPool_mp_${mpId}_clipIndex`,
-				label: `Media Pool: Media Player ${mpId} Clip Index`,
+				variableId: `mediaPool_mp_${mpId}_clipIndex`,
+				name: `Media Pool: Media Player ${mpId} Clip Index`,
 			})
 			this.variableDefinitions.push({
-				name: `mediaPool_mp_${mpId}_type`,
-				label: `Media Pool: Media Player ${mpId} Type`,
+				variableId: `mediaPool_mp_${mpId}_type`,
+				name: `Media Pool: Media Player ${mpId} Type`,
 			})
 			// this.variableDefinitions.push({
-			// 	name: `mediaPool_mp_${mpId}_index`,
-			// 	label: `Media Pool: Media Player ${mpId} Index`,
+			// 	variableId: `mediaPool_mp_${mpId}_index`,
+			// 	name: `Media Pool: Media Player ${mpId} Index`,
 			// })
 		}
 		// mediaPool.clips
@@ -663,8 +663,8 @@ module.exports = {
 		for (let i = 0; i < switcher.auxBuses; i++) {
 			let auxId = i + 1
 			this.variableDefinitions.push({
-				name: `aux_${auxId}_source`,
-				label: `Source for Aux ${auxId}`,
+				variableId: `aux_${auxId}_source`,
+				name: `Source for Aux ${auxId}`,
 			})
 		}
 
@@ -672,8 +672,8 @@ module.exports = {
 		for (let i = 0; i < switcher.multiViewers; i++) {
 			let multiviewerId = i + 1
 			this.variableDefinitions.push({
-				name: `multiview_${multiviewerId}_layout`,
-				label: `Layout for Multiview ${multiviewerId}`,
+				variableId: `multiview_${multiviewerId}_layout`,
+				name: `Layout for Multiview ${multiviewerId}`,
 			})
 		}
 
@@ -682,448 +682,448 @@ module.exports = {
 			let meId = i + 1
 			// transitionDve
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_logoRate`,
-				label: `Transition DVE Logo Rate for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_logoRate`,
+				name: `Transition DVE Logo Rate for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_style`,
-				label: `Transition DVE Style for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_style`,
+				name: `Transition DVE Style for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_fillSource`,
-				label: `Transition DVE Fill Source for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_fillSource`,
+				name: `Transition DVE Fill Source for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_reverse`,
-				label: `Transition DVE Reverse for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_reverse`,
+				name: `Transition DVE Reverse for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_rate`,
-				label: `Transition DVE Rate for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_rate`,
+				name: `Transition DVE Rate for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_flipFlop`,
-				label: `Transition DVE Flip Flop for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_flipFlop`,
+				name: `Transition DVE Flip Flop for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_keySource`,
-				label: `Transition DVE Key Source for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_keySource`,
+				name: `Transition DVE Key Source for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_preMultiplied`,
-				label: `Transition DVE Pre-Multiplied for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_preMultiplied`,
+				name: `Transition DVE Pre-Multiplied for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_enableKey`,
-				label: `Transition DVE Enable Key for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_enableKey`,
+				name: `Transition DVE Enable Key for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDve_invertKey`,
-				label: `Transition DVE Invert Key for ME ${meId}`,
+				variableId: `me_${meId}_transitionDve_invertKey`,
+				name: `Transition DVE Invert Key for ME ${meId}`,
 			})
 
 			// preview
 			this.variableDefinitions.push({
-				name: `me_${meId}_preview`,
-				label: `Preview for ME ${meId}`,
+				variableId: `me_${meId}_preview`,
+				name: `Preview for ME ${meId}`,
 			})
 
 			// transitionDip
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDip_dipSource`,
-				label: `Transition Dip Dip Source for ME ${meId}`,
+				variableId: `me_${meId}_transitionDip_dipSource`,
+				name: `Transition Dip Dip Source for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionDip_rate`,
-				label: `Transition Dip Rate for ME ${meId}`,
+				variableId: `me_${meId}_transitionDip_rate`,
+				name: `Transition Dip Rate for ME ${meId}`,
 			})
 
 			// transitionMix
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionMix_rate`,
-				label: `Transition Mix Rate for ME ${meId}`,
+				variableId: `me_${meId}_transitionMix_rate`,
+				name: `Transition Mix Rate for ME ${meId}`,
 			})
 
 			// inTransition
 			this.variableDefinitions.push({
-				name: `me_${meId}_inTransition`,
-				label: `inTransition for ME ${meId}`,
+				variableId: `me_${meId}_inTransition`,
+				name: `inTransition for ME ${meId}`,
 			})
 
 			// transitionSting
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionSting_source`,
-				label: `Transition Sting Source for ME ${meId}`,
+				variableId: `me_${meId}_transitionSting_source`,
+				name: `Transition Sting Source for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionSting_triggerPoint`,
-				label: `Transition Sting Trigger Point for ME ${meId}`,
+				variableId: `me_${meId}_transitionSting_triggerPoint`,
+				name: `Transition Sting Trigger Point for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionSting_clipDuration`,
-				label: `Transition Sting Clip Duration for ME ${meId}`,
+				variableId: `me_${meId}_transitionSting_clipDuration`,
+				name: `Transition Sting Clip Duration for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionSting_mixRate`,
-				label: `Transition Sting Mix Rate for ME ${meId}`,
+				variableId: `me_${meId}_transitionSting_mixRate`,
+				name: `Transition Sting Mix Rate for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionSting_preMultiplied`,
-				label: `Transition Sting Pre-Multiplied for ME ${meId}`,
+				variableId: `me_${meId}_transitionSting_preMultiplied`,
+				name: `Transition Sting Pre-Multiplied for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionSting_preRoll`,
-				label: `Transition Sting Pre-Roll for ME ${meId}`,
+				variableId: `me_${meId}_transitionSting_preRoll`,
+				name: `Transition Sting Pre-Roll for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionSting_invertKey`,
-				label: `Transition Sting Invert Key for ME ${meId}`,
+				variableId: `me_${meId}_transitionSting_invertKey`,
+				name: `Transition Sting Invert Key for ME ${meId}`,
 			})
 
 			// ftbInTransition
 			this.variableDefinitions.push({
-				name: `me_${meId}_ftbInTransition`,
-				label: `ftbInTransition for ME ${meId}`,
+				variableId: `me_${meId}_ftbInTransition`,
+				name: `ftbInTransition for ME ${meId}`,
 			})
 
 			// backgroundState
 			this.variableDefinitions.push({
-				name: `me_${meId}_backgroundState`,
-				label: `Background State for ME ${meId}`,
+				variableId: `me_${meId}_backgroundState`,
+				name: `Background State for ME ${meId}`,
 			})
 
 			// transitionWipe
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionWipe_pattern`,
-				label: `Transition Wipe Pattern for ME ${meId}`,
+				variableId: `me_${meId}_transitionWipe_pattern`,
+				name: `Transition Wipe Pattern for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionWipe_flipFlop`,
-				label: `Transition Wipe Flip Flop for ME ${meId}`,
+				variableId: `me_${meId}_transitionWipe_flipFlop`,
+				name: `Transition Wipe Flip Flop for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionWipe_fillSource`,
-				label: `Transition Wipe Fill Source for ME ${meId}`,
+				variableId: `me_${meId}_transitionWipe_fillSource`,
+				name: `Transition Wipe Fill Source for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionWipe_reverse`,
-				label: `Transition Wipe Reverse for ME ${meId}`,
+				variableId: `me_${meId}_transitionWipe_reverse`,
+				name: `Transition Wipe Reverse for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transitionWipe_rate`,
-				label: `Transition Wipe Rate for ME ${meId}`,
+				variableId: `me_${meId}_transitionWipe_rate`,
+				name: `Transition Wipe Rate for ME ${meId}`,
 			})
 
 			// usk
 			for (let j = 0; j < switcher.upstreamKeyers; j++) {
 				let uskId = j + 1
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_keyState`,
-					label: `Key State for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_keyState`,
+					name: `Key State for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_left`,
-					label: `Left for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_left`,
+					name: `Left for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_right`,
-					label: `Right for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_right`,
+					name: `Right for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_keySource`,
-					label: `Key Source for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_keySource`,
+					name: `Key Source for USK ${uskId} on ME ${meId}`,
 				})
 
 				// chromaAdvanced
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_sampleCb`,
-					label: `Chroma Advanced Sample CB for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_sampleCb`,
+					name: `Chroma Advanced Sample CB for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_blue`,
-					label: `Chroma Advanced Blue for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_blue`,
+					name: `Chroma Advanced Blue for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_red`,
-					label: `Chroma Advanced Red for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_red`,
+					name: `Chroma Advanced Red for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_flareSuppression`,
-					label: `Chroma Advanced Flare Suppression for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_flareSuppression`,
+					name: `Chroma Advanced Flare Suppression for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_sampleY`,
-					label: `Chroma Advanced Sample Y for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_sampleY`,
+					name: `Chroma Advanced Sample Y for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_green`,
-					label: `Chroma Advanced Green for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_green`,
+					name: `Chroma Advanced Green for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_foreground`,
-					label: `Chroma Advanced Foreground for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_foreground`,
+					name: `Chroma Advanced Foreground for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_background`,
-					label: `Chroma Advanced Background for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_background`,
+					name: `Chroma Advanced Background for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_spillSuppression`,
-					label: `Chroma Advanced Spill Supression for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_spillSuppression`,
+					name: `Chroma Advanced Spill Supression for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_saturation`,
-					label: `Chroma Advanced Saturation for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_saturation`,
+					name: `Chroma Advanced Saturation for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_sampleCr`,
-					label: `Chroma Advanced Sample CR for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_sampleCr`,
+					name: `Chroma Advanced Sample CR for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_contrast`,
-					label: `Chroma Advanced Contrast for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_contrast`,
+					name: `Chroma Advanced Contrast for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_brightness`,
-					label: `Chroma Advanced Brightness for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_brightness`,
+					name: `Chroma Advanced Brightness for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_chromaAdvanced_keyEdge`,
-					label: `Chroma Advanced Key Edge for USK ${uskId} on ME ${meId}`,
-				})
-
-				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_flyEnabled`,
-					label: `Fly Enabled for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_chromaAdvanced_keyEdge`,
+					name: `Chroma Advanced Key Edge for USK ${uskId} on ME ${meId}`,
 				})
 
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_fillSource`,
-					label: `Fill Source for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_flyEnabled`,
+					name: `Fly Enabled for USK ${uskId} on ME ${meId}`,
 				})
 
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_type`,
-					label: `Type for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_fillSource`,
+					name: `Fill Source for USK ${uskId} on ME ${meId}`,
+				})
+
+				this.variableDefinitions.push({
+					variableId: `me_${meId}_usk_${uskId}_type`,
+					name: `Type for USK ${uskId} on ME ${meId}`,
 				})
 
 				// dve begin
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderHue`,
-					label: `DVE Border Hue for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderHue`,
+					name: `DVE Border Hue for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_masked`,
-					label: `DVE Masked for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_masked`,
+					name: `DVE Masked for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderInnerSoftness`,
-					label: `DVE Border Inner Softness for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderInnerSoftness`,
+					name: `DVE Border Inner Softness for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderInnerWidth`,
-					label: `DVE Border Inner Width for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderInnerWidth`,
+					name: `DVE Border Inner Width for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_lightSourceAltitude`,
-					label: `DVE Light Source Altitude for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_lightSourceAltitude`,
+					name: `DVE Light Source Altitude for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderOuterWidth`,
-					label: `DVE Border Outer Width for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderOuterWidth`,
+					name: `DVE Border Outer Width for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_top`,
-					label: `DVE Top for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_top`,
+					name: `DVE Top for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_right`,
-					label: `DVE Right for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_right`,
+					name: `DVE Right for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderBevelSoftness`,
-					label: `DVE Border Bevel Softness for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderBevelSoftness`,
+					name: `DVE Border Bevel Softness for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderBevelPosition`,
-					label: `DVE Border Bevel Position for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderBevelPosition`,
+					name: `DVE Border Bevel Position for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderEnabled`,
-					label: `DVE Border Enabled for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderEnabled`,
+					name: `DVE Border Enabled for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_shadow`,
-					label: `DVE Shadow for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_shadow`,
+					name: `DVE Shadow for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderSaturation`,
-					label: `DVE Border Saturation for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderSaturation`,
+					name: `DVE Border Saturation for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_posX`,
-					label: `DVE posX for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_posX`,
+					name: `DVE posX for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_sizeY`,
-					label: `DVE sizeY for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_sizeY`,
+					name: `DVE sizeY for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderOpacity`,
-					label: `DVE Border Opacity for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderOpacity`,
+					name: `DVE Border Opacity for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderLuma`,
-					label: `DVE Border Luma for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderLuma`,
+					name: `DVE Border Luma for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_left`,
-					label: `DVE Left for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_left`,
+					name: `DVE Left for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_bottom`,
-					label: `DVE Bottom for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_bottom`,
+					name: `DVE Bottom for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderOuterSoftness`,
-					label: `DVE Border Outer Softness for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderOuterSoftness`,
+					name: `DVE Border Outer Softness for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_sizeX`,
-					label: `DVE sizeX for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_sizeX`,
+					name: `DVE sizeX for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_borderStyle`,
-					label: `DVE Border Style for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_borderStyle`,
+					name: `DVE Border Style for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_lightSourceDirection`,
-					label: `DVE Light Source Direction for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_lightSourceDirection`,
+					name: `DVE Light Source Direction for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_dve_posY`,
-					label: `DVE posY for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_dve_posY`,
+					name: `DVE posY for USK ${uskId} on ME ${meId}`,
 				})
 				// dve end
 
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_canFlyKey`,
-					label: `Can Fly Key for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_canFlyKey`,
+					name: `Can Fly Key for USK ${uskId} on ME ${meId}`,
 				})
 
 				// pattern begin
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_pattern_symmetry`,
-					label: `Pattern Symmetry for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_pattern_symmetry`,
+					name: `Pattern Symmetry for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_pattern_pattern`,
-					label: `Pattern Pattern for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_pattern_pattern`,
+					name: `Pattern Pattern for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_pattern_size`,
-					label: `Pattern Size for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_pattern_size`,
+					name: `Pattern Size for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_pattern_posX`,
-					label: `Pattern posX for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_pattern_posX`,
+					name: `Pattern posX for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_pattern_softness`,
-					label: `Pattern Softness for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_pattern_softness`,
+					name: `Pattern Softness for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_pattern_invertPattern`,
-					label: `Pattern Invert Pattern for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_pattern_invertPattern`,
+					name: `Pattern Invert Pattern for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_pattern_posY`,
-					label: `Pattern posY for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_pattern_posY`,
+					name: `Pattern posY for USK ${uskId} on ME ${meId}`,
 				})
 				// pattern end
 
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_bottom`,
-					label: `Bottom for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_bottom`,
+					name: `Bottom for USK ${uskId} on ME ${meId}`,
 				})
 
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_masked`,
-					label: `Masked for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_masked`,
+					name: `Masked for USK ${uskId} on ME ${meId}`,
 				})
 
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_onAir`,
-					label: `On Air for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_onAir`,
+					name: `On Air for USK ${uskId} on ME ${meId}`,
 				})
 
 				// luma begin
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_luma_invertKey`,
-					label: `Luma Invert Key for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_luma_invertKey`,
+					name: `Luma Invert Key for USK ${uskId} on ME ${meId}`,
 				})
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_luma_preMultiplied`,
-					label: `Luma Pre-Multiplied for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_luma_preMultiplied`,
+					name: `Luma Pre-Multiplied for USK ${uskId} on ME ${meId}`,
 				})
 				// luma end
 
 				this.variableDefinitions.push({
-					name: `me_${meId}_usk_${uskId}_top`,
-					label: `Top for USK ${uskId} on ME ${meId}`,
+					variableId: `me_${meId}_usk_${uskId}_top`,
+					name: `Top for USK ${uskId} on ME ${meId}`,
 				})
 			}
 
 			// ftb
 			this.variableDefinitions.push({
-				name: `me_${meId}_ftb`,
-				label: `FTB for ME ${meId}`,
+				variableId: `me_${meId}_ftb`,
+				name: `FTB for ME ${meId}`,
 			})
 
 			// program
 			this.variableDefinitions.push({
-				name: `me_${meId}_program`,
-				label: `Program for ME ${meId}`,
+				variableId: `me_${meId}_program`,
+				name: `Program for ME ${meId}`,
 			})
 
 			// transition begin
 			this.variableDefinitions.push({
-				name: `me_${meId}_transition_style`,
-				label: `Transition Style for ME ${meId}`,
+				variableId: `me_${meId}_transition_style`,
+				name: `Transition Style for ME ${meId}`,
 			})
 			this.variableDefinitions.push({
-				name: `me_${meId}_transition_rate`,
-				label: `Transition Rate for ME ${meId}`,
+				variableId: `me_${meId}_transition_rate`,
+				name: `Transition Rate for ME ${meId}`,
 			})
 			// transition end
 		}
 
 		// macros begin
 		this.variableDefinitions.push({
-			name: 'macros_isLooping',
-			label: 'Macros: Looping?',
+			variableId: 'macros_isLooping',
+			name: 'Macros: Looping?',
 		})
 
 		this.variableDefinitions.push({
-			name: 'macros_isRunning',
-			label: 'Macros: Running?',
+			variableId: 'macros_isRunning',
+			name: 'Macros: Running?',
 		})
 
 		this.variableDefinitions.push({
-			name: 'macros_isWaiting',
-			label: 'Macros: Waiting?',
+			variableId: 'macros_isWaiting',
+			name: 'Macros: Waiting?',
 		})
 
 		this.variableDefinitions.push({
-			name: 'macros_isRecording',
-			label: 'Macros: Recording?',
+			variableId: 'macros_isRecording',
+			name: 'Macros: Recording?',
 		})
 
 		for (let i = 0; i < switcher.macros; i++) {
 			let macroId = i + 1
 			this.variableDefinitions.push({
-				name: `macros_${macroId}_name`,
-				label: `Name for Macro ${macroId}`,
+				variableId: `macros_${macroId}_name`,
+				name: `Name for Macro ${macroId}`,
 			})
 		}
 		// macros end
@@ -1132,15 +1132,16 @@ module.exports = {
 		this.setVariableDefinitions(this.variableDefinitions)
 
 		// Set initial values
-		this.variableDefinitions.forEach(({ name, defaultValue }) => {
-			this.updateVariable(name, defaultValue)
+		// TODO: Optimise by setting all at once
+		this.variableDefinitions.forEach(({ variableId, defaultValue }) => {
+			this.updateVariable(variableId, defaultValue)
 		})
 	},
 
-	updateVariable(name, value) {
-		const { storeId, feedback } = this.variableDefinitions.find((item) => item.name === name) || {}
+	updateVariable(variableId, value) {
+		const { storeId, feedback } = this.variableDefinitions.find((item) => item.variableId === variableId) || {}
 
-		this.setVariable(name, value)
+		this.setVariableValues({ variableId: value })
 
 		if (storeId) {
 			this.store.variables[storeId] = value
@@ -1150,6 +1151,8 @@ module.exports = {
 		}
 	},
 
+	// TODO: Optimise Variable sets by making use of the fact that Companion 3.0
+	//  allows setting multiple variables at once.
 	updateVariables(data) {
 		// dsk
 		data?.dsk?.forEach((item) => {
