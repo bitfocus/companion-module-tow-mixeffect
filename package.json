@@ -25,6 +25,7 @@
 	"author": "Johnny Estilles <johnny@estilles.com>",
 	"license": "MIT",
 	"devDependencies": {
+		"@companion-module/tools": "^0.5.2",
 		"@semantic-release/changelog": "^6.0.1",
 		"@semantic-release/git": "^10.0.1",
 		"eslint": "^8.1.0",
@@ -35,5 +36,8 @@
 	"bugs": {
 		"url": "https://github.com/bitfocus/companion-module-tow-mixeffect/issues"
 	},
-	"api_version": "1.0.0"
+	"api_version": "1.0.0",
+	"dependencies": {
+		"@companion-module/base": "~1.1.0"
+	}
 }
