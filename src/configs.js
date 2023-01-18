@@ -5,7 +5,7 @@ module.exports = {
 	config_fields() {
 		return [
 			{
-				type: 'text',
+				type: 'static-text',
 				id: 'info',
 				width: 12,
 				label: 'Information',
@@ -56,7 +56,7 @@ module.exports = {
 				default: true,
 			},
 			{
-				type: 'text',
+				type: 'static-text',
 				id: 'notice',
 				width: 12,
 				label: '',
