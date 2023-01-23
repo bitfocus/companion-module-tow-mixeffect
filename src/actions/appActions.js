@@ -32,7 +32,7 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/connect', [{ type: 's', value: options.switcherName }])
+			context.oscSendPath('/mixeffect/connect', [{ type: 's', value: options.switcherName }])
 		},
 	}
 
@@ -51,7 +51,7 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/shortcut', [
+			context.oscSendPath('/shortcut', [
 				{ type: 's', value: options.shortcutName },
 				{ type: 's', value: options.shortcutInput },
 			])
@@ -73,7 +73,7 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/shortcut/return', [
+			context.oscSendPath('/shortcut/return', [
 				{ type: 's', value: options.shortcutName },
 				{ type: 's', value: options.shortcutInput },
 			])
@@ -93,7 +93,7 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/section', [{ type: 's', value: options.section }])
+			context.oscSendPath('/mixeffect/section', [{ type: 's', value: options.section }])
 		},
 	}
 
@@ -108,7 +108,7 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/page', [{ type: 's', value: options.page }])
+			context.oscSendPath('/mixeffect/page', [{ type: 's', value: options.page }])
 		},
 	}
 
@@ -116,7 +116,7 @@ const appActions = ({ context }) => {
 		name: 'App: Switcher Page: Previous',
 		options: [],
 		callback: () => {
-			context.oscSend('/mixeffect/page', [{ type: 's', value: 'previous' }])
+			context.oscSendPath('/mixeffect/page', [{ type: 's', value: 'previous' }])
 		},
 	}
 
@@ -124,28 +124,28 @@ const appActions = ({ context }) => {
 		name: 'App: Switcher Page: Next',
 		options: [],
 		callback: () => {
-			context.oscSend('/mixeffect/page', [{ type: 's', value: 'next' }])
+			context.oscSendPath('/mixeffect/page', [{ type: 's', value: 'next' }])
 		},
 	}
 
 	actions.appRemoteWebView = {
 		name: 'App: Remote WebView',
 		options: [],
-		callback: () => context.oscSend('/mixeffect/remote-webview'),
+		callback: () => context.oscSendPath('/mixeffect/remote-webview'),
 	}
 
 	actions.appVideoFollowsAudio = {
 		name: 'App: Video Follows Audio',
 		options: [option.mode()],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/vfa', [{ type: 's', value: options.mode }])
+			context.oscSendPath('/mixeffect/vfa', [{ type: 's', value: options.mode }])
 		},
 	}
 
 	actions.appViewOnlyMode = {
 		name: 'App: View Only Mode',
 		options: [],
-		callback: () => context.oscSend('/mixeffect/vom'),
+		callback: () => context.oscSendPath('/mixeffect/vom'),
 	}
 
 	return actions

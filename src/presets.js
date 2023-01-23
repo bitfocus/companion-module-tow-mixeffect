@@ -26,7 +26,7 @@ module.exports = {
 			feedbacks: [],
 			steps: [
 				{
-					down: [actionId, options],
+					down: [{ actionId, options }],
 					up: [],
 				},
 			],
@@ -79,8 +79,8 @@ module.exports = {
 
 		// Transitions
 		const transitionList = [
-			{ name: 'Auto', actionId: 'auto', options: { mixEffectBus: 1 } },
-			{ name: 'Cut', actionId: 'cut', options: { mixEffectBus: 1 } },
+			{ name: 'Auto', actionId: 'transitionAuto', options: { mixEffectBus: 1 } },
+			{ name: 'Cut', actionId: 'transitionCut', options: { mixEffectBus: 1 } },
 		]
 		addPresetObject({
 			category: 'Transitions',

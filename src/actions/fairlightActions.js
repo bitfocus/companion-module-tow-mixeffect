@@ -11,7 +11,7 @@ const fairlightActions = ({ context }) => {
 			option.value({ label: 'Frame Delay', id: 'frameDelay', min: 0, max: 8, step: 1 }),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/fairlight/frame-delay', [
+			context.oscSendPath('/mixeffect/fairlight/frame-delay', [
 				{ type: 'i', value: options.audioSource },
 				{ type: 'i', value: options.audioSourceType },
 				{ type: 'i', value: options.frameDelay },
@@ -38,7 +38,7 @@ const fairlightActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/fairlight/mix-option', [
+			context.oscSendPath('/mixeffect/fairlight/mix-option', [
 				{ type: 'i', value: options.audioSource },
 				{ type: 'i', value: options.audioSourceType },
 				{ type: 'i', value: options.mixOption },
@@ -54,7 +54,7 @@ const fairlightActions = ({ context }) => {
 			option.value({ min: -100, max: 10, defaultValue: 0 }),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/fairlight/fader-gain/set', [
+			context.oscSendPath('/mixeffect/fairlight/fader-gain/set', [
 				{ type: 'i', value: options.audioSource },
 				{ type: 'i', value: options.audioSourceType },
 				{ type: 'f', value: parseFloat(options.value) },
@@ -70,7 +70,7 @@ const fairlightActions = ({ context }) => {
 			option.value({ min: -100, max: 6, defaultValue: 0 }),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/fairlight/input-gain/set', [
+			context.oscSendPath('/mixeffect/fairlight/input-gain/set', [
 				{ type: 'i', value: options.audioSource },
 				{ type: 'i', value: options.audioSourceType },
 				{ type: 'f', value: parseFloat(options.value) },
@@ -82,7 +82,7 @@ const fairlightActions = ({ context }) => {
 		name: 'Fairlight: Master Gain Set',
 		options: [option.value({ min: -100, max: 10, defaultValue: 0 })],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/fairlight/master-gain/set', [{ type: 'f', value: parseFloat(options.value) }])
+			context.oscSendPath('/mixeffect/fairlight/master-gain/set', [{ type: 'f', value: parseFloat(options.value) }])
 		},
 	}
 
@@ -94,7 +94,7 @@ const fairlightActions = ({ context }) => {
 			option.value({ min: -100, max: 10, defaultValue: 0 }),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/fairlight/fader-gain/adjust', [
+			context.oscSendPath('/mixeffect/fairlight/fader-gain/adjust', [
 				{ type: 'i', value: options.audioSource },
 				{ type: 'i', value: options.audioSourceType },
 				{ type: 'f', value: parseFloat(options.value) },
@@ -110,7 +110,7 @@ const fairlightActions = ({ context }) => {
 			option.value({ min: -100, max: 6, defaultValue: 0 }),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/fairlight/input-gain/adjust', [
+			context.oscSendPath('/mixeffect/fairlight/input-gain/adjust', [
 				{ type: 'i', value: options.audioSource },
 				{ type: 'i', value: options.audioSourceType },
 				{ type: 'f', value: parseFloat(options.value) },
@@ -122,14 +122,14 @@ const fairlightActions = ({ context }) => {
 		name: 'Fairlight: Master Gain Adjust',
 		options: [option.value({ min: -100, max: 10, defaultValue: 0 })],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/fairlight/master-gain/adjust', [{ type: 'f', value: parseFloat(options.value) }])
+			context.oscSendPath('/mixeffect/fairlight/master-gain/adjust', [{ type: 'f', value: parseFloat(options.value) }])
 		},
 	}
 
 	actions.fairlightResetPeaks = {
 		name: 'Fairlight: Reset Peaks',
 		options: [],
-		callback: () => context.oscSend('/mixeffect/fairlight/reset-peaks'),
+		callback: () => context.oscSendPath('/mixeffect/fairlight/reset-peaks'),
 	}
 
 	actions.fairlightResetSourcePeaks = {
@@ -142,7 +142,7 @@ const fairlightActions = ({ context }) => {
 			option.yesNo({ label: 'Reset Dynamics Output Peaks', id: 'dynamicOutput' }),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/fairlight/reset-source-peaks', [
+			context.oscSendPath('/mixeffect/fairlight/reset-source-peaks', [
 				{ type: 'i', value: options.audioSource },
 				{ type: 'i', value: options.audioSourceType },
 				{ type: 'i', value: options.output },

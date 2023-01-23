@@ -46,7 +46,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Auto',
 		options: [option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/auto', [
+			context.oscSendPath('/mixeffect/auto', [
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
 		},
@@ -56,7 +56,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Cut',
 		options: [option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/cut', [
+			context.oscSendPath('/mixeffect/cut', [
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
 		},
@@ -80,7 +80,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dip', [
+			context.oscSendPath('/mixeffect/transition/dip', [
 				{ type: 'i', value: options.rate },
 				{ type: 'i', value: options.videoSource },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -105,7 +105,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dip/source', [
+			context.oscSendPath('/mixeffect/transition/dip/source', [
 				{ type: 'i', value: options.videoSource },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -146,7 +146,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve', [
+			context.oscSendPath('/mixeffect/transition/dve', [
 				{ type: 'i', value: options.rate },
 				{ type: 'i', value: options.style },
 				{ type: 'i', value: options.fillSource },
@@ -167,7 +167,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Flip Flop',
 		options: [option.mode({ label: 'Flip Flop', id: 'flipflop' }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/flip-flop', [
+			context.oscSendPath('/mixeffect/transition/dve/flip-flop', [
 				{ type: 'i', value: options.flipflop },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -192,7 +192,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/inputs', [
+			context.oscSendPath('/mixeffect/transition/dve/inputs', [
 				{ type: 'i', value: options.fillSource },
 				{ type: 'i', value: options.keySource },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -210,7 +210,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/key', [
+			context.oscSendPath('/mixeffect/transition/dve/key', [
 				{ type: 'i', value: options.preMultiplied },
 				{ type: 'f', value: parseFloat(options.clip) },
 				{ type: 'f', value: parseFloat(options.gain) },
@@ -224,7 +224,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Key Clip Gain',
 		options: [option.clip(), option.gain(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/key/clip-gain', [
+			context.oscSendPath('/mixeffect/transition/dve/key/clip-gain', [
 				{ type: 'f', value: parseFloat(options.clip) },
 				{ type: 'f', value: parseFloat(options.gain) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -236,7 +236,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Key Clip Set',
 		options: [option.clip(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/key/clip/set', [
+			context.oscSendPath('/mixeffect/transition/dve/key/clip/set', [
 				{ type: 'f', value: parseFloat(options.clip) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -247,7 +247,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Key Clip Adjust',
 		options: [option.value({ min: -100, max: 100, step: 0.1, defaultValue: 0 }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/key/clip/adjust', [
+			context.oscSendPath('/mixeffect/transition/dve/key/clip/adjust', [
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -258,7 +258,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Key Gain Set',
 		options: [option.gain(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/key/gain/set', [
+			context.oscSendPath('/mixeffect/transition/dve/key/gain/set', [
 				{ type: 'f', value: parseFloat(options.gain) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -269,7 +269,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Key Gain Adjust',
 		options: [option.value({ min: -100, max: 100, step: 0.1, defaultValue: 0 }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/key/gain/adjust', [
+			context.oscSendPath('/mixeffect/transition/dve/key/gain/adjust', [
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -280,7 +280,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Key Enable',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/key/enable', [
+			context.oscSendPath('/mixeffect/transition/dve/key/enable', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -291,7 +291,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Key Invert',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/key/invert', [
+			context.oscSendPath('/mixeffect/transition/dve/key/invert', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -302,7 +302,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Key Pre Multiplied',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/key/pre-multiplied', [
+			context.oscSendPath('/mixeffect/transition/dve/key/pre-multiplied', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -313,7 +313,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE Reverse',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/reverse', [
+			context.oscSendPath('/mixeffect/transition/dve/reverse', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -334,7 +334,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/dve/style', [
+			context.oscSendPath('/mixeffect/transition/dve/style', [
 				{ type: 'i', value: options.style },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -345,7 +345,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Mix',
 		options: [option.rate(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/mix', [
+			context.oscSendPath('/mixeffect/transition/mix', [
 				{ type: 'i', value: options.rate },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -356,7 +356,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Next',
 		options: [option.usk(context, true, true), option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/next', [
+			context.oscSendPath('/mixeffect/transition/next', [
 				{ type: 'i', value: context.selectedOrValue('usk', options.usk) },
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -368,7 +368,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Preview',
 		options: [option.mode(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/preview', [
+			context.oscSendPath('/mixeffect/transition/preview', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -395,7 +395,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/rate', [
+			context.oscSendPath('/mixeffect/transition/rate', [
 				{ type: 'i', value: options.style },
 				{ type: 'i', value: options.rate },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -422,7 +422,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/style', [
+			context.oscSendPath('/mixeffect/transition/style', [
 				{ type: 'i', value: options.style },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -459,7 +459,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe', [
+			context.oscSendPath('/mixeffect/transition/wipe', [
 				{ type: 'i', value: options.rate },
 				{ type: 'i', value: options.pattern },
 				{ type: 'f', value: parseFloat(options.width) },
@@ -492,7 +492,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/border', [
+			context.oscSendPath('/mixeffect/transition/wipe/border', [
 				{ type: 'f', value: parseFloat(options.width) },
 				{ type: 'f', value: parseFloat(options.softness) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -504,7 +504,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Wipe Border Softness Set',
 		options: [option.softness(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/border/parameter/set', [
+			context.oscSendPath('/mixeffect/transition/wipe/border/parameter/set', [
 				{ type: 'i', value: 0 },
 				{ type: 'f', value: parseFloat(options.softness) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -516,7 +516,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Wipe Border Softness Adjust',
 		options: [option.value({ min: -100, max: 100, step: 0.1, defaultValue: 0 }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/border/parameter/adjust', [
+			context.oscSendPath('/mixeffect/transition/wipe/border/parameter/adjust', [
 				{ type: 'i', value: 0 },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -538,7 +538,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/border/parameter/set', [
+			context.oscSendPath('/mixeffect/transition/wipe/border/parameter/set', [
 				{ type: 'i', value: 1 },
 				{ type: 'f', value: parseFloat(options.width) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -558,7 +558,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/border/parameter/adjust', [
+			context.oscSendPath('/mixeffect/transition/wipe/border/parameter/adjust', [
 				{ type: 'i', value: 1 },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -570,7 +570,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Wipe Flip Flop',
 		options: [option.mode({ label: 'Flip Flop', id: 'flipflop' }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/flip-flop', [
+			context.oscSendPath('/mixeffect/transition/wipe/flip-flop', [
 				{ type: 'i', value: options.flipflop },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -581,7 +581,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Wipe Pattern',
 		options: [option.pattern(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/pattern', [
+			context.oscSendPath('/mixeffect/transition/wipe/pattern', [
 				{ type: 'i', value: options.pattern },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -592,7 +592,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Wipe Pattern Cycle',
 		options: [option.yesNo({ label: 'Reverse', id: 'reverse' }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/pattern/cycle', [
+			context.oscSendPath('/mixeffect/transition/wipe/pattern/cycle', [
 				{ type: 'i', value: options.reverse },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -607,7 +607,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/position', [
+			context.oscSendPath('/mixeffect/transition/wipe/position', [
 				{ type: 'f', value: parseFloat(options.x) },
 				{ type: 'f', value: parseFloat(options.y) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -623,7 +623,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/position/set', [
+			context.oscSendPath('/mixeffect/transition/wipe/position/set', [
 				{ type: 's', value: options.coordinate },
 				{ type: 'f', value: parseFloat(options.position) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -644,7 +644,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/position/adjust', [
+			context.oscSendPath('/mixeffect/transition/wipe/position/adjust', [
 				{ type: 's', value: options.coordinate },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
@@ -656,7 +656,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Wipe Reverse',
 		options: [option.mode({ label: 'Reverse', id: 'reverse' }), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/reverse', [
+			context.oscSendPath('/mixeffect/transition/wipe/reverse', [
 				{ type: 'i', value: options.reverse },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -675,7 +675,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/source', [
+			context.oscSendPath('/mixeffect/transition/wipe/source', [
 				{ type: 'i', value: options.fillSource },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -686,7 +686,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: Wipe Symmetry Set',
 		options: [option.symmetry(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/symmetry', [
+			context.oscSendPath('/mixeffect/transition/wipe/symmetry', [
 				{ type: 'f', value: parseFloat(options.symmetry) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -705,7 +705,7 @@ const transitionActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/transition/wipe/symmetry/adjust', [
+			context.oscSendPath('/mixeffect/transition/wipe/symmetry/adjust', [
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])

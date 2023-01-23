@@ -29,7 +29,7 @@ const mixEffectBusActions = ({ context }) => {
 		name: 'M/E: Fade to Black Auto',
 		options: [option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/ftb', [
+			context.oscSendPath('/mixeffect/ftb', [
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
 		},
@@ -39,7 +39,7 @@ const mixEffectBusActions = ({ context }) => {
 		name: 'M/E: Fade to Black Rate',
 		options: [option.rate(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/ftb/rate', [
+			context.oscSendPath('/mixeffect/ftb/rate', [
 				{ type: 'i', value: options.rate },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -56,7 +56,7 @@ const mixEffectBusActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/preview', [
+			context.oscSendPath('/mixeffect/preview', [
 				{ type: 'i', value: options.videoSource },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -73,7 +73,7 @@ const mixEffectBusActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/program', [
+			context.oscSendPath('/mixeffect/program', [
 				{ type: 'i', value: options.videoSource },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])

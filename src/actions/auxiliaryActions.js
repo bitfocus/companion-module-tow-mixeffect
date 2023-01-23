@@ -22,7 +22,7 @@ const auxiliaryActions = ({ context }) => {
 			option.auxBuses(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/aux/source', [
+			context.oscSendPath('/mixeffect/aux/source', [
 				{ type: 'i', value: options.videoSource },
 				{ type: 'i', value: context.selectedOrValue('aux_bus', options.auxBus) },
 			])

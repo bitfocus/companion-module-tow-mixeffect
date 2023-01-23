@@ -16,7 +16,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Auto',
 		options: [option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/auto', [{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) }])
+			context.oscSendPath('/mixeffect/dsk/auto', [{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) }])
 		},
 	}
 
@@ -38,7 +38,7 @@ const downstreamKeyerActions = ({ context }) => {
 			option.dsk(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/inputs', [
+			context.oscSendPath('/mixeffect/dsk/inputs', [
 				{ type: 'i', value: options.fillSource },
 				{ type: 'i', value: options.keySource },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -56,7 +56,7 @@ const downstreamKeyerActions = ({ context }) => {
 			option.dsk(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/key', [
+			context.oscSendPath('/mixeffect/dsk/key', [
 				{ type: 'i', value: options.preMultiplied },
 				{ type: 'f', value: parseFloat(options.clip) },
 				{ type: 'f', value: parseFloat(options.gain) },
@@ -70,7 +70,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Key Clip Gain',
 		options: [option.clip(), option.gain(), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/key/clip-gain', [
+			context.oscSendPath('/mixeffect/dsk/key/clip-gain', [
 				{ type: 'f', value: parseFloat(options.clip) },
 				{ type: 'f', value: parseFloat(options.gain) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -82,7 +82,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Key Clip Set',
 		options: [option.value({ step: 0.1 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/key/clip/set', [
+			context.oscSendPath('/mixeffect/dsk/key/clip/set', [
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])
@@ -93,7 +93,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Key Gain Set',
 		options: [option.value({ step: 0.1 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/key/gain/set', [
+			context.oscSendPath('/mixeffect/dsk/key/gain/set', [
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])
@@ -104,7 +104,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Key Clip Adjust',
 		options: [option.value({ min: -100, step: 0.1 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/key/clip/adjust', [
+			context.oscSendPath('/mixeffect/dsk/key/clip/adjust', [
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])
@@ -115,7 +115,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Key Gain Adjust',
 		options: [option.value({ min: -100, step: 0.1 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/key/gain/adjust', [
+			context.oscSendPath('/mixeffect/dsk/key/gain/adjust', [
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])
@@ -126,7 +126,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Key Invert',
 		options: [option.mode(), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/key/invert', [
+			context.oscSendPath('/mixeffect/dsk/key/invert', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])
@@ -137,7 +137,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Key Pre Multiplied',
 		options: [option.mode(), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/key/pre-multiplied', [
+			context.oscSendPath('/mixeffect/dsk/key/pre-multiplied', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])
@@ -154,7 +154,7 @@ const downstreamKeyerActions = ({ context }) => {
 			option.dsk(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask', [
+			context.oscSendPath('/mixeffect/dsk/mask', [
 				{ type: 'f', value: parseFloat(options.top) },
 				{ type: 'f', value: parseFloat(options.bottom) },
 				{ type: 'f', value: parseFloat(options.left) },
@@ -168,7 +168,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Mask Enable',
 		options: [option.mode(), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask/enable', [
+			context.oscSendPath('/mixeffect/dsk/mask/enable', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])
@@ -179,7 +179,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Mask Top Set',
 		options: [option.value({ min: -9, max: 9, defaultValue: 9 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask/set', [
+			context.oscSendPath('/mixeffect/dsk/mask/set', [
 				{ type: 's', value: 'top' },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -191,7 +191,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Mask Bottom Set',
 		options: [option.value({ min: -9, max: 9, defaultValue: -9 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask/set', [
+			context.oscSendPath('/mixeffect/dsk/mask/set', [
 				{ type: 's', value: 'bottom' },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -203,7 +203,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Mask Left Set',
 		options: [option.value({ min: -16, max: 16, defaultValue: -16 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask/set', [
+			context.oscSendPath('/mixeffect/dsk/mask/set', [
 				{ type: 's', value: 'left' },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -215,7 +215,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Mask Right Set',
 		options: [option.value({ min: -16, max: 16, defaultValue: 16 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask/set', [
+			context.oscSendPath('/mixeffect/dsk/mask/set', [
 				{ type: 's', value: 'right' },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -227,7 +227,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Mask Top Adjust',
 		options: [option.value({ min: -9, max: 9, defaultValue: 0 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask/adjust', [
+			context.oscSendPath('/mixeffect/dsk/mask/adjust', [
 				{ type: 's', value: 'top' },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -239,7 +239,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Mask Bottom Adjust',
 		options: [option.value({ min: -9, max: 9, defaultValue: 0 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask/adjust', [
+			context.oscSendPath('/mixeffect/dsk/mask/adjust', [
 				{ type: 's', value: 'bottom' },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -251,7 +251,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Mask Left Adjust',
 		options: [option.value({ min: -16, max: 16, defaultValue: 0 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask/adjust', [
+			context.oscSendPath('/mixeffect/dsk/mask/adjust', [
 				{ type: 's', value: 'left' },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -263,7 +263,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Mask Right Adjust',
 		options: [option.value({ min: -16, max: 16, defaultValue: 0 }), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/mask/adjust', [
+			context.oscSendPath('/mixeffect/dsk/mask/adjust', [
 				{ type: 's', value: 'right' },
 				{ type: 'f', value: parseFloat(options.value) },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
@@ -275,7 +275,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: On Air',
 		options: [option.mode(), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/on-air', [
+			context.oscSendPath('/mixeffect/dsk/on-air', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])
@@ -286,7 +286,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Rate',
 		options: [option.rate(), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/rate', [
+			context.oscSendPath('/mixeffect/dsk/rate', [
 				{ type: 'i', value: options.rate },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])
@@ -297,7 +297,7 @@ const downstreamKeyerActions = ({ context }) => {
 		name: 'DSK: Tie',
 		options: [option.mode(), option.dsk(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/dsk/tie', [
+			context.oscSendPath('/mixeffect/dsk/tie', [
 				{ type: 'i', value: options.mode },
 				{ type: 'i', value: context.selectedOrValue('dsk', options.dsk) },
 			])

@@ -16,28 +16,28 @@ const macroActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/macro', [{ type: 'i', value: options.macro }])
+			context.oscSendPath('/mixeffect/macro', [{ type: 'i', value: options.macro }])
 		},
 	}
 
 	actions.macroContinue = {
 		name: 'Macro: Continue',
 		options: [],
-		callback: () => context.oscSend('/mixeffect/macro/continue'),
+		callback: () => context.oscSendPath('/mixeffect/macro/continue'),
 	}
 
 	actions.macroLoop = {
 		name: 'Macro: Loop',
 		options: [option.mode()],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/macro/loop', [{ type: 'i', value: options.mode }])
+			context.oscSendPath('/mixeffect/macro/loop', [{ type: 'i', value: options.mode }])
 		},
 	}
 
 	actions.macroStop = {
 		name: 'Macro: Stop',
 		options: [],
-		callback: () => context.oscSend('/mixeffect/macro/stop'),
+		callback: () => context.oscSendPath('/mixeffect/macro/stop'),
 	}
 
 	return actions

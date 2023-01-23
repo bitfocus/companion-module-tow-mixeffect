@@ -37,7 +37,7 @@ const outputActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/recording/filename', [{ type: 's', value: options.filename }])
+			context.oscSendPath('/mixeffect/recording/filename', [{ type: 's', value: options.filename }])
 		},
 	}
 
@@ -57,14 +57,14 @@ const outputActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/recording/start-stop', [{ type: 'i', value: options.mode }])
+			context.oscSendPath('/mixeffect/recording/start-stop', [{ type: 'i', value: options.mode }])
 		},
 	}
 
 	actions.recordingSwitchDisk = {
 		name: 'Output: Recording Switch Disk',
 		options: [],
-		callback: () => context.oscSend('/mixeffect/recording/switch-disk'),
+		callback: () => context.oscSendPath('/mixeffect/recording/switch-disk'),
 	}
 
 	actions.streamingSetService = {
@@ -119,7 +119,7 @@ const outputActions = ({ context }) => {
 				;({ bitrate1, bitrate2 } = bitrates.find(({ id }) => id === options.bitrate))
 			}
 
-			context.oscSend('/mixeffect/streaming/service', [
+			context.oscSendPath('/mixeffect/streaming/service', [
 				{ type: 's', value: options.name },
 				{ type: 's', value: options.url },
 				{ type: 's', value: options.key },
@@ -145,7 +145,7 @@ const outputActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/streaming/start-stop', [{ type: 'i', value: options.mode }])
+			context.oscSendPath('/mixeffect/streaming/start-stop', [{ type: 'i', value: options.mode }])
 		},
 	}
 

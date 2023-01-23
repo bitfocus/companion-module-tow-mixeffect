@@ -33,7 +33,7 @@ const superSourceActions = ({ context }) => {
 				},
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/speed', [{ type: 'i', value: options.speed }])
+				context.oscSendPath('/mixeffect/ssrc/speed', [{ type: 'i', value: options.speed }])
 			},
 		}
 
@@ -41,7 +41,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Cycle Animation Speed',
 			options: [],
 			callback: () => {
-				context.oscSend('/mixeffect/ssrc/cycle-speed')
+				context.oscSendPath('/mixeffect/ssrc/cycle-speed')
 			},
 		}
 
@@ -68,7 +68,7 @@ const superSourceActions = ({ context }) => {
 				},
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/style', [{ type: 'i', value: options.style }])
+				context.oscSendPath('/mixeffect/ssrc/style', [{ type: 'i', value: options.style }])
 			},
 		}
 
@@ -76,7 +76,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Cycle Animation Style',
 			options: [],
 			callback: () => {
-				context.oscSend('/mixeffect/ssrc/cycle-style')
+				context.oscSendPath('/mixeffect/ssrc/cycle-style')
 			},
 		}
 
@@ -119,7 +119,7 @@ const superSourceActions = ({ context }) => {
 				option.superSource(context),
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art', [
+				context.oscSendPath('/mixeffect/ssrc/art', [
 					{ type: 'i', value: options.fill },
 					{ type: 'i', value: options.key },
 					{ type: 'i', value: options.mode },
@@ -153,7 +153,7 @@ const superSourceActions = ({ context }) => {
 					option.superSource(context),
 				],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border', [
+					context.oscSendPath('/mixeffect/ssrc/art/border', [
 						{ type: 'i', value: Number(options.enable) },
 						{ type: 'i', value: options.style },
 						{ type: 'f', value: parseFloat(options.outerWidth) },
@@ -176,7 +176,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Enable',
 				options: [option.mode(), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/enable', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/enable', [
 						{ type: 'i', value: options.mode },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 					])
@@ -195,7 +195,7 @@ const superSourceActions = ({ context }) => {
 					option.superSource(context),
 				],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 0 },
 						{ type: 'i', value: options.style },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -210,7 +210,7 @@ const superSourceActions = ({ context }) => {
 					option.superSource(context),
 				],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 1 },
 						{ type: 'i', value: options.outerWidth },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -225,7 +225,7 @@ const superSourceActions = ({ context }) => {
 					option.superSource(context),
 				],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 2 },
 						{ type: 'i', value: options.innerWidth },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -237,7 +237,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Outer Softness Set',
 				options: [option.value({ label: 'Outer Softness', id: 'outerSoftness', step: 1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 3 },
 						{ type: 'i', value: options.outerSoftness },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -249,7 +249,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Inner Softness Set',
 				options: [option.value({ label: 'Inner Softness', id: 'innerSoftness', step: 1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 4 },
 						{ type: 'i', value: options.innerSoftness },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -261,7 +261,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Bevel Softness Set',
 				options: [option.value({ label: 'Bevel Softness', id: 'bevelSoftness', step: 1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 5 },
 						{ type: 'i', value: options.bevelSoftness },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -273,7 +273,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Bevel Position Set',
 				options: [option.value({ label: 'Bevel Position', id: 'bevelPosition', step: 1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 6 },
 						{ type: 'i', value: options.bevelPosition },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -285,7 +285,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Hue Set',
 				options: [option.hue, option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 7 },
 						{ type: 'i', value: options.hue },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -297,7 +297,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Saturation Set',
 				options: [option.saturation(), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 8 },
 						{ type: 'i', value: options.saturation },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -309,7 +309,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Luminance Set',
 				options: [option.luminance(), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 9 },
 						{ type: 'i', value: options.luminance },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -324,7 +324,7 @@ const superSourceActions = ({ context }) => {
 					option.superSource(context),
 				],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 10 },
 						{ type: 'i', value: options.lightSourceDirection },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -339,7 +339,7 @@ const superSourceActions = ({ context }) => {
 					option.superSource(context),
 				],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/set', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/set', [
 						{ type: 'i', value: 11 },
 						{ type: 'i', value: options.lightSourceAltitude },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -351,7 +351,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Outer Width Adjust',
 				options: [option.value({ min: -16, max: 16 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 1 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -363,7 +363,7 @@ const superSourceActions = ({ context }) => {
 				label: 'SuperSource: Art Border Inner Width Adjust',
 				options: [option.value({ min: -16, max: 16 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 2 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -375,7 +375,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Outer Softness Adjust',
 				options: [option.value({ min: -100, step: 1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 3 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -387,7 +387,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Inner Softness Adjust',
 				options: [option.value({ min: -100, step: 1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 4 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -399,7 +399,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Bevel Softness Adjust',
 				options: [option.value({ min: -100, step: 1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 5 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -411,7 +411,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Bevel Position Adjust',
 				options: [option.value({ min: -100, step: 1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 6 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -423,7 +423,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Hue Adjust',
 				options: [option.value({ min: -180, max: 180, step: 0.1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 7 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -435,7 +435,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Saturation Adjust',
 				options: [option.value({ min: -100, max: 100, step: 0.1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 8 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -447,7 +447,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Luminance Adjust',
 				options: [option.value({ min: -100, max: 100, step: 0.1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 9 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -459,7 +459,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Light Source Direction Adjust',
 				options: [option.value({ min: -180, max: 180, step: 0.1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 10 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -471,7 +471,7 @@ const superSourceActions = ({ context }) => {
 				name: 'SuperSource: Art Border Light Source Altitude Adjust',
 				options: [option.value({ min: -100, max: 100, step: 1 }), option.superSource(context)],
 				callback: ({ options }) => {
-					context.oscSend('/mixeffect/ssrc/art/border/parameter/adjust', [
+					context.oscSendPath('/mixeffect/ssrc/art/border/parameter/adjust', [
 						{ type: 'i', value: 11 },
 						{ type: 'i', value: options.value },
 						{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -490,7 +490,7 @@ const superSourceActions = ({ context }) => {
 				option.superSource(context),
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art/key', [
+				context.oscSendPath('/mixeffect/ssrc/art/key', [
 					{ type: 'i', value: options.mode },
 					{ type: 'f', value: parseFloat(options.clip) },
 					{ type: 'f', value: parseFloat(options.gain) },
@@ -504,7 +504,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Art Key Clip Gain',
 			options: [option.clip(), option.gain(), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art/key/clip-gain', [
+				context.oscSendPath('/mixeffect/ssrc/art/key/clip-gain', [
 					{ type: 'f', value: parseFloat(options.clip) },
 					{ type: 'f', value: parseFloat(options.gain) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -516,7 +516,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Art Key Clip Set',
 			options: [option.clip(), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art/key/clip/set', [
+				context.oscSendPath('/mixeffect/ssrc/art/key/clip/set', [
 					{ type: 'f', value: parseFloat(options.clip) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -527,7 +527,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Art Key Clip Adjust',
 			options: [option.value({ min: -100, max: 100, step: 0.1 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art/key/clip/adjust', [
+				context.oscSendPath('/mixeffect/ssrc/art/key/clip/adjust', [
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -538,7 +538,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Art Key Gain Set',
 			options: [option.gain(), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art/key/gain/set', [
+				context.oscSendPath('/mixeffect/ssrc/art/key/gain/set', [
 					{ type: 'f', value: parseFloat(options.gain) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -549,7 +549,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Art Key Gain Adjust',
 			options: [option.value({ min: -100, max: 100, step: 0.1 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art/key/gain/adjust', [
+				context.oscSendPath('/mixeffect/ssrc/art/key/gain/adjust', [
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -560,7 +560,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Art Key Invert',
 			options: [option.mode(), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art/key/invert', [
+				context.oscSendPath('/mixeffect/ssrc/art/key/invert', [
 					{ type: 'i', value: options.mode },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -571,7 +571,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Art Key Pre-Multiplied',
 			options: [option.mode(), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art/key/pre-multiplied', [
+				context.oscSendPath('/mixeffect/ssrc/art/key/pre-multiplied', [
 					{ type: 'i', value: options.mode },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -595,7 +595,7 @@ const superSourceActions = ({ context }) => {
 				option.superSource(context),
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/art/place-in', [
+				context.oscSendPath('/mixeffect/ssrc/art/place-in', [
 					{ type: 'i', value: options.mode },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -606,7 +606,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Auto',
 			options: [option.superSource(context), option.mixEffectBus(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/auto', [
+				context.oscSendPath('/mixeffect/ssrc/auto', [
 					{ type: 'i', value: options.superSource },
 					{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 				])
@@ -625,7 +625,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Crop Top Set',
 			options: [option.box(), option.value({ max: 18 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/crop/set', [
+				context.oscSendPath('/mixeffect/ssrc/box/crop/set', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'top' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -638,7 +638,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Crop Top Adjust',
 			options: [option.box(), option.value({ min: -18, max: 18 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/crop/adjust', [
+				context.oscSendPath('/mixeffect/ssrc/box/crop/adjust', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'top' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -651,7 +651,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Crop Bottom Set',
 			options: [option.box(), option.value({ max: 18 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/crop/set', [
+				context.oscSendPath('/mixeffect/ssrc/box/crop/set', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'bottom' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -664,7 +664,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Crop Bottom Adjust',
 			options: [option.box(), option.value({ min: -18, max: 18 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/crop/adjust', [
+				context.oscSendPath('/mixeffect/ssrc/box/crop/adjust', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'bottom' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -677,7 +677,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Crop Left Set',
 			options: [option.box(), option.value({ max: 32 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/crop/set', [
+				context.oscSendPath('/mixeffect/ssrc/box/crop/set', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'left' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -690,7 +690,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Crop Left Adjust',
 			options: [option.box(), option.value({ min: -32, max: 32 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/crop/adjust', [
+				context.oscSendPath('/mixeffect/ssrc/box/crop/adjust', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'left' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -703,7 +703,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Crop Right Set',
 			options: [option.box(), option.value({ max: 32 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/crop/set', [
+				context.oscSendPath('/mixeffect/ssrc/box/crop/set', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'right' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -716,7 +716,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Crop Right Adjust',
 			options: [option.box(), option.value({ min: -32, max: 32 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/crop/adjust', [
+				context.oscSendPath('/mixeffect/ssrc/box/crop/adjust', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'right' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -729,7 +729,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Position X Set',
 			options: [option.box(), option.value({ min: -48, max: 48 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/position/set', [
+				context.oscSendPath('/mixeffect/ssrc/box/position/set', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'x' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -742,7 +742,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Position X Adjust',
 			options: [option.box(), option.value({ min: -48, max: 48 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/position/adjust', [
+				context.oscSendPath('/mixeffect/ssrc/box/position/adjust', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'x' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -755,7 +755,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Position Y Set',
 			options: [option.box(), option.value({ min: -27, max: 27 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/position/set', [
+				context.oscSendPath('/mixeffect/ssrc/box/position/set', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'y' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -768,7 +768,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Position Y Adjust',
 			options: [option.box(), option.value({ min: -27, max: 27 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/position/adjust', [
+				context.oscSendPath('/mixeffect/ssrc/box/position/adjust', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 's', value: 'y' },
 					{ type: 'f', value: parseFloat(options.value) },
@@ -781,7 +781,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Size Set',
 			options: [option.box(), option.value({ min: 0.07, max: 1 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/size/set', [
+				context.oscSendPath('/mixeffect/ssrc/box/size/set', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -793,7 +793,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Size Adjust',
 			options: [option.box(), option.value({ min: -1, max: 1 }), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/size/adjust', [
+				context.oscSendPath('/mixeffect/ssrc/box/size/adjust', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'f', value: parseFloat(options.value) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -818,7 +818,7 @@ const superSourceActions = ({ context }) => {
 				option.superSource(context),
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/source', [
+				context.oscSendPath('/mixeffect/ssrc/box/source', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'i', value: options.videoSource },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -830,7 +830,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Box Enable',
 			options: [option.box(), option.mode(), option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/box/enable', [
+				context.oscSendPath('/mixeffect/ssrc/box/enable', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'i', value: options.mode },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
@@ -855,7 +855,7 @@ const superSourceActions = ({ context }) => {
 				},
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/cascade', [{ type: 's', value: options.mode }])
+				context.oscSendPath('/mixeffect/ssrc/cascade', [{ type: 's', value: options.mode }])
 			},
 		}
 
@@ -874,7 +874,7 @@ const superSourceActions = ({ context }) => {
 				},
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/cascade/presets', [
+				context.oscSendPath('/mixeffect/ssrc/cascade/presets', [
 					{ type: 's', value: options.superSource1 },
 					{ type: 's', value: options.superSource2 },
 				])
@@ -885,7 +885,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Cut',
 			options: [option.superSource(context), option.mixEffectBus(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/cut', [
+				context.oscSendPath('/mixeffect/ssrc/cut', [
 					{ type: 'i', value: options.superSource },
 					{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 				])
@@ -905,7 +905,7 @@ const superSourceActions = ({ context }) => {
 				},
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/grow-to', [{ type: 'f', value: parseFloat(options.growTo) }])
+				context.oscSendPath('/mixeffect/ssrc/grow-to', [{ type: 'f', value: parseFloat(options.growTo) }])
 			},
 		}
 
@@ -923,7 +923,7 @@ const superSourceActions = ({ context }) => {
 				},
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/grow-by', [{ type: 'f', value: parseFloat(options.growBy) }])
+				context.oscSendPath('/mixeffect/ssrc/grow-by', [{ type: 'f', value: parseFloat(options.growBy) }])
 			},
 		}
 
@@ -940,7 +940,7 @@ const superSourceActions = ({ context }) => {
 				option.superSource(context),
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/highlight', [
+				context.oscSendPath('/mixeffect/ssrc/highlight', [
 					{ type: 'i', value: context.selectedOrValue('box', options.box) },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -958,7 +958,7 @@ const superSourceActions = ({ context }) => {
 				option.superSource(context),
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/preset', [
+				context.oscSendPath('/mixeffect/ssrc/preset', [
 					{ type: 's', value: options.presetName },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
@@ -969,7 +969,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Previous Preset',
 			options: [option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/previous', [
+				context.oscSendPath('/mixeffect/ssrc/previous', [
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
 			},
@@ -979,7 +979,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Next Preset',
 			options: [option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/next', [
+				context.oscSendPath('/mixeffect/ssrc/next', [
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
 			},
@@ -998,7 +998,7 @@ const superSourceActions = ({ context }) => {
 				},
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/shrink-to', [{ type: 'f', value: parseFloat(options.shrinkTo) }])
+				context.oscSendPath('/mixeffect/ssrc/shrink-to', [{ type: 'f', value: parseFloat(options.shrinkTo) }])
 			},
 		}
 
@@ -1016,7 +1016,7 @@ const superSourceActions = ({ context }) => {
 				},
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/shrink-by', [{ type: 'f', value: parseFloat(options.shrinkBy) }])
+				context.oscSendPath('/mixeffect/ssrc/shrink-by', [{ type: 'f', value: parseFloat(options.shrinkBy) }])
 			},
 		}
 
@@ -1024,7 +1024,7 @@ const superSourceActions = ({ context }) => {
 			name: 'SuperSource: Swap',
 			options: [option.superSource(context)],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/swap', [
+				context.oscSendPath('/mixeffect/ssrc/swap', [
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },
 				])
 			},
@@ -1050,7 +1050,7 @@ const superSourceActions = ({ context }) => {
 				option.superSource(context),
 			],
 			callback: ({ options }) => {
-				context.oscSend('/mixeffect/ssrc/swap-boxes', [
+				context.oscSendPath('/mixeffect/ssrc/swap-boxes', [
 					{ type: 'i', value: options.box1 },
 					{ type: 'i', value: options.box2 },
 					{ type: 'i', value: context.selectedOrValue('supersource', options.superSource) },

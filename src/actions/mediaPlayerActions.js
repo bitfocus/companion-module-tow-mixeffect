@@ -24,7 +24,7 @@ const mediaPlayerActions = ({ context }) => {
 			option.mediaPlayer(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/clip', [
+			context.oscSendPath('/mixeffect/mp/clip', [
 				{ type: 'i', value: parseInt(options.clipIndex) },
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
@@ -35,7 +35,7 @@ const mediaPlayerActions = ({ context }) => {
 		name: 'Media Player: Clip Cycle',
 		options: [option.mediaPlayer(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/clip/cycle', [
+			context.oscSendPath('/mixeffect/mp/clip/cycle', [
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
 		},
@@ -45,7 +45,7 @@ const mediaPlayerActions = ({ context }) => {
 		name: 'Media Player: Clip Reverse',
 		options: [option.mediaPlayer(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/clip/cycle-reverse', [
+			context.oscSendPath('/mixeffect/mp/clip/cycle-reverse', [
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
 		},
@@ -64,7 +64,7 @@ const mediaPlayerActions = ({ context }) => {
 			option.mediaPlayer(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/still', [
+			context.oscSendPath('/mixeffect/mp/still', [
 				{ type: 'i', value: parseInt(options.still) },
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
@@ -75,7 +75,7 @@ const mediaPlayerActions = ({ context }) => {
 		name: 'Media Player: Still Cycle',
 		options: [option.mediaPlayer(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/still/cycle', [
+			context.oscSendPath('/mixeffect/mp/still/cycle', [
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
 		},
@@ -85,7 +85,7 @@ const mediaPlayerActions = ({ context }) => {
 		name: 'Media Player: Still Reverse',
 		options: [option.mediaPlayer(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/still/cycle-reverse', [
+			context.oscSendPath('/mixeffect/mp/still/cycle-reverse', [
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
 		},
