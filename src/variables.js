@@ -1141,7 +1141,7 @@ module.exports = {
 	updateVariable(variableId, value) {
 		const { storeId, feedback } = this.variableDefinitions.find((item) => item.variableId === variableId) || {}
 
-		this.setVariableValues({ variableId: value })
+		this.setVariableValues({ [variableId]: value })
 
 		if (storeId) {
 			this.store.variables[storeId] = value
