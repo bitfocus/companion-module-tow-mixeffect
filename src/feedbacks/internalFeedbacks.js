@@ -42,6 +42,22 @@ const getFeedbacks = ({ context }) => {
 			count: 4,
 		}),
 
+		selected_mix_effect_preview: generateInternalFeedback({
+			label: 'Preview',
+			id: 'mixEffectPreview',
+			storeId: 'selectedMixEffectPreview',
+			base: 1,
+			choices: context.switcher.videoSources,
+		}),
+
+		selected_mix_effect_program: generateInternalFeedback({
+			label: 'Program',
+			id: 'mixEffectProgram',
+			storeId: 'selectedMixEffectProgram',
+			base: 1,
+			choices: context.switcher.videoSources,
+		}),
+
 		selected_box: generateInternalFeedback({
 			label: 'Box',
 			id: 'box',

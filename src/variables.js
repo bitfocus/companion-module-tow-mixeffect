@@ -678,6 +678,20 @@ module.exports = {
 		}
 
 		// me
+		if (switcher.mixEffectBuses >= 1) {
+			this.variableDefinitions.push({
+				name: `Preview for Selected ME`,
+				variableId: `me_selected_preview`,
+				storeId: 'selectedMixEffectPreview',
+				feedback: 'selected_mix_effect_preview',
+			})
+			this.variableDefinitions.push({
+				name: `Program for Selected ME`,
+				variableId: `me_selected_program`,
+				storeId: 'selectedMixEffectProgram',
+				feedback: 'selected_mix_effect_program',
+			})
+		}
 		for (let i = 0; i < switcher.mixEffectBuses; i++) {
 			let meId = i + 1
 			// transitionDve
@@ -1330,8 +1344,15 @@ module.exports = {
 		data?.me?.forEach((item) => {
 			let meId = item.index + 1
 			for (const [key, value] of Object.entries(item)) {
-				if (key.match(/^(preview|index|inTransition|ftbInTransition|backgroundState|ftb|program)$/)) {
+				if (key.match(/^(index|inTransition|ftbInTransition|backgroundState|ftb)$/)) {
 					this.updateVariable(`me_${meId}_${key}`, value)
+				}
+				if (key.match(/^(preview|program)$/)) {
+					this.updateVariable(`me_${meId}_${key}`, value)
+					if (meId === this.store.variables['selectedMixEffectBus']) {
+						this.updateVariable(`me_selected_${key}`, value)
+						this.updateVariable(`me_selected_${key}`, value)
+					}
 				}
 				if (key.match(/^(transitionDve|transitionDip|transitionMix|transitionSting|transitionWipe|transition)$/)) {
 					for (const [insideKey, insideValue] of Object.entries(value)) {
