@@ -21,22 +21,6 @@ module.exports = {
 		}
 		if (this.config.ip && this.config.httpServerPort && this.config.pollingInterval) {
 			this.data.interval = setInterval(async () => {
-				// this.system.emit('rest_get', this.getUrl(), (err, result) => {
-				// 	if (err !== null) {
-				// 		this.log('error', `HTTP GET Request failed (${result.error.code})`)
-				// 		this.updateStatus('connection_failure', result.error.code)
-				// 		return
-				// 	}
-				// 	if (
-				// 		result.response.statusCode === 200 &&
-				// 		result.response.headers['content-type'] === 'application/json' &&
-				// 		result.response.headers['content-length'] > 0
-				// 	) {
-				// 		this.updateVariables(result.data)
-				// 		this.updateStatus('ok')
-				// 	}
-				// })
-
 				try {
 					const response = await fetch(this.getUrl(), this.getRequestOptions())
 					if (!response.ok) {

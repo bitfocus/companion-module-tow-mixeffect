@@ -6,7 +6,7 @@ module.exports = {
 			name: 'Selected Media Player',
 			variableId: 'media_player',
 			storeId: 'selectedMediaPlayer',
-			feedback: 'selected_media_player',
+			feedbackId: 'selected_media_player',
 			defaultValue: 1,
 		})
 
@@ -14,56 +14,56 @@ module.exports = {
 			name: 'Selected Mix Effect Bus',
 			variableId: 'mix_effect_bus',
 			storeId: 'selectedMixEffectBus',
-			feedback: 'selected_mix_effect_bus',
+			feedbackId: 'selected_mix_effect_bus',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
 			name: 'Selected Box',
 			variableId: 'box',
 			storeId: 'selectedBox',
-			feedback: 'selected_box',
+			feedbackId: 'selected_box',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
 			name: 'Selected SuperSource',
 			variableId: 'supersource',
 			storeId: 'selectedSuperSource',
-			feedback: 'selected_supersource',
+			feedbackId: 'selected_supersource',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
 			name: 'Selected USK',
 			variableId: 'usk',
 			storeId: 'selectedUSK',
-			feedback: 'selected_usk',
+			feedbackId: 'selected_usk',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
 			name: 'Selected DSK',
 			variableId: 'dsk',
 			storeId: 'selectedDSK',
-			feedback: 'selected_dsk',
+			feedbackId: 'selected_dsk',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
 			name: 'Selected Color Generator',
 			variableId: 'color_generator',
 			storeId: 'selectedColorGenerator',
-			feedback: 'selected_color_generator',
+			feedbackId: 'selected_color_generator',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
 			name: 'Selected AUX Bus',
 			variableId: 'aux_bus',
 			storeId: 'selectedAuxBus',
-			feedback: 'selected_aux_bus',
+			feedbackId: 'selected_aux_bus',
 			defaultValue: 1,
 		})
 		this.variableDefinitions.push({
 			name: 'Selected MultiViewer',
 			variableId: 'multiviewer',
 			storeId: 'selectedMultiViewer',
-			feedback: 'selected_multiviewer',
+			feedbackId: 'selected_multiviewer',
 			defaultValue: 1,
 		})
 
@@ -683,13 +683,13 @@ module.exports = {
 				name: `Preview for Selected ME`,
 				variableId: `me_selected_preview`,
 				storeId: 'selectedMixEffectPreview',
-				feedback: 'selected_mix_effect_preview',
+				feedbackId: 'selected_mix_effect_preview',
 			})
 			this.variableDefinitions.push({
 				name: `Program for Selected ME`,
 				variableId: `me_selected_program`,
 				storeId: 'selectedMixEffectProgram',
-				feedback: 'selected_mix_effect_program',
+				feedbackId: 'selected_mix_effect_program',
 			})
 		}
 		for (let i = 0; i < switcher.mixEffectBuses; i++) {
@@ -1153,15 +1153,15 @@ module.exports = {
 	},
 
 	updateVariable(variableId, value) {
-		const { storeId, feedback } = this.variableDefinitions.find((item) => item.variableId === variableId) || {}
+		const { storeId, feedbackId } = this.variableDefinitions.find((item) => item.variableId === variableId) || {}
 
 		this.setVariableValues({ [variableId]: value })
 
 		if (storeId) {
 			this.store.variables[storeId] = value
 		}
-		if (feedback) {
-			this.checkFeedbacks(feedback)
+		if (feedbackId) {
+			this.checkFeedbacks(feedbackId)
 		}
 	},
 
