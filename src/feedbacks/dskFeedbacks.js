@@ -3,17 +3,17 @@ const { option } = require('../actions/utils')
 const { availability } = require('../switchers/types')
 
 const feedbacksDefinitions = [
-	{ id: 'dskKeySource', stateId: 'keySource', name: 'DSK: Key Source', optionType: 'keySource' },
-	{ id: 'dskInvertKey', stateId: 'invertKey', name: 'DSK: Invert Key Status', optionType: 'onOff' },
-	{ id: 'dskInTransition', stateId: 'inTransition', name: 'DSK: In Transition', optionType: 'onOff' },
-	{ id: 'dskTie', stateId: 'tie', name: 'DSK: Tie', optionType: 'onOff' },
-	{ id: 'dskFillSource', stateId: 'fillSource', name: 'DSK: Fill Source', optionType: 'fillSource' },
-	{ id: 'dskOnAir', stateId: 'onAir', name: 'DSK: On Air', optionType: 'onOff' },
-	{ id: 'dskMasked', stateId: 'masked', name: 'DSK: Masked', optionType: 'onOff' },
-	{ id: 'dskRate', stateId: 'rate', name: 'DSK: Rate', optionType: 'rate' },
-	{ id: 'dskPreMultiplied', stateId: 'preMultiplied', name: 'DSK: Key Pre Multiplied', optionType: 'onOff' },
+	{ id: 'dsk_keySource', stateId: 'keySource', name: 'DSK: Key Source', optionType: 'keySource' },
+	{ id: 'dsk_invertKey', stateId: 'invertKey', name: 'DSK: Invert Key Status', optionType: 'onOff' },
+	{ id: 'dsk_inTransition', stateId: 'inTransition', name: 'DSK: In Transition', optionType: 'onOff' },
+	{ id: 'dsk_tie', stateId: 'tie', name: 'DSK: Tie', optionType: 'onOff' },
+	{ id: 'dsk_fillSource', stateId: 'fillSource', name: 'DSK: Fill Source', optionType: 'fillSource' },
+	{ id: 'dsk_onAir', stateId: 'onAir', name: 'DSK: On Air', optionType: 'onOff' },
+	{ id: 'dsk_masked', stateId: 'masked', name: 'DSK: Masked', optionType: 'onOff' },
+	{ id: 'dsk_rate', stateId: 'rate', name: 'DSK: Rate', optionType: 'rate' },
+	{ id: 'dsk_preMultiplied', stateId: 'preMultiplied', name: 'DSK: Key Pre Multiplied', optionType: 'onOff' },
 	{
-		id: 'dskIsAutoTransitioning',
+		id: 'dsk_isAutoTransitioning',
 		stateId: 'isAutoTransitioning',
 		name: 'DSK: Auto Transitioning',
 		optionType: 'onOff',
@@ -69,10 +69,11 @@ const getFeedbacks = ({ context }) => {
 				name,
 				options: [feedbackOption, option.dsk(context)],
 				callback: ({ options }) => {
-					const dskId = context.selectedOrValue('dsk', options.dsk) - 1
+					const dskId = context.selectedOrValue('dsk', options.dsk)
 					const optionValue = optionType === 'onOff' ? Boolean(options[optionType]) : options[optionType]
-					context.debug({ [id]: optionValue, state: context.state.dsk[dskId][stateId] })
-					return optionValue === context.state.dsk[dskId][stateId]
+					const currentValue = context.getVariableValue(`dsk_${dskId}_${stateId}`)
+					context.log('debug', JSON.stringify({ [id]: optionValue, state: currentValue }))
+					return optionValue === currentValue
 				},
 			}),
 		}

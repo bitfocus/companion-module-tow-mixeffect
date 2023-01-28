@@ -6,7 +6,7 @@ const dsk = require('./dskFeedbacks')
 // const fairlight = require('./fairlightFeedbacks')
 // const macro = require('./macroFeedbacks')
 // const mediaPool = require('./mediaPoolFeedbacks')
-// const me = require('./meFeedbacks')
+const me = require('./meFeedbacks')
 // const multiViewer = require('./multiViewerFeedbacks')
 const output = require('./outputFeedbacks')
 // const source = require('./sourceFeedbacks')
@@ -22,7 +22,7 @@ module.exports = {
 			// ...fairlight.getFeedbacks({ context: this }),
 			// ...macro.getFeedbacks({ context: this }),
 			// ...mediaPool.getFeedbacks({ context: this }),
-			// ...me.getFeedbacks({ context: this }),
+			...me.getFeedbacks({ context: this }),
 			// ...multiViewer.getFeedbacks({ context: this }),
 			...output.getFeedbacks({ context: this }),
 			// ...source.getFeedbacks({ context: this }),

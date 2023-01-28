@@ -73,22 +73,27 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_keySource`,
 				name: `Key source for DSK ${dskId}`,
+				feedbackId: `dsk_keySource`,
 			})
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_isAutoTransitioning`,
 				name: `isAutoTransitioning for DSK ${dskId}`,
+				feedbackId: `dsk_isAutoTransitioning`,
 			})
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_invertKey`,
 				name: `Invert key for DSK ${dskId}`,
+				feedbackId: `dsk_invertKey`,
 			})
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_inTransition`,
 				name: `inTransition for DSK ${dskId}`,
+				feedbackId: `dsk_inTransition`,
 			})
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_tie`,
 				name: `Tie for DSK ${dskId}`,
+				feedbackId: `dsk_tie`,
 			})
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_isTowardsOnAir`,
@@ -97,18 +102,22 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_fillSource`,
 				name: `Fill source for DSK ${dskId}`,
+				feedbackId: `dsk_fillSource`,
 			})
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_onAir`,
 				name: `On air for DSK ${dskId}`,
+				feedbackId: `dsk_onAir`,
 			})
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_masked`,
 				name: `Masked for DSK ${dskId}`,
+				feedbackId: `dsk_masked`,
 			})
 			this.variableDefinitions.push({
 				variableId: `dsk_${dskId}_preMultiplied`,
 				name: `PreMultiplied for DSK ${dskId}`,
+				feedbackId: `dsk_preMultiplied`,
 			})
 		}
 
@@ -190,11 +199,13 @@ module.exports = {
 		this.variableDefinitions.push({
 			variableId: 'output_streaming',
 			name: 'Output: Streaming',
+			feedbackId: 'output_streaming',
 		})
 
 		this.variableDefinitions.push({
 			variableId: 'output_recording',
 			name: 'Output: Recording',
+			feedbackId: 'output_recording',
 		})
 
 		this.variableDefinitions.push({
@@ -600,14 +611,17 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `colorGenerator_${cgId}_hue`,
 				name: `Hue for Color Generator ${cgId}`,
+				feedbackId: `colorGenerator_hue`,
 			})
 			this.variableDefinitions.push({
 				variableId: `colorGenerator_${cgId}_saturation`,
 				name: `Saturation for Color Generator ${cgId}`,
+				feedbackId: `colorGenerator_saturation`,
 			})
 			this.variableDefinitions.push({
 				variableId: `colorGenerator_${cgId}_luminance`,
 				name: `Luminance for Color Generator ${cgId}`,
+				feedbackId: `colorGenerator_luminance`,
 			})
 		}
 
@@ -665,6 +679,7 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `aux_${auxId}_source`,
 				name: `Source for Aux ${auxId}`,
+				feedbackId: `aux_source`,
 			})
 		}
 
@@ -678,20 +693,6 @@ module.exports = {
 		}
 
 		// me
-		if (switcher.mixEffectBuses >= 1) {
-			this.variableDefinitions.push({
-				name: `Preview for Selected ME`,
-				variableId: `me_selected_preview`,
-				storeId: 'selectedMixEffectPreview',
-				feedbackId: 'selected_mix_effect_preview',
-			})
-			this.variableDefinitions.push({
-				name: `Program for Selected ME`,
-				variableId: `me_selected_program`,
-				storeId: 'selectedMixEffectProgram',
-				feedbackId: 'selected_mix_effect_program',
-			})
-		}
 		for (let i = 0; i < switcher.mixEffectBuses; i++) {
 			let meId = i + 1
 			// transitionDve
@@ -740,6 +741,7 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_preview`,
 				name: `Preview for ME ${meId}`,
+				feedbackId: `me_preview`,
 			})
 
 			// transitionDip
@@ -1098,6 +1100,7 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_program`,
 				name: `Program for ME ${meId}`,
+				feedbackId: `me_program`,
 			})
 
 			// transition begin
