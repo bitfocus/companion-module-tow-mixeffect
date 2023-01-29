@@ -184,6 +184,9 @@ module.exports = {
 			{ name: 'Smooth Step', actionId: 'superSourceAnimationStyle', options: { style: 6 } },
 			{ name: 'Smoother Step', actionId: 'superSourceAnimationStyle', options: { style: 7 } },
 			{ name: 'Squared', actionId: 'superSourceAnimationStyle', options: { style: 8 } },
+			{ name: 'Ease In Out Elastic', actionId: 'superSourceAnimationStyle', options: { style: 9 } },
+			{ name: 'Ease Out Bounce', actionId: 'superSourceAnimationStyle', options: { style: 10 } },
+			{ name: 'Ease Out Elastic', actionId: 'superSourceAnimationStyle', options: { style: 11 } },
 			{ name: 'Cycle Style', actionId: 'superSourceAnimationStyleCycle' },
 		]
 		addPresetObject({
