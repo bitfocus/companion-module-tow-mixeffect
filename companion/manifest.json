@@ -3,7 +3,7 @@
 	"name": "tow-mixeffect",
 	"shortname": "mixeffect",
 	"description": "Companion Module for MixEffect",
-	"version": "2.0.0",
+	"version": "0.0.0",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-tow-mixeffect.git",
 	"bugs": "https://github.com/bitfocus/companion-module-tow-mixeffect/issues",
