@@ -143,6 +143,7 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `superSource_ssrc_${ssId}_art_borderEnabled`,
 					name: `SuperSource: SSRC ${ssId} Art: Border Enabled`,
+					feedbackId: 'superSource_art_border,',
 				})
 				this.variableDefinitions.push({
 					variableId: `superSource_ssrc_${ssId}_art_placeIn`,
@@ -151,10 +152,12 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `superSource_ssrc_${ssId}_art_invertKey`,
 					name: `SuperSource: SSRC ${ssId} Art: Invert Key`,
+					feedbackId: 'superSource_art_invertKey',
 				})
 				this.variableDefinitions.push({
 					variableId: `superSource_ssrc_${ssId}_art_preMultiplied`,
 					name: `SuperSource: SSRC ${ssId} Art: Pre-Multiplied`,
+					feedbackId: 'superSource_art_preMultiplied',
 				})
 				this.variableDefinitions.push({
 					variableId: `superSource_ssrc_${ssId}_art_borderBevel`,
@@ -165,6 +168,7 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `superSource_ssrc_${ssId}_currentPreset`,
 					name: `SuperSource: SSRC ${ssId} Current Preset`,
+					feedbackId: 'superSource_currentPreset',
 				})
 
 				// boxes
@@ -173,18 +177,22 @@ module.exports = {
 					this.variableDefinitions.push({
 						variableId: `superSource_ssrc_${ssId}_box_${boxId}_highlighted`,
 						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Highlighted`,
+						feedbackId: 'superSource_box_highlight',
 					})
 					this.variableDefinitions.push({
 						variableId: `superSource_ssrc_${ssId}_box_${boxId}_enabled`,
 						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Enabled`,
+						feedbackId: 'superSource_box_enable',
 					})
 					this.variableDefinitions.push({
 						variableId: `superSource_ssrc_${ssId}_box_${boxId}_cropped`,
 						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Cropped`,
+						feedbackId: 'superSource_box_crop',
 					})
 					this.variableDefinitions.push({
 						variableId: `superSource_ssrc_${ssId}_box_${boxId}_source`,
 						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Source`,
+						feedbackId: 'superSource_box_source',
 					})
 				}
 			}

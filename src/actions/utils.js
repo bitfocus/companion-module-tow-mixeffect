@@ -118,6 +118,14 @@ const option = {
 		default: 'x',
 	}),
 
+	empty: (id = 'blank') => ({
+		type: 'static-text',
+		id: id,
+		label: '',
+		value: '',
+		isVisible: () => false,
+	}),
+
 	rate: () =>
 		value({
 			label: 'Rate (1-250 frames)',

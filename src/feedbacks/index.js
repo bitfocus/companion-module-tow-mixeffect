@@ -10,7 +10,7 @@ const me = require('./meFeedbacks')
 // const multiViewer = require('./multiViewerFeedbacks')
 const output = require('./outputFeedbacks')
 // const source = require('./sourceFeedbacks')
-// const superSource = require('./superSourceFeedbacks')
+const superSource = require('./superSourceFeedbacks')
 const upstreamKeyer = require('./upstreamKeyerFeedbacks')
 
 module.exports = {
@@ -27,7 +27,7 @@ module.exports = {
 			// ...multiViewer.getFeedbacks({ context: this }),
 			...output.getFeedbacks({ context: this }),
 			// ...source.getFeedbacks({ context: this }),
-			// ...superSource.getFeedbacks({ context: this }),
+			...superSource.getFeedbacks({ context: this }),
 			...upstreamKeyer.getFeedbacks({ context: this }),
 		})
 	},
