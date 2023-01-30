@@ -6,131 +6,131 @@ const feedbacksDefinitions = [
 	// transitionMix
 	{
 		id: 'transition_mix_rate',
-		stateId: 'transitionMix_rate',
+		variableId: 'transitionMix_rate',
 		name: 'Transition: Mix: Rate',
 		optionType: 'rate',
 	},
 	// transitionDip
 	{
 		id: 'transition_dip_rate',
-		stateId: 'transitionDip_rate',
+		variableId: 'transitionDip_rate',
 		name: 'Transition: Dip: Rate',
 		optionType: 'rate',
 	},
 	{
 		id: 'transition_dip_source',
-		stateId: 'transitionDip_dipSource',
+		variableId: 'transitionDip_dipSource',
 		name: 'Transition: Dip: Source',
 		optionType: 'videoSource',
 	},
 	// transitionWipe
 	{
 		id: 'transition_wipe_rate',
-		stateId: 'transitionWipe_rate',
+		variableId: 'transitionWipe_rate',
 		name: 'Transition: Wipe: Rate',
 		optionType: 'rate',
 	},
 	{
 		id: 'transition_wipe_pattern',
-		stateId: 'transitionWipe_pattern',
+		variableId: 'transitionWipe_pattern',
 		name: 'Transition: Wipe: Pattern',
 		optionType: 'pattern',
 	},
 	{
 		id: 'transition_wipe_reverse',
-		stateId: 'transitionWipe_reverse',
+		variableId: 'transitionWipe_reverse',
 		name: 'Transition: Wipe: Reverse',
 		optionType: 'onOff',
 	},
 	{
 		id: 'transition_wipe_flipFlop',
-		stateId: 'transitionWipe_flipFlop',
+		variableId: 'transitionWipe_flipFlop',
 		name: 'Transition: Wipe: Flip Flop',
 		optionType: 'onOff',
 	},
 	{
 		id: 'transition_wipe_fillSource',
-		stateId: 'transitionWipe_fillSource',
+		variableId: 'transitionWipe_fillSource',
 		name: 'Transition: Wipe: Fill Source',
 		optionType: 'fillSource',
 	},
 	// transitionDve
 	{
 		id: 'transition_dve_style',
-		stateId: 'transitionDve_style',
+		variableId: 'transitionDve_style',
 		name: 'Transition: DVE: Style',
 		optionType: 'style',
 	},
 	{
 		id: 'transition_dve_rate',
-		stateId: 'transitionDve_rate',
+		variableId: 'transitionDve_rate',
 		name: 'Transition: DVE: Rate',
 		optionType: 'rate',
 	},
 	{
 		id: 'transition_dve_reverse',
-		stateId: 'transitionDve_reverse',
+		variableId: 'transitionDve_reverse',
 		name: 'Transition: DVE: Reverse',
 		optionType: 'onOff',
 	},
 	{
 		id: 'transition_dve_flipFlop',
-		stateId: 'transitionDve_flipFlop',
+		variableId: 'transitionDve_flipFlop',
 		name: 'Transition: DVE: Flip Flop',
 		optionType: 'onOff',
 	},
 	{
 		id: 'transition_dve_preMultiplied',
-		stateId: 'transitionDve_preMultiplied',
+		variableId: 'transitionDve_preMultiplied',
 		name: 'Transition: DVE: Pre-Multiplied',
 		optionType: 'onOff',
 	},
 	{
 		id: 'transition_dve_invertKey',
-		stateId: 'transitionDve_invertKey',
+		variableId: 'transitionDve_invertKey',
 		name: 'Transition: DVE: Invert Key',
 		optionType: 'onOff',
 	},
 	{
 		id: 'transition_dve_enableKey',
-		stateId: 'transitionDve_enableKey',
+		variableId: 'transitionDve_enableKey',
 		name: 'Transition: DVE: Enable Key',
 		optionType: 'onOff',
 	},
 	{
 		id: 'transition_dve_fillSource',
-		stateId: 'transitionDve_fillSource',
+		variableId: 'transitionDve_fillSource',
 		name: 'Transition: DVE: Fill Source',
 		optionType: 'fillSource',
 	},
 	{
 		id: 'transition_dve_keySource',
-		stateId: 'transitionDve_keySource',
+		variableId: 'transitionDve_keySource',
 		name: 'Transition: DVE: Key Source',
 		optionType: 'keySource',
 	},
 	// transitionSting
 	{
 		id: 'transition_sting_source',
-		stateId: 'transitionSting_source',
+		variableId: 'transitionSting_source',
 		name: 'Transition: Sting: Source',
 		optionType: 'videoSource',
 	},
 	{
 		id: 'transition_sting_mixRate',
-		stateId: 'transitionSting_mixRate',
+		variableId: 'transitionSting_mixRate',
 		name: 'Transition: Sting: Mix Rate',
 		optionType: 'rate',
 	},
 	{
 		id: 'transition_sting_preMultiplied',
-		stateId: 'transitionSting_preMultiplied',
+		variableId: 'transitionSting_preMultiplied',
 		name: 'Transition: Sting: Pre-Multiplied',
 		optionType: 'onOff',
 	},
 	{
 		id: 'transition_sting_invertKey',
-		stateId: 'transitionSting_invertKey',
+		variableId: 'transitionSting_invertKey',
 		name: 'Transition: Sting: Invert Key',
 		optionType: 'onOff',
 	},
@@ -141,7 +141,7 @@ const getFeedbackNames = () => feedbacksDefinitions.map(({ id }) => id)
 const getFeedbacks = ({ context }) => {
 	let feedbacks = {}
 
-	feedbacksDefinitions.forEach(({ name, id, stateId, optionType }) => {
+	feedbacksDefinitions.forEach(({ name, id, variableId, optionType }) => {
 		let feedbackOption
 
 		switch (optionType) {
@@ -205,7 +205,7 @@ const getFeedbacks = ({ context }) => {
 				callback: ({ options }) => {
 					const meId = context.selectedOrValue('mix_effect_bus', options.mixEffectBus)
 					const optionValue = optionType === 'onOff' ? Boolean(options[optionType]) : options[optionType]
-					const currentValue = context.getVariableValue(`me_${meId}_${stateId}`)
+					const currentValue = context.getVariableValue(`me_${meId}_${variableId}`)
 					return optionValue === currentValue
 				},
 			}),

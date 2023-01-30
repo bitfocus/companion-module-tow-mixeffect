@@ -6,56 +6,56 @@ const feedbacksDefinitions = [
 	{
 		id: 'superSource_art_preMultiplied',
 		name: 'SuperSource: Art: Pre-Multiplied',
-		stateId: 'art_preMultiplied',
+		variableId: 'art_preMultiplied',
 		optionType: 'onOff',
 		stateType: '',
 	},
 	{
 		id: 'superSource_art_invertKey',
 		name: 'SuperSource: Art: Invert Key',
-		stateId: 'art_invertKey',
+		variableId: 'art_invertKey',
 		optionType: 'onOff',
 		stateType: '',
 	},
 	{
 		id: 'superSource_art_border',
 		name: 'SuperSource: Art: Border',
-		stateId: 'art_borderEnabled',
+		variableId: 'art_borderEnabled',
 		optionType: 'onOff',
 		stateType: '',
 	},
 	{
 		id: 'superSource_currentPreset',
 		name: 'SuperSource: Current Preset',
-		stateId: 'currentPreset',
+		variableId: 'currentPreset',
 		optionType: 'superSource',
 		stateType: '',
 	},
 	{
 		id: 'superSource_box_source',
 		name: 'SuperSource: Box: Source',
-		stateId: 'source',
+		variableId: 'source',
 		optionType: 'videoSource',
 		stateType: 'box',
 	},
 	{
 		id: 'superSource_box_highlight',
 		name: 'SuperSource: Box: Highlight',
-		stateId: 'highlighted',
+		variableId: 'highlighted',
 		optionType: 'onOff',
 		stateType: 'box',
 	},
 	{
 		id: 'superSource_box_crop',
 		name: 'SuperSource: Box: Crop',
-		stateId: 'cropped',
+		variableId: 'cropped',
 		optionType: 'onOff',
 		stateType: 'box',
 	},
 	{
 		id: 'superSource_box_enable',
 		name: 'SuperSource: Box: Enable',
-		stateId: 'enabled',
+		variableId: 'enabled',
 		optionType: 'onOff',
 		stateType: 'box',
 	},
@@ -64,7 +64,7 @@ const feedbacksDefinitions = [
 const getFeedbacks = ({ context }) => {
 	let feedbacks = {}
 
-	feedbacksDefinitions.forEach(({ name, id, stateId, optionType, stateType }) => {
+	feedbacksDefinitions.forEach(({ name, id, variableId, optionType, stateType }) => {
 		let stateOption
 		switch (stateType) {
 			case 'box':
@@ -117,7 +117,7 @@ const getFeedbacks = ({ context }) => {
 
 					const optionValue = optionType === 'onOff' ? Boolean(options[optionType]) : options[optionType]
 
-					let state = stateId
+					let state = variableId
 					if (stateType === 'box') {
 						state = `box_${options.box}_` + state
 					}

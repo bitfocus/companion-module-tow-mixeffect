@@ -2,14 +2,14 @@ const { generateFeedback } = require('./utils')
 const { option } = require('../actions/utils')
 const { availability } = require('../switchers/types')
 
-const feedbacksDefinitions = [{ id: 'aux_source', stateId: 'source', name: 'Aux: source' }]
+const feedbacksDefinitions = [{ id: 'aux_source', variableId: 'source', name: 'Aux: source' }]
 
 const getFeedbackNames = () => feedbacksDefinitions.map(({ id }) => id)
 
 const getFeedbacks = ({ context }) => {
 	let feedbacks = {}
 
-	feedbacksDefinitions.forEach(({ name, id, stateId }) => {
+	feedbacksDefinitions.forEach(({ name, id, variableId }) => {
 		feedbacks = {
 			...feedbacks,
 			[id]: generateFeedback({
@@ -24,7 +24,7 @@ const getFeedbacks = ({ context }) => {
 				],
 				callback: ({ options }) => {
 					const auxBus = context.selectedOrValue('aux_bus', options.auxBus)
-					const currentValue = context.getVariableValue(`aux_${auxBus}_${stateId}`)
+					const currentValue = context.getVariableValue(`aux_${auxBus}_${variableId}`)
 					context.log('debug', JSON.stringify({ option: options.videoSource, state: currentValue }))
 					return options.videoSource === currentValue
 				},

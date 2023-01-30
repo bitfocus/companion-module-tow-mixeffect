@@ -5,61 +5,61 @@ const { availability } = require('../switchers/types')
 const feedbacksDefinitions = [
 	{
 		id: 'usk_fillSource',
-		stateId: 'fillSource',
+		variableId: 'fillSource',
 		name: 'USK: Fill Source',
 		optionType: 'fillSource',
 	},
 	{
 		id: 'usk_keySource',
-		stateId: 'keySource',
+		variableId: 'keySource',
 		name: 'USK: Key Source',
 		optionType: 'keySource',
 	},
 	{
 		id: 'usk_masked',
-		stateId: 'masked',
+		variableId: 'masked',
 		name: 'USK: Masked',
 		optionType: 'onOff',
 	},
 	{
 		id: 'usk_flyingKey',
-		stateId: 'flyEnabled',
+		variableId: 'flyEnabled',
 		name: 'USK: Flying Key',
 		optionType: 'onOff',
 	},
 	{
 		id: 'usk_pattern_pattern',
-		stateId: 'pattern_pattern',
+		variableId: 'pattern_pattern',
 		name: 'USK: Pattern: Pattern',
 		optionType: 'pattern',
 	},
 	{
 		id: 'usk_pattern_invert',
-		stateId: 'pattern_invertPattern',
+		variableId: 'pattern_invertPattern',
 		name: 'USK: Pattern: Invert',
 		optionType: 'onOff',
 	},
 	{
 		id: 'usk_dve_mask',
-		stateId: 'dve_masked',
+		variableId: 'dve_masked',
 		name: 'USK: DVE: Mask',
 		optionType: 'onOff',
 	},
 	{
 		id: 'usk_dve_shadow',
-		stateId: 'dve_shadow',
+		variableId: 'dve_shadow',
 		name: 'USK: DVE: Shadow',
 		optionType: 'onOff',
 	},
 	{
 		id: 'usk_dve_border',
-		stateId: 'dve_borderEnabled',
+		variableId: 'dve_borderEnabled',
 		name: 'USK: DVE: Border',
 		optionType: 'onOff',
 	},
 	{
 		id: 'usk_onAir',
-		stateId: 'onAir',
+		variableId: 'onAir',
 		name: 'USK: On Air',
 		optionType: 'onOff',
 	},
@@ -70,7 +70,7 @@ const getFeedbackNames = () => feedbacksDefinitions.map(({ id }) => id)
 const getFeedbacks = ({ context }) => {
 	let feedbacks = {}
 
-	feedbacksDefinitions.forEach(({ name, id, stateId, optionType }) => {
+	feedbacksDefinitions.forEach(({ name, id, variableId, optionType }) => {
 		let feedbackOption
 
 		switch (optionType) {
@@ -117,7 +117,7 @@ const getFeedbacks = ({ context }) => {
 					const meId = context.selectedOrValue('mix_effect_bus', options.mixEffectBus)
 					const uskId = context.selectedOrValue('usk', options.usk)
 					const optionValue = optionType === 'onOff' ? Boolean(options[optionType]) : options[optionType]
-					const currentValue = context.getVariableValue(`me_${meId}_usk_${uskId}_${stateId}`)
+					const currentValue = context.getVariableValue(`me_${meId}_usk_${uskId}_${variableId}`)
 					return optionValue === currentValue
 				},
 			}),
