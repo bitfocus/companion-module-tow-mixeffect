@@ -4,44 +4,6 @@ const { availability } = require('../switchers/types')
 const transitionActions = ({ context }) => {
 	const actions = {}
 
-	const dveEffectStyles = [
-		{ id: 0, label: 'Swoosh Top Left' },
-		{ id: 1, label: 'Swoosh Top' },
-		{ id: 2, label: 'Swoosh Top Right' },
-		{ id: 3, label: 'Swoosh Left' },
-		{ id: 4, label: 'Swoosh Right' },
-		{ id: 5, label: 'Swoosh Bottom Left' },
-		{ id: 6, label: 'Swoosh Bottom' },
-		{ id: 7, label: 'Swoosh Bottom Right' },
-		{ id: 8, label: 'Spin CCW Top Right' },
-		{ id: 9, label: 'Spin CW Top Left' },
-		{ id: 10, label: 'Spin CCW Bottom Right' },
-		{ id: 11, label: 'Spin CW Bottom Left' },
-		{ id: 12, label: 'Spin CW Top Right' },
-		{ id: 13, label: 'Spin CCW Top Left' },
-		{ id: 14, label: 'Spin CW Bottom Right' },
-		{ id: 15, label: 'Spin CCW Bottom Left' },
-		{ id: 16, label: 'Squeeze Top Left' },
-		{ id: 17, label: 'Squeeze Top' },
-		{ id: 18, label: 'Squeeze Top Right' },
-		{ id: 19, label: 'Squeeze Left' },
-		{ id: 20, label: 'Squeeze Right' },
-		{ id: 21, label: 'Squeeze Bottom Left' },
-		{ id: 22, label: 'Squeeze Bottom' },
-		{ id: 23, label: 'Squeeze Bottom Right' },
-		{ id: 24, label: 'Push Top Left' },
-		{ id: 25, label: 'Push Top' },
-		{ id: 26, label: 'Push Top Right' },
-		{ id: 27, label: 'Push Left' },
-		{ id: 28, label: 'Push Right' },
-		{ id: 29, label: 'Push Bottom Left' },
-		{ id: 30, label: 'Push Bottom' },
-		{ id: 31, label: 'Push Bottom Right' },
-		{ id: 32, label: 'Graphic CW Spin' },
-		{ id: 33, label: 'Graphic CCW Spin' },
-		{ id: 34, label: 'Graphic Logo Wipe' },
-	]
-
 	actions.transitionAuto = {
 		name: 'Transition: Auto',
 		options: [option.mixEffectBus(context)],
@@ -116,14 +78,7 @@ const transitionActions = ({ context }) => {
 		name: 'Transition: DVE',
 		options: [
 			option.rate(),
-			{
-				type: 'dropdown',
-				label: 'Style',
-				id: 'style',
-				choices: dveEffectStyles,
-				default: 0,
-				minChoicesForSearch: 0,
-			},
+			option.style(),
 			option.videoSources({
 				label: 'Fill Source',
 				id: 'fillSource',
@@ -322,17 +277,7 @@ const transitionActions = ({ context }) => {
 
 	actions.transitionDveStyle = {
 		name: 'Transition: DVE Style',
-		options: [
-			{
-				type: 'dropdown',
-				label: 'Style',
-				id: 'style',
-				choices: dveEffectStyles,
-				default: 0,
-				minChoicesForSearch: 0,
-			},
-			option.mixEffectBus(context),
-		],
+		options: [option.style(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
 			context.oscSendPath('/mixeffect/transition/dve/style', [
 				{ type: 'i', value: options.style },

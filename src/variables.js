@@ -711,38 +711,47 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDve_style`,
 				name: `Transition DVE Style for ME ${meId}`,
+				feedbackId: 'transition_dve_style',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDve_fillSource`,
 				name: `Transition DVE Fill Source for ME ${meId}`,
+				feedbackId: 'transition_dve_fillSource',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDve_reverse`,
 				name: `Transition DVE Reverse for ME ${meId}`,
+				feedbackId: 'transition_dve_reverse',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDve_rate`,
 				name: `Transition DVE Rate for ME ${meId}`,
+				feedbackId: 'transition_dve_rate',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDve_flipFlop`,
 				name: `Transition DVE Flip Flop for ME ${meId}`,
+				feedbackId: 'transition_dve_flipFlop',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDve_keySource`,
 				name: `Transition DVE Key Source for ME ${meId}`,
+				feedbackId: 'transition_dve_keySource',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDve_preMultiplied`,
 				name: `Transition DVE Pre-Multiplied for ME ${meId}`,
+				feedbackId: 'transition_dve_preMultiplied',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDve_enableKey`,
 				name: `Transition DVE Enable Key for ME ${meId}`,
+				feedbackId: 'transition_dve_enableKey',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDve_invertKey`,
 				name: `Transition DVE Invert Key for ME ${meId}`,
+				feedbackId: 'transition_dve_invertKey',
 			})
 
 			// preview
@@ -756,16 +765,19 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDip_dipSource`,
 				name: `Transition Dip Dip Source for ME ${meId}`,
+				feedbackId: 'transition_dip_source',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionDip_rate`,
 				name: `Transition Dip Rate for ME ${meId}`,
+				feedbackId: 'transition_dip_rate',
 			})
 
 			// transitionMix
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionMix_rate`,
 				name: `Transition Mix Rate for ME ${meId}`,
+				feedbackId: 'transition_mix_rate',
 			})
 
 			// inTransition
@@ -778,6 +790,7 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionSting_source`,
 				name: `Transition Sting Source for ME ${meId}`,
+				feedbackId: 'transition_sting_source',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionSting_triggerPoint`,
@@ -790,10 +803,12 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionSting_mixRate`,
 				name: `Transition Sting Mix Rate for ME ${meId}`,
+				feedbackId: 'transition_sting_mixRate',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionSting_preMultiplied`,
 				name: `Transition Sting Pre-Multiplied for ME ${meId}`,
+				feedbackId: 'transition_sting_preMultiplied',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionSting_preRoll`,
@@ -802,6 +817,7 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionSting_invertKey`,
 				name: `Transition Sting Invert Key for ME ${meId}`,
+				feedbackId: 'transition_sting_invertKey',
 			})
 
 			// ftbInTransition
@@ -820,22 +836,27 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionWipe_pattern`,
 				name: `Transition Wipe Pattern for ME ${meId}`,
+				feedbackId: 'transition_wipe_pattern',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionWipe_flipFlop`,
 				name: `Transition Wipe Flip Flop for ME ${meId}`,
+				feedbackId: 'transition_wipe_flipFlop',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionWipe_fillSource`,
 				name: `Transition Wipe Fill Source for ME ${meId}`,
+				feedbackId: 'transition_wipe_fillSource',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionWipe_reverse`,
 				name: `Transition Wipe Reverse for ME ${meId}`,
+				feedbackId: 'transition_wipe_reverse',
 			})
 			this.variableDefinitions.push({
 				variableId: `me_${meId}_transitionWipe_rate`,
 				name: `Transition Wipe Rate for ME ${meId}`,
+				feedbackId: 'transition_wipe_rate',
 			})
 
 			// usk

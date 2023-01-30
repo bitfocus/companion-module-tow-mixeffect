@@ -11,6 +11,7 @@ const me = require('./meFeedbacks')
 const output = require('./outputFeedbacks')
 // const source = require('./sourceFeedbacks')
 const superSource = require('./superSourceFeedbacks')
+const transition = require('./transitionFeedbacks')
 const upstreamKeyer = require('./upstreamKeyerFeedbacks')
 
 module.exports = {
@@ -28,6 +29,7 @@ module.exports = {
 			...output.getFeedbacks({ context: this }),
 			// ...source.getFeedbacks({ context: this }),
 			...superSource.getFeedbacks({ context: this }),
+			...transition.getFeedbacks({ context: this }),
 			...upstreamKeyer.getFeedbacks({ context: this }),
 		})
 	},
