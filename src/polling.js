@@ -218,15 +218,8 @@ module.exports = {
 		data?.me?.forEach((item) => {
 			let meId = item.index + 1
 			for (const [key, value] of Object.entries(item)) {
-				if (key.match(/^(index|inTransition|ftbInTransition|backgroundState|ftb)$/)) {
+				if (key.match(/^(index|inTransition|ftbInTransition|backgroundState|ftb|preview|program)$/)) {
 					this.updateVariable(`me_${meId}_${key}`, value)
-				}
-				if (key.match(/^(preview|program)$/)) {
-					this.updateVariable(`me_${meId}_${key}`, value)
-					if (meId === this.store.variables['selectedMixEffectBus']) {
-						this.updateVariable(`me_selected_${key}`, value)
-						this.updateVariable(`me_selected_${key}`, value)
-					}
 				}
 				if (key.match(/^(transitionDve|transitionDip|transitionMix|transitionSting|transitionWipe|transition)$/)) {
 					for (const [insideKey, insideValue] of Object.entries(value)) {

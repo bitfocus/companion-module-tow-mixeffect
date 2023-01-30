@@ -848,6 +848,7 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_keySource`,
 					name: `Key Source for USK ${uskId} on ME ${meId}`,
+					feedbackId: `usk_keySource`,
 				})
 
 				// chromaAdvanced
@@ -911,11 +912,13 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_flyEnabled`,
 					name: `Fly Enabled for USK ${uskId} on ME ${meId}`,
+					feedbackId: 'usk_flyingKey',
 				})
 
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_fillSource`,
 					name: `Fill Source for USK ${uskId} on ME ${meId}`,
+					feedbackId: 'usk_fillSource',
 				})
 
 				this.variableDefinitions.push({
@@ -931,6 +934,7 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_dve_masked`,
 					name: `DVE Masked for USK ${uskId} on ME ${meId}`,
+					feedbackId: 'usk_dve_mask',
 				})
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_dve_borderInnerSoftness`,
@@ -967,10 +971,12 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_dve_borderEnabled`,
 					name: `DVE Border Enabled for USK ${uskId} on ME ${meId}`,
+					feedbackId: 'usk_dve_border',
 				})
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_dve_shadow`,
 					name: `DVE Shadow for USK ${uskId} on ME ${meId}`,
+					feedbackId: 'usk_dve_shadow',
 				})
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_dve_borderSaturation`,
@@ -1035,6 +1041,7 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_pattern_pattern`,
 					name: `Pattern Pattern for USK ${uskId} on ME ${meId}`,
+					feedbackId: 'usk_pattern_pattern',
 				})
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_pattern_size`,
@@ -1051,6 +1058,7 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_pattern_invertPattern`,
 					name: `Pattern Invert Pattern for USK ${uskId} on ME ${meId}`,
+					feedbackId: 'usk_pattern_invert',
 				})
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_pattern_posY`,
@@ -1066,11 +1074,13 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_masked`,
 					name: `Masked for USK ${uskId} on ME ${meId}`,
+					feedbackId: 'usk_masked',
 				})
 
 				this.variableDefinitions.push({
 					variableId: `me_${meId}_usk_${uskId}_onAir`,
 					name: `On Air for USK ${uskId} on ME ${meId}`,
+					feedbackId: 'usk_onAir',
 				})
 
 				// luma begin
