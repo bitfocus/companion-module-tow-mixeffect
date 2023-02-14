@@ -396,6 +396,7 @@ module.exports = {
 			this.variableDefinitions.push({
 				variableId: 'fairlightAudio_vfaEnabled',
 				name: 'Fairlight Audio: VFA Enabled',
+				feedbackId: 'fairlightAudio_vfaEnabled',
 			})
 
 			// solo begin

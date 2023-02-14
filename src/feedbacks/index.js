@@ -3,7 +3,7 @@ const internal = require('./internalFeedbacks')
 const aux = require('./auxFeedbacks')
 const colorGenerator = require('./colorGeneratorFeedbacks')
 const dsk = require('./dskFeedbacks')
-// const fairlight = require('./fairlightFeedbacks')
+const fairlight = require('./fairlightFeedbacks')
 // const macro = require('./macroFeedbacks')
 // const mediaPool = require('./mediaPoolFeedbacks')
 const me = require('./meFeedbacks')
@@ -21,7 +21,7 @@ module.exports = {
 			...aux.getFeedbacks({ context: this }),
 			...colorGenerator.getFeedbacks({ context: this }),
 			...dsk.getFeedbacks({ context: this }),
-			// ...fairlight.getFeedbacks({ context: this }),
+			...fairlight.getFeedbacks({ context: this }),
 			// ...macro.getFeedbacks({ context: this }),
 			// ...mediaPool.getFeedbacks({ context: this }),
 			...me.getFeedbacks({ context: this }),
