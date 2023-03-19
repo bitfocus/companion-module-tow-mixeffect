@@ -33,6 +33,9 @@ module.exports = {
 		atemSdi: 21,
 		atemSdiProIso: 22,
 		atemSdiExtremeIso: 23,
+
+		atemTelevisionStudioHd8: 26,
+		atemTelevisionStudioHd8Iso: 27,
 	},
 
 	// Video Source Types

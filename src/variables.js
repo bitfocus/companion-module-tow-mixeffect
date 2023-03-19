@@ -194,6 +194,41 @@ module.exports = {
 						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Source`,
 						feedbackId: 'superSource_box_source',
 					})
+					this.variableDefinitions.push({
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_posX`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Position X`,
+						feedbackId: 'superSource_box_posX',
+					})
+					this.variableDefinitions.push({
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_posY`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Position Y`,
+						feedbackId: 'superSource_box_posY',
+					})
+					this.variableDefinitions.push({
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_size`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Size`,
+						feedbackId: 'superSource_box_size',
+					})
+					this.variableDefinitions.push({
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_top`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Top`,
+						feedbackId: 'superSource_box_top',
+					})
+					this.variableDefinitions.push({
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_bottom`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Bottom`,
+						feedbackId: 'superSource_box_bottom',
+					})
+					this.variableDefinitions.push({
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_left`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Left`,
+						feedbackId: 'superSource_box_left',
+					})
+					this.variableDefinitions.push({
+						variableId: `superSource_ssrc_${ssId}_box_${boxId}_right`,
+						name: `SuperSource: SSRC ${ssId} Box ${boxId}: Right`,
+						feedbackId: 'superSource_box_right',
+					})
 				}
 			}
 		}

@@ -1,3 +1,12 @@
+
+## [3.0.0]() (2023-03-17)
+
+* Compatibility with Companion 3.0.
+* Support for ATEM Television Studio HD8 and HD8 ISO switchers.
+* HTTP feedback server support
+* Removed OSC feedback support
+* Variables
+
 ## [1.1.6](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.5...v1.1.6) (2022-02-13)
 
 
