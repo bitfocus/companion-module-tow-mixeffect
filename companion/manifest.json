@@ -21,11 +21,6 @@
 		"entrypoint": "../src/index.js"
 	},
 	"manufacturer": "Adam Tow",
-	"products": [
-		"MixEffect"
-	],
-	"keywords": [
-		"MixEffect",
-		"ATEM"
-	]
+	"products": ["MixEffect"],
+	"keywords": ["MixEffect", "ATEM"]
 }
