@@ -10,7 +10,7 @@ This module will allow you to control an instance of [MixEffect Pro](https://mix
 
 ## System Requirements
 
-Version 2.0.0 of the native MixEffect module for Companion is designed for use with Companion 3.0. 
+Version 2.0.0 of the native MixEffect module for Companion is designed for use with Companion 3.0.
 
 **It will not work with prior versions of Companion 2.4.x.**
 
