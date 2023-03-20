@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.9...v1.2.0) (2023-03-20)
+
+
+### Features
+
+* Selected ME preview and program variable + feedback ([989a61a](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/989a61a0b3505158da7ffdce355d92582ee079e2))
 
 ## [2.0.0]() (2023-03-20)
 
