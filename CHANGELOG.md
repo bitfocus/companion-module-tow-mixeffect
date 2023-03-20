@@ -5,7 +5,7 @@
 
 * Selected ME preview and program variable + feedback ([989a61a](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/989a61a0b3505158da7ffdce355d92582ee079e2))
 
-## [3.0.0]() (2023-03-17)
+## [2.0.0]() (2023-03-20)
 
 * Compatibility with Companion 3.0.
 * Support for ATEM Television Studio HD8 and HD8 ISO switchers.
