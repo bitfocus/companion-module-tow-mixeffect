@@ -1,17 +1,31 @@
-const renameOption = (action, oldOption, newOption) => {
+const renameOption = (result, action, oldOption, newOption) => {
 	if (oldOption === newOption) {
-		return false
+		return
 	}
 	if (Object.keys(action.options).includes(oldOption)) {
 		Object.assign(action.options, { [newOption]: action.options[oldOption] })
 		delete action.options[oldOption]
 	}
-	return true
+	if (!result.updatedActions.includes(action)) {
+		result.updatedActions.push(action)
+	}
 }
 
 module.exports = {
-	v1_1_0(context, config, actions) {
-		let upgraded = false
+	v1_1_0(context, props) {
+		/* props
+		{
+			config: Object | null,
+			actions: [],
+			feedbacks: [],
+		}
+		*/
+		let actions = props.actions
+		let result = {
+			updatedConfig: null, // the config does not need updating
+			updatedActions: [],
+			updatedFeedbacks: [],
+		}
 
 		const actionsToRename = [
 			{ old: 'setMultiviewLayout', new: 'multiViewerLayoutSet' },
@@ -21,22 +35,24 @@ module.exports = {
 
 		// config.model = model.atemMiniExtremeIso
 		actions.forEach((action) => {
-			upgraded = upgraded || renameOption(action, 'boxId', 'box')
-			upgraded = upgraded || renameOption(action, 'macroIndex', 'macro')
-			upgraded = upgraded || renameOption(action, 'mediaPlayerIndex', 'mediaPlayer')
-			upgraded = upgraded || renameOption(action, 'meid', 'mixEffectBus')
-			upgraded = upgraded || renameOption(action, 'multiviewer', 'multiViewer')
-			upgraded = upgraded || renameOption(action, 'stillIndex', 'still')
-			upgraded = upgraded || renameOption(action, 'superSourceId', 'superSource')
+			renameOption(result, action, 'boxId', 'box')
+			renameOption(result, action, 'macroIndex', 'macro')
+			renameOption(result, action, 'mediaPlayerIndex', 'mediaPlayer')
+			renameOption(result, action, 'meid', 'mixEffectBus')
+			renameOption(result, action, 'multiviewer', 'multiViewer')
+			renameOption(result, action, 'stillIndex', 'still')
+			renameOption(result, action, 'superSourceId', 'superSource')
 
 			actionsToRename.forEach((names) => {
 				if (action.action === names.old) {
 					action.action = names.new
-					upgraded = true
+					if (!result.updatedActions.includes(action)) {
+						result.updatedActions.push(action)
+					}
 				}
 			})
 		})
 
-		return upgraded
+		return result
 	},
 }

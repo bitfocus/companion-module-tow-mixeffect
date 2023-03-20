@@ -1,12 +1,28 @@
 module.exports = {
 	initConstants() {
-		this.defineConst('DEFAULT_IP', '192.168.1.100')
-		this.defineConst('DEFAULT_PORT', '49990')
-
-		this.defineConst('STANDARD', 'standard')
-		this.defineConst('ADVANCED', 'advanced')
-
-		this.defineConst('CLASSIC', 'classicAudio')
-		this.defineConst('FAIRLIGHT', 'fairlightAudio')
+		Object.defineProperty(this, 'DEFAULT_IP', {
+			value: '192.168.1.100',
+			enumerable: true,
+		})
+		Object.defineProperty(this, 'DEFAULT_PORT', {
+			value: '49990',
+			enumerable: true,
+		})
+		Object.defineProperty(this, 'STANDARD', {
+			value: 'standard',
+			enumerable: true,
+		})
+		Object.defineProperty(this, 'ADVANCED', {
+			value: 'advanced',
+			enumerable: true,
+		})
+		Object.defineProperty(this, 'CLASSIC', {
+			value: 'classicAudio',
+			enumerable: true,
+		})
+		Object.defineProperty(this, 'FAIRLIGHT', {
+			value: 'fairlightAudio',
+			enumerable: true,
+		})
 	},
 }

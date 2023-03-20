@@ -1,13 +1,7 @@
 {
 	"name": "tow-mixeffect",
-	"version": "1.1.9",
-	"description": "Companion Module for MixEffect",
-	"manufacturer": "Adam Tow",
-	"product": [
-		"MixEffect"
-	],
-	"shortname": "mixeffect",
-	"compatibility": "MixEffect Pro 1.2.x",
+	"version": "3.0.0",
+	"compatibility": "MixEffect Pro 1.7.3",
 	"main": "src/index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -18,22 +12,17 @@
 		"type": "git",
 		"url": "git+https://github.com/bitfocus/companion-module-tow-mixeffect.git"
 	},
-	"keywords": [
-		"MixEffect",
-		"ATEM"
-	],
-	"author": "Johnny Estilles <johnny@estilles.com>",
 	"license": "MIT",
 	"devDependencies": {
+		"@companion-module/tools": "^0.5.2",
 		"@semantic-release/changelog": "^6.0.1",
 		"@semantic-release/git": "^10.0.1",
 		"eslint": "^8.1.0",
 		"prettier": "^2.4.1",
 		"semantic-release": "^18.0.0"
 	},
-	"homepage": "https://github.com/bitfocus/companion-module-tow-mixeffect#readme",
-	"bugs": {
-		"url": "https://github.com/bitfocus/companion-module-tow-mixeffect/issues"
-	},
-	"api_version": "1.0.0"
+	"dependencies": {
+		"@companion-module/base": "~1.1.0",
+		"node-fetch": "2.6.0"
+	}
 }

@@ -5,7 +5,7 @@ const auxiliaryActions = ({ context }) => {
 	const actions = {}
 
 	actions.selectAuxBus = {
-		label: 'AUX: Select AUX Bus',
+		name: 'AUX: Select AUX Bus',
 		options: [option.auxBuses(context, false)],
 		callback: ({ options }) => {
 			context.updateVariable('aux_bus', options.auxBus)
@@ -13,7 +13,7 @@ const auxiliaryActions = ({ context }) => {
 	}
 
 	actions.setAuxSource = {
-		label: 'AUX: Set Aux/Output Source',
+		name: 'AUX: Set Aux/Output Source',
 		options: [
 			option.videoSources({
 				sources: context.switcher.videoSources,
@@ -22,7 +22,7 @@ const auxiliaryActions = ({ context }) => {
 			option.auxBuses(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/aux/source', [
+			context.oscSendPath('/mixeffect/aux/source', [
 				{ type: 'i', value: options.videoSource },
 				{ type: 'i', value: context.selectedOrValue('aux_bus', options.auxBus) },
 			])

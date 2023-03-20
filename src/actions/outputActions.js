@@ -27,7 +27,7 @@ const outputActions = ({ context }) => {
 	]
 
 	actions.recordingSetFileName = {
-		label: 'Output: Recording Set Filename',
+		name: 'Output: Recording Set Filename',
 		options: [
 			{
 				type: 'textinput',
@@ -37,12 +37,12 @@ const outputActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/recording/filename', [{ type: 's', value: options.filename }])
+			context.oscSendPath('/mixeffect/recording/filename', [{ type: 's', value: options.filename }])
 		},
 	}
 
 	actions.recordingStartStop = {
-		label: 'Output: Recording Start or Stop',
+		name: 'Output: Recording Start or Stop',
 		options: [
 			{
 				type: 'dropdown',
@@ -57,17 +57,18 @@ const outputActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/recording/start-stop', [{ type: 'i', value: options.mode }])
+			context.oscSendPath('/mixeffect/recording/start-stop', [{ type: 'i', value: options.mode }])
 		},
 	}
 
 	actions.recordingSwitchDisk = {
-		label: 'Output: Recording Switch Disk',
-		callback: () => context.oscSend('/mixeffect/recording/switch-disk'),
+		name: 'Output: Recording Switch Disk',
+		options: [],
+		callback: () => context.oscSendPath('/mixeffect/recording/switch-disk'),
 	}
 
 	actions.streamingSetService = {
-		label: 'Output: Streaming Set Service',
+		name: 'Output: Streaming Set Service',
 		options: [
 			{
 				type: 'textinput',
@@ -118,7 +119,7 @@ const outputActions = ({ context }) => {
 				;({ bitrate1, bitrate2 } = bitrates.find(({ id }) => id === options.bitrate))
 			}
 
-			context.oscSend('/mixeffect/streaming/service', [
+			context.oscSendPath('/mixeffect/streaming/service', [
 				{ type: 's', value: options.name },
 				{ type: 's', value: options.url },
 				{ type: 's', value: options.key },
@@ -129,7 +130,7 @@ const outputActions = ({ context }) => {
 	}
 
 	actions.streamingStartStop = {
-		label: 'Output: Streaming Start or Stop',
+		name: 'Output: Streaming Start or Stop',
 		options: [
 			{
 				type: 'dropdown',
@@ -144,7 +145,7 @@ const outputActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/streaming/start-stop', [{ type: 'i', value: options.mode }])
+			context.oscSendPath('/mixeffect/streaming/start-stop', [{ type: 'i', value: options.mode }])
 		},
 	}
 

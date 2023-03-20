@@ -4,7 +4,7 @@ const macroActions = ({ context }) => {
 	const actions = {}
 
 	actions.macroRun = {
-		label: 'Macro: Run',
+		name: 'Macro: Run',
 		options: [
 			{
 				type: 'number',
@@ -16,26 +16,28 @@ const macroActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/macro', [{ type: 'i', value: options.macro }])
+			context.oscSendPath('/mixeffect/macro', [{ type: 'i', value: options.macro }])
 		},
 	}
 
 	actions.macroContinue = {
-		label: 'Macro: Continue',
-		callback: () => context.oscSend('/mixeffect/macro/continue'),
+		name: 'Macro: Continue',
+		options: [],
+		callback: () => context.oscSendPath('/mixeffect/macro/continue'),
 	}
 
 	actions.macroLoop = {
-		label: 'Macro: Loop',
+		name: 'Macro: Loop',
 		options: [option.mode()],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/macro/loop', [{ type: 'i', value: options.mode }])
+			context.oscSendPath('/mixeffect/macro/loop', [{ type: 'i', value: options.mode }])
 		},
 	}
 
 	actions.macroStop = {
-		label: 'Macro: Stop',
-		callback: () => context.oscSend('/mixeffect/macro/stop'),
+		name: 'Macro: Stop',
+		options: [],
+		callback: () => context.oscSendPath('/mixeffect/macro/stop'),
 	}
 
 	return actions

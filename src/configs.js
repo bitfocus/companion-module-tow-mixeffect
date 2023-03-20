@@ -1,11 +1,13 @@
 const switchers = require('./switchers')
 const { model } = require('./switchers/types')
 
+const { Regex } = require('@companion-module/base')
+
 module.exports = {
-	config_fields() {
+	getConfigFields() {
 		return [
 			{
-				type: 'text',
+				type: 'static-text',
 				id: 'info',
 				width: 12,
 				label: 'Information',
@@ -16,21 +18,47 @@ module.exports = {
 				id: 'ip',
 				label: 'Target IP',
 				width: 6,
-				regex: this.REGEX_IP,
+				regex: Regex.IP,
 				default: this.DEFAULT_IP,
 				required: true,
 			},
 			{
-				type: 'textinput',
+				type: 'number',
 				id: 'port',
-				label: 'Target Port',
+				label: 'OSC Port',
 				width: 6,
-				regex: this.REGEX_PORT,
+				regex: Regex.PORT,
 				default: this.DEFAULT_PORT,
 				required: true,
+				step: 1,
 			},
 			{
-				type: 'text',
+				type: 'number',
+				id: 'pollingInterval',
+				label: 'Polling Interval (milliseconds)',
+				width: 6,
+				min: 500,
+				max: 10000,
+				step: 1,
+				default: 500,
+			},
+			{
+				type: 'number',
+				id: 'httpServerPort',
+				label: 'HTTP Server Port',
+				width: 6,
+				regex: Regex.PORT,
+				step: 1,
+				default: 8080,
+			},
+			{
+				type: 'checkbox',
+				label: 'Enable Feedback Polling',
+				id: 'feedbackPolling',
+				default: true,
+			},
+			{
+				type: 'static-text',
 				id: 'notice',
 				width: 12,
 				label: '',

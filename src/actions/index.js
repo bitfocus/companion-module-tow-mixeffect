@@ -16,7 +16,7 @@ const { upstreamKeyerActions } = require('./upstreamKeyerActions')
 
 module.exports = {
 	initActions() {
-		this.setActions({
+		this.setActionDefinitions({
 			...appActions({ context: this }),
 			...auxiliaryActions({ context: this }),
 			...colorGeneratorActions({ context: this }),
@@ -34,16 +34,16 @@ module.exports = {
 		})
 	},
 
-	oscSend(path, args = []) {
+	oscSendPath(path, args = []) {
 		console.log('osc_send', this.config.ip, this.config.port, path, args)
-		this.system.emit('osc_send', this.config.ip, this.config.port, path, args)
+		this.oscSend(this.config.ip, this.config.port, path, args)
 	},
 
 	selectedOrValue(variableName, value) {
 		let selectedValue = value
 
 		if (selectedValue === SELECTED_ID) {
-			this.getVariable(variableName, (variableValue) => (selectedValue = variableValue))
+			selectedValue = this.getVariableValue(variableName)
 		}
 
 		return selectedValue

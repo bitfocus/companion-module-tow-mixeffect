@@ -5,53 +5,57 @@ const { multiViewerAdvancedLayoutSetChoices } = require('./actions/multiViewerAc
 
 const images = require('./images')
 
+const { combineRgb } = require('@companion-module/base')
+
 module.exports = {
 	initPresets() {
-		const presets = []
+		const presets = {}
 
-		const generatePreset = ({ category, label, size = 14, action, bank = {}, options = {} }) => ({
+		const generatePreset = ({ category, name, size = 14, actionId, style = {}, options = {} }) => ({
 			category,
-			label,
-			bank: {
-				style: 'text',
-				text: label,
+			name,
+			type: 'button',
+			options: [],
+			style: {
+				text: name,
 				size,
-				color: this.rgb(255, 255, 255),
-				bgcolor: this.rgb(0, 0, 0),
-				...bank,
+				color: combineRgb(255, 255, 255),
+				bgcolor: combineRgb(0, 0, 0),
+				...style,
 			},
-			actions: [
+			feedbacks: [],
+			steps: [
 				{
-					action,
-					options,
+					down: [{ actionId, options }],
+					up: [],
 				},
 			],
 		})
 
-		const addPresetList = ({ category, size = 14, action, bank = {}, list = [] }) =>
-			list.forEach((item) =>
-				presets.push(
-					generatePreset({
+		// Each preset name must be unique as that is the key for the presets object
+		const addPresetObject = ({ category, size = 14, actionId, style = {}, list = [] }) =>
+			list.forEach(
+				(item) =>
+					(presets[item.name] = generatePreset({
 						category,
 						size,
-						action,
+						actionId,
 						...item,
-						bank: {
-							...bank,
-							...item.bank,
+						style: {
+							...style,
+							...item.style,
 						},
-					})
-				)
+					}))
 			)
 
 		// MixEffect App
-		addPresetList({
+		addPresetObject({
 			category: 'Switcher Sections',
-			action: 'appSwitcherSection',
-			list: appSwitcherSectionChoices.map(({ id, presetLabel }) => ({
-				label: presetLabel,
+			actionId: 'appSwitcherSection',
+			list: appSwitcherSectionChoices.map(({ id, presetName }) => ({
+				name: presetName,
 				options: { section: id },
-				bank: {
+				style: {
 					size: '7',
 					alignment: 'center:bottom',
 					png64: images.appSwitcherSection[id],
@@ -60,12 +64,14 @@ module.exports = {
 		})
 
 		// MultiViewers
-		addPresetList({
+		addPresetObject({
 			category: 'MultiViewers',
-			action: 'multiViewerAdvancedLayoutSet',
+			actionId: 'multiViewerAdvancedLayoutSet',
+			// Here we use label as the options datatype still requires `label` and not `name`
+			// See https://github.com/bitfocus/companion-module-base/blob/c423e3d722d2adb1c4d2e5f8e5b1eb432188ac91/src/module-api/input.ts
 			list: multiViewerAdvancedLayoutSetChoices.map(({ id, label }) => ({
 				options: { layout: id, multiViewer: 1 },
-				bank: {
+				style: {
 					png64: images.multiViewerAdvancedLayoutSet[label],
 				},
 			})),
@@ -73,10 +79,10 @@ module.exports = {
 
 		// Transitions
 		const transitionList = [
-			{ label: 'Auto', action: 'auto', options: { mixEffectBus: 1 } },
-			{ label: 'Cut', action: 'cut', options: { mixEffectBus: 1 } },
+			{ name: 'Auto', actionId: 'transitionAuto', options: { mixEffectBus: 1 } },
+			{ name: 'Cut', actionId: 'transitionCut', options: { mixEffectBus: 1 } },
 		]
-		addPresetList({
+		addPresetObject({
 			category: 'Transitions',
 			size: 18,
 			list: transitionList,
@@ -84,68 +90,68 @@ module.exports = {
 
 		// SuperSource
 		const superSourceList1 = [
-			{ label: 'Four Grid' },
-			{ label: 'Four Grid Alternate' },
-			{ label: 'Four Grid Full' },
-			{ label: 'Four Horizontal Crop' },
-			{ label: 'Four Horizontal Fill' },
-			{ label: 'Four Left' },
-			{ label: 'Four Left Full' },
-			{ label: 'iPad Mini Left' },
-			{ label: 'iPad Mini PIP' },
-			{ label: 'iPad Mini Right' },
-			{ label: 'iPad Pro 12.9 Left' },
-			{ label: 'iPad Pro 12.9 PIP' },
-			{ label: 'iPad Pro 12.9 Right' },
-			{ label: 'iPhone Pro Max PIP' },
-			{ label: 'PIP Under' },
-			{ label: 'Standard - 1' },
-			{ label: 'Standard - 2' },
-			{ label: 'Standard - 3' },
-			{ label: 'Standard - 4' },
-			{ label: 'Three Horizontal Crop' },
-			{ label: 'Three Horizontal Fill' },
-			{ label: 'Three Left' },
-			{ label: 'Three Left Crop' },
-			{ label: 'Three Top' },
-			{ label: 'Two Bottom' },
-			{ label: 'Two Diagonal' },
-			{ label: 'Two Horizontal' },
-			{ label: 'Two Horizontal Crop' },
-			{ label: 'Two Horizontal Fill' },
-			{ label: 'Two Left' },
-			{ label: 'Two Right' },
-			{ label: 'Two Top' },
-			{ label: 'Two Vertical' },
-			{ label: 'Two Vertical Fill' },
-			{ label: 'USK - Five Grid Corp' },
-			{ label: 'USK - Five Left' },
-			{ label: 'USK - PIP Over' },
-			{ label: 'USK - PIP Over Two' },
-			{ label: 'USK - Six Grid' },
-			{ label: 'USK - Six Grid Crop' },
-			{ label: 'USK - Six Left' },
-		].map(({ label }) => ({
-			label,
-			bank: { png64: thumbnails[label] },
-			options: { presetName: label, superSource: 1 },
+			{ name: 'Four Grid' },
+			{ name: 'Four Grid Alternate' },
+			{ name: 'Four Grid Full' },
+			{ name: 'Four Horizontal Crop' },
+			{ name: 'Four Horizontal Fill' },
+			{ name: 'Four Left' },
+			{ name: 'Four Left Full' },
+			{ name: 'iPad Mini Left' },
+			{ name: 'iPad Mini PIP' },
+			{ name: 'iPad Mini Right' },
+			{ name: 'iPad Pro 12.9 Left' },
+			{ name: 'iPad Pro 12.9 PIP' },
+			{ name: 'iPad Pro 12.9 Right' },
+			{ name: 'iPhone Pro Max PIP' },
+			{ name: 'PIP Under' },
+			{ name: 'Standard - 1' },
+			{ name: 'Standard - 2' },
+			{ name: 'Standard - 3' },
+			{ name: 'Standard - 4' },
+			{ name: 'Three Horizontal Crop' },
+			{ name: 'Three Horizontal Fill' },
+			{ name: 'Three Left' },
+			{ name: 'Three Left Crop' },
+			{ name: 'Three Top' },
+			{ name: 'Two Bottom' },
+			{ name: 'Two Diagonal' },
+			{ name: 'Two Horizontal' },
+			{ name: 'Two Horizontal Crop' },
+			{ name: 'Two Horizontal Fill' },
+			{ name: 'Two Left' },
+			{ name: 'Two Right' },
+			{ name: 'Two Top' },
+			{ name: 'Two Vertical' },
+			{ name: 'Two Vertical Fill' },
+			{ name: 'USK - Five Grid Corp' },
+			{ name: 'USK - Five Left' },
+			{ name: 'USK - PIP Over' },
+			{ name: 'USK - PIP Over Two' },
+			{ name: 'USK - Six Grid' },
+			{ name: 'USK - Six Grid Crop' },
+			{ name: 'USK - Six Left' },
+		].map(({ name }) => ({
+			name,
+			style: { png64: thumbnails[name] },
+			options: { presetName: name, superSource: 1 },
 		}))
-		addPresetList({
+		addPresetObject({
 			category: 'SuperSource: Presets',
 			size: 7,
-			bank: {
+			style: {
 				alignment: 'center:bottom',
 				pngalignment: 'center:bottom',
 			},
-			action: 'superSourcePreset',
+			actionId: 'superSourcePreset',
 			list: superSourceList1,
 		})
 
 		const superSourceList2 = [
-			{ label: 'Previous Preset', action: 'superSourcePresetPrevious', options: { superSource: 1 } },
-			{ label: 'Next  Preset', action: 'superSourcePresetNext', options: { superSource: 1 } },
+			{ name: 'Previous Preset', actionId: 'superSourcePresetPrevious', options: { superSource: 1 } },
+			{ name: 'Next  Preset', actionId: 'superSourcePresetNext', options: { superSource: 1 } },
 		]
-		addPresetList({
+		addPresetObject({
 			category: 'SuperSource: Presets',
 			size: 14,
 			list: superSourceList2,
@@ -153,15 +159,15 @@ module.exports = {
 
 		// SuperSource Animation Speed
 		const superSourceAnimationSpeedList = [
-			{ label: 'Instant', action: 'superSourceAnimationSpeed', options: { speed: 0 } },
-			{ label: 'Extra Fast', action: 'superSourceAnimationSpeed', options: { speed: 1 } },
-			{ label: 'Fast', action: 'superSourceAnimationSpeed', options: { speed: 2 } },
-			{ label: 'Normal', action: 'superSourceAnimationSpeed', options: { speed: 3 } },
-			{ label: 'Slow', action: 'superSourceAnimationSpeed', options: { speed: 4 } },
-			{ label: 'Extra Slow', action: 'superSourceAnimationSpeed', options: { speed: 5 } },
-			{ label: 'Cycle Speed', action: 'superSourceAnimationSpeedCycle' },
+			{ name: 'Instant', actionId: 'superSourceAnimationSpeed', options: { speed: 0 } },
+			{ name: 'Extra Fast', actionId: 'superSourceAnimationSpeed', options: { speed: 1 } },
+			{ name: 'Fast', actionId: 'superSourceAnimationSpeed', options: { speed: 2 } },
+			{ name: 'Normal', actionId: 'superSourceAnimationSpeed', options: { speed: 3 } },
+			{ name: 'Slow', actionId: 'superSourceAnimationSpeed', options: { speed: 4 } },
+			{ name: 'Extra Slow', actionId: 'superSourceAnimationSpeed', options: { speed: 5 } },
+			{ name: 'Cycle Speed', actionId: 'superSourceAnimationSpeedCycle' },
 		]
-		addPresetList({
+		addPresetObject({
 			category: 'SuperSource: Animation Speed',
 			size: 18,
 			list: superSourceAnimationSpeedList,
@@ -169,18 +175,21 @@ module.exports = {
 
 		// SuperSource Animation Style
 		const superSourceAnimationStyleList = [
-			{ label: 'Cosine', action: 'superSourceAnimationStyle', options: { style: 0 } },
-			{ label: 'Cubed', action: 'superSourceAnimationStyle', options: { style: 1 } },
-			{ label: 'Inverse Cubed', action: 'superSourceAnimationStyle', options: { style: 2 } },
-			{ label: 'Inverse Squared', action: 'superSourceAnimationStyle', options: { style: 3 } },
-			{ label: 'Linear', action: 'superSourceAnimationStyle', options: { style: 4 } },
-			{ label: 'Sine', action: 'superSourceAnimationStyle', options: { style: 5 } },
-			{ label: 'Smooth Step', action: 'superSourceAnimationStyle', options: { style: 6 } },
-			{ label: 'Smoother Step', action: 'superSourceAnimationStyle', options: { style: 7 } },
-			{ label: 'Squared', action: 'superSourceAnimationStyle', options: { style: 8 } },
-			{ label: 'Cycle Style', action: 'superSourceAnimationStyleCycle' },
+			{ name: 'Cosine', actionId: 'superSourceAnimationStyle', options: { style: 0 } },
+			{ name: 'Cubed', actionId: 'superSourceAnimationStyle', options: { style: 1 } },
+			{ name: 'Inverse Cubed', actionId: 'superSourceAnimationStyle', options: { style: 2 } },
+			{ name: 'Inverse Squared', actionId: 'superSourceAnimationStyle', options: { style: 3 } },
+			{ name: 'Linear', actionId: 'superSourceAnimationStyle', options: { style: 4 } },
+			{ name: 'Sine', actionId: 'superSourceAnimationStyle', options: { style: 5 } },
+			{ name: 'Smooth Step', actionId: 'superSourceAnimationStyle', options: { style: 6 } },
+			{ name: 'Smoother Step', actionId: 'superSourceAnimationStyle', options: { style: 7 } },
+			{ name: 'Squared', actionId: 'superSourceAnimationStyle', options: { style: 8 } },
+			{ name: 'Ease In Out Elastic', actionId: 'superSourceAnimationStyle', options: { style: 9 } },
+			{ name: 'Ease Out Bounce', actionId: 'superSourceAnimationStyle', options: { style: 10 } },
+			{ name: 'Ease Out Elastic', actionId: 'superSourceAnimationStyle', options: { style: 11 } },
+			{ name: 'Cycle Style', actionId: 'superSourceAnimationStyleCycle' },
 		]
-		addPresetList({
+		addPresetObject({
 			category: 'SuperSource: Animation Style',
 			size: 18,
 			list: superSourceAnimationStyleList,
@@ -188,16 +197,16 @@ module.exports = {
 
 		// SuperSource Highlight
 		const superSourceHighlightList = [
-			{ label: 'Highlight Box 1', options: { box: 1, supersource: 1 } },
-			{ label: 'Highlight Box 2', options: { box: 2, supersource: 1 } },
-			{ label: 'Highlight Box 3', options: { box: 3, supersource: 1 } },
-			{ label: 'Highlight Box 4', options: { box: 4, supersource: 1 } },
-			{ label: 'Highlight Reset', options: { box: 0, supersource: 1 } },
+			{ name: 'Highlight Box 1', options: { box: 1, supersource: 1 } },
+			{ name: 'Highlight Box 2', options: { box: 2, supersource: 1 } },
+			{ name: 'Highlight Box 3', options: { box: 3, supersource: 1 } },
+			{ name: 'Highlight Box 4', options: { box: 4, supersource: 1 } },
+			{ name: 'Highlight Reset', options: { box: 0, supersource: 1 } },
 		]
 
-		addPresetList({
+		addPresetObject({
 			category: 'SuperSource: Highlight',
-			action: 'superSourceHighlight',
+			actionId: 'superSourceHighlight',
 			options: { superSource: 1 },
 			list: superSourceHighlightList,
 		})
@@ -205,31 +214,31 @@ module.exports = {
 		// MixEffect App Actions
 		const appActions = [
 			{
-				label: 'VFA ON',
-				action: 'appVideoFollowsAudio',
+				name: 'VFA ON',
+				actionId: 'appVideoFollowsAudio',
 				options: { mode: 1 },
-				bank: { png64: images.appActions.appVideoFollowsAudio },
+				style: { png64: images.appActions.appVideoFollowsAudio },
 			},
 			{
-				label: 'VFA OFF',
-				action: 'appVideoFollowsAudio',
+				name: 'VFA OFF',
+				actionId: 'appVideoFollowsAudio',
 				options: { mode: 0 },
-				bank: { png64: images.appActions.appVideoFollowsAudio },
+				style: { png64: images.appActions.appVideoFollowsAudio },
 			},
 			{
-				label: 'VFA TOGGLE',
-				action: 'appVideoFollowsAudio',
+				name: 'VFA TOGGLE',
+				actionId: 'appVideoFollowsAudio',
 				options: { mode: 2 },
-				bank: { png64: images.appActions.appVideoFollowsAudio },
+				style: { png64: images.appActions.appVideoFollowsAudio },
 			},
-			{ label: 'REMOTE WEBVIEW', action: 'appRemoteWebView', bank: { png64: images.appActions.appRemoteWebView } },
-			{ label: 'VIEW ONLY', action: 'appViewOnlyMode', bank: { png64: images.appActions.appViewOnlyMode } },
+			{ name: 'REMOTE WEBVIEW', actionId: 'appRemoteWebView', style: { png64: images.appActions.appRemoteWebView } },
+			{ name: 'VIEW ONLY', actionId: 'appViewOnlyMode', style: { png64: images.appActions.appViewOnlyMode } },
 		]
-		addPresetList({
+		addPresetObject({
 			category: 'MixEffect App Actions',
 			list: appActions,
 			size: 7,
-			bank: {
+			style: {
 				alignment: 'center:bottom',
 			},
 		})

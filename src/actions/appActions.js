@@ -2,27 +2,27 @@ const { option } = require('./utils')
 
 const appSwitcherSectionChoices = [
 	{ id: 'audio', label: 'AUDIO' },
-	{ id: 'auxiliary', label: 'Auxiliary', presetLabel: 'AUX' },
-	{ id: 'camera-control', label: 'Camera Control', presetLabel: 'CAMERA' },
-	{ id: 'color-generators', label: 'Color Generators', presetLabel: 'COLORS' },
-	{ id: 'downstream-keyers', label: 'Downstream Keyers', presetLabel: 'DSK' },
-	{ id: 'hyperdecks', label: 'Hyperdecks', presetLabel: 'HYPERDECK' },
-	{ id: 'macros', label: 'Macros', presetLabel: 'MACROS' },
-	{ id: 'media', label: 'Media', presetLabel: 'MEDIA' },
-	{ id: 'output', label: 'Output', presetLabel: 'OUTPUT' },
-	{ id: 'settings', label: 'Settings', presetLabel: 'SETTINGS' },
-	{ id: 'supersource', label: 'SuperSource', presetLabel: 'SSRC' },
-	{ id: 'switcher', label: 'Switcher', presetLabel: 'SWITCHER' },
-	{ id: 'transitions', label: 'Transitions', presetLabel: 'TRANSITION' },
-	{ id: 'upstream-keyers', label: 'Upstream Keyers', presetLabel: 'USK' },
-	{ id: 'view-all', label: 'View All Presets', presetLabel: 'PRESETS' },
+	{ id: 'auxiliary', label: 'Auxiliary', presetName: 'AUX' },
+	{ id: 'camera-control', label: 'Camera Control', presetName: 'CAMERA' },
+	{ id: 'color-generators', label: 'Color Generators', presetName: 'COLORS' },
+	{ id: 'downstream-keyers', label: 'Downstream Keyers', presetName: 'DSK' },
+	{ id: 'hyperdecks', label: 'Hyperdecks', presetName: 'HYPERDECK' },
+	{ id: 'macros', label: 'Macros', presetName: 'MACROS' },
+	{ id: 'media', label: 'Media', presetName: 'MEDIA' },
+	{ id: 'output', label: 'Output', presetName: 'OUTPUT' },
+	{ id: 'settings', label: 'Settings', presetName: 'SETTINGS' },
+	{ id: 'supersource', label: 'SuperSource', presetName: 'SSRC' },
+	{ id: 'switcher', label: 'Switcher', presetName: 'SWITCHER' },
+	{ id: 'transitions', label: 'Transitions', presetName: 'TRANSITION' },
+	{ id: 'upstream-keyers', label: 'Upstream Keyers', presetName: 'USK' },
+	{ id: 'view-all', label: 'View All Presets', presetName: 'PRESETS' },
 ]
 
 const appActions = ({ context }) => {
 	const actions = {}
 
 	actions.appConnectToSwitcher = {
-		label: 'App: Connect to Switcher',
+		name: 'App: Connect to Switcher',
 		options: [
 			{
 				type: 'textinput',
@@ -32,12 +32,12 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/connect', [{ type: 's', value: options.switcherName }])
+			context.oscSendPath('/mixeffect/connect', [{ type: 's', value: options.switcherName }])
 		},
 	}
 
 	actions.appRunShortCut = {
-		label: 'App: Run Shortcut',
+		name: 'App: Run Shortcut',
 		options: [
 			{
 				type: 'textinput',
@@ -51,7 +51,7 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/shortcut', [
+			context.oscSendPath('/shortcut', [
 				{ type: 's', value: options.shortcutName },
 				{ type: 's', value: options.shortcutInput },
 			])
@@ -59,7 +59,7 @@ const appActions = ({ context }) => {
 	}
 
 	actions.appRunShortcutAndReturn = {
-		label: 'App: Run Shortcut and Return',
+		name: 'App: Run Shortcut and Return',
 		options: [
 			{
 				type: 'textinput',
@@ -73,7 +73,7 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/shortcut/return', [
+			context.oscSendPath('/shortcut/return', [
 				{ type: 's', value: options.shortcutName },
 				{ type: 's', value: options.shortcutInput },
 			])
@@ -81,7 +81,7 @@ const appActions = ({ context }) => {
 	}
 
 	actions.appSwitcherSection = {
-		label: 'App: Switcher Section',
+		name: 'App: Switcher Section',
 		options: [
 			{
 				type: 'dropdown',
@@ -93,12 +93,12 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/section', [{ type: 's', value: options.section }])
+			context.oscSendPath('/mixeffect/section', [{ type: 's', value: options.section }])
 		},
 	}
 
 	actions.appSwitcherPage = {
-		label: 'App: Switcher Page',
+		name: 'App: Switcher Page',
 		options: [
 			{
 				type: 'textinput',
@@ -108,40 +108,44 @@ const appActions = ({ context }) => {
 			},
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/page', [{ type: 's', value: options.page }])
+			context.oscSendPath('/mixeffect/page', [{ type: 's', value: options.page }])
 		},
 	}
 
 	actions.appSwitcherPagePrevious = {
-		label: 'App: Switcher Page: Previous',
+		name: 'App: Switcher Page: Previous',
+		options: [],
 		callback: () => {
-			context.oscSend('/mixeffect/page', [{ type: 's', value: 'previous' }])
+			context.oscSendPath('/mixeffect/page', [{ type: 's', value: 'previous' }])
 		},
 	}
 
 	actions.appSwitcherPageNext = {
-		label: 'App: Switcher Page: Next',
+		name: 'App: Switcher Page: Next',
+		options: [],
 		callback: () => {
-			context.oscSend('/mixeffect/page', [{ type: 's', value: 'next' }])
+			context.oscSendPath('/mixeffect/page', [{ type: 's', value: 'next' }])
 		},
 	}
 
 	actions.appRemoteWebView = {
-		label: 'App: Remote WebView',
-		callback: () => context.oscSend('/mixeffect/remote-webview'),
+		name: 'App: Remote WebView',
+		options: [],
+		callback: () => context.oscSendPath('/mixeffect/remote-webview'),
 	}
 
 	actions.appVideoFollowsAudio = {
-		label: 'App: Video Follows Audio',
+		name: 'App: Video Follows Audio',
 		options: [option.mode()],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/vfa', [{ type: 's', value: options.mode }])
+			context.oscSendPath('/mixeffect/vfa', [{ type: 's', value: options.mode }])
 		},
 	}
 
 	actions.appViewOnlyMode = {
-		label: 'App: View Only Mode',
-		callback: () => context.oscSend('/mixeffect/vom'),
+		name: 'App: View Only Mode',
+		options: [],
+		callback: () => context.oscSendPath('/mixeffect/vom'),
 	}
 
 	return actions

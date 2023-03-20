@@ -4,7 +4,7 @@ const mediaPlayerActions = ({ context }) => {
 	const actions = {}
 
 	actions.selectMediaPlayer = {
-		label: 'Media Player: Select Media Player',
+		name: 'Media Player: Select Media Player',
 		options: [option.mediaPlayer(context, false)],
 		callback: ({ options }) => {
 			context.updateVariable('media_player', options.mediaPlayer)
@@ -12,7 +12,7 @@ const mediaPlayerActions = ({ context }) => {
 	}
 
 	actions.mediaPlayerClip = {
-		label: 'Media Player: Clip',
+		name: 'Media Player: Clip',
 		options: [
 			{
 				type: 'number',
@@ -24,7 +24,7 @@ const mediaPlayerActions = ({ context }) => {
 			option.mediaPlayer(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/clip', [
+			context.oscSendPath('/mixeffect/mp/clip', [
 				{ type: 'i', value: parseInt(options.clipIndex) },
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
@@ -32,27 +32,27 @@ const mediaPlayerActions = ({ context }) => {
 	}
 
 	actions.mediaPlayerClipCycle = {
-		label: 'Media Player: Clip Cycle',
+		name: 'Media Player: Clip Cycle',
 		options: [option.mediaPlayer(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/clip/cycle', [
+			context.oscSendPath('/mixeffect/mp/clip/cycle', [
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
 		},
 	}
 
 	actions.mediaPlayerClipCycleReverse = {
-		label: 'Media Player: Clip Reverse',
+		name: 'Media Player: Clip Reverse',
 		options: [option.mediaPlayer(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/clip/cycle-reverse', [
+			context.oscSendPath('/mixeffect/mp/clip/cycle-reverse', [
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
 		},
 	}
 
 	actions.mediaPlayerStill = {
-		label: 'Media Player: Still',
+		name: 'Media Player: Still',
 		options: [
 			{
 				type: 'number',
@@ -64,7 +64,7 @@ const mediaPlayerActions = ({ context }) => {
 			option.mediaPlayer(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/still', [
+			context.oscSendPath('/mixeffect/mp/still', [
 				{ type: 'i', value: parseInt(options.still) },
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
@@ -72,20 +72,20 @@ const mediaPlayerActions = ({ context }) => {
 	}
 
 	actions.mediaPlayerStillCycle = {
-		label: 'Media Player: Still Cycle',
+		name: 'Media Player: Still Cycle',
 		options: [option.mediaPlayer(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/still/cycle', [
+			context.oscSendPath('/mixeffect/mp/still/cycle', [
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
 		},
 	}
 
 	actions.mediaPlayerStillCycleReverse = {
-		label: 'Media Player: Still Reverse',
+		name: 'Media Player: Still Reverse',
 		options: [option.mediaPlayer(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/mp/still/cycle-reverse', [
+			context.oscSendPath('/mixeffect/mp/still/cycle-reverse', [
 				{ type: 'i', value: context.selectedOrValue('media_player', options.mediaPlayer) },
 			])
 		},

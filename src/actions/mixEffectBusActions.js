@@ -5,7 +5,7 @@ const mixEffectBusActions = ({ context }) => {
 	const actions = {}
 
 	actions.selectMixEffectBus = {
-		label: 'M/E: Select Mix Effect Bus',
+		name: 'M/E: Select Mix Effect Bus',
 		options: [
 			{
 				type: 'dropdown',
@@ -26,20 +26,20 @@ const mixEffectBusActions = ({ context }) => {
 	}
 
 	actions.fadeToBlackAuto = {
-		label: 'M/E: Fade to Black Auto',
+		name: 'M/E: Fade to Black Auto',
 		options: [option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/ftb', [
+			context.oscSendPath('/mixeffect/ftb', [
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
 		},
 	}
 
 	actions.fadeToBlackRate = {
-		label: 'M/E: Fade to Black Rate',
+		name: 'M/E: Fade to Black Rate',
 		options: [option.rate(), option.mixEffectBus(context)],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/ftb/rate', [
+			context.oscSendPath('/mixeffect/ftb/rate', [
 				{ type: 'i', value: options.rate },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -47,7 +47,7 @@ const mixEffectBusActions = ({ context }) => {
 	}
 
 	actions.setPreviewInput = {
-		label: 'M/E: Set Preview Input',
+		name: 'M/E: Set Preview Input',
 		options: [
 			option.videoSources({
 				sources: context.switcher.videoSources,
@@ -56,7 +56,7 @@ const mixEffectBusActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/preview', [
+			context.oscSendPath('/mixeffect/preview', [
 				{ type: 'i', value: options.videoSource },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
@@ -64,7 +64,7 @@ const mixEffectBusActions = ({ context }) => {
 	}
 
 	actions.setProgramInput = {
-		label: 'M/E: Set Program Input',
+		name: 'M/E: Set Program Input',
 		options: [
 			option.videoSources({
 				sources: context.switcher.videoSources,
@@ -73,7 +73,7 @@ const mixEffectBusActions = ({ context }) => {
 			option.mixEffectBus(context),
 		],
 		callback: ({ options }) => {
-			context.oscSend('/mixeffect/program', [
+			context.oscSendPath('/mixeffect/program', [
 				{ type: 'i', value: options.videoSource },
 				{ type: 'i', value: context.selectedOrValue('mix_effect_bus', options.mixEffectBus) },
 			])
