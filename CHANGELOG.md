@@ -1,5 +1,5 @@
 
-## [3.0.0]() (2023-03-17)
+## [2.0.0]() (2023-03-20)
 
 * Compatibility with Companion 3.0.
 * Support for ATEM Television Studio HD8 and HD8 ISO switchers.
