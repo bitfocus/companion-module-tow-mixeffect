@@ -1,4 +1,3 @@
-
 module.exports = {
 	getUrl() {
 		return `http://${this.config.ip}:${this.config.httpServerPort}/feedback`
