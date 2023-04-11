@@ -4,13 +4,13 @@
 ![Version](https://img.shields.io/github/package-json/v/bitfocus/companion-module-tow-mixeffect)
 [![Compatibility](https://img.shields.io/badge/compatibility-MixEffect%20Pro%201.8.0-blue)](https://mixeffect.app)
 
-[MixEffect Pro](https://mixeffect.app/) is a professional tool for controlling Blackmagic ATEM switchers from your iPhone or iPad.
+[MixEffect](https://mixeffect.app/) is a professional tool for controlling Blackmagic ATEM switchers from your iPhone, iPad, or Apple Silicon Mac.
 
-This module will allow you to control an instance of [MixEffect Pro](https://mixeffect.app/) using Companion 3.0.
+This module will allow you to control an instance of [MixEffect](https://mixeffect.app/) or [MixEffect Pro](htps://mixeffectpro.app) using Companion 3.0.
 
 ## System Requirements
 
-Version 2.0.0 of the native MixEffect module for Companion is designed for use with Companion 3.0.
+Version 2.0.1 of the native MixEffect module for Companion is designed for use with Companion 3.0.
 
 **It will not work with prior versions of Companion 2.4.x.**
 

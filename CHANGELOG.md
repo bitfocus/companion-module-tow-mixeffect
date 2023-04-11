@@ -1,9 +1,6 @@
-# [1.2.0](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.9...v1.2.0) (2023-03-20)
+## [2.0.1]() (2023-04-10)
 
-
-### Features
-
-* Selected ME preview and program variable + feedback ([989a61a](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/989a61a0b3505158da7ffdce355d92582ee079e2))
+* Compatibility with Companion 3.0.
 
 ## [2.0.0]() (2023-03-20)
 
@@ -13,8 +10,11 @@
 * Removed OSC feedback support
 * Variables
 
-## [1.1.6](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.5...v1.1.6) (2022-02-13)
+## [1.2.0](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.9...v1.2.0) (2023-03-20)
 
+* Selected ME preview and program variable + feedback ([989a61a](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/989a61a0b3505158da7ffdce355d92582ee079e2))
+
+## [1.1.6](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.5...v1.1.6) (2022-02-13)
 
 ### Reverts
 
