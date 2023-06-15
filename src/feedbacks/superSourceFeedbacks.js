@@ -119,7 +119,8 @@ const getFeedbacks = ({ context }) => {
 
 					let state = variableId
 					if (stateType === 'box') {
-						state = `box_${options.box}_` + state
+						const boxId = context.selectedOrValue('box', options.box)
+						state = `box_${boxId}_` + state
 					}
 
 					const currentValue = context.getVariableValue(`superSource_ssrc_${ssId}_${state}`)

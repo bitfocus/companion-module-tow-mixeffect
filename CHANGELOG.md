@@ -1,3 +1,7 @@
+## [2.0.2]() (2023-06-14)
+
+* Fix bug where selected SuperSource Box feedback would not work.
+
 ## [2.0.1]() (2023-04-10)
 
 * Compatibility with Companion 3.0.
