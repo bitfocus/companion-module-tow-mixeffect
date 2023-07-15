@@ -44,8 +44,8 @@ module.exports = {
 			renameOption(result, action, 'superSourceId', 'superSource')
 
 			actionsToRename.forEach((names) => {
-				if (action.action === names.old) {
-					action.action = names.new
+				if (action.actionId === names.old) {
+					action.actionId = names.new
 					if (!result.updatedActions.includes(action)) {
 						result.updatedActions.push(action)
 					}
