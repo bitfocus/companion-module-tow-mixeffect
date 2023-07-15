@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v2.0.2...v2.0.3) (2023-07-15)
+
+
+### Bug Fixes
+
+* upgrade scripts ([a0084dc](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/a0084dc97a6eb0705717f11cc1d4fac984592c46))
+
 ## [2.0.2]() (2023-06-14)
 
 * Fix bug where selected SuperSource Box feedback would not work.
