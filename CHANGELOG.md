@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v3.0.0...v3.0.1) (2024-01-09)
+
+
+### Bug Fixes
+
+* upgrade scripts ([a0084dc](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/a0084dc97a6eb0705717f11cc1d4fac984592c46))
+
 ## [2.0.4]() (2024-01-09)
 
 * Fix bug where USK Border Hue Set slider would not appear.
