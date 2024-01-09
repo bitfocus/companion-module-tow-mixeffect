@@ -1,5 +1,9 @@
-## [2.0.3](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v2.0.2...v2.0.3) (2023-07-15)
+## [2.0.4]() (2024-01-09)
 
+* Fix bug where USK Border Hue Set slider would not appear.
+* Support for ATEM Television Studio 4K8 and 4 M/E Constellation 4K switchers.
+
+## [2.0.3](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v2.0.2...v2.0.3) (2023-07-15)
 
 ### Bug Fixes
 
@@ -33,20 +37,17 @@
 
 ## [1.1.3](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.2...v1.1.3) (2021-12-09)
 
-
 ### Bug Fixes
 
 * **switchers:** various fixes to switch configs ([2eebc09](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/2eebc094f418c8fbaf26f1ed7f6de5517e3dbc89)), closes [#4](https://github.com/bitfocus/companion-module-tow-mixeffect/issues/4) [#5](https://github.com/bitfocus/companion-module-tow-mixeffect/issues/5)
 
 ## [1.1.1](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v1.1.0...v1.1.1) (2021-11-11)
 
-
 ### Bug Fixes
 
 * **variables:** correct default value keys for mp, me, box and ssrc ([01956e3](https://github.com/bitfocus/companion-module-tow-mixeffect/commit/01956e39fa144c09e9e53b4fb64c7e9a9a92ca99))
 
 # [1.1.0](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.0.2...v1.1.0) (2021-11-08)
-
 
 ### Bug Fixes
 
@@ -79,7 +80,6 @@
 * **usk:** correct missing 'USK: Chroma Advanced Red Set' action ([ec4e86b](https://github.com/estilles/companion-module-tow-mixeffect/commit/ec4e86bf124da4f1c233b8cb486b991e550e3abf))
 * **usk:** fix missing 'USK: Pattern Size Set' action ([77bf76b](https://github.com/estilles/companion-module-tow-mixeffect/commit/77bf76b32e8e1773ef41ab1e42ba6824daa1be14))
 
-
 ### Features
 
 * **actions:** show 'Selected ...' option when only one option is available ([12c9404](https://github.com/estilles/companion-module-tow-mixeffect/commit/12c9404a9a36b892644ee4ff50b00f1931d67434))
@@ -92,7 +92,6 @@
 
 # [1.1.0-beta.11](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.10...v1.1.0-beta.11) (2021-11-07)
 
-
 ### Bug Fixes
 
 * **multiviewer:** correct typo ([b7319f1](https://github.com/estilles/companion-module-tow-mixeffect/commit/b7319f167aceeddcffd3648228babfcf5e98553b))
@@ -103,20 +102,17 @@
 * **preset:** update labels on VFA presets ([34be5f1](https://github.com/estilles/companion-module-tow-mixeffect/commit/34be5f1064c084558f44f2fd01533d11d1a057f3))
 * **preset:** update Transitions presets ([a7891fd](https://github.com/estilles/companion-module-tow-mixeffect/commit/a7891fd1b28f4a31cb3cd557741e2e940519dbc5))
 
-
 ### Features
 
 * **presets:** add multi viewer presets ([b51debf](https://github.com/estilles/companion-module-tow-mixeffect/commit/b51debf474febdb91e3c7dc55decef238bd0900c))
 
 # [1.1.0-beta.10](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.9...v1.1.0-beta.10) (2021-11-07)
 
-
 ### Bug Fixes
 
 * **multiviewer:** remove old file ([198f9a8](https://github.com/estilles/companion-module-tow-mixeffect/commit/198f9a87963ddcab9ae504434cdc1cbbbe72685f))
 
 # [1.1.0-beta.9](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.8...v1.1.0-beta.9) (2021-11-06)
-
 
 ### Bug Fixes
 
@@ -125,7 +121,6 @@
 
 # [1.1.0-beta.8](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.7...v1.1.0-beta.8) (2021-11-06)
 
-
 ### Bug Fixes
 
 * **multiview:** fix typo on advanced layout 4 ([6094847](https://github.com/estilles/companion-module-tow-mixeffect/commit/60948475ff5418bbd852690b056f9615fb72e85a))
@@ -133,13 +128,11 @@
 * **switchers:** change number of aux buses for Constellation 8K to 24 ([7b78f1a](https://github.com/estilles/companion-module-tow-mixeffect/commit/7b78f1a9912b70789618e53237a6301a86344656))
 * **transition:** enable 'Transition: Next' to use the selected USK ([f805483](https://github.com/estilles/companion-module-tow-mixeffect/commit/f805483700558b977519b6f5f56fb85ecae00d8b))
 
-
 ### Features
 
 * **multiviewer:** add select multi viewer variable/action/feedback ([3b3eca5](https://github.com/estilles/companion-module-tow-mixeffect/commit/3b3eca5a9f2582a96990d8fbe5ec5e7991d8de23))
 
 # [1.1.0-beta.7](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.6...v1.1.0-beta.7) (2021-11-04)
-
 
 ### Bug Fixes
 
@@ -149,13 +142,11 @@
 * **usk:** correct missing 'USK: Chroma Advanced Red Set' action ([ec4e86b](https://github.com/estilles/companion-module-tow-mixeffect/commit/ec4e86bf124da4f1c233b8cb486b991e550e3abf))
 * **usk:** fix missing 'USK: Pattern Size Set' action ([77bf76b](https://github.com/estilles/companion-module-tow-mixeffect/commit/77bf76b32e8e1773ef41ab1e42ba6824daa1be14))
 
-
 ### Features
 
 * **supersource:** add 'SuperSource: Box Select' action ([117fbe7](https://github.com/estilles/companion-module-tow-mixeffect/commit/117fbe79deac4652aedbe840fce3f766673a1188))
 
 # [1.1.0-beta.6](https://github.com/estilles/companion-module-tow-mixeffect/compare/v1.1.0-beta.5...v1.1.0-beta.6) (2021-11-03)
-
 
 ### Bug Fixes
 

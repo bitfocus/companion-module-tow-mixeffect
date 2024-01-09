@@ -27,6 +27,9 @@ const { atemSdiExtremeIso } = require('./atem-sdi-extreme-iso')
 const { atemTelevisionStudioHd8 } = require('./atem-television-studio-hd8')
 const { atemTelevisionStudioHd8Iso } = require('./atem-television-studio-hd8-iso')
 
+const { atem4meConstellation4k } = require('./atem-4-me-constellation-4k')
+const { atemTelevisionStudio4k8 } = require('./atem-television-studio-4k8')
+
 module.exports = [
 	atemProductionStudio4k,
 
@@ -56,4 +59,7 @@ module.exports = [
 
 	atemTelevisionStudioHd8,
 	atemTelevisionStudioHd8Iso,
+
+	atem4meConstellation4k,
+	atemTelevisionStudio4k8,
 ]

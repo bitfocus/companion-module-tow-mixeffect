@@ -984,7 +984,15 @@ const upstreamKeyerActions = ({ context }) => {
 
 	actions.uskDVEBorderHueSet = {
 		name: 'USK: DVE Border Hue Set',
-		options: [option.hue, option.usk(context), option.mixEffectBus(context)],
+		options: [
+			option.hue({
+				min: 0,
+				max: 359.9,
+				step: 0.1,
+			}),
+			option.usk(context),
+			option.mixEffectBus(context),
+		],
 		callback: ({ options }) => {
 			context.oscSendPath('/mixeffect/usk/dve/border/parameter/set', [
 				{ type: 'i', value: 8 },
