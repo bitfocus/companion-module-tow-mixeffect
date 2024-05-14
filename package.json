@@ -1,6 +1,6 @@
 {
 	"name": "tow-mixeffect",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"compatibility": "MixEffect Pro 1.8.0",
 	"main": "src/index.js",
 	"scripts": {
@@ -22,6 +22,6 @@
 		"semantic-release": "^19.0.3"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.7.0"
+		"@companion-module/base": "~1.8.0"
 	}
 }

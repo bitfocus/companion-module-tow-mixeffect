@@ -1,5 +1,8 @@
-## [3.0.1](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v3.0.0...v3.0.1) (2024-01-09)
+## [2.0.5]() (2024-05-15)
 
+* Support for ATEM 1 M/E Constellation 4K and 2 M/E Constellation 4K switchers.
+
+## [3.0.1](https://github.com/bitfocus/companion-module-tow-mixeffect/compare/v3.0.0...v3.0.1) (2024-01-09)
 
 ### Bug Fixes
 

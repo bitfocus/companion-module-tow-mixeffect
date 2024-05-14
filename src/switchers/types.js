@@ -37,6 +37,8 @@ module.exports = {
 		atemTelevisionStudioHd8: 26,
 		atemTelevisionStudioHd8Iso: 27,
 
+		atem1meConstellation4k: 28,
+		atem2meConstellation4k: 29,
 		atem4meConstellation4k: 30,
 		atemTelevisionStudio4k8: 32,
 	},
