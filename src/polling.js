@@ -26,7 +26,19 @@ module.exports = {
 						this.updateStatus('connection_failure', response.status)
 						return
 					}
-					this.updateState(await response.json())
+				const contentType = response.headers.get('content-type')
+				if (!contentType || !contentType.includes('application/json')) {
+					this.log('error', 'Invalid response content-type')
+					this.updateStatus('connection_failure', 'invalid_response')
+					return
+				}
+				const data = await response.json()
+				if (typeof data !== 'object' || data === null || Array.isArray(data)) {
+					this.log('error', 'Invalid response format')
+					this.updateStatus('connection_failure', 'invalid_response')
+					return
+				}
+				this.updateState(data)
 					this.updateStatus('ok')
 				} catch (err) {
 					this.log('error', `HTTP GET Request failed (${String(err)})`)
