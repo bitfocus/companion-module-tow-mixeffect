@@ -1,25 +1,23 @@
 {
 	"name": "tow-mixeffect",
-	"version": "2.0.6",
+	"version": "2.1.0",
 	"compatibility": "MixEffect Pro 1.8.0",
 	"main": "src/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "node --test",
 		"prettier": "prettier",
-		"semantic-release": "semantic-release"
+		"package": "companion-module-build"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/bitfocus/companion-module-tow-mixeffect.git"
 	},
 	"license": "MIT",
+	"packageManager": "yarn@1.22.22",
 	"devDependencies": {
 		"@companion-module/tools": "^2.8.0",
-		"@semantic-release/changelog": "^6.0.1",
-		"@semantic-release/git": "^10.0.1",
 		"eslint": "^8.1.0",
-		"prettier": "^2.4.1",
-		"semantic-release": "^19.0.3"
+		"prettier": "^2.4.1"
 	},
 	"dependencies": {
 		"@companion-module/base": "~1.8.0"

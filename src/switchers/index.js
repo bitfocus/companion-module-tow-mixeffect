@@ -15,6 +15,7 @@ const { atemMiniPro } = require('./atem-mini-pro')
 const { atemMiniProIso } = require('./atem-mini-pro-iso')
 const { atemMiniExtreme } = require('./atem-mini-extreme')
 const { atemMiniExtremeIso } = require('./atem-mini-extreme-iso')
+const { atemMiniExtremeIsoG2 } = require('./atem-mini-extreme-iso-g2')
 
 const { atem1meConstellationHd } = require('./atem-1-me-constellation-hd')
 const { atem2meConstellationHd } = require('./atem-2-me-constellation-hd')
@@ -30,6 +31,7 @@ const { atemTelevisionStudioHd8Iso } = require('./atem-television-studio-hd8-iso
 const { atem1meConstellation4k } = require('./atem-1-me-constellation-4k')
 const { atem2meConstellation4k } = require('./atem-2-me-constellation-4k')
 const { atem4meConstellation4k } = require('./atem-4-me-constellation-4k')
+const { atem4meConstellation4kPlus } = require('./atem-4-me-constellation-4k-plus')
 const { atemTelevisionStudio4k8 } = require('./atem-television-studio-4k8')
 
 module.exports = [
@@ -50,6 +52,7 @@ module.exports = [
 	atemMiniProIso,
 	atemMiniExtreme,
 	atemMiniExtremeIso,
+	atemMiniExtremeIsoG2,
 
 	atem1meConstellationHd,
 	atem2meConstellationHd,
@@ -65,5 +68,6 @@ module.exports = [
 	atem1meConstellation4k,
 	atem2meConstellation4k,
 	atem4meConstellation4k,
+	atem4meConstellation4kPlus,
 	atemTelevisionStudio4k8,
 ]

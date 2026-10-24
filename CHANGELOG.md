@@ -1,3 +1,12 @@
+## 2.1.0 (Unreleased)
+
+- Add ATEM Mini Extreme ISO G2 and ATEM 4 M/E Constellation 4K Plus profiles (requires MixEffect 2.4.0 or later for these models).
+- Include webcam outputs in the ATEM Mini Pro, SDI Pro ISO, and SDI Extreme ISO output selections.
+- Rebuild variables when the switcher model changes and prevent variable definitions from accumulating.
+- Add automated model registration, output routing, and configuration regression tests.
+- Update vulnerable runtime and development dependencies.
+- Remove unused semantic-release tooling left over from the release workflow disabled in January 2024.
+
 ## [2.0.6]() (2024-05-15)
 
 * Support for ATEM 1 M/E Constellation 4K and 2 M/E Constellation 4K switchers.
