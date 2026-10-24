@@ -281,18 +281,18 @@ const mediaPlayerAudioSources = (count) =>
 		frameDelay: false,
 	}))
 
-const trsSources = (count) =>
+const trsSources = (count, start = audioSourceId.trs) =>
 	arrayOf(count).map((id) => ({
-		id: audioSourceId.trs + id,
+		id: start + id,
 		label: `TRS ${count === 1 ? '' : id + 1}`.trim(),
 		short: `TRS${count === 1 ? '' : id + 1}`,
 		type: audioSource.trs,
 		frameDelay: false,
 	}))
 
-const madiSources = (count) =>
+const madiSources = (count, start = audioSourceId.madi) =>
 	arrayOf(count).map((id) => ({
-		id: audioSourceId.madi + id,
+		id: start + id,
 		label: `MADI ${count === 1 ? '' : id + 1}`.trim(),
 		short: `MADI${count === 1 ? '' : id + 1}`,
 		type: audioSource.madi,

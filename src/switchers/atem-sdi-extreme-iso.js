@@ -5,7 +5,7 @@ const switcher = {
 	...atemMiniExtremeIso,
 	id: model.atemSdiExtremeIso,
 	label: 'ATEM SDI Extreme ISO',
-	auxBuses: 4,
+	auxBuses: 5,
 }
 
 module.exports = {

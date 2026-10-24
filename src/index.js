@@ -65,6 +65,7 @@ class MixEffectInstance extends InstanceBase {
 	}
 
 	async configUpdated(config) {
+		const previousModel = this.switcher?.id
 		this.config = config
 
 		this.switcher = switchers.find(({ id }) => this.config.model === id)
@@ -76,6 +77,9 @@ class MixEffectInstance extends InstanceBase {
 		this.initActions()
 		this.initPresets()
 		this.initFeedbacks()
+		if (!this.variableDefinitions || previousModel !== this.switcher.id) {
+			this.initVariables(this.switcher)
+		}
 		this.initPolling()
 
 		this.updateStatus('ok')

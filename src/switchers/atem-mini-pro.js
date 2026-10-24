@@ -7,6 +7,7 @@ const switcher = {
 	id: model.atemMiniPro,
 	label: 'ATEM Mini Pro',
 	multiViewers: 1,
+	auxBuses: 2,
 	streaming: true,
 	recording: true,
 }

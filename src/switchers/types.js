@@ -40,7 +40,9 @@ module.exports = {
 		atem1meConstellation4k: 28,
 		atem2meConstellation4k: 29,
 		atem4meConstellation4k: 30,
+		atem4meConstellation4kPlus: 31,
 		atemTelevisionStudio4k8: 32,
+		atemMiniExtremeIsoG2: 33,
 	},
 
 	// Video Source Types
@@ -66,6 +68,8 @@ module.exports = {
 		colorGenerator: 2001,
 		mediaPlayerFill: 3010,
 		mediaPlayerKey: 3011,
+		thunderbolt: 3210,
+		thunderboltKey: 3211,
 		keyMask: 4010,
 		downstreamKeyMask: 5010,
 		superSource: 6000,
@@ -102,6 +106,7 @@ module.exports = {
 		mp: 2001,
 		trs: 1400,
 		madi: 1500,
+		thunderbolt: 2051,
 	},
 
 	// Source Availability

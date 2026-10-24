@@ -1,7 +1,7 @@
 module.exports = {
-	variableDefinitions: [],
-
 	initVariables(switcher) {
+		this.variableDefinitions = []
+
 		this.variableDefinitions.push({
 			name: 'Selected Media Player',
 			variableId: 'media_player',
