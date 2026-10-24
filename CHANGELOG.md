@@ -1,3 +1,8 @@
+## 2.0.7 (Unreleased)
+
+- Update vulnerable runtime and development dependencies.
+- Remove unused semantic-release tooling left over from the release workflow disabled in January 2024.
+
 ## [2.0.6]() (2024-05-15)
 
 * Support for ATEM 1 M/E Constellation 4K and 2 M/E Constellation 4K switchers.
