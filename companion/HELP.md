@@ -1,5 +1,7 @@
 ## MixEffect Companion Module
 
+Requires Companion 4.2 or later (module API 1.14 and Node 22).
+
 This module will allow you to control a MixEffect instance running on iOS devices such as an iPhone, iPad, iPod Touch, etc.
 
 The ATEM Mini Extreme ISO G2 and ATEM 4 M/E Constellation 4K Plus require MixEffect 2.4.0 or later. The G2 output selector includes HDMI 1–3, webcam (4), and Thunderbolt (5). Constellation IP models are pending support in MixEffect.
