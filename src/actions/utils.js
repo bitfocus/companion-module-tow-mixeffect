@@ -46,7 +46,7 @@ const value = (
 		step: 0.01,
 		defaultValue: 0,
 		range: true,
-	}
+	},
 ) => ({
 	type: 'number',
 	label,
@@ -91,7 +91,7 @@ const option = {
 			label: 'Size',
 			id: 'size',
 			step: 0.1,
-		}
+		},
 	) => {
 		return value({ label, id, max, step, range })
 	},

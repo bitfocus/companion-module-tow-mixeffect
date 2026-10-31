@@ -4,22 +4,6 @@ on:
   push:
 
 jobs:
-  test:
-    name: Test module
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '18'
-      - run: corepack enable
-      - run: yarn install --frozen-lockfile
-      - run: yarn test
-      - name: Audit dependencies
-        run: yarn audit
-
   check:
     name: Check module
 

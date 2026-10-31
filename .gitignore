@@ -2,6 +2,7 @@ node_modules/
 package-lock.json
 .DS_Store
 
-# Companion 3.0
 /pkg
-/pkg.tgz
+/*.tgz
+DEBUG-*
+/.yarn

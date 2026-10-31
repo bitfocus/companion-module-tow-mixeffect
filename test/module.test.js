@@ -88,7 +88,7 @@ test('existing output corrections expose the webcam output', async () => {
 		const choices = instance.actions.selectAuxBus.options[0].choices
 		assert.deepEqual(
 			choices.map((choice) => choice.id),
-			Array.from({ length: count }, (_, index) => index + 1)
+			Array.from({ length: count }, (_, index) => index + 1),
 		)
 		instance.actions.setAuxSource.callback({ options: { videoSource: 1, auxBus: count } })
 		assert.deepEqual(instance.messages.pop(), {
