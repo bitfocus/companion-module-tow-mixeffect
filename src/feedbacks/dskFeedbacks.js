@@ -72,7 +72,6 @@ const getFeedbacks = ({ context }) => {
 					const dskId = context.selectedOrValue('dsk', options.dsk)
 					const optionValue = optionType === 'onOff' ? Boolean(options[optionType]) : options[optionType]
 					const currentValue = context.getVariableValue(`dsk_${dskId}_${variableId}`)
-					context.log('debug', JSON.stringify({ [id]: optionValue, state: currentValue }))
 					return optionValue === currentValue
 				},
 			}),

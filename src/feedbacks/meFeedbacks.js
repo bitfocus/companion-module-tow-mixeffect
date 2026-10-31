@@ -28,7 +28,6 @@ const getFeedbacks = ({ context }) => {
 				callback: ({ options }) => {
 					const meId = context.selectedOrValue('mix_effect_bus', options.mixEffectBus)
 					const currentValue = context.getVariableValue(`me_${meId}_${variableId}`)
-					context.log('debug', JSON.stringify({ option: options.videoSource, state: currentValue }))
 					return options.videoSource === currentValue
 				},
 			}),

@@ -1,0 +1,367 @@
+{
+	"dsk": [
+		{
+			"index": 0,
+			"keySource": 2,
+			"fillSource": 1,
+			"onAir": true,
+			"masked": false,
+			"tie": true,
+			"invertKey": false,
+			"inTransition": false,
+			"isAutoTransitioning": false,
+			"preMultiplied": true
+		}
+	],
+	"superSource": {
+		"animationSpeed": 1,
+		"interpolationStyle": 0,
+		"ssrc": [
+			{
+				"index": 0,
+				"currentPreset": 3,
+				"art": {
+					"borderEnabled": true,
+					"invertKey": false,
+					"preMultiplied": true,
+					"placeIn": 0,
+					"borderBevel": 1
+				},
+				"boxes": [
+					{
+						"boxId": 0,
+						"source": 1,
+						"enabled": true,
+						"cropped": false,
+						"highlighted": true,
+						"posX": 0,
+						"posY": 0,
+						"size": 0.5,
+						"top": 0,
+						"bottom": 0,
+						"left": 0,
+						"right": 0
+					}
+				]
+			}
+		]
+	},
+	"output": {
+		"streaming": true,
+		"recording": false,
+		"recordInAllCameras": true,
+		"useLowLatency": false
+	},
+	"fairlight": {
+		"vfaEnabled": true,
+		"canVfa": true,
+		"solo": {
+			"enabled": true,
+			"audioSource": 1,
+			"sourceId": 0
+		},
+		"master": {
+			"equalizerGain": 0,
+			"gain": -2,
+			"limiter": {
+				"attack": 1,
+				"hold": 2,
+				"release": 3,
+				"limiterEnabled": true,
+				"threshold": -1
+			},
+			"compressor": {
+				"attack": 1,
+				"hold": 2,
+				"release": 3,
+				"compressorEnabled": true,
+				"ratio": 2,
+				"threshold": -10
+			},
+			"equalizerBands": [
+				{
+					"band": 0,
+					"bandEnabled": true,
+					"frequency": 1000,
+					"frequencyRange": 2,
+					"qFactor": 1.5,
+					"gain": -2,
+					"shape": 1
+				},
+				{
+					"band": 1,
+					"bandEnabled": true,
+					"frequency": 2000,
+					"frequencyRange": 2,
+					"qFactor": 1.5,
+					"gain": -2,
+					"shape": 1
+				},
+				{
+					"band": 2,
+					"bandEnabled": true,
+					"frequency": 3000,
+					"frequencyRange": 2,
+					"qFactor": 1.5,
+					"gain": -2,
+					"shape": 1
+				},
+				{
+					"band": 3,
+					"bandEnabled": true,
+					"frequency": 4000,
+					"frequencyRange": 2,
+					"qFactor": 1.5,
+					"gain": -2,
+					"shape": 1
+				},
+				{
+					"band": 4,
+					"bandEnabled": true,
+					"frequency": 5000,
+					"frequencyRange": 2,
+					"qFactor": 1.5,
+					"gain": -2,
+					"shape": 1
+				},
+				{
+					"band": 5,
+					"bandEnabled": true,
+					"frequency": 6000,
+					"frequencyRange": 2,
+					"qFactor": 1.5,
+					"gain": -2,
+					"shape": 1
+				}
+			]
+		},
+		"sources": [
+			{
+				"audioSource": 1,
+				"sourceId": 0,
+				"gain": -6,
+				"mixOption": 1,
+				"isMixedIn": true,
+				"equalizerEnabled": true,
+				"equalizerGain": 0,
+				"compressor": {
+					"attack": 1,
+					"hold": 2,
+					"release": 3,
+					"compressorEnabled": true,
+					"ratio": 2,
+					"threshold": -10
+				},
+				"limiter": {
+					"attack": 1,
+					"hold": 2,
+					"release": 3,
+					"limiterEnabled": true,
+					"threshold": -1
+				},
+				"expander": {
+					"attack": 1,
+					"hold": 2,
+					"release": 3,
+					"range": 4,
+					"gateEnabled": false,
+					"expanderEnabled": true,
+					"ratio": 2,
+					"threshold": -20
+				},
+				"equalizerBands": [
+					{
+						"band": 0,
+						"bandEnabled": true,
+						"frequency": 1000,
+						"frequencyRange": 2,
+						"qFactor": 1.5,
+						"gain": -2,
+						"shape": 1
+					},
+					{
+						"band": 1,
+						"bandEnabled": true,
+						"frequency": 2000,
+						"frequencyRange": 2,
+						"qFactor": 1.5,
+						"gain": -2,
+						"shape": 1
+					},
+					{
+						"band": 2,
+						"bandEnabled": true,
+						"frequency": 3000,
+						"frequencyRange": 2,
+						"qFactor": 1.5,
+						"gain": -2,
+						"shape": 1
+					},
+					{
+						"band": 3,
+						"bandEnabled": true,
+						"frequency": 4000,
+						"frequencyRange": 2,
+						"qFactor": 1.5,
+						"gain": -2,
+						"shape": 1
+					},
+					{
+						"band": 4,
+						"bandEnabled": true,
+						"frequency": 5000,
+						"frequencyRange": 2,
+						"qFactor": 1.5,
+						"gain": -2,
+						"shape": 1
+					},
+					{
+						"band": 5,
+						"bandEnabled": true,
+						"frequency": 6000,
+						"frequencyRange": 2,
+						"qFactor": 1.5,
+						"gain": -2,
+						"shape": 1
+					}
+				]
+			}
+		]
+	},
+	"sources": [
+		{
+			"inputSource": 1,
+			"outputSource": 1,
+			"keySource": 1,
+			"longName": "Camera One",
+			"shortName": "CAM1",
+			"auxSource": true,
+			"mixOption": 2,
+			"audioSource": 1,
+			"isMixedIn": true
+		}
+	],
+	"legacyAudio": {},
+	"colorGenerators": [
+		{
+			"index": 0,
+			"hue": 120,
+			"saturation": 0.5,
+			"luminance": 0.25
+		}
+	],
+	"mediaPool": {
+		"clipCapacity": 2,
+		"stillCapacity": 96,
+		"stills": [
+			{
+				"index": 0,
+				"filename": "Logo.png"
+			}
+		],
+		"mp": [
+			{
+				"index": 0,
+				"stillIndex": 0,
+				"clipIndex": 0,
+				"type": 1
+			}
+		]
+	},
+	"aux": [
+		{
+			"index": 0,
+			"source": 2
+		}
+	],
+	"multiview": [
+		{
+			"index": 0,
+			"layout": 1
+		}
+	],
+	"me": [
+		{
+			"index": 0,
+			"program": 1,
+			"preview": 2,
+			"inTransition": false,
+			"ftbInTransition": false,
+			"backgroundState": true,
+			"ftb": false,
+			"transitionDve": {
+				"style": 1,
+				"rate": 25,
+				"fillSource": 1,
+				"keySource": 2,
+				"reverse": false,
+				"flipFlop": true,
+				"preMultiplied": true,
+				"enableKey": true,
+				"invertKey": false
+			},
+			"transitionDip": {
+				"rate": 20,
+				"dipSource": 2
+			},
+			"transitionMix": {
+				"rate": 15
+			},
+			"transitionSting": {
+				"source": 1,
+				"mixRate": 10,
+				"preMultiplied": true,
+				"invertKey": false
+			},
+			"transitionWipe": {
+				"rate": 30,
+				"pattern": 2,
+				"fillSource": 1,
+				"reverse": false,
+				"flipFlop": true
+			},
+			"transition": {
+				"style": 1,
+				"rate": 25
+			},
+			"usk": [
+				{
+					"index": 0,
+					"keySource": 2,
+					"fillSource": 1,
+					"onAir": true,
+					"masked": false,
+					"flyEnabled": true,
+					"chromaAdvanced": {
+						"blue": 0.1,
+						"sampleCb": 0.2
+					},
+					"dve": {
+						"masked": true,
+						"shadow": false,
+						"borderEnabled": true
+					},
+					"pattern": {
+						"pattern": 1,
+						"invertPattern": false
+					},
+					"luma": {
+						"preMultiplied": true
+					}
+				}
+			]
+		}
+	],
+	"macros": {
+		"isLooping": false,
+		"isRunning": true,
+		"isRecording": false,
+		"isWaiting": false,
+		"macros": [
+			{
+				"index": 0,
+				"name": "Opening"
+			}
+		]
+	}
+}

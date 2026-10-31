@@ -123,7 +123,7 @@ const option = {
 		id: id,
 		label: '',
 		value: '',
-		isVisible: () => false,
+		isVisibleExpression: 'false',
 	}),
 
 	rate: () =>

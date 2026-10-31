@@ -1,3 +1,10 @@
+## 2.1.2 (Unreleased)
+
+- Batch initial variable values and each polled feedback response, sending only changed values.
+- Use indexed variable lookups and deduplicate feedback checks, including changes to selected buses and keyers.
+- Prevent overlapping polls, enforce the HTTP timeout, and discard responses from replaced connections.
+- Remove repeated feedback debug logging and use the current hidden-field expression syntax.
+
 ## 2.1.1 (2026-10-30)
 
 - Align the module with the reviewed API 1.x template: Node 22, Yarn 4, and module base 1.14.1.
