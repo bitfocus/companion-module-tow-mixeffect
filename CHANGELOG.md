@@ -1,4 +1,4 @@
-## 2.1.1 (Unreleased)
+## 2.1.1 (2026-10-30)
 
 - Align the module with the reviewed API 1.x template: Node 22, Yarn 4, and module base 1.14.1.
 - Add the shared Yarn safety settings, line-ending policy, ignore rules, and Prettier configuration.
