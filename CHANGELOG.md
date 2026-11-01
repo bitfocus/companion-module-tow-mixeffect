@@ -1,6 +1,6 @@
-## 2.1.2 (Unreleased)
+## 2.1.2 (2026-11-01)
 
-- Batch initial variable values and each polled feedback response, sending only changed values.
+- Address the variable-update performance finding (L1) from the 2.1.1 review by batching initial values and each polled feedback response, sending only changed values.
 - Use indexed variable lookups and deduplicate feedback checks, including changes to selected buses and keyers.
 - Allow a minimum polling interval of 200 ms, retaining the 500 ms default and enforcing the minimum for saved settings.
 - Prevent overlapping polls, enforce the HTTP timeout, and discard responses from replaced connections.
