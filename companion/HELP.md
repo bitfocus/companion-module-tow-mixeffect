@@ -24,7 +24,7 @@ Once OSC is enabled on the MixEffect app you can proceed to configure this modul
 If you have the HTTP Feedback server enabled in your Switcher Connection in MixEffect and want to have feedback returned to Companion from your ATEM switcher, follow these steps:
 
 1. Set the HTTP Server Port to the same HTTP Server Port value in your Switcher Connection entry in MixEffect.
-2. Set the Polling Interval in milliseconds. The minimum time value should be 500, but you can increase this number if it leads to better performance in Companion.
+2. Set the Polling Interval from 100 to 10,000 milliseconds. The default is 500 ms. Lower values request feedback more often and increase work for MixEffect and network traffic. Requests never overlap; if a response takes longer than the interval, the next request waits for a later polling tick.
 
 ### Actions
 

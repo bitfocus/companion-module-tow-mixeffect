@@ -432,10 +432,10 @@ test('the HTTP deadline is an abort signal, reports failure, and releases the re
 	assert.equal(instance.statuses.at(-1)[0], 'connection_failure')
 })
 
-test('disabling polling and destroying the module clear timers and cancel in-flight responses', async (t) => {
+test('100 ms polling does not overlap and disabling or destroying cancels in-flight responses', async (t) => {
 	const timers = new Set()
 	t.mock.method(globalThis, 'setInterval', (callback, milliseconds) => {
-		assert.equal(milliseconds, 500)
+		assert.equal(milliseconds, 100)
 		const timer = { callback }
 		timers.add(timer)
 		return timer
@@ -443,15 +443,18 @@ test('disabling polling and destroying the module clear timers and cancel in-fli
 	t.mock.method(globalThis, 'clearInterval', (timer) => timers.delete(timer))
 	for (const stop of ['disable', 'destroy']) {
 		const instance = await createInstance(model.atemMiniPro)
-		await instance.configUpdated({ ...configFor(model.atemMiniPro), feedbackPolling: true })
+		await instance.configUpdated({ ...configFor(model.atemMiniPro), pollingInterval: 100, feedbackPolling: true })
 		assert.equal(timers.size, 1)
 		const pending = deferred()
 		let signal
-		t.mock.method(globalThis, 'fetch', (url, options) => {
+		const fetch = t.mock.method(globalThis, 'fetch', (url, options) => {
 			signal = options.signal
 			return pending.promise
 		})
 		const poll = instance.data.interval.callback()
+		await instance.data.interval.callback()
+		await instance.data.interval.callback()
+		assert.equal(fetch.mock.callCount(), 1, 'later timer ticks skip the pending request')
 		if (stop === 'disable') await instance.configUpdated(configFor(model.atemMiniPro))
 		else await instance.destroy()
 		assert.equal(timers.size, 0)
