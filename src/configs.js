@@ -37,7 +37,7 @@ module.exports = {
 				id: 'pollingInterval',
 				label: 'Polling Interval (milliseconds)',
 				width: 6,
-				min: 100,
+				min: 200,
 				max: 10000,
 				step: 1,
 				default: 500,

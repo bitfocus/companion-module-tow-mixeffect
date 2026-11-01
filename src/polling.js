@@ -22,7 +22,7 @@ module.exports = {
 		this.stopPolling()
 		if (!this.config.feedbackPolling) return
 		if (this.config.ip && this.config.httpServerPort && this.config.pollingInterval) {
-			this.data.interval = setInterval(() => this.pollState(), this.config.pollingInterval)
+			this.data.interval = setInterval(() => this.pollState(), Math.max(200, this.config.pollingInterval))
 		}
 	},
 

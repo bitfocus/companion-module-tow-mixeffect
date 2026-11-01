@@ -24,6 +24,6 @@ Use Node 22.20 or later within Node 22 and Yarn 4 for this API 1.x module. Enabl
 
 For distribution, update the package version, push a matching Git tag, and submit that tag through the [Bitfocus Developer Portal](https://developer.bitfocus.io/). Follow the [current release guide](https://companion.free/for-developers/module-development/module-lifecycle/releasing-your-module/). Using the portal does not require migrating this module to API 2.x.
 
-Feedback polling uses the existing MixEffect `/feedback` JSON response and the configured interval (100–10,000 ms; default 500 ms). Only one request runs at a time, with a 10-second timeout. Each response updates changed, declared variables in one batch and rechecks affected feedback types once; identical values produce no variable updates or feedback rechecks. Local selection changes refresh dependent feedbacks immediately. Responses from an old configuration are discarded.
+Feedback polling uses the existing MixEffect `/feedback` JSON response and the configured interval (200–10,000 ms; default 500 ms). Only one request runs at a time, with a 10-second timeout. Each response updates changed, declared variables in one batch and rechecks affected feedback types once; identical values produce no variable updates or feedback rechecks. Local selection changes refresh dependent feedbacks immediately. Responses from an old configuration are discarded.
 
 For a repeatable v2.1.1 comparison with real base-library IPC and saved MixEffect JSON, see [performance testing](docs/performance.md).

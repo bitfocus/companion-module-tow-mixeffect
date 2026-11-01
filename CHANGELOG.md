@@ -2,7 +2,7 @@
 
 - Batch initial variable values and each polled feedback response, sending only changed values.
 - Use indexed variable lookups and deduplicate feedback checks, including changes to selected buses and keyers.
-- Allow a minimum polling interval of 100 ms, retaining the 500 ms default.
+- Allow a minimum polling interval of 200 ms, retaining the 500 ms default and enforcing the minimum for saved settings.
 - Prevent overlapping polls, enforce the HTTP timeout, and discard responses from replaced connections.
 - Remove repeated feedback debug logging and use the current hidden-field expression syntax.
 

@@ -432,10 +432,10 @@ test('the HTTP deadline is an abort signal, reports failure, and releases the re
 	assert.equal(instance.statuses.at(-1)[0], 'connection_failure')
 })
 
-test('100 ms polling does not overlap and disabling or destroying cancels in-flight responses', async (t) => {
+test('polling enforces the 200 ms minimum, avoids overlap, and cancels in-flight responses', async (t) => {
 	const timers = new Set()
 	t.mock.method(globalThis, 'setInterval', (callback, milliseconds) => {
-		assert.equal(milliseconds, 100)
+		assert.equal(milliseconds, 200)
 		const timer = { callback }
 		timers.add(timer)
 		return timer
@@ -443,6 +443,7 @@ test('100 ms polling does not overlap and disabling or destroying cancels in-fli
 	t.mock.method(globalThis, 'clearInterval', (timer) => timers.delete(timer))
 	for (const stop of ['disable', 'destroy']) {
 		const instance = await createInstance(model.atemMiniPro)
+		// A saved setting from the earlier Dev build must also respect the new floor.
 		await instance.configUpdated({ ...configFor(model.atemMiniPro), pollingInterval: 100, feedbackPolling: true })
 		assert.equal(timers.size, 1)
 		const pending = deferred()
