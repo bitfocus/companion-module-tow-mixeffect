@@ -5,6 +5,7 @@
 	"main": "src/index.js",
 	"scripts": {
 		"test": "node --test",
+		"benchmark": "node scripts/benchmark-feedback.js",
 		"format": "prettier -w .",
 		"prettier": "prettier",
 		"package": "companion-module-build"
