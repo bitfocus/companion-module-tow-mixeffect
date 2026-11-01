@@ -25,7 +25,6 @@ const getFeedbacks = ({ context }) => {
 				callback: ({ options }) => {
 					const auxBus = context.selectedOrValue('aux_bus', options.auxBus)
 					const currentValue = context.getVariableValue(`aux_${auxBus}_${variableId}`)
-					context.log('debug', JSON.stringify({ option: options.videoSource, state: currentValue }))
 					return options.videoSource === currentValue
 				},
 			}),

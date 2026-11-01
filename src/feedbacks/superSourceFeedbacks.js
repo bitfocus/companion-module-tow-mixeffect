@@ -124,7 +124,6 @@ const getFeedbacks = ({ context }) => {
 					}
 
 					const currentValue = context.getVariableValue(`superSource_ssrc_${ssId}_${state}`)
-					context.log('info', `superSource_ssrc_${ssId}_${state}`)
 
 					return optionValue === currentValue
 				},

@@ -143,7 +143,7 @@ module.exports = {
 				this.variableDefinitions.push({
 					variableId: `superSource_ssrc_${ssId}_art_borderEnabled`,
 					name: `SuperSource: SSRC ${ssId} Art: Border Enabled`,
-					feedbackId: 'superSource_art_border,',
+					feedbackId: 'superSource_art_border',
 				})
 				this.variableDefinitions.push({
 					variableId: `superSource_ssrc_${ssId}_art_placeIn`,
@@ -704,18 +704,7 @@ module.exports = {
 			// 	name: `Media Pool: Media Player ${mpId} Index`,
 			// })
 		}
-		// mediaPool.clips
-		for (let i = 0; i < switcher.mediaClips; i++) {
-			let mcId = i + 1
-			console.log(mcId)
-			//TODO: not sure what to do here. Need JSON file to process.
-		}
-		// mediaPool.audioClips
-		for (let i = 0; i < switcher.mediaClips; i++) {
-			let mcId = i + 1
-			console.log(mcId)
-			//TODO: not sure what to do here. Need JSON file to process.
-		}
+		// Clip and audio-clip variables await support in the feedback payload.
 
 		// aux
 		for (let i = 0; i < switcher.auxBuses; i++) {
@@ -1220,26 +1209,50 @@ module.exports = {
 		}
 		// macros end
 
-		// Configure variables
+		// Rebuild per instance/model so lookups never scan the full definition list.
+		this.variableDefinitionMap = new Map(
+			this.variableDefinitions.map((definition) => [definition.variableId, definition]),
+		)
 		this.setVariableDefinitions(this.variableDefinitions)
 
-		// Set initial values
-		// TODO: Optimise by setting all at once
-		this.variableDefinitions.forEach(({ variableId, defaultValue }) => {
-			this.updateVariable(variableId, defaultValue)
-		})
+		// Send defaults together, including clearing old values after a model change.
+		this.updateVariables(
+			Object.fromEntries(this.variableDefinitions.map(({ variableId, defaultValue }) => [variableId, defaultValue])),
+			{ force: true },
+		)
 	},
 
 	updateVariable(variableId, value) {
-		const { storeId, feedbackId } = this.variableDefinitions.find((item) => item.variableId === variableId) || {}
+		this.updateVariables({ [variableId]: value })
+	},
 
-		this.setVariableValues({ [variableId]: value })
+	updateVariables(values, { force = false } = {}) {
+		const changedValues = {}
+		const feedbackIds = new Set()
+		let changed = false
 
-		if (storeId) {
-			this.store.variables[storeId] = value
+		for (const [variableId, value] of Object.entries(values)) {
+			const definition = this.variableDefinitionMap.get(variableId)
+			// The JSON can contain fields that are not variables for this model.
+			if (!definition) continue
+
+			// Match the base API's null/undefined handling when comparing cached values.
+			const normalizedValue = value ?? ''
+			if (!force && Object.is(this.getVariableValue(variableId), normalizedValue)) continue
+
+			changedValues[variableId] = normalizedValue
+			changed = true
+			if (definition.storeId) this.store.variables[definition.storeId] = normalizedValue
+			if (this.feedbackIds.has(definition.feedbackId)) feedbackIds.add(definition.feedbackId)
+			// Selected-resource feedbacks also depend on the local selection itself.
+			const selectionFeedbacks = this.selectionFeedbackIds.get(variableId)
+			if (selectionFeedbacks) {
+				for (const feedbackId of selectionFeedbacks) feedbackIds.add(feedbackId)
+			}
 		}
-		if (feedbackId) {
-			this.checkFeedbacks(feedbackId)
-		}
+
+		if (changed) this.setVariableValues(changedValues)
+		// Callbacks must see the complete new state, including local selections.
+		if (feedbackIds.size) this.checkFeedbacks(...feedbackIds)
 	},
 }

@@ -65,6 +65,7 @@ class MixEffectInstance extends InstanceBase {
 	}
 
 	async configUpdated(config) {
+		this.stopPolling()
 		const previousModel = this.switcher?.id
 		this.config = config
 
@@ -86,9 +87,7 @@ class MixEffectInstance extends InstanceBase {
 	}
 
 	async destroy() {
-		if (this.data.interval) {
-			clearInterval(this.data.interval)
-		}
+		this.stopPolling()
 	}
 }
 
